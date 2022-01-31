@@ -20,12 +20,14 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     public bool jumpQueued;
+    public bool isFalling;
 
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
         jumpQueued = false;
         isMoving = false;
+        isFalling = false;
     }
 
 
@@ -33,10 +35,12 @@ public class PlayerController : MonoBehaviour
     {
         //InputDetection();
         xInput = Input.GetAxis("Horizontal");
-        movementVector = new Vector3(xInput * speed, 0, 0);
-        Vector3 movement = transform.forward * movementVector.x;
+        movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
+
+        //tentative
+        /*Vector3 movement = transform.forward * movementVector.x;
         movement.y = myRigidbody.velocity.y;
-        myRigidbody.velocity = movement;
+        myRigidbody.velocity = movement;*/
 
         if (xInput != 0)
         {
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
         //fall multiplier
         if (myRigidbody.velocity.y < 0)
         {
-            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            isFalling = true;
         }
         else if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")))
         {
@@ -71,7 +75,6 @@ public class PlayerController : MonoBehaviour
     {
         if (isMoving)
         {
-            // myRigidbody.velocity = movement;
             myRigidbody.velocity = movementVector;
             isMoving = false;
         }
@@ -82,8 +85,15 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 myRigidbody.velocity += Vector3.up * playerJumpForce;
+                //myRigidbody.AddForce(new Vector3(0, 50, 0), ForceMode.Impulse);
                 jumpQueued = false;
+                isFalling = false;
             }
+        }
+
+        if (isFalling)
+        {
+            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
     }
 }
