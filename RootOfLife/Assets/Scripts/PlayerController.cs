@@ -71,7 +71,8 @@ public class PlayerController : MonoBehaviour
     {
         if (isMoving)
         {
-            myRigidbody.velocity = movement;
+            // myRigidbody.velocity = movement;
+            myRigidbody.velocity = movementVector;
             isMoving = false;
         }
 
