@@ -55,14 +55,14 @@ public class PlayerController : MonoBehaviour
         }
 
         //Rotate the avatar on the same direction the player is moving to
-         if (Input.GetAxis("Horizontal") != 0)
-         {
+        if (Input.GetAxis("Horizontal") != 0)
+        {
              Quaternion turnModel = Quaternion.LookRotation(new Vector3(Input.GetAxis("Horizontal"), 0, 0));
              model.rotation = turnModel;
 
-         }
+        }
 
-        //fall multiplier
+        //fall multiplier (fake gravité)
         if (myRigidbody.velocity.y < 0)
         {
             isFalling = true;
@@ -86,8 +86,9 @@ public class PlayerController : MonoBehaviour
             isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
             if (isGrounded)
             {
-                myRigidbody.velocity += Vector3.up * playerJumpForce;
                 //myRigidbody.AddForce(new Vector3(0, 50, 0), ForceMode.Impulse);
+
+                myRigidbody.velocity += Vector3.up * playerJumpForce;
                 jumpQueued = false;
                 isFalling = false;
             }
