@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public bool jumpQueued;
     public bool isFalling;
 
+    public Transform model;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -52,13 +54,13 @@ public class PlayerController : MonoBehaviour
             jumpQueued = true;
         }
 
-        /* //Rotate the avatar on the same direction the player is moving to
+        //Rotate the avatar on the same direction the player is moving to
          if (Input.GetAxis("Horizontal") != 0)
          {
              Quaternion turnModel = Quaternion.LookRotation(new Vector3(Input.GetAxis("Horizontal"), 0, 0));
              model.rotation = turnModel;
 
-         }*/
+         }
 
         //fall multiplier
         if (myRigidbody.velocity.y < 0)
