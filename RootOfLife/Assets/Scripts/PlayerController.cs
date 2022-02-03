@@ -21,8 +21,11 @@ public class PlayerController : MonoBehaviour
 
     public bool jumpQueued;
     public bool isFalling;
+    public bool isFastJumping;
 
     public Transform model;
+
+    public CapsuleCollider capCollider;
 
     void Start()
     {
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
         jumpQueued = false;
         isMoving = false;
         isFalling = false;
+        isFastJumping = false;
     }
 
 
@@ -38,11 +42,12 @@ public class PlayerController : MonoBehaviour
         //InputDetection();
         xInput = Input.GetAxis("Horizontal");
         movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
-
         //tentative
         /*Vector3 movement = transform.forward * movementVector.x;
         movement.y = myRigidbody.velocity.y;
         myRigidbody.velocity = movement;*/
+
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
 
         if (xInput != 0)
         {
@@ -52,6 +57,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space))
         {
             jumpQueued = true;
+        }
+        //low Jump
+        if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")))
+        {
+            isFastJumping = true;
         }
 
         //Rotate the avatar on the same direction the player is moving to
@@ -67,11 +77,23 @@ public class PlayerController : MonoBehaviour
         {
             isFalling = true;
         }
-        else if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")))
+    }
+
+    private void OnCollisionStay(Collision col)
+    {
+        foreach (ContactPoint p in col.contacts)
         {
-            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            Vector3 bottom = capCollider.bounds.center - (Vector3.up * capCollider.bounds.extents.y);
+            Vector3 curve = bottom + (Vector3.up * capCollider.radius);
+            Vector3 dir = curve - p.point;
         }
     }
+
+    /*private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer == 6)
+            isFalling = false; 
+    }*/
 
     private void FixedUpdate()
     {
@@ -81,22 +103,31 @@ public class PlayerController : MonoBehaviour
             isMoving = false;
         }
 
-        if (jumpQueued)
+        if (isGrounded)
         {
-            isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
-            if (isGrounded)
+            isFalling = false;
+            //isFastJumping = false;
+            //isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
+            if (jumpQueued)
             {
                 //myRigidbody.AddForce(new Vector3(0, 50, 0), ForceMode.Impulse);
 
                 myRigidbody.velocity += Vector3.up * playerJumpForce;
                 jumpQueued = false;
-                isFalling = false;
+                //isFalling = false;
+                
             }
         }
 
         if (isFalling)
         {
             myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+
+        if (isFastJumping)
+        {
+            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            isFastJumping = false;
         }
     }
 }
