@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     public CapsuleCollider capCollider;
 
+    public Animator animator;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -42,6 +44,11 @@ public class PlayerController : MonoBehaviour
         //InputDetection();
         xInput = Input.GetAxis("Horizontal");
         movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
+
+        //animation horizontal
+        this.animator.SetFloat("horizontal", xInput);
+        
+
         //tentative
         /*Vector3 movement = transform.forward * movementVector.x;
         movement.y = myRigidbody.velocity.y;

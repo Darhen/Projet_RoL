@@ -174,6 +174,7 @@ MonoBehaviour:
   isFastJumping: 0
   model: {fileID: 4086829344064056566}
   capCollider: {fileID: 3124496072062757467}
+  animator: {fileID: 7950957215595722380}
 --- !u!1001 &4557058843983072029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -250,5 +251,10 @@ PrefabInstance:
 --- !u!4 &4086829344064056566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8223b9708fe65b048b6f2389adcd7441, type: 3}
+  m_PrefabInstance: {fileID: 4557058843983072029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7950957215595722380 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 8223b9708fe65b048b6f2389adcd7441, type: 3}
   m_PrefabInstance: {fileID: 4557058843983072029}
   m_PrefabAsset: {fileID: 0}
