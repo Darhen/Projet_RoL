@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //InputDetection();
+        //InputDetection;
         xInput = Input.GetAxis("Horizontal");
         movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
 
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision col)
+    /*private void OnCollisionStay(Collision col)
     {
         foreach (ContactPoint p in col.contacts)
         {
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
             Vector3 curve = bottom + (Vector3.up * capCollider.radius);
             Vector3 dir = curve - p.point;
         }
-    }
+    }*/
 
     /*private void OnCollisionEnter(Collision other)
     {
