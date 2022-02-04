@@ -25,7 +25,10 @@ public class PlayerController : MonoBehaviour
 
     public Transform model;
 
-    public CapsuleCollider capCollider;
+    public PhysicMaterial withFriction;
+    public PhysicMaterial noFriction;
+
+    //public CapsuleCollider capCollider;
 
     public Animator animator;
 
@@ -47,18 +50,24 @@ public class PlayerController : MonoBehaviour
 
         //animation horizontal
         this.animator.SetFloat("horizontal", xInput);
-        
+
 
         //tentative
         /*Vector3 movement = transform.forward * movementVector.x;
         movement.y = myRigidbody.velocity.y;
         myRigidbody.velocity = movement;*/
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.30f, groundLayer);
 
         if (xInput != 0)
         {
             isMoving = true;
+            GetComponent<Collider>().material = noFriction;
+        }
+        else
+        {
+            isMoving = false;
+            GetComponent<Collider>().material = withFriction;
         }
 
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space))
@@ -74,8 +83,8 @@ public class PlayerController : MonoBehaviour
         //Rotate the avatar on the same direction the player is moving to
         if (Input.GetAxis("Horizontal") != 0)
         {
-             Quaternion turnModel = Quaternion.LookRotation(new Vector3(Input.GetAxis("Horizontal"), 0, 0));
-             model.rotation = turnModel;
+            Quaternion turnModel = Quaternion.LookRotation(new Vector3(Input.GetAxis("Horizontal"), 0, 0));
+            model.rotation = turnModel;
 
         }
 
@@ -83,6 +92,12 @@ public class PlayerController : MonoBehaviour
         if (myRigidbody.velocity.y < 0)
         {
             isFalling = true;
+        }
+
+        //Désactive la fake gravité si sur le ground
+        if (isGrounded)
+        {
+            isFalling = false;
         }
     }
 
@@ -107,22 +122,17 @@ public class PlayerController : MonoBehaviour
         if (isMoving)
         {
             myRigidbody.velocity = movementVector;
-            isMoving = false;
         }
 
         if (isGrounded)
         {
-            isFalling = false;
-            //isFastJumping = false;
-            //isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
             if (jumpQueued)
             {
                 //myRigidbody.AddForce(new Vector3(0, 50, 0), ForceMode.Impulse);
 
                 myRigidbody.velocity += Vector3.up * playerJumpForce;
                 jumpQueued = false;
-                //isFalling = false;
-                
+                //isFalling = false; 
             }
         }
 
