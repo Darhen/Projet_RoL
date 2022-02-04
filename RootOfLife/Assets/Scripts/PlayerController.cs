@@ -8,9 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody myRigidbody;
 
     public float xInput;
-    //public float zInput;
     private Vector3 movementVector;
-    private bool isMoving;
 
     public int playerJumpForce = 50;
     public int fallMultiplier = 15;
@@ -19,17 +17,15 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    public bool isMoving;
     public bool jumpQueued;
     public bool isFalling;
     public bool isFastJumping;
 
-    public Transform model;
-
     public PhysicMaterial withFriction;
     public PhysicMaterial noFriction;
 
-    //public CapsuleCollider capCollider;
-
+    public Transform model;
     public Animator animator;
 
     void Start()
@@ -44,103 +40,86 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //InputDetection;
+        //On stock dans un float l'input x qu'on insert dans un vector3 multiplié par speed et en ignorant la vélocité y du rigidbody ("évite les conflits de physique")
         xInput = Input.GetAxis("Horizontal");
         movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
 
-        //animation horizontal
+        //Animation horizontal
         this.animator.SetFloat("horizontal", xInput);
 
-
-        //tentative
-        /*Vector3 movement = transform.forward * movementVector.x;
-        movement.y = myRigidbody.velocity.y;
-        myRigidbody.velocity = movement;*/
-
+        //Check si le player est sur le sol
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.30f, groundLayer);
 
+        //Active le script de déplacement & Active le physicMat de noFriction (permet au joueur de se déplacer sur des pentes) 
         if (xInput != 0)
         {
             isMoving = true;
             GetComponent<Collider>().material = noFriction;
         }
+        //Désactive la fonction & active le physicMat noFriction (permet au player de ne pas glisser sur les pentes)
         else
         {
             isMoving = false;
             GetComponent<Collider>().material = withFriction;
         }
 
+        //Active jump si input est maintenu 
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space))
         {
             jumpQueued = true;
         }
-        //low Jump
-        if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")))
+
+        //Active le low Jump si input est "juste préssé"
+        if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) )
         {
             isFastJumping = true;
         }
 
-        //Rotate the avatar on the same direction the player is moving to
+        //Rotate l'avatar dans la même direction (+ / -) ou le player bouge
         if (Input.GetAxis("Horizontal") != 0)
         {
             Quaternion turnModel = Quaternion.LookRotation(new Vector3(Input.GetAxis("Horizontal"), 0, 0));
             model.rotation = turnModel;
-
         }
 
-        //fall multiplier (fake gravité)
+        //On détecte si la vélocité en y du player est inf à 0 et on active la fake gravité  
         if (myRigidbody.velocity.y < 0)
         {
             isFalling = true;
         }
 
-        //Désactive la fake gravité si sur le ground
+        //Désactive la fake gravité si player sur le ground
         if (isGrounded)
         {
             isFalling = false;
         }
     }
 
-    /*private void OnCollisionStay(Collision col)
-    {
-        foreach (ContactPoint p in col.contacts)
-        {
-            Vector3 bottom = capCollider.bounds.center - (Vector3.up * capCollider.bounds.extents.y);
-            Vector3 curve = bottom + (Vector3.up * capCollider.radius);
-            Vector3 dir = curve - p.point;
-        }
-    }*/
-
-    /*private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.layer == 6)
-            isFalling = false; 
-    }*/
-
     private void FixedUpdate()
     {
+        //Physique du déplacement
         if (isMoving)
         {
             myRigidbody.velocity = movementVector;
         }
 
+        //si player au sol, alors on autorise le Jump 
         if (isGrounded)
         {
             if (jumpQueued)
             {
-                //myRigidbody.AddForce(new Vector3(0, 50, 0), ForceMode.Impulse);
-
                 myRigidbody.velocity += Vector3.up * playerJumpForce;
                 jumpQueued = false;
-                //isFalling = false; 
             }
         }
 
+        //physique de la fake gravité
         if (isFalling)
         {
             myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
 
+        //physique du lowJump
         if (isFastJumping)
         {
             myRigidbody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;

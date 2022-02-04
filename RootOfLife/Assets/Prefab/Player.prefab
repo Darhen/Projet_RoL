@@ -163,18 +163,19 @@ MonoBehaviour:
   xInput: 0
   playerJumpForce: 80
   fallMultiplier: 35
-  lowJumpMultiplier: 5
+  lowJumpMultiplier: 25
   isGrounded: 0
   groundCheck: {fileID: 3124496071943672421}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  isMoving: 0
   jumpQueued: 0
   isFalling: 0
   isFastJumping: 0
-  model: {fileID: 4086829344064056566}
   withFriction: {fileID: 13400000, guid: 20208defe118ffc4090ec04a161c60da, type: 2}
   noFriction: {fileID: 13400000, guid: b2cad8346eedddc48ae76620dd7cea9d, type: 2}
+  model: {fileID: 4086829344064056566}
   animator: {fileID: 7950957215595722380}
 --- !u!1001 &4557058843983072029
 PrefabInstance:
