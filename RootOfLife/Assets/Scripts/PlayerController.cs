@@ -67,12 +67,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space))
         {
             jumpQueued = true;
+ 
         }
 
         //Active le low Jump si input est "juste préssé"
         if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) )
         {
             isFastJumping = true;
+
         }
 
         //Rotate l'avatar dans la même direction (+ / -) ou le player bouge
@@ -86,13 +88,40 @@ public class PlayerController : MonoBehaviour
         if (myRigidbody.velocity.y < 0)
         {
             isFalling = true;
+
         }
 
         //Désactive la fake gravité si player sur le ground
         if (isGrounded)
         {
             isFalling = false;
+            
         }
+
+        //ANIMATION JUMP
+
+        if (Input.GetButton("Jump"))
+        {
+            this.animator.SetBool("jump", true);
+        }
+
+        if (isGrounded)
+        {
+            this.animator.SetBool("grounded", true);
+            this.animator.SetBool("jump", false);
+            this.animator.SetBool("falling", false);
+        }
+
+        if (isGrounded == false)
+        {
+            this.animator.SetBool("grounded", false);
+        }
+
+        if (isFalling)
+        {
+            this.animator.SetBool("falling", true);
+        }
+
     }
 
     private void FixedUpdate()
