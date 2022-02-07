@@ -6,10 +6,12 @@ public class MovableObjectBehaviour : MonoBehaviour
 {
     private Rigidbody rb;
     public bool playerTouching;
+    public Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -18,15 +20,25 @@ public class MovableObjectBehaviour : MonoBehaviour
         {
             rb.isKinematic = false;
             playerTouching = true;
-            StartCoroutine("Timeleft");
+            //StartCoroutine("Timeleft");
+            this.animator.SetBool("pushing", true);
         }
         else
         {
             playerTouching = false;
         }
     }
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            rb.isKinematic = true;
+            playerTouching = false;
+            this.animator.SetBool("pushing", false);
+        }
+    }
 
-    IEnumerator Timeleft()
+    /*IEnumerator Timeleft()
     {
         yield return new WaitForSeconds(1f);
         if (!playerTouching)
@@ -38,6 +50,6 @@ public class MovableObjectBehaviour : MonoBehaviour
 
             StopCoroutine("Timeleft");
 
-    }
+    }*/
     
 }

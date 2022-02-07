@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space))
         {
             jumpQueued = true;
+
  
         }
 
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
         if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) )
         {
             isFastJumping = true;
+
 
         }
 
@@ -138,14 +140,19 @@ public class PlayerController : MonoBehaviour
             if (jumpQueued)
             {
                 myRigidbody.velocity += Vector3.up * playerJumpForce;
+                Debug.Log("Yolo");
                 jumpQueued = false;
             }
+        }
+        else
+        {
+            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
 
         //physique de la fake gravité
         if (isFalling)
         {
-            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+           // myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
 
         //physique du lowJump
