@@ -22,9 +22,6 @@ public class PlayerController : MonoBehaviour
     public bool isFalling;
     public bool isFastJumping;
 
-    public PhysicMaterial withFriction;
-    public PhysicMaterial noFriction;
-
     public Transform model;
     public Animator animator;
 
@@ -54,13 +51,11 @@ public class PlayerController : MonoBehaviour
         if (xInput != 0)
         {
             isMoving = true;
-            //GetComponent<Collider>().material = noFriction;
         }
         //Désactive la fonction & active le physicMat noFriction (permet au player de ne pas glisser sur les pentes)
         else
         {
             isMoving = false;
-            //GetComponent<Collider>().material = withFriction;
         }
 
         //Active jump si input est maintenu 
