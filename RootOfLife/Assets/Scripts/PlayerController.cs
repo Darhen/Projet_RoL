@@ -67,8 +67,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space))
         {
             jumpQueued = true;
+            this.animator.SetBool("jump", true);
 
- 
         }
 
         //Active le low Jump si input est "juste préssé"
