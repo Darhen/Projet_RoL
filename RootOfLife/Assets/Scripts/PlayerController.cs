@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    public float speed = 10f;
     private Rigidbody myRigidbody;
 
     public float xInput;
@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public int playerJumpForce = 50;
     public int fallMultiplier = 15;
-    public float lowJumpMultiplier = 15;
+    public float lowJumpMultiplier = 15f;
     public bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundLayer;
@@ -88,12 +88,12 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        //Désactive la fake gravité si player sur le ground
+        /*Désactive la fake gravité si player sur le ground
         if (isGrounded)
         {
             isFalling = false;
             
-        }
+        }*/
 
         //ANIMATION JUMP
 
