@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GrowBehaviour : MonoBehaviour
 {
-    public float growSpeed = 0.5f;
     public float rotSpeed = 350;
     public float damping = 15;
 
@@ -31,11 +30,11 @@ public class GrowBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.transform.localScale.y <= 1)
+        if (this.transform.localScale.y <= 0.5f)
         {
             if (Input.GetKey(KeyCode.F))
             {
-                this.transform.localScale = this.transform.localScale + new Vector3(0f, 1f, 0f) * growSpeed * Time.deltaTime;
+                this.transform.localScale = this.transform.localScale + (new Vector3(0f, 1.5f, 0f)  * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.RightArrow))
@@ -52,7 +51,7 @@ public class GrowBehaviour : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotQ, Time.deltaTime * damping);
         }
 
-        if (this.transform.localScale.y >= 1 && canClone == true)
+        if (this.transform.localScale.y >= 0.5f && canClone == true)
         {
             SpawnClone();
             canClone = false;

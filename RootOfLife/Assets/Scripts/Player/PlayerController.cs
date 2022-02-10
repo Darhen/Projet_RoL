@@ -70,8 +70,6 @@ public class PlayerController : MonoBehaviour
         if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) )
         {
             isFastJumping = true;
-
-
         }
 
         //Rotate l'avatar dans la même direction (+ / -) ou le player bouge
@@ -108,8 +106,7 @@ public class PlayerController : MonoBehaviour
             this.animator.SetBool("jump", false);
             this.animator.SetBool("falling", false);
         }
-
-        if (isGrounded == false)
+        else
         {
             this.animator.SetBool("grounded", false);
         }

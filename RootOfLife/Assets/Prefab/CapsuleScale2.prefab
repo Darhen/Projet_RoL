@@ -75,7 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bdb7ce58645ff458c587b5e3921d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growSpeed: 0.5
   rotSpeed: 350
   damping: 15
   myPrefab: {fileID: 8884946090903062660, guid: 07fe13e48b8ea88429cf1d5b86b30cb3, type: 3}
@@ -141,7 +140,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8521b32b7fcd7ae41acc48012ada9ec0, type: 2}
+  - {fileID: 0}
+  - {fileID: 2100000, guid: 5e88a93148f69984e968ecc92408960f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
