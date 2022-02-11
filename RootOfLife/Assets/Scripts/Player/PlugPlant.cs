@@ -7,6 +7,8 @@ public class PlugPlant : MonoBehaviour
 
     public GameObject myPrefab;
     public GameObject spawnPos;
+    public GameObject sac;
+    public GameObject sacPlug;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,8 @@ public class PlugPlant : MonoBehaviour
 
     void SpawnBranch()
     {
-        Instantiate (myPrefab, spawnPos.transform.position, Quaternion.identity);
+        Instantiate(myPrefab, spawnPos.transform.position, Quaternion.identity);
+        sac.SetActive(false);
+        sacPlug.SetActive(true);
     }
 }
