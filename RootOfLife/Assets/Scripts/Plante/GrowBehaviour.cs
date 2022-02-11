@@ -55,6 +55,7 @@ public class GrowBehaviour : MonoBehaviour
         {
             SpawnClone();
             canClone = false;
+            this.gameObject.tag = "Untagged";
         }
     }
     void SpawnClone()

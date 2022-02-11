@@ -9,20 +9,22 @@ public class PlugPlant : MonoBehaviour
     public GameObject spawnPos;
     public GameObject sac;
     public GameObject sacPlug;
+    private int count;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        count = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && count == 0)
         {
             gameObject.GetComponent<PlayerController>().enabled = false;
             SpawnBranch();
+            count++;
         }
     }
 
