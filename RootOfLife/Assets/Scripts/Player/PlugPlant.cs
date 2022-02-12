@@ -6,6 +6,8 @@ public class PlugPlant : MonoBehaviour
 {
 
     public GameObject myPrefab;
+    private GameObject myClone;
+    Transform startPos;
     public GameObject spawnPos;
     public GameObject sac;
     public GameObject sacPlug;
@@ -15,6 +17,7 @@ public class PlugPlant : MonoBehaviour
     void Start()
     {
         count = 0;
+        startPos = spawnPos.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -30,7 +33,8 @@ public class PlugPlant : MonoBehaviour
 
     void SpawnBranch()
     {
-        Instantiate(myPrefab, spawnPos.transform.position, Quaternion.identity);
+        myClone = Instantiate(myPrefab, spawnPos.transform.position, Quaternion.identity);
+        myClone.transform.SetParent(startPos);
         sac.SetActive(false);
         sacPlug.SetActive(true);
     }

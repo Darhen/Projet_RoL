@@ -12,6 +12,8 @@ public class GrowBehaviour : MonoBehaviour
     public GameObject myPrefab;
     private GameObject prefabClone;
     public GameObject endPoint;
+    GameObject spawnPoint;
+    Transform startPos;
 
     private bool canClone;
 
@@ -19,6 +21,8 @@ public class GrowBehaviour : MonoBehaviour
     void Start()
     {
         canClone = true;
+        spawnPoint = GameObject.Find("SpawnPos");
+        startPos = spawnPoint.GetComponent<Transform>();
     }
 
     private void OnEnable()
@@ -61,5 +65,6 @@ public class GrowBehaviour : MonoBehaviour
     void SpawnClone()
     {
         prefabClone = Instantiate(myPrefab, endPoint.transform.position, endPoint.transform.rotation) as GameObject;
+        prefabClone.transform.SetParent(startPos);
     }
 }
