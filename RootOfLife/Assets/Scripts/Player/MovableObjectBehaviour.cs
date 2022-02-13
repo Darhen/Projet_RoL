@@ -5,8 +5,9 @@ using UnityEngine;
 public class MovableObjectBehaviour : MonoBehaviour
 {
     private Rigidbody rb;
-    public bool playerTouching;
     public Animator animator;
+    private bool isPushing;
+
 
     private void Awake()
     {
@@ -14,42 +15,31 @@ public class MovableObjectBehaviour : MonoBehaviour
         rb.isKinematic = true;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void Update()
     {
-        if (other.gameObject.tag == "Player")
+        if (Input.GetKey(KeyCode.P))
         {
-            rb.isKinematic = false;
-            playerTouching = true;
-            //StartCoroutine("Timeleft");
-            this.animator.SetBool("pushing", true);
+            isPushing = true;
         }
         else
         {
-            playerTouching = false;
+            isPushing = false;
         }
     }
-    private void OnCollisionExit(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
-            rb.isKinematic = true;
-            playerTouching = false;
-            this.animator.SetBool("pushing", false);
+            if(isPushing)
+            {
+                rb.isKinematic = false;
+                this.animator.SetBool("pushing", true);
+            }
+            else if (!isPushing)
+            {
+                rb.isKinematic = true;
+                this.animator.SetBool("pushing", false);
+            }
         }
     }
-
-    /*IEnumerator Timeleft()
-    {
-        yield return new WaitForSeconds(1f);
-        if (!playerTouching)
-        {
-            rb.isKinematic = true;
-            StopCoroutine("Timeleft");
-        }
-        else
-
-            StopCoroutine("Timeleft");
-
-    }*/
-    
 }
