@@ -42,4 +42,17 @@ public class MovableObjectBehaviour : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (isPushing)
+            {
+                rb.isKinematic = true;
+                this.animator.SetBool("pushing", false);
+            }
+
+        }
+    }
 }
