@@ -46,16 +46,16 @@ public class EnemyAi : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+       // if (!playerInSightRange && !playerInAttackRange) Patroling();
+       // if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
         
     }
 
     private void Patroling()
     {
-        if (walkPointSet == false)
-            SearchWalkPoint();
+       // if (walkPointSet == false)
+       //     SearchWalkPoint();
 
         if (walkPointSet == true)
             agent.SetDestination(walkPoint);
@@ -63,12 +63,12 @@ public class EnemyAi : MonoBehaviour
         //Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //walkpoint reached
-        float dist = Vector3.Distance(walkPoint, transform.position);
+       /* float dist = Vector3.Distance(walkPoint, transform.position);
         if (dist < 1f)
         {
             walkPointSet = false;
         }
-        
+        */
     }
 
     private void SearchWalkPoint()
@@ -100,8 +100,8 @@ public class EnemyAi : MonoBehaviour
         {
             ///Attack code here
             Rigidbody rb = Instantiate(projectile, projPos.transform.position, projPos.transform.rotation/*Quaternion.identity*/).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 1000f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 1f, ForceMode.Impulse);
 
             ///
 
