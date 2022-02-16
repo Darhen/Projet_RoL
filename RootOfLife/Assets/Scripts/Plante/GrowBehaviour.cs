@@ -15,7 +15,7 @@ public class GrowBehaviour : MonoBehaviour
     GameObject spawnPoint;
     Transform startPos;
 
-    private bool canClone;
+    public bool canClone;
 
     // Start is called before the first frame update
     void Start()
@@ -48,17 +48,21 @@ public class GrowBehaviour : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-
                 desiredRot += rotSpeed * Time.deltaTime;
             }
             var desiredRotQ = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, desiredRot);
             transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotQ, Time.deltaTime * damping);
         }
 
-        if (this.transform.localScale.y >= 0.5f && canClone == true)
+        if (canClone)
         {
-            SpawnClone();
-            canClone = false;
+            if (this.transform.localScale.y >= 0.5f)
+            {
+                SpawnClone();
+            }
+        }
+        else if (!canClone)
+        {
             this.gameObject.tag = "Untagged";
         }
     }
@@ -66,5 +70,6 @@ public class GrowBehaviour : MonoBehaviour
     {
         prefabClone = Instantiate(myPrefab, endPoint.transform.position, endPoint.transform.rotation) as GameObject;
         prefabClone.transform.SetParent(startPos);
+        canClone = false;
     }
 }

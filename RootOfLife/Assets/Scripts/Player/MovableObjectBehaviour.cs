@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovableObjectBehaviour : MonoBehaviour
 {
+
     private Rigidbody rb;
     public Animator animator;
     private bool isPushing;
@@ -26,6 +27,7 @@ public class MovableObjectBehaviour : MonoBehaviour
             isPushing = false;
         }
     }
+
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Player")
@@ -43,16 +45,4 @@ public class MovableObjectBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            if (isPushing)
-            {
-                rb.isKinematic = true;
-                this.animator.SetBool("pushing", false);
-            }
-
-        }
-    }
 }
