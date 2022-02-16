@@ -113,6 +113,8 @@ public class LadderClimb : MonoBehaviour
                 //desactivation du box collider pour tomber une fois en jump
                 this.GetComponent<BoxCollider>().enabled = false;
 
+                other.GetComponent<PlayerController>().jumpQueued = true;
+
             }
 
         }
