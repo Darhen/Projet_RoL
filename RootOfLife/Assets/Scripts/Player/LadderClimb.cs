@@ -12,7 +12,10 @@ public class LadderClimb : MonoBehaviour
     public bool movingDown;
 
     public Animator animator;
-    
+    public GameObject Player;
+    public float yInput;
+    public bool playerGrounded;
+
     
     
 
@@ -21,13 +24,31 @@ public class LadderClimb : MonoBehaviour
     {
         movingUp = false;
         movingDown = false;
+
+        
         
       
     }
     
     private void Update()
     {
-       if (Input.GetAxis("Vertical") > 0)
+        yInput = Input.GetAxis("Vertical");
+        Player.GetComponent<Animator>().SetFloat("vertical", yInput);
+
+        //activation du box collider lorsque le player isGrounded
+        playerGrounded = GameObject.FindWithTag("Player").GetComponent<PlayerController>().isGrounded;
+
+        //activation du box collider lorsque le player isGrounded
+        if (playerGrounded)
+        {
+            this.GetComponent<BoxCollider>().enabled = true;
+            Debug.Log("grounded");
+        }
+       
+
+
+
+        if (Input.GetAxis("Vertical") > 0)
         {
             movingUp = true;
             movingDown = false;
@@ -44,6 +65,7 @@ public class LadderClimb : MonoBehaviour
             movingUp = false;
             movingDown = false;
         }
+        
 
     }
 
@@ -87,6 +109,10 @@ public class LadderClimb : MonoBehaviour
                 other.GetComponent<Rigidbody>().AddForce(playerXInput, jumpForce, 0);
 
                 animator.SetBool("isClimbing", false);
+
+                //desactivation du box collider pour tomber une fois en jump
+                this.GetComponent<BoxCollider>().enabled = false;
+
             }
 
         }
@@ -97,6 +123,8 @@ public class LadderClimb : MonoBehaviour
         other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
 
         animator.SetBool("isClimbing", false);
+
+        
 
     }
 
