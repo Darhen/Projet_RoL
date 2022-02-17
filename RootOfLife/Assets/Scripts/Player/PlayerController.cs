@@ -59,18 +59,19 @@ public class PlayerController : MonoBehaviour
         }
 
         //Active jump si input est maintenu 
-        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             jumpQueued = true;
+            Debug.Log("Jump!");
             this.animator.SetBool("jump", true);
 
         }
 
         //Active le low Jump si input est "juste préssé"
-        if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) )
+        /*if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) )
         {
             isFastJumping = true;
-        }
+        }*/
 
         //Rotate l'avatar dans la même direction (+ / -) ou le player bouge
         if (Input.GetAxis("Horizontal") != 0)
@@ -108,8 +109,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            
-
             this.animator.SetBool("grounded", false);
         }
 
@@ -134,9 +133,14 @@ public class PlayerController : MonoBehaviour
             if (jumpQueued)
             {
                 myRigidbody.velocity += Vector3.up * playerJumpForce;
-                Debug.Log("Yolo");
                 jumpQueued = false;
             }
+
+            /*if (isFastJumping)
+            {
+                myRigidbody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+                isFastJumping = false;
+            }*/
         }
         else
         {
@@ -147,13 +151,6 @@ public class PlayerController : MonoBehaviour
         if (isFalling)
         {
            // myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        }
-
-        //physique du lowJump
-        if (isFastJumping)
-        {
-            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-            isFastJumping = false;
         }
     }
 }
