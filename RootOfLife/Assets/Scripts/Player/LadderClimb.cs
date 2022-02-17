@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class LadderClimb : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 2;
     private float playerXInput;
     private float jumpForce;
 
-    public bool movingUp;
-    public bool movingDown;
+    public bool moving;
+   
 
     public Animator animator;
-    public GameObject Player;
+    public GameObject avatar;
     public float yInput;
     public bool playerGrounded;
+    public bool climbing;
+    public GameObject Player;
+    public int initialFallmultiplier;
 
     
     
@@ -22,10 +25,10 @@ public class LadderClimb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movingUp = false;
-        movingDown = false;
-
-        
+        moving= false;
+        Player = GameObject.Find("Player");
+        avatar = GameObject.Find("TestCharacter27_janvier");
+        initialFallmultiplier = Player.GetComponent<PlayerController>().fallMultiplier;
         
       
     }
@@ -33,7 +36,7 @@ public class LadderClimb : MonoBehaviour
     private void Update()
     {
         yInput = Input.GetAxis("Vertical");
-        Player.GetComponent<Animator>().SetFloat("vertical", yInput);
+        avatar.GetComponent<Animator>().SetFloat("vertical", yInput);
 
         //activation du box collider lorsque le player isGrounded
         playerGrounded = GameObject.FindWithTag("Player").GetComponent<PlayerController>().isGrounded;
@@ -43,92 +46,107 @@ public class LadderClimb : MonoBehaviour
         {
             this.GetComponent<BoxCollider>().enabled = true;
             Debug.Log("grounded");
+       
         }
        
+        //detection si le player bouge
 
-
-
-        if (Input.GetAxis("Vertical") > 0)
+        if (yInput != 0)
         {
-            movingUp = true;
-            movingDown = false;
+            moving = true;
         }
 
-        else if (Input.GetAxis("Vertical") < 0)
+        //detection si le player bouge pas
+        else
         {
-            movingUp = false;
-            movingDown = true;
+            moving = false;
+        }
+
+        //bool animation pour climbing
+        if (climbing)
+        {
+            animator.SetBool("jump", false);
+            animator.SetBool("isClimbing", true);
+        }
+
+        else 
+        {
+            animator.SetBool("isClimbing", false);
+        }
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        //déplacements sur liane
+        if (climbing)
+        {
+            Player.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+
+            Player.GetComponent<PlayerController>().fallMultiplier = 0;
+
+            if (moving)
+            {
+                Player.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * speed, 0);
+                Player.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            }
+           /*
+            else
+            {
+
+                if (Player.GetComponent<PlayerController>().isGrounded == false)
+                {
+                    Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+                }
+
+                if (Input.GetButton("Jump"))
+                {
+                    climbing = false;
+                    Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+                    Player.GetComponent<Rigidbody>().AddForce(playerXInput, jumpForce, 0);
+
+                    animator.SetBool("jump", true);
+                    animator.SetBool("isClimbing", false);
+
+                    //desactivation du box collider pour tomber une fois en jump
+                    this.GetComponent<BoxCollider>().enabled = false;
+                    Player.GetComponent<PlayerController>().jumpQueued = true;
+                }
+            }*/
         }
 
         else
         {
-            movingUp = false;
-            movingDown = false;
+            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
+            Player.GetComponent<PlayerController>().fallMultiplier = initialFallmultiplier;
         }
-        
-
     }
-
-
     private void OnTriggerStay(Collider other)
     {
         playerXInput = other.GetComponent<PlayerController>().xInput * other.GetComponent<PlayerController>().speed;
         jumpForce = other.GetComponent<PlayerController>().playerJumpForce;
 
-        if (other.tag == "Player" && movingUp == true)
-        {
-            
-            other.GetComponent<Rigidbody>().velocity = new Vector3(0, speed, 0);
-            other.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-
-            animator.SetBool("isClimbing", true);
-        }
-
-        else if (other.tag == "Player" && movingDown == true)
-        {
-            other.GetComponent<Rigidbody>().velocity = new Vector3(0, -speed, 0);
-            other.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-
-            animator.SetBool("isClimbing", true);
-        }
-
+        if(Input.GetButton("Fire3"))
+            {
+            climbing = true;
+            }
         else
         {
-            
-            if (other.GetComponent<PlayerController>().isGrounded == false )
-            {
-                other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-
-                animator.SetBool("isClimbing", true);
-
-            }
-            
-            if (Input.GetButton("Jump"))
-            {
-                other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-                other.GetComponent<Rigidbody>().AddForce(playerXInput, jumpForce, 0);
-
-                animator.SetBool("isClimbing", false);
-
-                //desactivation du box collider pour tomber une fois en jump
-                this.GetComponent<BoxCollider>().enabled = false;
-
-                other.GetComponent<PlayerController>().jumpQueued = true;
-
-            }
-
+            climbing = false;
         }
+
     }
 
-    private void OnTriggerExit(Collider other)
+        private void OnTriggerExit(Collider other)
     {
         other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
 
         animator.SetBool("isClimbing", false);
 
-        
-
     }
+
+    
 
 }
 

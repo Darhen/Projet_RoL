@@ -8,7 +8,7 @@ namespace Com.LuisPedroFonseca.ProCamera2D.Platformer
     {
         public Transform Body;
 
-        // Player Handling
+        // avatar Handling
         public float gravity = 20;
         public float runSpeed = 12;
         public float acceleration = 30;

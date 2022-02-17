@@ -25,6 +25,12 @@ public class PlayerController : MonoBehaviour
     public Transform model;
     public Animator animator;
 
+    //Liane
+
+    LadderClimb ladderClimb;
+    public GameObject liane;
+    public bool isClimbing;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -32,6 +38,10 @@ public class PlayerController : MonoBehaviour
         isMoving = false;
         isFalling = false;
         isFastJumping = false;
+
+        liane = GameObject.Find("LianeRigide");
+        ladderClimb = liane.GetComponent<LadderClimb>();
+
     }
 
 
@@ -117,6 +127,8 @@ public class PlayerController : MonoBehaviour
             this.animator.SetBool("falling", true);
         }
 
+
+
     }
 
     private void FixedUpdate()
@@ -152,5 +164,11 @@ public class PlayerController : MonoBehaviour
         {
            // myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
+
+        //JUMP
+
+
+
+
     }
 }
