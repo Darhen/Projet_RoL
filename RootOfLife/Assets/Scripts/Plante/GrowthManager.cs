@@ -39,9 +39,10 @@ public class GrowthManager : MonoBehaviour
 
         if (currentCap != maxCap)
         {
-            if (!Input.GetKey(KeyCode.G))
+            if (!Input.GetKey(KeyCode.F))
             {
-                Debug.Log("yolo");
+               // StartCoroutine("DestroyRoots");
+                Debug.Log("destroyRoot");
                 //Ici on détecte le relachement de l'input
 
                 //Code:On instancie le pont et on lance la coroutine de destruction des capsules? 
