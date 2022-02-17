@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 15443216}
+  - component: {fileID: 1050712619}
   m_Layer: 0
   m_Name: SpawnPos
   m_TagString: Untagged
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 2189126246793513207}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1050712619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15443215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2580879fd6254a042941821fc8182aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCap: 12
+  currentCap: 0
 --- !u!1 &1875654653
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,8 +74,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875654653}
   m_LocalRotation: {x: -0.014565549, y: -0.023729315, z: 0.25125453, w: 0.96752053}
-  m_LocalPosition: {x: 0.013088226, y: 0.5021061, z: 0}
-  m_LocalScale: {x: 0.85308, y: 0.85308003, z: 0.50232005}
+  m_LocalPosition: {x: 0, y: 0.87, z: -0}
+  m_LocalScale: {x: 1.1990892, y: 1.1990893, z: 0.70606107}
   m_Children: []
   m_Father: {fileID: 15443216}
   m_RootOrder: 0
@@ -4698,7 +4713,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2209
+  m_VersionIndex: 2212
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4829,6 +4844,7 @@ GameObject:
   - component: {fileID: 3124496072062757466}
   - component: {fileID: 3124496072062757465}
   - component: {fileID: 596418948}
+  - component: {fileID: 2023999900}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4845,7 +4861,7 @@ Transform:
   m_GameObject: {fileID: 3124496072062757464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 3124496071943672421}
   - {fileID: 2189126246793513207}
@@ -4913,9 +4929,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.35
-  m_Height: 2.9445922
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.47229612, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3124496072062757466
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4930,7 +4946,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &3124496072062757465
 MonoBehaviour:
@@ -4976,6 +4992,20 @@ MonoBehaviour:
   spawnPos: {fileID: 15443215}
   sac: {fileID: 8887326981273654995}
   sacPlug: {fileID: 1875654653}
+--- !u!136 &2023999900
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124496072062757464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.13
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5524811190506412196
 GameObject:
   m_ObjectHideFlags: 0
@@ -9675,7 +9705,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2215
+  m_VersionIndex: 2227
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9774,15 +9804,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8223b9708fe65b048b6f2389adcd7441, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4999999
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8223b9708fe65b048b6f2389adcd7441, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8223b9708fe65b048b6f2389adcd7441, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4999999
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8223b9708fe65b048b6f2389adcd7441, type: 3}
       propertyPath: m_LocalPosition.x
