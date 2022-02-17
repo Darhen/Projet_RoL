@@ -14367,7 +14367,7 @@ GameObject:
   - component: {fileID: 349104999}
   - component: {fileID: 349104998}
   - component: {fileID: 349104997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17924,7 +17924,9 @@ GameObject:
   - component: {fileID: 718339304}
   - component: {fileID: 718339303}
   - component: {fileID: 718339302}
-  m_Layer: 0
+  - component: {fileID: 718339309}
+  - component: {fileID: 718339308}
+  m_Layer: 6
   m_Name: Pont
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18246,12 +18248,46 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718339301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1274.56, y: 2.42, z: 14.573835}
+  m_LocalPosition: {x: -1277.68, y: 2.42, z: 14.57384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &718339308
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718339301}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 883873b6672076045b04f28c967f4aea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &718339309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718339301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734e8253ae794644abb2fafbd27f595c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAnimationController: {fileID: 718339308}
+  Sensor: {fileID: 1229585086}
+  isOpen: 0
 --- !u!1 &720212840
 GameObject:
   m_ObjectHideFlags: 0
@@ -27015,7 +27051,7 @@ GameObject:
   - component: {fileID: 1532289261}
   - component: {fileID: 1532289260}
   - component: {fileID: 1532289259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prism (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
