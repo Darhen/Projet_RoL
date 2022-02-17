@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
 
     public float smoothSpeed = 3.5f;
     public Vector3 offset;
-    private int count;
+    public int count;
 
     private void Start()
     {
