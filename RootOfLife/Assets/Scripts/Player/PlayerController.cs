@@ -165,10 +165,28 @@ public class PlayerController : MonoBehaviour
            // myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
 
-        //JUMP
-
-
-
 
     }
+
+    //Slope
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Slope")
+        {
+            if (myRigidbody.velocity.y < 0)
+            {
+                animator.SetBool("Sliding", true);
+            }
+            else
+            {
+                animator.SetBool("Sliding", false);
+            }
+        }
+        else
+        {
+            animator.SetBool("Sliding", false);
+        }
+    }
+
 }
