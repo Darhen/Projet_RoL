@@ -26,6 +26,11 @@ public class CameraFollow : MonoBehaviour
         if (count == 1)
         {
             target = GameObject.FindWithTag("FollowMe");
+
+            if(target == null)
+            {
+                count++;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.G))

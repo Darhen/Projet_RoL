@@ -7,16 +7,25 @@ public class GrowthManager : MonoBehaviour
 
     public int maxCap = 12;
     public int currentCap;
-    //GameObject lastChild;
+
     Transform lastChild;
     GrowBehaviour growthBehaviour;
+
     CameraFollow cameraFollow;
     GameObject cam;
+
+    PlugPlant plugPlant;
+
+    PlayerController playerController;
 
     private void Awake()
     {
         cam = GameObject.FindWithTag("MainCamera");
         cameraFollow = cam.GetComponent<CameraFollow>();
+
+        plugPlant = GetComponentInParent<PlugPlant>();
+
+        playerController = GetComponentInParent<PlayerController>();
     }
     private void Update()
     {
@@ -39,19 +48,25 @@ public class GrowthManager : MonoBehaviour
 
         if (currentCap != maxCap)
         {
-            if (!Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.F))
             {
                // StartCoroutine("DestroyRoots");
-                Debug.Log("destroyRoot");
+
                 //Ici on détecte le relachement de l'input
 
                 //Code:On instancie le pont et on lance la coroutine de destruction des capsules? 
+            }
+            if (Input.GetKeyUp(KeyCode.F))
+            {
+                Debug.Log("destroyRoot");
             }
         }
 
         if (currentCap == 1)
         {
             StopCoroutine("DestroyRoots");
+            playerController.enabled = true;
+            plugPlant.count = 0;
             //Quand le bool est strictement égale à 1 on stop la coroutine (SacPlug est le 1er enfant de l'objet et on ne veut pas le détruire)
         }
     }
@@ -63,8 +78,13 @@ public class GrowthManager : MonoBehaviour
         cameraFollow.count = 0; //On réattribut le player comme target de la caméra
         while (true)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
             Destroy(lastChild.gameObject);
         }
+    }
+
+    public void OnCollisionEnterChild(Collision other)
+    {
+        StartCoroutine("DestroyRoots");
     }
 }

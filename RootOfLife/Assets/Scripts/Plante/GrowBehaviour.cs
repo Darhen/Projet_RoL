@@ -14,6 +14,7 @@ public class GrowBehaviour : MonoBehaviour
     public GameObject endPoint;
     GameObject spawnPoint;
     Transform startPos;
+    GrowthManager growthManager;
 
     public bool canClone;
 
@@ -38,7 +39,7 @@ public class GrowBehaviour : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.F))
             {
-                this.transform.localScale = this.transform.localScale + (new Vector3(0f, 0.5f, 0f)  * Time.deltaTime);
+                this.transform.localScale = this.transform.localScale + (new Vector3(0f, 0.5f, 0f) * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.RightArrow))
@@ -63,7 +64,7 @@ public class GrowBehaviour : MonoBehaviour
         }
         else if (!canClone)
         {
-            this.gameObject.tag = "Untagged";
+            this.gameObject.tag = "OldRoot";
         }
     }
     void SpawnClone()
@@ -71,5 +72,15 @@ public class GrowBehaviour : MonoBehaviour
         prefabClone = Instantiate(myPrefab, endPoint.transform.position, endPoint.transform.rotation) as GameObject;
         prefabClone.transform.SetParent(startPos);
         canClone = false;
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Box" || other.gameObject.tag == "Untagged" || other.gameObject.tag == "Slope")
+        {
+            Debug.Log("Hit");
+            growthManager = transform.parent.GetComponent<GrowthManager>();
+            growthManager.OnCollisionEnterChild(other);
+        }
     }
 }
