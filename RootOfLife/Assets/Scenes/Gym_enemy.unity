@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!153 &88744927
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -492,8 +492,8 @@ GameObject:
   - component: {fileID: 454336333}
   - component: {fileID: 454336332}
   - component: {fileID: 454336331}
-  - component: {fileID: 454336336}
   - component: {fileID: 454336335}
+  - component: {fileID: 454336336}
   m_Layer: 0
   m_Name: enemy_ground
   m_TagString: Untagged
@@ -587,7 +587,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 454336330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0987f442e91df574893bc743b9714c59, type: 3}
+  m_Script: {fileID: 11500000, guid: 32653e649a5a8f344a54b70bf7f42776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 454336336}
@@ -597,19 +597,17 @@ MonoBehaviour:
     m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   health: 120
   isSearching: 1
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
-  walkPointRange: 1
+  walkPointRange: 2
   timeBetweenAttacks: 0.1
-  projectile: {fileID: 755982452}
   sightRange: 4
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
-  projPos: {fileID: 454336330}
 --- !u!195 &454336336
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -881,7 +879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &773534310
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1092,7 +1090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1037594094
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1301,7 +1299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!171741748 &1454847113
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1548,7 +1546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!153 &1764340309
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1854,7 +1852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!171741748 &1998172193
 ArticulationBody:
   m_ObjectHideFlags: 0
