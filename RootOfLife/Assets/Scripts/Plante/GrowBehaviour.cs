@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GrowBehaviour : MonoBehaviour
 {
+    public float xInput;
+
     public float rotSpeed = 350;
     public float damping = 15;
 
@@ -17,6 +19,9 @@ public class GrowBehaviour : MonoBehaviour
     GrowthManager growthManager;
 
     public bool canClone;
+    public bool keyIsReleased;
+
+    public GameObject pont;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,8 @@ public class GrowBehaviour : MonoBehaviour
         canClone = true;
         spawnPoint = GameObject.Find("SpawnPos");
         startPos = spawnPoint.GetComponent<Transform>();
+        keyIsReleased = false;
+        growthManager = transform.parent.GetComponent<GrowthManager>();
     }
 
     private void OnEnable()
@@ -35,19 +42,27 @@ public class GrowBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        xInput = Input.GetAxis("Horizontal");
+
         if (this.transform.localScale.y <= 0.2f)
         {
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.F) || Input.GetButton("Fire2"))
             {
                 this.transform.localScale = this.transform.localScale + (new Vector3(0f, 0.5f, 0f) * Time.deltaTime);
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))
+            {
+                Instantiate(pont, endPoint.transform.position, Quaternion.identity);
+                growthManager.StartCoroutine("DestroyRoots");
+            }
+
+            if (xInput >= 0)//(Input.GetKey(KeyCode.RightArrow))
             {
                 desiredRot -= rotSpeed * Time.deltaTime;
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (xInput <= 0)//(Input.GetKey(KeyCode.LeftArrow))
             {
                 desiredRot += rotSpeed * Time.deltaTime;
             }
@@ -65,6 +80,7 @@ public class GrowBehaviour : MonoBehaviour
         else if (!canClone)
         {
             this.gameObject.tag = "OldRoot";
+            this.enabled = false;
         }
     }
     void SpawnClone()
@@ -79,7 +95,6 @@ public class GrowBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Box" || other.gameObject.tag == "Untagged" || other.gameObject.tag == "Slope")
         {
             Debug.Log("Hit");
-            growthManager = transform.parent.GetComponent<GrowthManager>();
             growthManager.OnCollisionEnterChild(other);
         }
     }

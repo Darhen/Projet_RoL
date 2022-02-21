@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     public GameObject liane;
     public bool isClimbing;
 
+    public bool plantIsPlugged;
+    public bool playerIsPushing;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
         isMoving = false;
         isFalling = false;
         isFastJumping = false;
+        plantIsPlugged = false;
 
         liane = GameObject.Find("LianeRigide");
         ladderClimb = liane.GetComponent<LadderClimb>();
@@ -57,15 +61,15 @@ public class PlayerController : MonoBehaviour
         //Check si le player est sur le sol
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.30f, groundLayer);
 
-        //Active le script de déplacement & Active le physicMat de noFriction (permet au joueur de se déplacer sur des pentes) 
+        //Active le script de déplacement
         if (xInput != 0)
         {
             isMoving = true;
         }
-        //Désactive la fonction & active le physicMat noFriction (permet au player de ne pas glisser sur les pentes)
         else
         {
             isMoving = false;
+            //myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, 0);
         }
 
         //Active jump si input est maintenu 
@@ -103,6 +107,22 @@ public class PlayerController : MonoBehaviour
             isFalling = false;
             
         }*/
+        if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
+        {
+            plantIsPlugged = true;
+        }
+
+
+        if(Input.GetKey(KeyCode.P) || Input.GetButton("Fire2"))
+        {
+            playerIsPushing = true;
+        }
+        else
+        {
+            playerIsPushing = false;
+        }
+
+
 
         //ANIMATION JUMP
 

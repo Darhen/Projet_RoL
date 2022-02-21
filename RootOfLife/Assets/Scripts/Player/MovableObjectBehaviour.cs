@@ -9,16 +9,24 @@ public class MovableObjectBehaviour : MonoBehaviour
     public Animator animator;
     private bool isPushing;
 
+    PlayerController playerController;
+    GameObject player;
+    private bool buttonIsPressed;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
+
+        player = GameObject.FindWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.P))
+        buttonIsPressed = playerController.playerIsPushing;
+
+        if (buttonIsPressed)
         {
             isPushing = true;
         }

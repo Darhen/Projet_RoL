@@ -8,6 +8,8 @@ public class GrowthManager : MonoBehaviour
     public int maxCap = 12;
     public int currentCap;
 
+    public GameObject pont;
+
     Transform lastChild;
     GrowBehaviour growthBehaviour;
 
@@ -15,7 +17,6 @@ public class GrowthManager : MonoBehaviour
     GameObject cam;
 
     PlugPlant plugPlant;
-
     PlayerController playerController;
 
     private void Awake()
@@ -31,12 +32,11 @@ public class GrowthManager : MonoBehaviour
     {
         currentCap = this.gameObject.transform.childCount;
         lastChild = this.gameObject.transform.GetChild(this.gameObject.transform.childCount - 1);
-
+        growthBehaviour = lastChild.GetComponentInChildren<GrowBehaviour>();
+         
         if (currentCap >= maxCap)
         {
-            growthBehaviour = lastChild.GetComponentInChildren<GrowBehaviour>();
             growthBehaviour.canClone = false;
-
             //Chope le dernier child et désactive son script et le détag.
         }
 
@@ -48,18 +48,19 @@ public class GrowthManager : MonoBehaviour
 
         if (currentCap != maxCap)
         {
-            if (Input.GetKey(KeyCode.F))
+            /*if (Input.GetKey(KeyCode.F))
             {
                // StartCoroutine("DestroyRoots");
 
                 //Ici on détecte le relachement de l'input
 
                 //Code:On instancie le pont et on lance la coroutine de destruction des capsules? 
-            }
-            if (Input.GetKeyUp(KeyCode.F))
-            {
-                Debug.Log("destroyRoot");
-            }
+            } */
+        }
+        else
+        {
+            StartCoroutine("DestroyRoots");
+            SpawnPont();
         }
 
         if (currentCap == 1)
@@ -75,6 +76,7 @@ public class GrowthManager : MonoBehaviour
     //Prend le dernier child (le + récent) et le détruit, puis au bout de 0.1 sec détruit le prochain child
     IEnumerator DestroyRoots()
     {
+        playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "repose" de la plante
         cameraFollow.count = 0; //On réattribut le player comme target de la caméra
         while (true)
         {
@@ -86,5 +88,11 @@ public class GrowthManager : MonoBehaviour
     public void OnCollisionEnterChild(Collision other)
     {
         StartCoroutine("DestroyRoots");
+    }
+
+    private void SpawnPont()
+    {
+        Instantiate(pont, lastChild.transform.position, Quaternion.identity);
+        
     }
 }

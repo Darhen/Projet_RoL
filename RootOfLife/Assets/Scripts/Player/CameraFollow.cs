@@ -10,14 +10,23 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset;
     public int count;
 
+    PlayerController playerController;
+    GameObject player;
+    private bool plantPlugged;
+
     private void Start()
     {
         count = 0;
         target = GameObject.FindWithTag("Player");
+
+        player = GameObject.FindWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
     }
 
     private void Update()
     {
+        plantPlugged = playerController.plantIsPlugged;
+
         if (count == 0)
         {
             target = GameObject.FindWithTag("Player");
@@ -33,7 +42,7 @@ public class CameraFollow : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (plantPlugged && count == 0)
         {
             count++;
         }
