@@ -77,11 +77,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bdb7ce58645ff458c587b5e3921d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xInput: 0
   rotSpeed: 350
   damping: 15
   myPrefab: {fileID: 8884946090903062660, guid: 567385aac9ecea9489cb05b11c78dd6a, type: 3}
   endPoint: {fileID: 8884946090705832476}
   canClone: 0
+  keyIsReleased: 0
+  pont: {fileID: 5546986537788647914, guid: 7ea2e09ddce73b343acd4dc9507bcc03, type: 3}
 --- !u!136 &3026910045488130098
 CapsuleCollider:
   m_ObjectHideFlags: 0
