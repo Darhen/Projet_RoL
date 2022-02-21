@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAi_2 : MonoBehaviour
+public class EnemyAi_3 : MonoBehaviour
 {
     public NavMeshAgent agent;
 
@@ -88,8 +88,8 @@ public class EnemyAi_2 : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        GetComponent<NavMeshAgent>().speed = 100f;
-        GetComponent<NavMeshAgent>().acceleration = 100f;
+        GetComponent<NavMeshAgent>().speed = 50f;
+        GetComponent<NavMeshAgent>().acceleration = 50f;
         walkPointSet = false;
     }
 
@@ -97,18 +97,18 @@ public class EnemyAi_2 : MonoBehaviour
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-        GetComponent<NavMeshAgent>().speed = 100f;
-        GetComponent<NavMeshAgent>().acceleration = 100f;
+        GetComponent<NavMeshAgent>().speed = 50f;
+        GetComponent<NavMeshAgent>().acceleration = 50f;
         walkPointSet = false;
         transform.LookAt(player);
 
-        /*
+        
         if (Vector3.Distance(walkPoint, player.position) > 1.0f)
         {
             walkPoint = player.position;
             agent.destination = walkPoint;
         }
-        */
+       
 
         //if (!alreadyAttacked)
         {
