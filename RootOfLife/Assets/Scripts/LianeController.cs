@@ -5,13 +5,22 @@ using UnityEngine;
 public class LianeController : MonoBehaviour
 {
     public bool canClimb;
-    public GameObject activeSection;
+    public Vector3 activeSection;
+
+    public Rigidbody rb;
+    private HingeJoint hj;
+
+    public float pushForce = 10f;
+
+    public bool attached = false;
+    
    
 
     // Start is called before the first frame update
     void Start()
     {
-        //Collider servant a autoriser le grab avec la liane
+        rb = gameObject.GetComponent<Rigidbody>();
+        hj = gameObject.GetComponent<HingeJoint>();
         
     }
 
@@ -20,9 +29,33 @@ public class LianeController : MonoBehaviour
     {
         //le raycast verifie avec quel section de la liane le joueur est en ligne
         InteractRaycast();
-
+       
 
     }
+
+    private void FixedUpdate()
+    {
+        
+    }
+
+    
+
+  
+
+    void OnTriggerEnter(Collider collider)
+    {/*
+       if(!attached)
+        {
+            if(collider.gameObject.tag == "Ladder")
+            {
+                if(attachedTo != collider.gameObject.transform.parent.gameObject != disregard)
+                {
+                    Attach(collider.gameObject.GetComponent<Rigidbody>());
+                }
+            }
+        }*/
+    }
+
 
     void InteractRaycast()
     {
@@ -32,9 +65,10 @@ public class LianeController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 5.0f))
         {
+            hit.transform.gameObject.GetComponent<Transform>().position = activeSection;
            // Debug.Log(hit.transform.gameObject.name);
         }
         
     }
-
+  
 }

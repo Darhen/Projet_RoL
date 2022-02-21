@@ -45,7 +45,7 @@ public class LadderClimb : MonoBehaviour
         if (playerGrounded)
         {
             this.GetComponent<BoxCollider>().enabled = true;
-            Debug.Log("grounded");
+            //Debug.Log("grounded");
        
         }
        
