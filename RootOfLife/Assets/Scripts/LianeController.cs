@@ -27,8 +27,8 @@ public class LianeController : MonoBehaviour
     public bool jumpQueued;
 
     PlayerController playerController;
-    
-   
+
+    public bool isClimbing;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,7 @@ public class LianeController : MonoBehaviour
         speed = 5f;
 
         playerController = GetComponent<PlayerController>();
+
 
     }
 
@@ -61,40 +62,54 @@ public class LianeController : MonoBehaviour
             moving = false;
         }
         
+        if(isClimbing)
+        {
+            upTarget = activeSection.transform.GetChild(1).gameObject;
+        }
 
-        upTarget = activeSection.transform.GetChild(1).gameObject;
+        else
+        {
+            upTarget = null;
+        }
+
 
         if (upTarget == null)
         {
             return;
         }
 
-        
-        if (Input.GetButton("Fire3"))
+        if(canClimb)
         {
-            GetComponent<PlayerController>().enabled = false;
-            
-            if (Input.GetButtonDown("Jump"))
-            {
-                jumpQueued = true;
-                rb.velocity = new Vector3(transform.position.x * xInput, transform.position.y *2, 0);
-                rb.useGravity = true;
-                GetComponent<PlayerController>().fallMultiplier = 5;
-                Debug.Log("j'ai jump");
-                GetComponent<PlayerController>().enabled = true;
-                GetComponent<LianeController>().enabled = false;
+                if (Input.GetButton("Fire3"))
+                {
+                    GetComponent<PlayerController>().enabled = false;
+                    isClimbing = true;
+                    rb.transform.position = new Vector3 (activeSectionPosition.x, rb.transform.position.y, activeSectionPosition.z);
+
+                if (Input.GetButtonDown("Jump"))
+                        {
+                            jumpQueued = true;
+                            rb.velocity = new Vector3(transform.position.x * xInput, transform.position.y *2, 0);
+                            rb.useGravity = true;
+                            GetComponent<PlayerController>().fallMultiplier = 5;
+                            Debug.Log("j'ai jump");
+                            GetComponent<PlayerController>().enabled = true;
+                            GetComponent<LianeController>().enabled = false;
                 
 
-            }
+                        }
 
+                }
+                if (Input.GetButtonUp("Fire3"))
+                {
+                    GetComponent<PlayerController>().enabled = true;
+                    jumpQueued = false;
+                    GetComponent<PlayerController>().fallMultiplier = 5;
+                    rb.useGravity = true;
+                    //isClimbing = false;
+                }
         }
-        if (Input.GetButtonUp("Fire3"))
-        {
-            GetComponent<PlayerController>().enabled = true;
-            jumpQueued = false;
-            GetComponent<PlayerController>().fallMultiplier = 5;
-            rb.useGravity = true;
-        }
+        
     }
 
     private void FixedUpdate()
@@ -104,6 +119,8 @@ public class LianeController : MonoBehaviour
             if (Input.GetButton("Fire3"))
             {
                 rb.useGravity = false;
+                isClimbing = true;
+                
 
                 if (moving)
                 {
@@ -166,7 +183,7 @@ public class LianeController : MonoBehaviour
         }
         else
         {
-            activeSectionPosition = new Vector3 (0, 0, 0);
+            //activeSectionPosition = new Vector3 (0, 0, 0);
             activeSection = null;
             //Debug.Log(hit.transform.gameObject.name);
         }
