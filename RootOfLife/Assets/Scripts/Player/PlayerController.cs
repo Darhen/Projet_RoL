@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
             this.animator.SetBool("grounded", true);
             this.animator.SetBool("jump", false);
             this.animator.SetBool("falling", false);
-            GetComponent<LianeController>().enabled = true;
+         // GetComponent<LianeController>().enabled = true;
         }
         else
         {
