@@ -9,6 +9,8 @@ namespace VLB_Samples
         Material m_Material = null;
         Collider m_Collider = null;
 
+        public int dying = 0;
+
         void Start()
         {
             m_Collider = GetComponent<Collider>();
@@ -25,6 +27,11 @@ namespace VLB_Samples
             if (m_Material)
             {
                 m_Material.SetColor("_Color", isInsideBeam ? Color.green : Color.red);
+            }
+
+            if (isInsideBeam)
+            {
+                dying += 1;
             }
         }
 
