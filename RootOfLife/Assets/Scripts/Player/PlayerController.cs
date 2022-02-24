@@ -43,8 +43,8 @@ public class PlayerController : MonoBehaviour
         isFastJumping = false;
         plantIsPlugged = false;
 
-        liane = GameObject.Find("LianeRigide");
-        ladderClimb = liane.GetComponent<LadderClimb>();
+        //liane = GameObject.Find("LianeRigide");
+        //ladderClimb = liane.GetComponent<LadderClimb>();
 
     }
 

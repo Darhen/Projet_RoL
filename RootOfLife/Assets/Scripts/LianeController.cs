@@ -18,8 +18,10 @@ public class LianeController : MonoBehaviour
 
     public float yInput;
     public float xInput;
-    public bool moving;
+    public bool movingUp;
+    public bool movingDown;
     public GameObject upTarget;
+    public GameObject bottomTarget;
 
     public Transform rayCastOrigin;
 
@@ -27,8 +29,12 @@ public class LianeController : MonoBehaviour
     public bool jumpQueued;
 
     PlayerController playerController;
+    public GameObject triggerActiveSection;
+    CollisionLiane collisionLiane;
+    
 
     public bool isClimbing;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +45,7 @@ public class LianeController : MonoBehaviour
         speed = 5f;
 
         playerController = GetComponent<PlayerController>();
+        collisionLiane = triggerActiveSection.GetComponent<CollisionLiane>();
 
 
     }
@@ -48,43 +55,56 @@ public class LianeController : MonoBehaviour
     {
         //le raycast verifie avec quel section de la liane le joueur est en ligne
         InteractRaycast();
-
+        activeSection = collisionLiane.activeSection;
+        activeSectionPosition = collisionLiane.activeSectionPosition;
         
 
         yInput = Input.GetAxis("Vertical");
         xInput = Input.GetAxis("Horizontal");
-        if (yInput != 0)
+        if (yInput < 0)
         {
-            moving = true;
+            movingUp = false;
+            movingDown = true;
         }
-        else
+        if (yInput > 0)
         {
-            moving = false;
+            movingUp = true;
+            movingDown = false;
+        }
+        if (yInput == 0)
+        {
+            movingUp = false;
+            movingDown = false;
         }
         
         if(isClimbing)
         {
             upTarget = activeSection.transform.GetChild(1).gameObject;
+            bottomTarget = activeSection.transform.GetChild(2).gameObject;
         }
 
         else
         {
             upTarget = null;
+            bottomTarget = null;
         }
 
-
-        if (upTarget == null)
-        {
-            return;
-        }
+        
+        
 
         if(canClimb)
         {
+                if (Input.GetButtonDown("Fire3"))
+                    {
+                        rb.transform.position = new Vector3(activeSectionPosition.x, rb.transform.position.y, activeSectionPosition.z);
+                    }
+
                 if (Input.GetButton("Fire3"))
                 {
                     GetComponent<PlayerController>().enabled = false;
                     isClimbing = true;
-                    rb.transform.position = new Vector3 (activeSectionPosition.x, rb.transform.position.y, activeSectionPosition.z);
+                //rb.transform.position = new Vector3 (activeSectionPosition.x, rb.transform.position.y, activeSectionPosition.z);
+               
 
                 if (Input.GetButtonDown("Jump"))
                         {
@@ -106,7 +126,6 @@ public class LianeController : MonoBehaviour
                     jumpQueued = false;
                     GetComponent<PlayerController>().fallMultiplier = 5;
                     rb.useGravity = true;
-                    //isClimbing = false;
                 }
         }
         
@@ -122,25 +141,22 @@ public class LianeController : MonoBehaviour
                 isClimbing = true;
                 
 
-                if (moving)
+                if (movingUp)
                 {
-                // GetComponent<Transform>().position = new Vector3(activeSectionPosition.x, activeSectionPosition.y * yInput ,activeSectionPosition.z) * Time.deltaTime;
-                //rb.velocity = new Vector3(activeSectionPosition.x, activeSectionPosition.y + yInput * Time.deltaTime, activeSectionPosition.z) ;
                 transform.position = Vector3.MoveTowards(transform.position, upTarget.transform.position, yInput * Time.deltaTime * speed);
-                GetComponent<PlayerController>().fallMultiplier = 0;
 
                 }
-
+                if (movingDown)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, upTarget.transform.position, yInput * Time.deltaTime * speed);
+                }
             }
            else
             {
                 rb.useGravity = true;
-                GetComponent<PlayerController>().fallMultiplier = 5;
-                //GetComponent<PlayerController>().enabled = true;
             }
             if (jumpQueued)
             {
-                //rb.velocity = new Vector3(transform.position.x * xInput, transform.position.y * 20 * yInput, 0);
                 jumpQueued = false;
                 rb.useGravity = true; 
             }
@@ -170,7 +186,7 @@ public class LianeController : MonoBehaviour
 
 
     void InteractRaycast()
-    {
+    {/*
         Ray ray = new Ray(rayCastOrigin.position, transform.right);
         RaycastHit hit;
         //Debug.DrawRay(ray.origin, ray.direction, Color.cyan, 5.0f);
@@ -187,7 +203,7 @@ public class LianeController : MonoBehaviour
             activeSection = null;
             //Debug.Log(hit.transform.gameObject.name);
         }
-
+        */
     }
   
 }
