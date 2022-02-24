@@ -5,7 +5,7 @@ using UnityEngine;
 public class LianeController : MonoBehaviour
 {
     public bool canClimb;
-    public Vector3 activeSectionPosition;
+    public Transform activeSectionPosition;
     public GameObject activeSection;
     
 
@@ -96,7 +96,7 @@ public class LianeController : MonoBehaviour
         {
                 if (Input.GetButtonDown("Fire3"))
                     {
-                        rb.transform.position = new Vector3(activeSectionPosition.x, rb.transform.position.y, activeSectionPosition.z);
+                        rb.transform.position = new Vector3(activeSection.transform.position.x, rb.transform.position.y, activeSection.transform.position.z);
                     }
 
                 if (Input.GetButton("Fire3"))
@@ -148,7 +148,7 @@ public class LianeController : MonoBehaviour
                 }
                 if (movingDown)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, upTarget.transform.position, yInput * Time.deltaTime * speed);
+                    transform.position = Vector3.MoveTowards(transform.position, bottomTarget.transform.position, yInput * Time.deltaTime * speed);
                 }
             }
            else
@@ -161,7 +161,6 @@ public class LianeController : MonoBehaviour
                 rb.useGravity = true; 
             }
         }
-
     }
 
     

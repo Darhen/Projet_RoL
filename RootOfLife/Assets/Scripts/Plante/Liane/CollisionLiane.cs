@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionLiane : MonoBehaviour
 {
-    public Vector3 activeSectionPosition;
+    public Transform activeSectionPosition;
     public GameObject activeSection;
 
     // Start is called before the first frame update
@@ -23,8 +23,12 @@ public class CollisionLiane : MonoBehaviour
     {
         if (other.gameObject.tag == "Ladder")
         {
-            activeSectionPosition = other.gameObject.GetComponent<Transform>().position;
+            activeSectionPosition = other.gameObject.GetComponent<Transform>();
             activeSection = other.transform.gameObject;
+        }
+        else
+        {
+            activeSection = null;
         }
     }
 }
