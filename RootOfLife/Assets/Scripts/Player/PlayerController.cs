@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     public bool plantIsPlugged;
     public bool playerIsPushing;
+    public bool canPlug;
 
     void Start()
     {
@@ -107,9 +108,12 @@ public class PlayerController : MonoBehaviour
             isFalling = false;
             
         }*/
-        if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
+        if (canPlug)
         {
-            plantIsPlugged = true;
+            if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
+            {
+                plantIsPlugged = true;
+            }
         }
 
 
@@ -207,6 +211,16 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("Sliding", false);
+        }
+
+        if (collision.gameObject.tag == "GoodGround")
+        {
+            canPlug = true;
+        }
+
+        if (collision.gameObject.tag == "BadGround")
+        {
+            canPlug = false;
         }
     }
 
