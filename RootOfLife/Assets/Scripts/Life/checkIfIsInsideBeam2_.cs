@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class checkIfIsInsideBeam2_ : MonoBehaviour
 {
-    bool m_IsInsideBeam = false;
+    /*bool m_IsInsideBeam = false;
     Collider m_Collider = null;
 
     [SerializeField] private Material colorMaterial;
@@ -53,5 +53,5 @@ public class checkIfIsInsideBeam2_ : MonoBehaviour
         }
     }
 
-    
+    */
 }
