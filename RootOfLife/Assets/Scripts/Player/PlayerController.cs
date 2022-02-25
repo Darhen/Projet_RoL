@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if(Input.GetKey(KeyCode.P) || Input.GetButton("Fire2"))
+        if (Input.GetKey(KeyCode.P) || Input.GetButton("Fire2"))
         {
             playerIsPushing = true;
         }
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
             this.animator.SetBool("grounded", true);
             this.animator.SetBool("jump", false);
             this.animator.SetBool("falling", false);
-         // GetComponent<LianeController>().enabled = true;
+            // GetComponent<LianeController>().enabled = true;
         }
         else
         {
@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
         //physique de la fake gravité
         if (isFalling)
         {
-           // myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            // myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
 
 
@@ -213,15 +213,29 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Sliding", false);
         }
 
-        if (collision.gameObject.tag == "GoodGround")
+        /*if (collision.gameObject.tag == "GoodGround")
         {
             canPlug = true;
         }
+        else
+        {
+            canPlug = false;
+        }*/
+    }
 
-        if (collision.gameObject.tag == "BadGround")
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "PlugArea")
+        {
+            canPlug = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "PlugArea")
         {
             canPlug = false;
         }
     }
-
 }
