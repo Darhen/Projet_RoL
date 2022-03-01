@@ -22,13 +22,12 @@ public class SensorTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Box") || other.CompareTag("FollowMe") || other.CompareTag("OldRoot"))
         {
             isActive = true;
-        }
-        
+        }  
     }
 
     private void OnTriggerExit(Collider other)
