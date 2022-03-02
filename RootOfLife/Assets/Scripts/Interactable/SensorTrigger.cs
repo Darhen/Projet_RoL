@@ -38,3 +38,5 @@ public class SensorTrigger : MonoBehaviour
         }
     }
 }
+
+// référence : https://www.youtube.com/watch?v=SXoiuOGm12M&ab_channel=KeySmashStudios */ 
