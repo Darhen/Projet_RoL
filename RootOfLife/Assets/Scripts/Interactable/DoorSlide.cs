@@ -64,3 +64,5 @@ public class DoorSlide : MonoBehaviour
     }
 
 }
+
+// référence : https://www.youtube.com/watch?v=SXoiuOGm12M&ab_channel=KeySmashStudios */ 
