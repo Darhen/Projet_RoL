@@ -11,6 +11,7 @@ public class Plane : MonoBehaviour
     public bool jumpQueued;
     public int parachuteMultiplier;
     public Animator animator;
+    Rigidbody myRigidBody;
 
     //variables camera
 
@@ -22,6 +23,7 @@ public class Plane : MonoBehaviour
         initialFallMultiplier = GetComponent<PlayerController>().fallMultiplier;
         playerController = GetComponent<PlayerController>();
         parachuteMultiplier = -4;
+        myRigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -34,20 +36,20 @@ public class Plane : MonoBehaviour
         if (jumpQueued && !isGrounded)
         {
             if (Input.GetButton("Jump"))
-            {
+            {/*
                 GetComponent<PlayerController>().fallMultiplier = 1;
                 //GetComponent<Rigidbody>().mass = 0.5f;
                 GetComponent<Rigidbody>().velocity = new Vector3(0, parachuteMultiplier, 0);
-
+                */
                 isGliding = true;
 
                 animator.SetBool("gliding", true);
             }
             if (Input.GetButtonUp("Jump"))
-            {
+            {/*
                 GetComponent<PlayerController>().fallMultiplier = initialFallMultiplier;
                 //GetComponent<Rigidbody>().mass = 1f;
-
+                */
                 isGliding = false;
 
                 animator.SetBool("gliding", false);
@@ -61,6 +63,22 @@ public class Plane : MonoBehaviour
             isGliding = false;
 
             animator.SetBool("gliding", false);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(isGliding)
+        {
+            GetComponent<PlayerController>().fallMultiplier = 1;
+            //GetComponent<Rigidbody>().mass = 0.5f;
+            GetComponent<Rigidbody>().velocity = new Vector3(myRigidBody.velocity.x , parachuteMultiplier, 0);
+
+        }
+        else
+        {
+            GetComponent<PlayerController>().fallMultiplier = initialFallMultiplier;
+            //GetComponent<Rigidbody>().mass = 1f;
         }
     }
 }
