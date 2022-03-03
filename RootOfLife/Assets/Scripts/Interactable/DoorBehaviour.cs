@@ -8,19 +8,22 @@ public class DoorBehaviour : MonoBehaviour
     public GameObject Sensor;
     public bool isOpen;
 
+
+
     void Update()
     {
-        isOpen = Sensor.GetComponent<SensorTrigger>().isActive;
+        isOpen = Sensor.GetComponent<SensorTrigger>().isActive;      
 
         if (isOpen)
         {
-            myAnimationController.SetBool("DoorSlide", true);
-            myAnimationController.SetBool("ClosingDoor", false);
+            myAnimationController.SetBool("OpenDoor", true);
+            myAnimationController.SetBool("CloseDoor", false);
         }
         else
         {
-            myAnimationController.SetBool("DoorSlide", false);
-            myAnimationController.SetBool("ClosingDoor", true);
+
+            myAnimationController.SetBool("OpenDoor", false);
+            myAnimationController.SetBool("CloseDoor", true);
         }
     }
 }
