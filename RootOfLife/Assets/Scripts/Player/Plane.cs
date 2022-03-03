@@ -8,10 +8,13 @@ public class Plane : MonoBehaviour
     public int fallMultiplier;
     public int initialFallMultiplier;
     public bool isGrounded;
-    public bool jumQueued;
+    public bool jumpQueued;
     public int parachuteMultiplier;
     public Animator animator;
 
+    //variables camera
+
+    public bool isGliding;
 
     // Start is called before the first frame update
     void Start()
@@ -19,22 +22,24 @@ public class Plane : MonoBehaviour
         initialFallMultiplier = GetComponent<PlayerController>().fallMultiplier;
         playerController = GetComponent<PlayerController>();
         parachuteMultiplier = -4;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         isGrounded = GetComponent<PlayerController>().isGrounded;
-        jumQueued = GetComponent<PlayerController>().jumpQueued;
+        jumpQueued = GetComponent<PlayerController>().jumpQueued;
 
-        if (jumQueued && !isGrounded)
+
+        if (jumpQueued && !isGrounded)
         {
             if (Input.GetButton("Jump"))
             {
                 GetComponent<PlayerController>().fallMultiplier = 1;
                 //GetComponent<Rigidbody>().mass = 0.5f;
                 GetComponent<Rigidbody>().velocity = new Vector3(0, parachuteMultiplier, 0);
+
+                isGliding = true;
 
                 animator.SetBool("gliding", true);
             }
@@ -43,6 +48,8 @@ public class Plane : MonoBehaviour
                 GetComponent<PlayerController>().fallMultiplier = initialFallMultiplier;
                 //GetComponent<Rigidbody>().mass = 1f;
 
+                isGliding = false;
+
                 animator.SetBool("gliding", false);
             }
         }
@@ -50,6 +57,10 @@ public class Plane : MonoBehaviour
         {
             GetComponent<PlayerController>().fallMultiplier = initialFallMultiplier;
             //GetComponent<Rigidbody>().mass = 1f;
+
+            isGliding = false;
+
+            animator.SetBool("gliding", false);
         }
     }
 }

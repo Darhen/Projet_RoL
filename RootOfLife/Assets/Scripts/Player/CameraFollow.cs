@@ -14,6 +14,12 @@ public class CameraFollow : MonoBehaviour
     GameObject player;
     private bool plantPlugged;
 
+    //script du parachute
+    Plane plane;
+    public bool isGliding;
+    public Vector3 parachuteOffset;
+    public int parachuteOffsetZ;
+
     private void Start()
     {
         count = 0;
@@ -21,11 +27,15 @@ public class CameraFollow : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
+        plane = player.GetComponent<Plane>();
+
     }
 
     private void Update()
     {
         plantPlugged = playerController.plantIsPlugged;
+
+        isGliding = plane.isGliding;
 
         if (count == 0)
         {
@@ -51,12 +61,22 @@ public class CameraFollow : MonoBehaviour
         {
             count = 0;
         }
+
     }
 
     private void FixedUpdate()
     {
-        Vector3 desiredPosition = target.transform.position + offset;
+        Vector3 desiredPosition = target.transform.position + offset + parachuteOffset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
+
+        if(isGliding)
+        {
+            parachuteOffset = new Vector3(0, 0, parachuteOffsetZ);
+        }
+        else
+        {
+            parachuteOffset = new Vector3(0, 0, 0);
+        }
     }
 }
