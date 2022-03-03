@@ -10,6 +10,8 @@ public class Plane : MonoBehaviour
     public bool isGrounded;
     public bool jumQueued;
     public int parachuteMultiplier;
+    public Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class Plane : MonoBehaviour
         initialFallMultiplier = GetComponent<PlayerController>().fallMultiplier;
         playerController = GetComponent<PlayerController>();
         parachuteMultiplier = -4;
+        
     }
 
     // Update is called once per frame
@@ -32,11 +35,15 @@ public class Plane : MonoBehaviour
                 GetComponent<PlayerController>().fallMultiplier = 1;
                 //GetComponent<Rigidbody>().mass = 0.5f;
                 GetComponent<Rigidbody>().velocity = new Vector3(0, parachuteMultiplier, 0);
+
+                animator.SetBool("gliding", true);
             }
             if (Input.GetButtonUp("Jump"))
             {
                 GetComponent<PlayerController>().fallMultiplier = initialFallMultiplier;
                 //GetComponent<Rigidbody>().mass = 1f;
+
+                animator.SetBool("gliding", false);
             }
         }
         else
