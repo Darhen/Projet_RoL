@@ -5429,6 +5429,9 @@ GameObject:
   - component: {fileID: 3124496072062757465}
   - component: {fileID: 596418948}
   - component: {fileID: 2023999900}
+  - component: {fileID: 1070944011}
+  - component: {fileID: 1070944009}
+  - component: {fileID: 1070944010}
   - component: {fileID: 1070944018}
   m_Layer: 0
   m_Name: Player
@@ -5594,12 +5597,74 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3124496072062757464}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   m_Radius: 0.13
-  m_Height: 0.42964718
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.6949665, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1070944011
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124496072062757464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cdab2f7166ca4447b9d323d506b05ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1070944009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124496072062757464}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b682e4ac45b753048ba64631a060433b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canClimb: 0
+  activeSectionPosition: {fileID: 0}
+  activeSection: {fileID: 0}
+  rb: {fileID: 0}
+  pushForce: 10
+  attached: 0
+  yInput: 0
+  xInput: 0
+  movingUp: 0
+  movingDown: 0
+  upTarget: {fileID: 0}
+  bottomTarget: {fileID: 0}
+  rayCastOrigin: {fileID: 529152789}
+  speed: 0
+  jumpQueued: 0
+  triggerActiveSection: {fileID: 237458484}
+  isClimbing: 0
+--- !u!114 &1070944010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124496072062757464}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5012053668c58574d8f4b8128970820a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerActiveSection: {fileID: 237458484}
+  activeSection: {fileID: 0}
 --- !u!114 &1070944018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11085,7 +11150,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2266
+  m_VersionIndex: 2308
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
