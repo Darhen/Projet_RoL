@@ -6,6 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(MeshRenderer))]
 public class NewCheckIfIsInsideBeam : MonoBehaviour
 {
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform respawnPoint;
+
     bool isInsideBeam = false;
    /* Material m_Material = null;*/
     Collider m_Collider = null;
@@ -16,7 +19,10 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     public float durationUp = 10f;
     Color lerpedColor = Color.green;
 
-    private float t = 0;
+
+    public float t = 0;
+    public int maxT;
+    public int minT;
    /* private bool flag;*/
 
     Renderer _renderer;
@@ -26,6 +32,9 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         m_Collider = GetComponent<Collider>();
         Debug.Assert(m_Collider);
         _renderer = GetComponent<Renderer>();
+
+        maxT = 1;
+        minT = 0;
 
         /* var meshRenderer = GetComponent<MeshRenderer>();
          if (meshRenderer)
@@ -72,19 +81,42 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         lerpedColor = Color.Lerp(colorIni, colorFin, t);
         _renderer.material.color = lerpedColor;
 
-        if (isInsideBeam == true)
+        if (isInsideBeam)
         {
-            t -= Time.deltaTime / durationUp;
-            if (t < 0.01f)
-                durationUp = 1000000000f;
+            if(t > minT)
+            {
+                t -= Time.deltaTime / durationUp;
+
+            }   
         }
-        else if (isInsideBeam == false)
+        else if (!isInsideBeam)
         {
             t += Time.deltaTime / durationDown;
             durationUp = 10f;
-            /*if (t > 0.99f)
-                durationDown = 10000f;*/
+
         }
-      
+
+        if(t < 0)
+        {
+            t = minT;
+        }
+
+        //Respawn
+        if (t >= maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
+        {
+           StartCoroutine(Respawn());
+           //_renderer.material.color = lerpedColor;
+        }
+    }
+    
+    IEnumerator Respawn()
+    {
+        //animator.SetTrigger("LightDeath");
+        yield return new WaitForSeconds(0.1f);
+        t = minT;
+        yield return new WaitForSeconds(0.1f);
+        player.transform.position = respawnPoint.transform.position;
+        //fadeOutMenuUI.SetActive(true);
+        //Instantiate(player, checkPoint1.position, checkPoint1.rotation);
     }
 }
