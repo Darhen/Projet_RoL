@@ -48,7 +48,7 @@ public class GrowBehaviour : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.F) || Input.GetButton("Fire2"))
             {
-                this.transform.localScale = this.transform.localScale + (new Vector3(0f, 0.5f, 0f) * Time.deltaTime);
+                this.transform.localScale = this.transform.localScale + (new Vector3(0f, 1f, 0f) * Time.deltaTime);
             }
 
             if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))

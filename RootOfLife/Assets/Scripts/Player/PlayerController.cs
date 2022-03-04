@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem dust;
 
+    public bool isJumping;
+
 
     void Start()
     {
@@ -136,6 +138,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             this.animator.SetBool("jump", true);
+            isJumping = true;
         }
 
         if (isGrounded)
@@ -168,6 +171,8 @@ public class PlayerController : MonoBehaviour
         //si player au sol, alors on autorise le Jump 
         if (isGrounded)
         {
+            isJumping = false;
+
             if (jumpQueued)
             {
                 myRigidbody.velocity += Vector3.up * playerJumpForce;
