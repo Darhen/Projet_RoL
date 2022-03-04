@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool jumpQueued;
     public bool isFalling;
     public bool isFastJumping;
+    public bool isJumping;
 
     public Transform model;
     public Animator animator;
@@ -82,7 +83,10 @@ public class PlayerController : MonoBehaviour
             jumpQueued = true;
             Debug.Log("Jump!");
             this.animator.SetBool("jump", true);
+<<<<<<< Updated upstream
             CreateDust();
+=======
+>>>>>>> Stashed changes
         }
 
         //Active le low Jump si input est "juste préssé"
@@ -136,6 +140,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             this.animator.SetBool("jump", true);
+            isJumping = true;
         }
 
         if (isGrounded)
@@ -144,6 +149,7 @@ public class PlayerController : MonoBehaviour
             this.animator.SetBool("jump", false);
             this.animator.SetBool("falling", false);
             // GetComponent<LianeController>().enabled = true;
+
         }
         else
         {
@@ -168,6 +174,8 @@ public class PlayerController : MonoBehaviour
         //si player au sol, alors on autorise le Jump 
         if (isGrounded)
         {
+            isJumping = false;
+
             if (jumpQueued)
             {
                 myRigidbody.velocity += Vector3.up * playerJumpForce;
