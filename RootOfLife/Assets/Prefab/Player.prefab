@@ -10235,10 +10235,10 @@ GameObject:
   - component: {fileID: 3124496072062757465}
   - component: {fileID: 596418948}
   - component: {fileID: 2023999900}
+  - component: {fileID: 1070944011}
   - component: {fileID: 1070944009}
   - component: {fileID: 1070944010}
   - component: {fileID: 1070944018}
-  - component: {fileID: 1762911737679644715}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10409,7 +10409,6 @@ CapsuleCollider:
   m_Radius: 0.13
   m_Height: 0.42964718
   m_Direction: 1
-<<<<<<< Updated upstream
   m_Center: {x: 0, y: 0.6949665, z: 0}
 --- !u!95 &1070944011
 Animator:
@@ -10430,9 +10429,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-=======
-  m_Center: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!114 &1070944009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10495,23 +10491,6 @@ MonoBehaviour:
   parachuteMultiplier: 0
   animator: {fileID: 7950957215595722380}
   isGliding: 0
---- !u!114 &1762911737679644715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3124496072062757464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936a71d69cc4ff84b96d960414408ccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isClimbing: 0
-  climbStartPoint: {fileID: 0}
-  climbEndPoint: {fileID: 0}
-  timerAnimation: 2.4
-  animator: {fileID: 7950957215595722380}
 --- !u!1 &3290052804694686960
 GameObject:
   m_ObjectHideFlags: 0
@@ -15979,11 +15958,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-<<<<<<< Updated upstream
   m_VersionIndex: 2275
-=======
-  m_VersionIndex: 2350
->>>>>>> Stashed changes
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
