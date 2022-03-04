@@ -9,19 +9,31 @@ public class PlayerLedgeClimb : MonoBehaviour
     public Transform climbEndPoint;
     public float timerAnimation;
     public Animator animator;
-    PlayerController playerController;
+    public PlayerController playerController;
     public bool isJumping;
+    public Vector3 endOffset;
+    public int direction;
 
 
 
     void Start()
     {
-        timerAnimation = 2.4f;
+        //timerAnimation = 2.3f;
+        direction = 1;
     }
 
 
     void Update()
     {
+        if(Input.GetAxis("Horizontal") > 0)
+        {
+            direction = 1;
+        }
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            direction = -1;
+        }
+  
 
         isJumping = GetComponent<PlayerController>().isJumping;
 
@@ -32,10 +44,14 @@ public class PlayerLedgeClimb : MonoBehaviour
             //StartCoroutine(Waiter());
 
             animator.SetBool("ledgeClimbing", true);
+            GetComponent<PlayerController>().enabled = false;
+
+            //this.gameObject.GetComponent<Transform>().position = Vector3.Lerp(transform.position, climbEndPoint.transform.position, 2f * Time.deltaTime);
+            this.gameObject.GetComponent<Transform>().position = Vector3.Lerp(transform.position, climbEndPoint.transform.position + endOffset, 2f * Time.deltaTime);
         }
         else
         {
-            animator.SetBool("ledgeClimbing", false);
+            //animator.SetBool("ledgeClimbing", false);
         }
     }
 
@@ -48,8 +64,10 @@ public class PlayerLedgeClimb : MonoBehaviour
 
             this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             this.gameObject.GetComponent<Transform>().position = climbStartPoint.transform.position;
-            StartCoroutine(Waiter());
             isClimbing = true;
+            endOffset = new Vector3(-2, 0, 0) * direction;
+            StartCoroutine(Waiter());
+
 
         }
     }
@@ -67,9 +85,15 @@ public class PlayerLedgeClimb : MonoBehaviour
         //wait durant le temps de l,animation
         yield return new WaitForSeconds(timerAnimation);
         //position au empty ClimbEndPoint
-        this.gameObject.GetComponent<Transform>().position = climbEndPoint.transform.position;
+        //this.gameObject.GetComponent<Transform>().position = Vector3.MoveTowards(climbEndPoint.transform.position, climbEndPoint.transform.position, 2f * Time.deltaTime / 4);
+        endOffset = new Vector3(2, 0, 0) * direction;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+
+        GetComponent<PlayerController>().enabled = true;
+        yield return new WaitForSeconds(0.3f);
         isClimbing = false;
+        animator.SetBool("ledgeClimbing", false);
     }
 
 }
