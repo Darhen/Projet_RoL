@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     public bool playerIsPushing;
     public bool canPlug;
 
+    public ParticleSystem dust;
+
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -79,7 +82,7 @@ public class PlayerController : MonoBehaviour
             jumpQueued = true;
             Debug.Log("Jump!");
             this.animator.SetBool("jump", true);
-
+            CreateDust();
         }
 
         //Active le low Jump si input est "juste préssé"
@@ -151,8 +154,6 @@ public class PlayerController : MonoBehaviour
         {
             this.animator.SetBool("falling", true);
         }
-
-
 
     }
 
@@ -237,5 +238,17 @@ public class PlayerController : MonoBehaviour
         {
             canPlug = false;
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Untagged")
+        {
+            CreateDust();
+        }
+    }
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
