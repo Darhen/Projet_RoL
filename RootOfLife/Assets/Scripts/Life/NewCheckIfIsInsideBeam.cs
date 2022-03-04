@@ -9,7 +9,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform respawnPoint;
 
-    bool isInsideBeam = false;
+    public bool isInsideBeam = false;
    /* Material m_Material = null;*/
     Collider m_Collider = null;
 
@@ -27,7 +27,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
     Renderer _renderer;
 
-    void Start()
+    void Awake()
     {
         m_Collider = GetComponent<Collider>();
         Debug.Assert(m_Collider);
@@ -52,7 +52,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
     void FixedUpdate()
     {
-        isInsideBeam = false;
+       // isInsideBeam = false;
     }
 
     void OnTriggerStay(Collider trigger)
@@ -83,6 +83,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
         if (isInsideBeam)
         {
+            Debug.Log("Coucou");
             if(t > minT)
             {
                 t -= Time.deltaTime / durationUp;
