@@ -190,11 +190,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2998721083433861632, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2998721083433861754, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998721083433861754, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998721083433861754, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 2998721083433861754, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,6 +252,22 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 1818491100}
+    - target: {fileID: 2998721083433861759, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
+      propertyPath: sightRange
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998721083433861759, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
+      propertyPath: attackRange
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998721083433861759, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
+      propertyPath: walkPoint.x
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998721083433861759, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
+      propertyPath: walkPoint.y
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f197190a707fd4ba1786421447b8d4, type: 3}
 --- !u!4 &496288121 stripped
@@ -1752,7 +1776,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-119352
+  m_Name: pb_Mesh-4470
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
