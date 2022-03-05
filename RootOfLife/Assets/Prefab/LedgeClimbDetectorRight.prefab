@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6017882414656535346
+--- !u!1 &1248391513354208690
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6017882414656535347}
+  - component: {fileID: 1248391513354208691}
   m_Layer: 6
   m_Name: EndPointLedge
   m_TagString: Untagged
@@ -16,21 +16,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6017882414656535347
+--- !u!4 &1248391513354208691
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6017882414656535346}
+  m_GameObject: {fileID: 1248391513354208690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.02, y: 1.31, z: -0.16}
+  m_LocalPosition: {x: 1.02, y: 1.41, z: -0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6017882416241759720}
+  m_Father: {fileID: 1248391514989783912}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6017882415291372242
+--- !u!1 &1248391513792588882
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6017882415291372243}
+  - component: {fileID: 1248391513792588883}
   m_Layer: 6
   m_Name: StartPointLedge
   m_TagString: Untagged
@@ -46,21 +46,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6017882415291372243
+--- !u!4 &1248391513792588883
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6017882415291372242}
+  m_GameObject: {fileID: 1248391513792588882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.38, y: 0.08, z: -0.15655416}
+  m_LocalPosition: {x: -0.78, y: 0.46, z: -0.15655416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6017882416241759720}
+  m_Father: {fileID: 1248391514989783912}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6017882416241759723
+--- !u!1 &1248391514989783915
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,8 +68,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6017882416241759720}
-  - component: {fileID: 6017882416241759721}
+  - component: {fileID: 1248391514989783912}
+  - component: {fileID: 1248391514989783913}
   m_Layer: 6
   m_Name: LedgeClimbDetectorRight
   m_TagString: Ledge
@@ -77,29 +77,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6017882416241759720
+--- !u!4 &1248391514989783912
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6017882416241759723}
+  m_GameObject: {fileID: 1248391514989783915}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.44, y: 1.9700001, z: 0.7900001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.54, y: 0.1, z: 0.17721474}
+  m_LocalScale: {x: 0.22222224, y: 2, z: 0.22222224}
   m_Children:
-  - {fileID: 6017882414656535347}
-  - {fileID: 6017882415291372243}
+  - {fileID: 1248391513354208691}
+  - {fileID: 1248391513792588883}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &6017882416241759721
+--- !u!65 &1248391514989783913
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6017882416241759723}
+  m_GameObject: {fileID: 1248391514989783915}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1

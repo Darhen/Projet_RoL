@@ -10572,6 +10572,7 @@ GameObject:
   - component: {fileID: 1070944018}
   - component: {fileID: 6951614801419474597}
   - component: {fileID: 1739259629}
+  - component: {fileID: 239818914}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10779,9 +10780,9 @@ MonoBehaviour:
   isClimbing: 0
   climbStartPoint: {fileID: 0}
   climbEndPoint: {fileID: 0}
-  timerAnimation: 0
-  animator: {fileID: 0}
-  playerController: {fileID: 0}
+  timerAnimation: 1.4
+  animator: {fileID: 7950957215595722380}
+  playerController: {fileID: 3124496072062757465}
   isJumping: 0
   endOffset: {x: 0, y: 0, z: 0}
   direction: 0
@@ -10797,6 +10798,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa80be3114439164cb57d970b56bc816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &239818914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124496072062757464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afddce35a868b3d4d936192317046ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+  upSpeed: 1300
+  velocityCheck: 0
+  velocityLimit: -14
+  bounceSpeedChecked: 0
 --- !u!1 &3290052804694686960
 GameObject:
   m_ObjectHideFlags: 0
@@ -11567,6 +11585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3124496072062757462}
   respawnPoint: {fileID: 0}
+  isInsideBeam: 0
   colorIni: {r: 0, g: 1, b: 0, a: 1}
   colorFin: {r: 1, g: 0, b: 0, a: 1}
   durationDown: 15
@@ -11586,6 +11605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f4e54493d24af46b63e628921290ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activated: 0
 --- !u!114 &238035468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16334,7 +16354,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2299
+  m_VersionIndex: 2323
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

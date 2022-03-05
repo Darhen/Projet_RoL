@@ -45,9 +45,9 @@ public class PlayerLedgeClimb : MonoBehaviour
 
             animator.SetBool("ledgeClimbing", true);
             GetComponent<PlayerController>().enabled = false;
+            this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
-            //this.gameObject.GetComponent<Transform>().position = Vector3.Lerp(transform.position, climbEndPoint.transform.position, 2f * Time.deltaTime);
-            this.gameObject.GetComponent<Transform>().position = Vector3.Lerp(transform.position, climbEndPoint.transform.position + endOffset, 2f * Time.deltaTime);
+            //this.gameObject.GetComponent<Transform>().position = Vector3.Lerp(transform.position, climbEndPoint.transform.position + endOffset, 20f * Time.deltaTime);
         }
         else
         {
@@ -85,7 +85,7 @@ public class PlayerLedgeClimb : MonoBehaviour
         //wait durant le temps de l,animation
         yield return new WaitForSeconds(timerAnimation);
         //position au empty ClimbEndPoint
-        //this.gameObject.GetComponent<Transform>().position = Vector3.MoveTowards(climbEndPoint.transform.position, climbEndPoint.transform.position, 2f * Time.deltaTime / 4);
+        this.gameObject.GetComponent<Transform>().position = climbEndPoint.transform.position;
         endOffset = new Vector3(2, 0, 0) * direction;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -94,6 +94,8 @@ public class PlayerLedgeClimb : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         isClimbing = false;
         animator.SetBool("ledgeClimbing", false);
+        this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+
     }
 
 }
