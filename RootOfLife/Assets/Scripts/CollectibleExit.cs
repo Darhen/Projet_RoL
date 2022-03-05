@@ -8,6 +8,7 @@ public class CollectibleExit : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject MenuCollectiblesUI;
+    public GameObject CollectibleUI;
 
     // Update is called once per frame
     void Update()
@@ -28,6 +29,7 @@ public class CollectibleExit : MonoBehaviour
     public void Resume ()
     {
         MenuCollectiblesUI.SetActive(false);
+        CollectibleUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -35,9 +37,11 @@ public class CollectibleExit : MonoBehaviour
     void Pause ()
     {
         MenuCollectiblesUI.SetActive(true);
+        CollectibleUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
+
     /*
     public void LoadCollectible()
     {
