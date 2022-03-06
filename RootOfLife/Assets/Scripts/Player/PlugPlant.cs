@@ -49,6 +49,6 @@ public class PlugPlant : MonoBehaviour
         myClone.transform.SetParent(startPos);
         sac.SetActive(false);
         sacPlug.SetActive(true);
-        Destroy(GameObject.FindWithTag("Pont"));
+        Destroy(GameObject.FindWithTag("Trampoline"));
     }
 }

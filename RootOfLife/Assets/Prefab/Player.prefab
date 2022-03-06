@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCap: 35
   currentCap: 0
-  pont: {fileID: 5546986537788647914, guid: 7ea2e09ddce73b343acd4dc9507bcc03, type: 3}
+  pont: {fileID: 2382716474244820971, guid: f4daeeee4c0fb494587ffa6ded834ea2, type: 3}
 --- !u!1 &136452015
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150772784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.103, y: -0.637, z: -0.07}
+  m_LocalPosition: {x: 0.26, y: -0.34, z: -0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4207072812664212334}
@@ -223,14 +223,14 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.08018869, g: 1, b: 0.85419506, a: 1}
-  m_Intensity: 10.8
-  m_Range: 10
+  m_Color: {r: 0.9433962, g: 0.9362384, b: 0.10234961, a: 1}
+  m_Intensity: 0
+  m_Range: 10.19
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 128
     m_CustomResolution: -1
     m_Strength: 1
@@ -5208,7 +5208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779944077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.103, y: -0.637, z: -0.07}
+  m_LocalPosition: {x: -0.096, y: -0.029, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4207072812664212334}
@@ -5225,8 +5225,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.07843137, b: 0.31433934, a: 1}
-  m_Intensity: 22.3
+  m_Color: {r: 0.6981132, g: 0.3602949, b: 0.1284265, a: 1}
+  m_Intensity: 5
   m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -11590,7 +11590,8 @@ MonoBehaviour:
   colorFin: {r: 1, g: 0, b: 0, a: 1}
   durationDown: 15
   durationUp: 10
-  t: 0
+  lerpedColor: {r: 0, g: 0, b: 0, a: 0}
+  variableT: 0
   maxT: 0
   minT: 0
 --- !u!114 &8983235642104801941
@@ -16354,7 +16355,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2323
+  m_VersionIndex: 2293
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

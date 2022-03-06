@@ -46,18 +46,7 @@ public class GrowthManager : MonoBehaviour
             //Lance une coroutine de destruction de child
         }
 
-        if (currentCap != maxCap)
-        {
-            /*if (Input.GetKey(KeyCode.F))
-            {
-               // StartCoroutine("DestroyRoots");
-
-                //Ici on détecte le relachement de l'input
-
-                //Code:On instancie le pont et on lance la coroutine de destruction des capsules? 
-            } */
-        }
-        else
+        if (currentCap >= maxCap)
         {
             StartCoroutine("DestroyRoots");
             SpawnPont();
@@ -78,6 +67,8 @@ public class GrowthManager : MonoBehaviour
     {
         playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "repose" de la plante
         cameraFollow.count = 0; //On réattribut le player comme target de la caméra
+
+        Destroy(lastChild.gameObject);
         while (true)
         {
             yield return new WaitForSeconds(0.05f);
