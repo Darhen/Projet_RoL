@@ -10624,6 +10624,7 @@ GameObject:
   - component: {fileID: 6951614801419474597}
   - component: {fileID: 1739259629}
   - component: {fileID: 239818914}
+  - component: {fileID: 418988692}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10866,6 +10867,22 @@ MonoBehaviour:
   velocityCheck: 0
   velocityLimit: -14
   bounceSpeedChecked: 0
+--- !u!114 &418988692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124496072062757464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863900d358e26f64fbb912dd05abef49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3124496072062757462}
+  respawnPoint: {x: 0, y: 0, z: 0}
+  fadeToBlack: {fileID: 0}
+  sphere: {fileID: 6764732775457254973}
 --- !u!1 &3290052804694686960
 GameObject:
   m_ObjectHideFlags: 0
@@ -16411,7 +16428,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2587
+  m_VersionIndex: 2590
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
