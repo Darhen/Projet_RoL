@@ -2254,7 +2254,7 @@ PrefabInstance:
       objectReference: {fileID: 1384199203}
     - target: {fileID: 1519903346687470965, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_VersionIndex
-      value: 2590
+      value: 2596
       objectReference: {fileID: 0}
     - target: {fileID: 1519903346687470965, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -4266,32 +4266,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &418988679 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3124496072062757464, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
-  m_PrefabInstance: {fileID: 132247423}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &418988691 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3124496072062757462, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
-  m_PrefabInstance: {fileID: 132247423}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &418988692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418988679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 863900d358e26f64fbb912dd05abef49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 418988691}
-  respawnPoint: {x: 0, y: 0, z: 0}
-  fadeToBlack: {fileID: 0}
-  sphere: {fileID: 916342471}
 --- !u!1 &425351467
 GameObject:
   m_ObjectHideFlags: 0
@@ -43397,11 +43371,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &916342471 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6764732775457254973, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
-  m_PrefabInstance: {fileID: 132247423}
-  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &929835285
 LightingSettings:
   m_ObjectHideFlags: 0

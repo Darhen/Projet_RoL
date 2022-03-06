@@ -34,6 +34,20 @@ public class ActivateCheckIfIsInside : MonoBehaviour
             newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
             StartCoroutine("ChangeBoolNeg");
         }
+
+    }
+
+    private void Update()
+    {
+        if(activated == true)
+        {
+            this.GetComponent<NewCheckIfIsInsideBeam>().enabled = true;
+        }
+
+        if(activated == false)
+        {
+            this.GetComponent<NewCheckIfIsInsideBeam>().enabled = false;
+        }
     }
 
 

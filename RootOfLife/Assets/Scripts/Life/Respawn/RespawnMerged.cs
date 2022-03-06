@@ -9,11 +9,13 @@ public class RespawnMerged : MonoBehaviour
 
     public GameObject fadeToBlack;
     NewCheckIfIsInsideBeam newCheckIfIsInsideBeam;
+    ActivateCheckIfIsInside activateCheckIfIsInside;
     public GameObject sphere;
 
     private void Start()
     {
         newCheckIfIsInsideBeam = sphere.GetComponent<NewCheckIfIsInsideBeam>();
+        activateCheckIfIsInside = sphere.GetComponent<ActivateCheckIfIsInside>();
         respawnPoint = player.transform.position;
     }
 
@@ -27,7 +29,7 @@ public class RespawnMerged : MonoBehaviour
         {
             StartCoroutine(RespawnCollision());
         }
-        else if (other.CompareTag ("CheckPoint"))
+        else if (other.gameObject.tag == "CheckPoint")
         {
             respawnPoint = player.transform.position;
         }
@@ -44,8 +46,10 @@ public class RespawnMerged : MonoBehaviour
     IEnumerator RespawnCollision()
     {
         yield return new WaitForSeconds(0.1f);
-        player.transform.position = respawnPoint;
         newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
+        newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
+        activateCheckIfIsInside.activated = false;
+        player.transform.position = respawnPoint;
         Physics.SyncTransforms();
         fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
     }
@@ -55,9 +59,11 @@ public class RespawnMerged : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
         newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
+        newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
+        activateCheckIfIsInside.activated = false;
         yield return new WaitForSeconds(0.1f);
         player.transform.position = respawnPoint;
-        fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
+       // fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
 
     }
  
