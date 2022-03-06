@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6187632162345923195}
   - component: {fileID: 6187632162345923198}
   - component: {fileID: 6187632162345923141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LianeRigide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6187632162345923140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.44, y: 9.69, z: -6.462534}
-  m_LocalScale: {x: 0.17677309, y: 9.225374, z: 0.17677309}
+  m_LocalScale: {x: 0.5, y: 10.841708, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8521b32b7fcd7ae41acc48012ada9ec0, type: 2}
+  - {fileID: 2100000, guid: d1a5903867c8f0a4a8a94c3fe36dad11, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.78, y: 2, z: 2.3}
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Size: {x: 0.74209595, y: 1.9999998, z: 0.7862053}
+  m_Center: {x: 0.0095825195, y: 0, z: 0.11206031}
 --- !u!114 &6187632162345923141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,5 +110,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  movingUp: 0
-  movingDown: 0
+  moving: 0
+  animator: {fileID: 0}
+  avatar: {fileID: 0}
+  yInput: 0
+  playerGrounded: 0
+  climbing: 0
+  Player: {fileID: 0}
+  initialFallmultiplier: 0

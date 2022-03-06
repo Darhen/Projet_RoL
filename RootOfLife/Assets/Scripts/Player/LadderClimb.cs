@@ -18,8 +18,9 @@ public class LadderClimb : MonoBehaviour
     public bool climbing;
     public GameObject Player;
     public int initialFallmultiplier;
+    private Vector3 playerPosition;
 
-    
+    PlayerController playerController;
     
 
     // Start is called before the first frame update
@@ -29,14 +30,17 @@ public class LadderClimb : MonoBehaviour
         Player = GameObject.Find("Player");
         avatar = GameObject.Find("TestCharacter27_janvier");
         initialFallmultiplier = Player.GetComponent<PlayerController>().fallMultiplier;
-        
-      
+        playerController = Player.GetComponent<PlayerController>();
+        playerPosition = Player.GetComponent<Transform>().position;
     }
     
     private void Update()
     {
         yInput = Input.GetAxis("Vertical");
         avatar.GetComponent<Animator>().SetFloat("vertical", yInput);
+        jumpForce = playerController.playerJumpForce;
+        playerXInput = playerController.xInput * playerController.speed;
+        jumpForce = playerController.playerJumpForce;
 
         //activation du box collider lorsque le player isGrounded
         playerGrounded = GameObject.FindWithTag("Player").GetComponent<PlayerController>().isGrounded;
@@ -82,7 +86,9 @@ public class LadderClimb : MonoBehaviour
         //déplacements sur liane
         if (climbing)
         {
-            Player.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            playerPosition.x = transform.position.x;
+            playerPosition.z = transform.position.z;
+            //Player.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 
             Player.GetComponent<PlayerController>().fallMultiplier = 0;
 
@@ -91,29 +97,15 @@ public class LadderClimb : MonoBehaviour
                 Player.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * speed, 0);
                 Player.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             }
-           /*
             else
             {
-
-                if (Player.GetComponent<PlayerController>().isGrounded == false)
-                {
-                    Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-                }
-
-                if (Input.GetButton("Jump"))
-                {
-                    climbing = false;
-                    Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-                    Player.GetComponent<Rigidbody>().AddForce(playerXInput, jumpForce, 0);
-
-                    animator.SetBool("jump", true);
-                    animator.SetBool("isClimbing", false);
-
-                    //desactivation du box collider pour tomber une fois en jump
-                    this.GetComponent<BoxCollider>().enabled = false;
-                    Player.GetComponent<PlayerController>().jumpQueued = true;
-                }
-            }*/
+                Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            }
+           
+            if (Input.GetButtonDown("Jump"))
+            {
+                Jump();
+            }
         }
 
         else
@@ -124,10 +116,8 @@ public class LadderClimb : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        playerXInput = other.GetComponent<PlayerController>().xInput * other.GetComponent<PlayerController>().speed;
-        jumpForce = other.GetComponent<PlayerController>().playerJumpForce;
 
-        if(Input.GetButton("Fire3"))
+        if (Input.GetButton("Fire3"))
             {
             climbing = true;
             }
@@ -146,7 +136,11 @@ public class LadderClimb : MonoBehaviour
 
     }
 
-    
+    void Jump()
+    {
+        climbing = false;
+        
+    }
 
 }
 
