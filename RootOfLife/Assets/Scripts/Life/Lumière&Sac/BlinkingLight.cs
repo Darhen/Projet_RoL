@@ -8,15 +8,19 @@ public class BlinkingLight : MonoBehaviour
     public Color SphereColor;
     public Light light;
 
+
+
     private void Start()
     {
         light = GetComponent<Light>();
+        
     }
 
     private void Update()
     {
         SphereColor = Sphere.GetComponent<NewCheckIfIsInsideBeam>().lerpedColor;
         light.color = SphereColor;
+
     }
 
 }

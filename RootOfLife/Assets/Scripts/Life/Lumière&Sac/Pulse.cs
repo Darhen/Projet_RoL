@@ -9,7 +9,7 @@ public class Pulse : MonoBehaviour
     public float minIntensity = 1f;
     public float pulseSpeed = 20f; //here, a value of 0.5f would take 2 seconds and a value of 2f would take half a second
     public float targetIntensity = 8f;
-    private float currentIntensity;
+    public float currentIntensity;
 
     void Start()
     {
