@@ -138,7 +138,7 @@ public class LadderClimb : MonoBehaviour
 
     void Jump()
     {
-        climbing = false;
+        
         
     }
 
