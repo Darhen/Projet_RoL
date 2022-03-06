@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dust;
 
     public bool isJumping;
-
+    private bool isActivated;
 
     void Start()
     {
@@ -231,19 +231,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "PlugArea")
+        if (other.gameObject.tag == "PlugArea" && !isActivated)
         {
             canPlug = true;
+            StartCoroutine("PlugPos");
+        }
+
+        if (other.gameObject.tag == "PlugArea" && isActivated)
+        {
+            canPlug = false;
+            StartCoroutine("PlugNeg");
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "PlugArea")
-        {
-            canPlug = false;
-        }
-    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -255,5 +255,17 @@ public class PlayerController : MonoBehaviour
     void CreateDust()
     {
         dust.Play();
+    }
+
+    IEnumerator PlufNeg()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isActivated = false;
+    }
+
+    IEnumerator PlugPos()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isActivated = true;
     }
 }
