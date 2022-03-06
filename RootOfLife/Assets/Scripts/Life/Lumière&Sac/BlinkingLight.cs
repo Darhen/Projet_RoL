@@ -6,20 +6,20 @@ public class BlinkingLight : MonoBehaviour
 {
     public GameObject Sphere;
     public Color SphereColor;
-    public Light light;
+    public Light spotLight;
 
 
 
     private void Start()
     {
-        light = GetComponent<Light>();
+        spotLight = GetComponent<Light>();
         
     }
 
     private void Update()
     {
         SphereColor = Sphere.GetComponent<NewCheckIfIsInsideBeam>().lerpedColor;
-        light.color = SphereColor;
+        spotLight.color = SphereColor;
 
     }
 
