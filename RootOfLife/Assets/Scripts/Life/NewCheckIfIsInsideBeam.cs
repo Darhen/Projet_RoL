@@ -10,17 +10,16 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
 
     public bool isInsideBeam = false;
-   /* Material m_Material = null;*/
     Collider m_Collider = null;
 
-    public Color colorIni = Color.green;
-    public Color colorFin = Color.red;
+    public Color colorIni;
+    public Color colorFin;
     public float durationDown = 15f;
     public float durationUp = 10f;
-    Color lerpedColor = Color.green;
+    public Color lerpedColor;
 
 
-    public float t = 0;
+    public float variableT = 0;
     public int maxT;
     public int minT;
    /* private bool flag;*/
@@ -35,6 +34,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
         maxT = 1;
         minT = 0;
+
 
         /* var meshRenderer = GetComponent<MeshRenderer>();
          if (meshRenderer)
@@ -78,32 +78,32 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
     void Update()
     {
-        lerpedColor = Color.Lerp(colorIni, colorFin, t);
+        lerpedColor = Color.Lerp(colorIni, colorFin, variableT);
         _renderer.material.color = lerpedColor;
 
         if (isInsideBeam)
         {
             Debug.Log("Coucou");
-            if(t > minT)
+            if(variableT > minT)
             {
-                t -= Time.deltaTime / durationUp;
+                variableT -= Time.deltaTime / durationUp;
 
             }   
         }
         else if (!isInsideBeam)
         {
-            t += Time.deltaTime / durationDown;
+            variableT += Time.deltaTime / durationDown;
             durationUp = 10f;
 
         }
 
-        if(t < 0)
+        if(variableT < 0)
         {
-            t = minT;
+            variableT = minT;
         }
 
         //Respawn
-        if (t >= maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
+        if (variableT >= maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
         {
            StartCoroutine(Respawn());
            //_renderer.material.color = lerpedColor;
@@ -114,7 +114,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     {
         //animator.SetTrigger("LightDeath");
         yield return new WaitForSeconds(0.1f);
-        t = minT;
+        variableT = minT;
         yield return new WaitForSeconds(0.1f);
         player.transform.position = respawnPoint.transform.position;
         //fadeOutMenuUI.SetActive(true);
