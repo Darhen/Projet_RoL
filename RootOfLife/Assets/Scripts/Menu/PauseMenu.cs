@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    //public GameObject RespawnPoint;
+
 
     // Update is called once per frame
     void Update()
@@ -47,9 +49,12 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("Loading RestartGame...");
+        SceneManager.LoadScene("Demo_Preuve_techno");
         //Time.timeScale = 1f;
         //SceneManager.LoadScene("Restart");
+        //référence future : https://www.youtube.com/watch?v=TVSLCZWYL_E
     }
+
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
