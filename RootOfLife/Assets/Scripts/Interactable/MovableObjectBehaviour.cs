@@ -50,6 +50,8 @@ public class MovableObjectBehaviour : MonoBehaviour
                 rb.isKinematic = true;
                 this.animator.SetBool("pushing", false);
             }
+
+
         }
     }
 }
