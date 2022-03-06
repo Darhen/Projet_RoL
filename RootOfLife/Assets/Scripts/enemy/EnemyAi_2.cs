@@ -62,7 +62,7 @@ public class EnemyAi_2 : MonoBehaviour
         if (walkPointSet == true)
             agent.SetDestination(walkPoint);
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        //Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //walkpoint reached
         float dist = Vector3.Distance(walkPoint, transform.position);
