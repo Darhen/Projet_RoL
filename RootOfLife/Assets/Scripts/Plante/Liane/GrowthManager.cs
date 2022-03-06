@@ -19,6 +19,8 @@ public class GrowthManager : MonoBehaviour
     PlugPlant plugPlant;
     PlayerController playerController;
 
+    public bool cr_Running;
+
     private void Awake()
     {
         cam = GameObject.FindWithTag("MainCamera");
@@ -55,9 +57,16 @@ public class GrowthManager : MonoBehaviour
         if (currentCap == 1)
         {
             StopCoroutine("DestroyRoots");
+            cr_Running = false;
             playerController.enabled = true;
             plugPlant.count = 0;
+            plugPlant.sacPlug.tag = "Untagged";
             //Quand le bool est strictement égale à 1 on stop la coroutine (SacPlug est le 1er enfant de l'objet et on ne veut pas le détruire)
+        }
+
+        if(cr_Running)
+        {
+            lastChild.tag = "FollowMe";
         }
     }
 
@@ -65,13 +74,14 @@ public class GrowthManager : MonoBehaviour
     //Prend le dernier child (le + récent) et le détruit, puis au bout de 0.1 sec détruit le prochain child
     IEnumerator DestroyRoots()
     {
+        cr_Running = true;
         playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "repose" de la plante
-        cameraFollow.count = 0; //On réattribut le player comme target de la caméra
 
         Destroy(lastChild.gameObject);
         while (true)
         {
             yield return new WaitForSeconds(0.05f);
+            //lastChild.gameObject.tag = "FollowMe";
             Destroy(lastChild.gameObject);
         }
     }

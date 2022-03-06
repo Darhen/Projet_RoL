@@ -55,6 +55,7 @@ public class GrowBehaviour : MonoBehaviour
             {
                 Instantiate(pont, endPoint.transform.position, Quaternion.identity);
                 growthManager.StartCoroutine("DestroyRoots");
+                this.gameObject.tag = "FollowMe";
             }
 
             if (xInput >= 0)//(Input.GetKey(KeyCode.RightArrow))
