@@ -257,7 +257,7 @@ public class PlayerController : MonoBehaviour
         dust.Play();
     }
 
-    IEnumerator PlufNeg()
+    IEnumerator PlugNeg()
     {
         yield return new WaitForSeconds(0.1f);
         isActivated = false;
