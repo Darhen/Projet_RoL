@@ -37,7 +37,7 @@ public class CollectibleExit : MonoBehaviour
     void Pause ()
     {
         MenuCollectiblesUI.SetActive(true);
-        CollectibleUI.SetActive(true);
+        //CollectibleUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
