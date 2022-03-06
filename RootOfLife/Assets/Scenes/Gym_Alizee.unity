@@ -2254,7 +2254,7 @@ PrefabInstance:
       objectReference: {fileID: 1384199203}
     - target: {fileID: 1519903346687470965, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_VersionIndex
-      value: 2572
+      value: 2584
       objectReference: {fileID: 0}
     - target: {fileID: 1519903346687470965, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -2500,6 +2500,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1384199203}
+    - target: {fileID: 8983235642104801941, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 916342471}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
 --- !u!43 &160704574
@@ -43313,6 +43317,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &916342471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6764732775457254973, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
+  m_PrefabInstance: {fileID: 132247423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &929835285
 LightingSettings:
   m_ObjectHideFlags: 0

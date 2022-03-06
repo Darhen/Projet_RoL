@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sphere: {fileID: 6764732775457254973}
   SphereColor: {r: 0, g: 0, b: 0, a: 0}
-  light: {fileID: 150772786}
+  spotLight: {fileID: 0}
 --- !u!114 &1536075174105306575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11658,6 +11658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
+  sphere: {fileID: 6764732775457254973}
+  LerpedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &238035468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16409,7 +16411,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2566
+  m_VersionIndex: 2587
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
