@@ -10,6 +10,7 @@ public class respawn : MonoBehaviour
 
     public GameObject fadeToBlack;
 
+
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -18,7 +19,9 @@ public class respawn : MonoBehaviour
             Physics.SyncTransforms();
             fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
         }
+        
     }
+
     /*
     public void FadingOut()
     {

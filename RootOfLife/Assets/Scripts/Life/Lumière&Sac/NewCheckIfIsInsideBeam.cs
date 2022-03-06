@@ -101,16 +101,16 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         {
             variableT = minT;
         }
-
+        /*
         //Respawn
         if (variableT >= maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
-        {
+       {
            StartCoroutine(Respawn());
            //_renderer.material.color = lerpedColor;
-        }
+       }*/
     }
-    
-    IEnumerator Respawn()
+  /*  
+   IEnumerator Respawn()
     {
         //animator.SetTrigger("LightDeath");
         yield return new WaitForSeconds(0.1f);
@@ -119,5 +119,5 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         player.transform.position = respawnPoint.transform.position;
         //fadeOutMenuUI.SetActive(true);
         //Instantiate(player, checkPoint1.position, checkPoint1.rotation);
-    }
+    }*/
 }
