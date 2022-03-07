@@ -8,6 +8,7 @@ public class ActivateCheckIfIsInside : MonoBehaviour
     NewCheckIfIsInsideBeam newCheckIfIsInsideBeam;
     public GameObject sphere;
     public Color LerpedColor;
+    public GameObject myLight;
     //public float VariableT;
 
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class ActivateCheckIfIsInside : MonoBehaviour
         newCheckIfIsInsideBeam = sphere.GetComponent<NewCheckIfIsInsideBeam>();
         this.GetComponent<NewCheckIfIsInsideBeam>().enabled = false;
         activated = false;
+        myLight.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -24,6 +26,7 @@ public class ActivateCheckIfIsInside : MonoBehaviour
         {
             this.GetComponent<NewCheckIfIsInsideBeam>().enabled = true;
             StartCoroutine("ChangeBoolPos");
+            myLight.SetActive(true);
         }
 
         if (other.gameObject.tag == "ActivationLight" && activated)
@@ -33,6 +36,7 @@ public class ActivateCheckIfIsInside : MonoBehaviour
             newCheckIfIsInsideBeam.variableT = 0f;
             newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
             StartCoroutine("ChangeBoolNeg");
+            myLight.SetActive(false);
         }
 
     }

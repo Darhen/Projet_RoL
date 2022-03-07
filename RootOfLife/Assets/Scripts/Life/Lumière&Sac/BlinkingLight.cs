@@ -13,7 +13,6 @@ public class BlinkingLight : MonoBehaviour
     private void Start()
     {
         spotLight = GetComponent<Light>();
-        
     }
 
     private void Update()

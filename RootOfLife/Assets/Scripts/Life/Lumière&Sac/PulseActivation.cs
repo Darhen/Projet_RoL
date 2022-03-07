@@ -8,6 +8,7 @@ public class PulseActivation : MonoBehaviour
     public float variable;
     public GameObject Sphere;
 
+
     // Start is called before the first frame update
     void Start()
     {

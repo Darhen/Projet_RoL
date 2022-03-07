@@ -7,11 +7,14 @@ public class PulseEmissiveActivation : MonoBehaviour
     public bool pulseActiv;
     public float variable;
     public GameObject Sphere;
+    CouleurEmmissiveSac couleurEmissiveSac;
+    public GameObject sac;
 
     // Start is called before the first frame update
     void Start()
     {
         this.GetComponent<PulseEmissive>().enabled = false;
+        couleurEmissiveSac = sac.GetComponent<CouleurEmmissiveSac>();
         pulseActiv = false;
 
     }
@@ -40,6 +43,7 @@ public class PulseEmissiveActivation : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         pulseActiv = false;
+        couleurEmissiveSac.emissiveIntensity = 4f;
     }
     IEnumerator ChangeBoolPos()
     {

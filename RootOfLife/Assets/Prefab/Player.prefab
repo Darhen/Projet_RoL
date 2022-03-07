@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 5119994384684473761}
   - component: {fileID: 1536075174105306575}
   - component: {fileID: 150772787}
+  - component: {fileID: 1503566912}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -309,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sphere: {fileID: 6764732775457254973}
   SphereColor: {r: 0, g: 0, b: 0, a: 0}
-  spotLight: {fileID: 0}
+  spotLight: {fileID: 150772786}
 --- !u!114 &1536075174105306575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +340,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
+--- !u!135 &1503566912
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150772784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &237458484
 GameObject:
   m_ObjectHideFlags: 0
@@ -10883,6 +10897,7 @@ MonoBehaviour:
   respawnPoint: {x: 0, y: 0, z: 0}
   fadeToBlack: {fileID: 0}
   sphere: {fileID: 6764732775457254973}
+  myLight: {fileID: 150772784}
 --- !u!1 &3290052804694686960
 GameObject:
   m_ObjectHideFlags: 0
@@ -11677,6 +11692,7 @@ MonoBehaviour:
   activated: 0
   sphere: {fileID: 6764732775457254973}
   LerpedColor: {r: 0, g: 0, b: 0, a: 0}
+  myLight: {fileID: 150772784}
 --- !u!114 &238035468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16428,7 +16444,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2593
+  m_VersionIndex: 2662
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -16564,6 +16580,7 @@ MonoBehaviour:
   pulseActiv: 0
   variable: 0
   Sphere: {fileID: 6764732775457254973}
+  sac: {fileID: 8887326981273654995}
 --- !u!1 &8998982458738845269
 GameObject:
   m_ObjectHideFlags: 0

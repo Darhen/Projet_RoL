@@ -75,6 +75,7 @@ namespace VLB
 
             var isInside = GeometryUtility.TestPlanesAABB(new Plane[] { planeEquationWS }, collider.bounds);
             return !isInside;
+            this.GetComponent<VolumetricDustParticles>().enabled = false;
         }
 
         public struct HitResult
