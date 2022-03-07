@@ -14,7 +14,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
     public Color colorIni;
     public Color colorFin;
-    public float durationDown = 15f;
+    public float durationDown = 25f;
     public float durationUp = 5f;
     public Color lerpedColor;
 
@@ -93,7 +93,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         else if (!isInsideBeam)
         {
             variableT += Time.deltaTime / durationDown;
-            durationUp = 10f;
+            durationUp = 5f;
 
         }
 

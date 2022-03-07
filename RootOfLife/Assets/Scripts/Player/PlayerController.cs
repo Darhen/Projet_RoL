@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.P) || Input.GetButton("Fire2"))
+        if (Input.GetKey(KeyCode.P) || Input.GetButton("Fire3"))
         {
             playerIsPushing = true;
         }
