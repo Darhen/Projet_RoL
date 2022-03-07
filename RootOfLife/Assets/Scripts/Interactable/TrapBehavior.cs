@@ -7,23 +7,28 @@ public class TrapBehavior : MonoBehaviour
     public Animator myAnimationController;
     public GameObject Sensor;
     public bool isOpen;
+    SensorOnOff sensorOnOff; 
 
-
+    //void Start()
+    /*{
+        sensorOnOff = Sensor.GetComponent<SensorOnOff>();
+    }*/
 
     void Update()
     {
-        isOpen = Sensor.GetComponent<SensorTrigger>().isActive;
+        isOpen = Sensor.GetComponent<SensorOnOff>().isActive;
+        /*isOpen = sensorOnOff.isActive;*/
 
         if (isOpen)
         {
-            myAnimationController.SetBool("OpenTrap", true);
-            myAnimationController.SetBool("CloseTrap", false);
+            myAnimationController.SetBool("TrapSlide", true);
+            myAnimationController.SetBool("TrapClose", false);
         }
         else
         {
 
-            myAnimationController.SetBool("OpenTrap", false);
-            myAnimationController.SetBool("CloseTrap", true);
+            myAnimationController.SetBool("TrapSlide", false);
+            myAnimationController.SetBool("TrapClose", true);
         }
     }
 }

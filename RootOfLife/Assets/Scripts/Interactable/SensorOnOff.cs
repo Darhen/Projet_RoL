@@ -28,22 +28,35 @@ public class SensorOnOff : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.CompareTag("Player") || /*other.CompareTag("Box") ||*/ other.CompareTag("FollowMe") || other.CompareTag("OldRoot")) && isActive == false)
+        Debug.Log("OUVRETABARNAK");
+        if ((other.CompareTag("Player") || other.CompareTag("Box") || other.CompareTag("FollowMe") || other.CompareTag("OldRoot"))  && !isActive)
         {
-            isActive = true;
+            StartCoroutine("SensorPos");
         }
 
-        if((other.CompareTag("Player") || /*other.CompareTag("Box") ||*/ other.CompareTag("FollowMe") || other.CompareTag("OldRoot")) && isActive == true)
+        if((other.CompareTag("Player") || other.CompareTag("Box") || other.CompareTag("FollowMe") || other.CompareTag("OldRoot")) && isActive)
         {
-            isActive = false;
+            StartCoroutine("SensorNeg");
         }
+
     }
 
-    /*private void OnTriggerEnter(Collider other)
+    IEnumerator SensorPos()
     {
-        if (other.CompareTag("Player") || other.CompareTag("Box") || other.CompareTag("FollowMe") || other.CompareTag("OldRoot"))
-        {
-            isActive = false;
-        }
-    }*/
+        yield return new WaitForSeconds(0.1f);
+        isActive = true;
+    }
+
+    IEnumerator SensorNeg()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isActive = false;
+    }
+    /* private void OnTriggerExit(Collider other)
+     {
+         if (other.CompareTag("Player") || other.CompareTag("Box") || other.CompareTag("FollowMe") || other.CompareTag("OldRoot"))
+         {
+             isActive = false;
+         }
+     }*/
 }
