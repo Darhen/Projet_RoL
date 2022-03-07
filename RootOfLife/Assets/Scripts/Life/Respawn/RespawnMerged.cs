@@ -13,10 +13,15 @@ public class RespawnMerged : MonoBehaviour
     CouleurEmmissiveSac couleurEmissiveSac;
     public GameObject sphere;
     public GameObject myLight;
+    PlayerController playerController;
 
 
     private void Start()
     {
+
+
+        playerController = GetComponentInParent<PlayerController>();
+
         newCheckIfIsInsideBeam = sphere.GetComponent<NewCheckIfIsInsideBeam>();
         activateCheckIfIsInside = sphere.GetComponent<ActivateCheckIfIsInside>();
 
@@ -57,6 +62,7 @@ public class RespawnMerged : MonoBehaviour
         player.transform.position = respawnPoint;
         Physics.SyncTransforms();
         fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
+        playerController.canPlug = false;
     }
 
     IEnumerator RespawnLight()
@@ -69,7 +75,8 @@ public class RespawnMerged : MonoBehaviour
         myLight.SetActive(false);
         yield return new WaitForSeconds(0.1f);
         player.transform.position = respawnPoint;
-       // fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
+        // fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
+        playerController.canPlug = false;
 
     }
  
