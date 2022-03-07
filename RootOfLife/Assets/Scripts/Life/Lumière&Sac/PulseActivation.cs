@@ -7,12 +7,14 @@ public class PulseActivation : MonoBehaviour
     public bool pulseActiv;
     public float variable;
     public GameObject Sphere;
+    public Light myLight;
 
 
     // Start is called before the first frame update
     void Start()
     {
         this.GetComponent<Pulse>().enabled = false;
+        myLight = this.GetComponent<Light>();
         pulseActiv = false;
 
     }
@@ -41,6 +43,7 @@ public class PulseActivation : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         pulseActiv = false;
+        myLight.intensity = 4.5f;
     }
     IEnumerator ChangeBoolPos()
     {
