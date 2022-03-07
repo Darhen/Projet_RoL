@@ -32,6 +32,11 @@ public class EnemyAi_2 : MonoBehaviour
 
     //public GameObject projPos;
 
+    void Start()
+    {
+        InvokeRepeating("UnStuck", 1f, 5f);
+    }
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -62,7 +67,7 @@ public class EnemyAi_2 : MonoBehaviour
         if (walkPointSet == true)
             agent.SetDestination(walkPoint);
 
-        //Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //walkpoint reached
         float dist = Vector3.Distance(walkPoint, transform.position);
@@ -72,6 +77,12 @@ public class EnemyAi_2 : MonoBehaviour
         }
        
     }
+
+    private void UnStuck()
+    {
+        walkPointSet = false;
+    }
+
 
     private void SearchWalkPoint()
     {
