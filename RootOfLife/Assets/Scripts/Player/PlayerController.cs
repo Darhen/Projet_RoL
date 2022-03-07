@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
 
     public bool plantIsPlugged;
     public bool playerIsPushing;
-    public bool canPlug;
 
     public ParticleSystem dust;
 
@@ -113,12 +112,10 @@ public class PlayerController : MonoBehaviour
             isFalling = false;
             
         }*/
-        if (canPlug)
+
+        if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
         {
-            if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
-            {
-                plantIsPlugged = true;
-            }
+            plantIsPlugged = true;
         }
 
 
@@ -218,32 +215,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("Sliding", false);
         }
-
-        /*if (collision.gameObject.tag == "GoodGround")
-        {
-            canPlug = true;
-        }
-        else
-        {
-            canPlug = false;
-        }*/
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "PlugArea" && !isActivated)
-        {
-            canPlug = true;
-            StartCoroutine("PlugPos");
-        }
-
-        if (other.gameObject.tag == "PlugArea" && isActivated)
-        {
-            canPlug = false;
-            StartCoroutine("PlugNeg");
-        }
-    }
-
 
     private void OnCollisionEnter(Collision other)
     {
@@ -255,17 +227,5 @@ public class PlayerController : MonoBehaviour
     void CreateDust()
     {
         dust.Play();
-    }
-
-    IEnumerator PlugNeg()
-    {
-        yield return new WaitForSeconds(0.1f);
-        isActivated = false;
-    }
-
-    IEnumerator PlugPos()
-    {
-        yield return new WaitForSeconds(0.1f);
-        isActivated = true;
     }
 }

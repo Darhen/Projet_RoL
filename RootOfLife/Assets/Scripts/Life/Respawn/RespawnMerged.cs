@@ -62,7 +62,6 @@ public class RespawnMerged : MonoBehaviour
         player.transform.position = respawnPoint;
         Physics.SyncTransforms();
         fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
-        playerController.canPlug = false;
     }
 
     IEnumerator RespawnLight()
@@ -76,7 +75,6 @@ public class RespawnMerged : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         player.transform.position = respawnPoint;
         // fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
-        playerController.canPlug = false;
 
     }
  
