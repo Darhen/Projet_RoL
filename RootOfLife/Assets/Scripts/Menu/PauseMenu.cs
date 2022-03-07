@@ -50,7 +50,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Loading RestartGame...");
         SceneManager.LoadScene("Demo_Preuve_techno");
-        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
         //SceneManager.LoadScene("Restart");
         //référence future : https://www.youtube.com/watch?v=TVSLCZWYL_E
     }
