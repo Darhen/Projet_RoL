@@ -5355,6 +5355,9 @@ GameObject:
   - component: {fileID: 1875654657}
   - component: {fileID: 1875654656}
   - component: {fileID: 1875654655}
+  - component: {fileID: 5970959483609823878}
+  - component: {fileID: 8575020186362021096}
+  - component: {fileID: 8059865172230184811}
   m_Layer: 0
   m_Name: SacPlug
   m_TagString: Untagged
@@ -10009,7 +10012,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2212
+  m_VersionIndex: 2242
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10095,6 +10098,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875654653}
   m_Mesh: {fileID: 0}
+--- !u!114 &5970959483609823878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875654653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e22b2fcfd2145244b30e789251dda06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmissiveMaterial: {fileID: 0}
+  Sac: {fileID: 1875654653}
+  Sphere: {fileID: 6764732775457254973}
+  emissiveIntensity: 0
+  emissiveColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &8575020186362021096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875654653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f8a7fa5e7edc041aac3c39d0ce960b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sac: {fileID: 1875654653}
+  maxIntensity: 5
+  minIntensity: 0
+  pulseSpeed: 20
+  targetIntensity: 5
+  emissiveIntensity: 0
+--- !u!114 &8059865172230184811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875654653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca91c70c400019045922164d41fbe83b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseActiv: 0
+  variable: 0
+  Sphere: {fileID: 6764732775457254973}
+  sac: {fileID: 1875654653}
 --- !u!1 &7984621121311936
 GameObject:
   m_ObjectHideFlags: 0
@@ -11666,13 +11720,15 @@ MonoBehaviour:
   respawnPoint: {fileID: 0}
   isInsideBeam: 0
   colorIni: {r: 0, g: 0.8018868, b: 0.015070326, a: 1}
-  colorFin: {r: 0.7529412, g: 0, b: 0.17342457, a: 1}
-  durationDown: 15
+  colorMid: {r: 0.8490566, g: 0.69922316, b: 0, a: 0}
+  colorFin: {r: 0.7529412, g: 0, b: 0.288692, a: 1}
+  durationDown: 25
   durationUp: 5
   lerpedColor: {r: 0, g: 0.745283, b: 0.033489283, a: 0}
   variableT: 0
   maxT: 0
   minT: 0
+  midT: 0
 --- !u!114 &8983235642104801941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16440,7 +16496,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2326
+  m_VersionIndex: 2743
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
