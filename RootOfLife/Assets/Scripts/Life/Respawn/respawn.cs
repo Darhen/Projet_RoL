@@ -17,7 +17,7 @@ public class respawn : MonoBehaviour
         {
             player.transform.position = respawnPoint.transform.position;
             Physics.SyncTransforms();
-            fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
+            //fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
         }
         
     }

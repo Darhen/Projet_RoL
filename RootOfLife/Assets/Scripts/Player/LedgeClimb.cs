@@ -7,12 +7,13 @@ public class LedgeClimb : MonoBehaviour
     PlayerController playerController;
     Plane plane;
     Vector3 endPosition;
+    Rigidbody rbPlayer;
 
     public float offset;
     public float realOffset;
     public int direction;
     public bool isJumping;
-
+    public bool isLedgeClimbing;
     public float timerAnimation;
 
     // Start is called before the first frame update
@@ -21,7 +22,8 @@ public class LedgeClimb : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         plane = GetComponent<Plane>();
         offset = 1f;
-        timerAnimation = 10f;//1.5f;
+        timerAnimation = 1.5f;
+        rbPlayer = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,10 @@ public class LedgeClimb : MonoBehaviour
             transform.position = endPosition + new Vector3 (realOffset, 0, 0);
             //Départ de la coroutine pour desactiver le script PlayerController le temps de l'animation;
             StartCoroutine(Waiter());
+            //Éliminer la vélocité du player
+            rbPlayer.velocity = new Vector3 (0, 0, 0);
+            //Déclarer que le player ledge climb pour l'animation
+            isLedgeClimbing = true;
         }
     }
     //Ce IEnumator desactive les contrôles du player pour la durée de l'animation
@@ -62,6 +68,7 @@ public class LedgeClimb : MonoBehaviour
         yield return new WaitForSeconds(timerAnimation);
         playerController.enabled = true;
         plane.enabled = true;
+        isLedgeClimbing = false;
         Debug.Log("playerController enabled true");
     }
 }

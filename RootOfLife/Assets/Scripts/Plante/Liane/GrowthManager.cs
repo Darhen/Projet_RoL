@@ -20,6 +20,7 @@ public class GrowthManager : MonoBehaviour
     PlayerController playerController;
 
     public bool cr_Running;
+    public bool playerIsActif;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class GrowthManager : MonoBehaviour
         plugPlant = GetComponentInParent<PlugPlant>();
 
         playerController = GetComponentInParent<PlayerController>();
+        playerIsActif = false;
     }
     private void Update()
     {
@@ -58,10 +60,14 @@ public class GrowthManager : MonoBehaviour
         {
             StopCoroutine("DestroyRoots");
             cr_Running = false;
-            playerController.enabled = true;
             plugPlant.count = 0;
             plugPlant.sacPlug.tag = "Untagged";
             //Quand le bool est strictement égale à 1 on stop la coroutine (SacPlug est le 1er enfant de l'objet et on ne veut pas le détruire)
+            if (playerIsActif)
+            {
+                playerController.enabled = true;
+                playerIsActif = false;
+            }
         }
 
         if(cr_Running)
@@ -76,7 +82,7 @@ public class GrowthManager : MonoBehaviour
     {
         cr_Running = true;
         playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "repose" de la plante
-
+        playerIsActif = true;
         Destroy(lastChild.gameObject);
         while (true)
         {
@@ -96,4 +102,5 @@ public class GrowthManager : MonoBehaviour
         Instantiate(pont, lastChild.transform.position, Quaternion.identity);
         
     }
+
 }

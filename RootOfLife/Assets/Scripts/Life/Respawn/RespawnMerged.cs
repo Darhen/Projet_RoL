@@ -61,7 +61,7 @@ public class RespawnMerged : MonoBehaviour
         myLight.SetActive(false);
         player.transform.position = respawnPoint;
         Physics.SyncTransforms();
-        fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
+        //fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
     }
 
     IEnumerator RespawnLight()
