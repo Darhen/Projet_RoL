@@ -10636,10 +10636,10 @@ GameObject:
   - component: {fileID: 596418948}
   - component: {fileID: 2023999900}
   - component: {fileID: 1070944018}
-  - component: {fileID: 6951614801419474597}
   - component: {fileID: 1739259629}
   - component: {fileID: 239818914}
   - component: {fileID: 418988692}
+  - component: {fileID: 1808560368}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10779,7 +10779,6 @@ MonoBehaviour:
   isClimbing: 0
   plantIsPlugged: 0
   playerIsPushing: 0
-  canPlug: 0
   dust: {fileID: 737274254}
   isJumping: 0
 --- !u!114 &596418948
@@ -10832,27 +10831,6 @@ MonoBehaviour:
   parachuteMultiplier: 0
   animator: {fileID: 7950957215595722380}
   isGliding: 0
---- !u!114 &6951614801419474597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3124496072062757464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936a71d69cc4ff84b96d960414408ccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isClimbing: 0
-  climbStartPoint: {fileID: 0}
-  climbEndPoint: {fileID: 0}
-  timerAnimation: 1.4
-  animator: {fileID: 7950957215595722380}
-  playerController: {fileID: 3124496072062757465}
-  isJumping: 0
-  endOffset: {x: 0, y: 0, z: 0}
-  direction: 0
 --- !u!114 &1739259629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10899,6 +10877,23 @@ MonoBehaviour:
   fadeToBlack: {fileID: 0}
   sphere: {fileID: 6764732775457254973}
   myLight: {fileID: 150772784}
+--- !u!114 &1808560368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124496072062757464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db1d0035bfb33649a69eb3f2f21c9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  realOffset: 0
+  direction: 0
+  isJumping: 0
+  timerAnimation: 0
 --- !u!1 &3290052804694686960
 GameObject:
   m_ObjectHideFlags: 0
@@ -16445,7 +16440,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2674
+  m_VersionIndex: 2326
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
