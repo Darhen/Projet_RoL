@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RespawnMerged : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private Vector3 respawnPoint;
 
-    public GameObject fadeToBlack;
+    public GameObject FadeOutScreen;
     NewCheckIfIsInsideBeam newCheckIfIsInsideBeam;
     ActivateCheckIfIsInside activateCheckIfIsInside;
     CouleurEmmissiveSac couleurEmissiveSac;
@@ -48,34 +49,31 @@ public class RespawnMerged : MonoBehaviour
     {
         if (newCheckIfIsInsideBeam.variableT >= newCheckIfIsInsideBeam.maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
         {
-            StartCoroutine(RespawnLight());
+            StartCoroutine(RespawnCollision());
         }
     }
+    /*
+    public void FadingOut()
+    {
+        StartCoroutine(IsFading());
+    }*/
 
     IEnumerator RespawnCollision()
     {
         yield return new WaitForSeconds(0.1f);
+        //FadingOut();
         newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
         newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
         activateCheckIfIsInside.activated = false;
         myLight.SetActive(false);
         player.transform.position = respawnPoint;
         Physics.SyncTransforms();
-        //fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
+        FadeOutScreen.GetComponent<Animator>().Play("FadeOut");
     }
-
-    IEnumerator RespawnLight()
+    /*
+    IEnumerator IsFading()
     {
-
         yield return new WaitForSeconds(0.1f);
-        newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
-        newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
-        activateCheckIfIsInside.activated = false;
-        myLight.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
-        player.transform.position = respawnPoint;
-        // fadeToBlack.GetComponent<Animation>().Play("fadeToBlack");
-
-    }
+    }*/
  
 }
