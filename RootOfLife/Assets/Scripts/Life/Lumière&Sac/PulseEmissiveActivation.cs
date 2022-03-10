@@ -25,14 +25,14 @@ public class PulseEmissiveActivation : MonoBehaviour
 
         variable = Sphere.GetComponent<NewCheckIfIsInsideBeam>().variableT;
 
-        if (variable >= 0.7 && pulseActiv == false)
+        if (variable >= 0.75f && pulseActiv == false)
         {
             Debug.Log("Allo");
             this.GetComponent<PulseEmissive>().enabled = true;
             StartCoroutine("ChangeBoolPos");
         }
 
-        if (variable < 0.7 && pulseActiv)
+        if (variable < 0.75f && pulseActiv)
         {
             this.GetComponent<PulseEmissive>().enabled = false;
             StartCoroutine("ChangeBoolNeg");

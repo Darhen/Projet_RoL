@@ -13,6 +13,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     Collider m_Collider = null;
 
     public Color colorIni;
+    public Color colorMid;
     public Color colorFin;
     public float durationDown = 25f;
     public float durationUp = 5f;
@@ -22,6 +23,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     public float variableT = 0;
     public int maxT;
     public int minT;
+    public float midT;
    /* private bool flag;*/
 
     Renderer _renderer;
@@ -33,8 +35,8 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         _renderer = GetComponent<Renderer>();
 
         maxT = 1;
+        midT = 0.5f;
         minT = 0;
-
 
         /* var meshRenderer = GetComponent<MeshRenderer>();
          if (meshRenderer)
@@ -78,7 +80,41 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
     void Update()
     {
-        lerpedColor = Color.Lerp(colorIni, colorFin, variableT);
+        if (variableT <= midT)
+        {
+            lerpedColor = Color.Lerp(colorIni, colorMid, variableT / 0.5f);
+            _renderer.material.color = lerpedColor;
+        }
+        if (variableT > midT)
+        {
+            lerpedColor = Color.Lerp(colorMid, colorFin, (variableT - 0.5f) / 0.5f);
+            _renderer.material.color = lerpedColor;
+        }
+
+
+        if (isInsideBeam)
+        {
+            
+            Debug.Log("Coucou");
+            if (variableT > minT)
+            {
+                variableT -= Time.deltaTime / durationUp;
+            }
+        }
+        else if (!isInsideBeam)
+        {
+            durationUp = 5f;
+            variableT += Time.deltaTime / durationDown ;
+        }
+
+        if (variableT < 0)
+        {
+            variableT = minT;
+        }
+
+
+
+        /*lerpedColor = Color.Lerp(colorIni, colorFin, variableT);
         _renderer.material.color = lerpedColor;
 
         if (isInsideBeam)
@@ -100,7 +136,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         if(variableT < 0)
         {
             variableT = minT;
-        }
+        }*/
         /*
         //Respawn
         if (variableT >= maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
@@ -109,15 +145,15 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
            //_renderer.material.color = lerpedColor;
        }*/
     }
-  /*  
-   IEnumerator Respawn()
-    {
-        //animator.SetTrigger("LightDeath");
-        yield return new WaitForSeconds(0.1f);
-        variableT = minT;
-        yield return new WaitForSeconds(0.1f);
-        player.transform.position = respawnPoint.transform.position;
-        //fadeOutMenuUI.SetActive(true);
-        //Instantiate(player, checkPoint1.position, checkPoint1.rotation);
-    }*/
+    /*  
+     IEnumerator Respawn()
+      {
+          //animator.SetTrigger("LightDeath");
+          yield return new WaitForSeconds(0.1f);
+          variableT = minT;
+          yield return new WaitForSeconds(0.1f);
+          player.transform.position = respawnPoint.transform.position;
+          //fadeOutMenuUI.SetActive(true);
+          //Instantiate(player, checkPoint1.position, checkPoint1.rotation);
+      }*/
 }

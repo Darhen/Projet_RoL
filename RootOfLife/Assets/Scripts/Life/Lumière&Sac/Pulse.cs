@@ -5,10 +5,10 @@ using UnityEngine;
 public class Pulse : MonoBehaviour
     {
     private Light spotLight;
-    public float maxIntensity = 7f;
+    public float maxIntensity = 6f;
     public float minIntensity = 1f;
     public float pulseSpeed = 20f; //here, a value of 0.5f would take 2 seconds and a value of 2f would take half a second
-    public float targetIntensity = 7f;
+    public float targetIntensity = 6f;
     public float currentIntensity;
 
     void Start()
