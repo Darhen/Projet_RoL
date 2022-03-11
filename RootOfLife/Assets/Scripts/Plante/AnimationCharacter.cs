@@ -9,6 +9,7 @@ public class AnimationCharacter : MonoBehaviour
 
     //BOOLS
     public bool isLedgeClimbing;
+    public bool isJumping;
 
     //SCRIPTS
     LedgeClimb ledgeClimb;
@@ -23,11 +24,18 @@ public class AnimationCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Animation ledge climb
+        //Animation ledge climb (voir OnTriggerEnter pour le reste)
         isLedgeClimbing = ledgeClimb.isLedgeClimbing;
-        if (isLedgeClimbing)
+        isJumping = ledgeClimb.isJumping;
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ledge") && isJumping)
         {
             animator.Play("LedgeClimb");
+            animator.SetBool("jump", false);
         }
     }
 }

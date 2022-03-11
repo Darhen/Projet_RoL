@@ -22,7 +22,7 @@ public class LedgeClimb : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         plane = GetComponent<Plane>();
         offset = 1f;
-        timerAnimation = 1.5f;
+        timerAnimation = 1.2f;
         rbPlayer = GetComponent<Rigidbody>();
     }
 
