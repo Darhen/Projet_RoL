@@ -15,6 +15,7 @@ public class RespawnMerged : MonoBehaviour
     public GameObject sphere;
     public GameObject myLight;
     PlayerController playerController;
+    public bool isDying;
 
 
     private void Start()
@@ -54,6 +55,7 @@ public class RespawnMerged : MonoBehaviour
 
     private void isDead()
     {
+        isDying = true;
         StartCoroutine(RespawnCollision());
         FadeOutScreen.SetActive(false);
     }
@@ -62,7 +64,8 @@ public class RespawnMerged : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         FadeOutScreen.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
+        isDying = false;
         newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
         newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
         activateCheckIfIsInside.activated = false;

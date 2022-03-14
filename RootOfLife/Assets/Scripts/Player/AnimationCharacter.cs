@@ -8,16 +8,18 @@ public class AnimationCharacter : MonoBehaviour
     public Animator animator;
     
 
-    //BOOLS
+    //VARIABLES
     public bool isLedgeClimbing;
     public bool isJumping;
     public bool isClimbing;
     public float yInput;
     public float xInput;
+    public bool isDying;
 
     //SCRIPTS
     LedgeClimb ledgeClimb;
     PlayerClimbing playerClimbing;
+    RespawnMerged respawnMerged;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class AnimationCharacter : MonoBehaviour
         avatar = GameObject.Find("TestCharacter27_janvier");
         ledgeClimb = GetComponent<LedgeClimb>();
         playerClimbing = GetComponent<PlayerClimbing>();
+        respawnMerged = GetComponent<RespawnMerged>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class AnimationCharacter : MonoBehaviour
         yInput = Input.GetAxis("Vertical");
         animator.SetFloat("horizontal", xInput);
         animator.SetFloat("vertical", yInput);
+        isDying = respawnMerged.isDying;
 
         //Animation ledge climb (voir OnTriggerEnter pour le reste)
         isLedgeClimbing = ledgeClimb.isLedgeClimbing;
@@ -49,6 +53,14 @@ public class AnimationCharacter : MonoBehaviour
         else
         {
             animator.SetBool("isClimbing", false);
+        }
+    }
+    private void FixedUpdate()
+    {
+        //Animation mort asphyxie
+        if (isDying)
+        {
+            animator.SetTrigger("die");
         }
     }
 
