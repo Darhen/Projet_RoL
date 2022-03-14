@@ -5,6 +5,7 @@ using UnityEngine;
 public class LedgeClimb : MonoBehaviour
 {
     PlayerController playerController;
+    PlayerClimbing playerClimbing;
     Plane plane;
     Vector3 endPosition;
     Rigidbody rbPlayer;
@@ -15,11 +16,13 @@ public class LedgeClimb : MonoBehaviour
     public bool isJumping;
     public bool isLedgeClimbing;
     public float timerAnimation;
+    public bool isLadderClimbing;
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        playerClimbing = GetComponent<PlayerClimbing>();
         plane = GetComponent<Plane>();
         offset = 1f;
         timerAnimation = 1.2f;
@@ -31,6 +34,7 @@ public class LedgeClimb : MonoBehaviour
     {
         realOffset = offset * direction;
         isJumping = playerController.isJumping;
+        isLadderClimbing = playerClimbing.isClimbing;
 
         //On détermine la direction du joueur pour orienter son offset
         if (Input.GetAxis("Horizontal") > 0)
@@ -45,7 +49,7 @@ public class LedgeClimb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ledge") && isJumping)
+        if (other.gameObject.CompareTag("Ledge") && isJumping )
         {
             //Lors de la collision, on va chercher la position du endPoint enfant du ledge climb actif
             endPosition = other.gameObject.transform.GetChild(0).position;
@@ -64,11 +68,15 @@ public class LedgeClimb : MonoBehaviour
     {
         playerController.enabled = false;
         plane.enabled = false;
+        rbPlayer.isKinematic = true;
         Debug.Log("playerController enabled false");
         yield return new WaitForSeconds(timerAnimation);
         playerController.enabled = true;
         plane.enabled = true;
         isLedgeClimbing = false;
+        //Éliminer la vélocité du player
+        rbPlayer.velocity = new Vector3(0, 0, 0);
+        rbPlayer.isKinematic = false;
         Debug.Log("playerController enabled true");
     }
 }
