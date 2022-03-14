@@ -19,10 +19,10 @@ public class TimerPont : MonoBehaviour
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = startColor;
         currentColor = startColor;
-        colorChangeTime = 0.0025f;
+        colorChangeTime = 0.0035f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (currentColor == startColor)
         {
