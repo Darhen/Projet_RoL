@@ -121,9 +121,13 @@ public class PlayerClimbing : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        //reactiver le script player controller a la sortie du ladder
-        playerController.enabled = true;
-        isClimbing = false;
-        rbPlayer.isKinematic = false;
+        if (other.gameObject.CompareTag("Ladder"))
+        {
+            //reactiver le script player controller a la sortie du ladder
+            playerController.enabled = true;
+            isClimbing = false;
+            rbPlayer.isKinematic = false;
+        }
+        
     }
 }

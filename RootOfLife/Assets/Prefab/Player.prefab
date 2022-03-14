@@ -10861,6 +10861,7 @@ MonoBehaviour:
   isJumping: 0
   isLedgeClimbing: 0
   timerAnimation: 0
+  isLadderClimbing: 0
 --- !u!114 &2416874249987486474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10877,6 +10878,9 @@ MonoBehaviour:
   animator: {fileID: 7950957215595722380}
   isLedgeClimbing: 0
   isJumping: 0
+  isClimbing: 0
+  yInput: 0
+  xInput: 0
 --- !u!114 &1465056800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10899,6 +10903,7 @@ MonoBehaviour:
   jumpForce: 0
   jumpingOff: 0
   isGrounded: 0
+  isLedgeClimbing: 0
 --- !u!1 &3290052804694686960
 GameObject:
   m_ObjectHideFlags: 0
@@ -16447,7 +16452,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2344
+  m_VersionIndex: 2353
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

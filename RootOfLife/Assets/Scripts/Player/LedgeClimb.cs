@@ -45,6 +45,10 @@ public class LedgeClimb : MonoBehaviour
         {
             direction = -1;
         }
+        if (isLedgeClimbing)
+        {
+            rbPlayer.velocity = new Vector3(0, 0, 0);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
