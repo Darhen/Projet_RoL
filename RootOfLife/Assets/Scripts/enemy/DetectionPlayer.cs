@@ -9,6 +9,7 @@ public class DetectionPlayer : MonoBehaviour
     public bool playerIsDetected;
     Collider m_Collider = null;
     public Animator animator;
+
     void Start()
     {
         m_Collider = GetComponent<Collider>();
@@ -45,6 +46,12 @@ public class DetectionPlayer : MonoBehaviour
             playerIsDetected = true;
             animator.Play("WhiteToRed");
 
+            /* Vector3 direction = sphere.position - transform.position;
+             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);*/
+
+            //robot.transform.rotation = Quaternion.Euler(new Vector3(0, sphere.transform.rotation.y, 0));
         }
         else
         {
