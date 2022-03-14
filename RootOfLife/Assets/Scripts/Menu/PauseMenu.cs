@@ -49,10 +49,11 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("Loading RestartGame...");
-        SceneManager.LoadScene("Demo_Preuve_techno");
+        
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //référence future : https://www.youtube.com/watch?v=TVSLCZWYL_E
+        //SceneManager.LoadScene("Demo_Preuve_techno");
     }
 
     public void QuitGame()
