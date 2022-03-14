@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
-    public bool PlayerDetected = false;
+    public bool PlayerDetected;
     public Transform sphere;
-    public Transform originPoint;
+    
+
+    //public Transform originPoint;
     DetectionPlayer detectionPlayer;
 
     void Start()
     {
         detectionPlayer = sphere.GetComponent<DetectionPlayer>();
+        
     }
 
     // Update is called once per frame
@@ -24,10 +27,16 @@ public class LookAtPlayer : MonoBehaviour
             /*Vector3 directionToFace = sphere.position - this.transform.position;
             transform.rotation = Quaternion.LookRotation(directionToFace);*/
 
-            originPoint.rotation = Quaternion.LookRotation(sphere.position, Vector3.forward);
+            /*originPoint.rotation = Quaternion.LookRotation(sphere.position, Vector3.forward);
             Debug.DrawLine(originPoint.position, originPoint.position + originPoint.forward * 15, Color.blue);
-            Debug.DrawLine(originPoint.position, originPoint.position + originPoint.up * 15, Color.green);
+            Debug.DrawLine(originPoint.position, originPoint.position + originPoint.up * 15, Color.green);*/
 
+            //transform.rotation = Quaternion.Euler(new Vector3(0, sphere.transform.position.y, 0));
+            
+        }
+        else
+        {
+            
         }
     }
 }

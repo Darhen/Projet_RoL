@@ -8,7 +8,7 @@ public class DetectionPlayer : MonoBehaviour
     public bool playerInside = false;
     public bool playerIsDetected;
     Collider m_Collider = null;
-
+    public Animator animator;
     void Start()
     {
         m_Collider = GetComponent<Collider>();
@@ -30,6 +30,7 @@ public class DetectionPlayer : MonoBehaviour
             // This GameObject is inside the beam's TriggerZone.
             // Make sure it's not hidden by an occluder
             playerInside = !dynamicOcclusion.IsColliderHiddenByDynamicOccluder(m_Collider);
+            
         }
         else
         {
@@ -42,10 +43,13 @@ public class DetectionPlayer : MonoBehaviour
         if (playerInside)
         {
             playerIsDetected = true;
+            animator.Play("WhiteToRed");
+
         }
         else
         {
             playerIsDetected = false;
+            animator.Play("RedToWhite");
         }
     }
 }
