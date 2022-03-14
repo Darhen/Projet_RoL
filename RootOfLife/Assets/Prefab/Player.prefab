@@ -10608,6 +10608,7 @@ GameObject:
   - component: {fileID: 1808560368}
   - component: {fileID: 2416874249987486474}
   - component: {fileID: 1465056800}
+  - component: {fileID: 1443935752}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10904,6 +10905,21 @@ MonoBehaviour:
   jumpingOff: 0
   isGrounded: 0
   isLedgeClimbing: 0
+--- !u!114 &1443935752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124496072062757464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21b366d51308d5489395403732c8323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliding: 0
+  slidingSpeed: {x: 0, y: 0, z: 0}
+  jumpForce: 0
 --- !u!1 &3290052804694686960
 GameObject:
   m_ObjectHideFlags: 0
@@ -16452,7 +16468,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2353
+  m_VersionIndex: 2356
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

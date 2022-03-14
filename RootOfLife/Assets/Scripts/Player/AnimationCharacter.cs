@@ -54,10 +54,32 @@ public class AnimationCharacter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Ledge Climb
         if (other.gameObject.CompareTag("Ledge") && isJumping)
         {
             animator.Play("LedgeClimb");
             animator.SetBool("jump", false);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Mort
+        if (collision.gameObject.CompareTag("Ennemi"))
+        {
+            animator.SetTrigger("die");
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        //Slope
+        if (collision.gameObject.CompareTag("Slope"))
+        {
+            animator.SetBool("Sliding", true);
+        }
+        else
+        {
+            animator.SetBool("Sliding", false);
         }
     }
 }

@@ -196,27 +196,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    //Slope
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.tag == "Slope")
-        {
-            if (myRigidbody.velocity.y < 0)
-            {
-                animator.SetBool("Sliding", true);
-            }
-            else
-            {
-                animator.SetBool("Sliding", false);
-            }
-        }
-        else
-        {
-            animator.SetBool("Sliding", false);
-        }
-    }
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Untagged")
