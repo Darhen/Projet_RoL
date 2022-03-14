@@ -20,7 +20,6 @@ public class RespawnMerged : MonoBehaviour
     private void Start()
     {
 
-
         playerController = GetComponentInParent<PlayerController>();
 
         newCheckIfIsInsideBeam = sphere.GetComponent<NewCheckIfIsInsideBeam>();
@@ -33,11 +32,11 @@ public class RespawnMerged : MonoBehaviour
     {
         if (other.CompareTag("Ennemi"))
         {
-            StartCoroutine(RespawnCollision());
+            isDead();
         }
         else if (other.CompareTag("Trou"))
         {
-            StartCoroutine(RespawnCollision());
+            isDead();
         }
         else if (other.gameObject.tag == "CheckPoint")
         {
@@ -49,31 +48,28 @@ public class RespawnMerged : MonoBehaviour
     {
         if (newCheckIfIsInsideBeam.variableT >= newCheckIfIsInsideBeam.maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
         {
-            StartCoroutine(RespawnCollision());
+            isDead();
         }
     }
-    /*
-    public void FadingOut()
+
+    private void isDead()
     {
-        StartCoroutine(IsFading());
-    }*/
+        StartCoroutine(RespawnCollision());
+        FadeOutScreen.SetActive(false);
+    }
 
     IEnumerator RespawnCollision()
     {
         yield return new WaitForSeconds(0.1f);
-        //FadingOut();
+        FadeOutScreen.SetActive(true);
+        yield return new WaitForSeconds(1f);
         newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
         newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
         activateCheckIfIsInside.activated = false;
         myLight.SetActive(false);
         player.transform.position = respawnPoint;
-        Physics.SyncTransforms();
-        FadeOutScreen.GetComponent<Animator>().Play("FadeOut");
+        
+        // Physics.SyncTransforms();
     }
-    /*
-    IEnumerator IsFading()
-    {
-        yield return new WaitForSeconds(0.1f);
-    }*/
- 
+
 }
