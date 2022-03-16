@@ -66,6 +66,8 @@ public class PlayerClimbing : MonoBehaviour
                 isClimbing = false;
                 //ajout de velocity pour le jump
                 rbPlayer.velocity += Vector3.up * jumpForce;
+                //reactiver le player controller
+                playerController.enabled = true;
             }
         }
         if(!isClimbing)
@@ -108,10 +110,7 @@ public class PlayerClimbing : MonoBehaviour
                 transform.position = new Vector3(ladderPosition.x + offsetX, transform.position.y + offsetY * 4, ladderPosition.z);
             }
         }
-        if (!isClimbing)
-        {
-            playerController.enabled = true;
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)

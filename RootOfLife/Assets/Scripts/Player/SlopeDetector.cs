@@ -11,6 +11,8 @@ public class SlopeDetector : MonoBehaviour
     public Vector3 slidingSpeed;
     public float jumpForce;
     private bool jump;
+    private int direction;
+    public Transform model;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,21 @@ public class SlopeDetector : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             jump = true;
+        }
+
+       
+        if (sliding)
+        {
+             if(rbPlayer.velocity.x > 0)
+            {
+                direction = 1;
+            }
+            if(rbPlayer.velocity.x < 0)
+            {
+                direction = -1;
+            }
+            Quaternion turnModel = Quaternion.LookRotation(new Vector3(direction, 0, 0));
+            model.rotation = turnModel;
         }
     }
 
