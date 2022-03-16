@@ -54,13 +54,12 @@ public class AnimationCharacter : MonoBehaviour
         {
             animator.SetBool("isClimbing", false);
         }
-    }
-    private void FixedUpdate()
-    {
-        //Animation mort asphyxie
+
+        //Animation mort asphyxie (voir coroutine Respawn pour suite)
         if (isDying)
         {
-            animator.SetTrigger("die");
+            animator.SetBool("dieAir", true);
+            StartCoroutine(Respawn());
         }
     }
 
@@ -75,10 +74,17 @@ public class AnimationCharacter : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //Mort
+        //Mort Bras robot (voir coroutine Respawn pour la suite)
         if (collision.gameObject.CompareTag("Ennemi"))
         {
-            animator.SetTrigger("die");
+            animator.SetBool("armDeath", true);
+            StartCoroutine(Respawn());
+        }
+        //Mort robot spider (voir coroutine Respawn pour la suite)
+        if (collision.gameObject.CompareTag("EnnemiGround"))
+        {
+            animator.SetBool("spiderDeath", true);
+            StartCoroutine(Respawn());
         }
     }
 
@@ -93,5 +99,14 @@ public class AnimationCharacter : MonoBehaviour
         {
             animator.SetBool("Sliding", false);
         }
+    }
+
+    //Sequence de reset mort au respawn
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(2f);
+        animator.SetBool("dieAir", false);
+        animator.SetBool("armDeath", false);
+        animator.SetBool("spiderDeath", false);
     }
 }
