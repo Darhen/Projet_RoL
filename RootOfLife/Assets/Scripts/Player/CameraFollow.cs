@@ -11,6 +11,7 @@ public class CameraFollow : MonoBehaviour
     public int count;
 
     PlayerController playerController;
+    SlopeDetector slopeDetector;
     GameObject player;
     private bool plantPlugged;
 
@@ -19,6 +20,9 @@ public class CameraFollow : MonoBehaviour
     public bool isGliding;
     public Vector3 parachuteOffset;
     public int parachuteOffsetZ;
+    public Vector3 slopeOffset;
+    public int slopeOffsetZ;
+    public bool isSliding;
 
     private void Start()
     {
@@ -29,12 +33,14 @@ public class CameraFollow : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
         plane = player.GetComponent<Plane>();
 
+        slopeDetector = player.GetComponent<SlopeDetector>();
     }
 
     private void Update()
     {
         plantPlugged = playerController.plantIsPlugged;
 
+        isSliding = slopeDetector.sliding;
         isGliding = plane.isGliding;
 
         if (count == 0)
@@ -66,7 +72,7 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 desiredPosition = target.transform.position + offset + parachuteOffset;
+        Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
 
@@ -77,6 +83,15 @@ public class CameraFollow : MonoBehaviour
         else
         {
             parachuteOffset = new Vector3(0, 0, 0);
+        }
+
+        if(isSliding)
+        {
+            slopeOffset = new Vector3(0, 0, slopeOffsetZ);
+        }
+        else
+        {
+            slopeOffset = new Vector3(0, 0, 0);
         }
     }
 }
