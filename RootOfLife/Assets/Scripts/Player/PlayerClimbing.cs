@@ -45,15 +45,7 @@ public class PlayerClimbing : MonoBehaviour
         yInput = Input.GetAxis("Vertical");
         xInput = Input.GetAxis("Horizontal");
 
-        //calcul direction
-        if (xInput > 0)
-        {
-            directionX = 1;
-        }
-        if (xInput < 0)
-        {
-            directionX = -1;
-        }
+        
 
         //permettre la collision avec le ladder une fois grounded apres un jump
         if(isGrounded)
@@ -76,6 +68,19 @@ public class PlayerClimbing : MonoBehaviour
                 rbPlayer.velocity += Vector3.up * jumpForce;
             }
         }
+        if(!isClimbing)
+        {
+            //calcul direction seulement lorsque le player ne climb pas
+            if (xInput > 0)
+            {
+                directionX = 1;
+            }
+            if (xInput < 0)
+            {
+                directionX = -1;
+            }
+        }
+
         if (isLedgeClimbing)
         {
             isClimbing = false;
@@ -103,6 +108,10 @@ public class PlayerClimbing : MonoBehaviour
                 transform.position = new Vector3(ladderPosition.x + offsetX, transform.position.y + offsetY * 4, ladderPosition.z);
             }
         }
+        if (!isClimbing)
+        {
+            playerController.enabled = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -123,8 +132,6 @@ public class PlayerClimbing : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ladder"))
         {
-            //reactiver le script player controller a la sortie du ladder
-            playerController.enabled = true;
             isClimbing = false;
             rbPlayer.isKinematic = false;
         }
