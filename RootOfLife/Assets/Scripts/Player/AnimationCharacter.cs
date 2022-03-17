@@ -15,11 +15,14 @@ public class AnimationCharacter : MonoBehaviour
     public float yInput;
     public float xInput;
     public bool isDying;
+    public bool isGrounded;
+    public bool isFalling;
 
     //SCRIPTS
     LedgeClimb ledgeClimb;
     PlayerClimbing playerClimbing;
     RespawnMerged respawnMerged;
+    PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class AnimationCharacter : MonoBehaviour
         ledgeClimb = GetComponent<LedgeClimb>();
         playerClimbing = GetComponent<PlayerClimbing>();
         respawnMerged = GetComponent<RespawnMerged>();
+        playerController = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -39,6 +43,38 @@ public class AnimationCharacter : MonoBehaviour
         animator.SetFloat("horizontal", xInput);
         animator.SetFloat("vertical", yInput);
         isDying = respawnMerged.isDying;
+        isFalling = playerController.isFalling;
+
+        //update bools
+        isGrounded = playerController.isGrounded;
+
+        //UPDATE BOOLS ANIMATION
+
+        //grounded
+        if (isGrounded)
+        {
+            animator.SetBool("grounded", true);
+        }
+        if (!isGrounded)
+        {
+            animator.SetBool("grounded", false);
+        }
+
+        //Animation falling
+        if(isFalling)
+        {
+            animator.SetBool("falling", true);
+        }
+        if(!isFalling)
+        {
+            animator.SetBool("falling", false);
+        }
+
+        //Animation jump
+        if (Input.GetButtonDown("Jump"))
+        {
+            animator.SetTrigger("jump");
+        }
 
         //Animation ledge climb (voir OnTriggerEnter pour le reste)
         isLedgeClimbing = ledgeClimb.isLedgeClimbing;

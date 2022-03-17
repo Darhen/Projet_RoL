@@ -82,7 +82,6 @@ public class PlayerController : MonoBehaviour
         {
             jumpQueued = true;
             Debug.Log("Jump!");
-            this.animator.SetBool("jump", true);
             CreateDust();
         }
 
@@ -100,18 +99,15 @@ public class PlayerController : MonoBehaviour
         }
 
         //On détecte si la vélocité en y du player est inf à 0 et on active la fake gravité  
-        if (myRigidbody.velocity.y < 0)
+        if (myRigidbody.velocity.y < -14)
         {
             isFalling = true;
 
         }
-
-        /*Désactive la fake gravité si player sur le ground
-        if (isGrounded)
+        else
         {
             isFalling = false;
-            
-        }*/
+        }
 
         if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
         {
@@ -130,30 +126,13 @@ public class PlayerController : MonoBehaviour
 
 
 
-        //ANIMATION JUMP
+        //Bool is jumping residu du animator, a verifier si encore utile dans un autre script
 
         if (Input.GetButton("Jump"))
         {
-            this.animator.SetBool("jump", true);
             isJumping = true;
         }
 
-        if (isGrounded)
-        {
-            this.animator.SetBool("grounded", true);
-            this.animator.SetBool("jump", false);
-            this.animator.SetBool("falling", false);
-            // GetComponent<LianeController>().enabled = true;
-        }
-        else
-        {
-            this.animator.SetBool("grounded", false);
-        }
-
-        if (isFalling)
-        {
-            this.animator.SetBool("falling", true);
-        }
 
     }
 
