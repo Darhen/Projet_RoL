@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy_sol_mouvement : MonoBehaviour
 {
-    
+   /* 
     Vector3 back = new Vector3(35.6f, 5.21f, 0.22f); //assign it whatever value you want one edge of the movement to be
     Vector3 forth = new Vector3(-33.19f, 5.21f, 0.22f); //again, assign whatever the other edge is supposed to be
     float phase = 0;
@@ -31,5 +31,5 @@ public class enemy_sol_mouvement : MonoBehaviour
             }
 
     }
-
+    */
 }
