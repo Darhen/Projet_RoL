@@ -6642,7 +6642,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh251572
+  m_Name: pb_Mesh30752
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27173,11 +27173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4538684733888660245, guid: 058df68b7c54fe946ac413b3ce4c88ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 334.04
+      value: -15.1
       objectReference: {fileID: 0}
     - target: {fileID: 4538684733888660245, guid: 058df68b7c54fe946ac413b3ce4c88ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -45.33
+      value: 28.4
       objectReference: {fileID: 0}
     - target: {fileID: 4538684733888660245, guid: 058df68b7c54fe946ac413b3ce4c88ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -67367,6 +67367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collectible1: {fileID: 1863501259}
+  CollectibleUI: {fileID: 1244641478}
 --- !u!1 &1887455150
 GameObject:
   m_ObjectHideFlags: 0
@@ -69894,7 +69895,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-715794
+  m_Name: pb_Mesh-5960
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -71849,6 +71850,9 @@ MonoBehaviour:
   isGliding: 0
   parachuteOffset: {x: 0, y: 0, z: 0}
   parachuteOffsetZ: -4
+  slopeOffset: {x: 0, y: 0, z: 0}
+  slopeOffsetZ: 0
+  isSliding: 0
 --- !u!1 &2031820744
 GameObject:
   m_ObjectHideFlags: 0

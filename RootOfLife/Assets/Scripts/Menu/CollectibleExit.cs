@@ -13,6 +13,8 @@ public class CollectibleExit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CollectibleUI.SetActive(true);
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)

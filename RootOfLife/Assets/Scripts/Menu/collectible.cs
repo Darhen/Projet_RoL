@@ -8,6 +8,7 @@ public class collectible : MonoBehaviour
     private int collectibles;
 
     public GameObject Collectible1;
+    public GameObject CollectibleUI;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +31,18 @@ public class collectible : MonoBehaviour
         if(other.gameObject.tag=="Collectible")
         {
             collectibles++;
+            StartCoroutine(imageOff());
             other.gameObject.SetActive(false);
+            CollectibleUI.SetActive(true);
 
             Collectible1.SetActive(true);
         }
+    }
+
+    IEnumerator imageOff()
+    {
+        yield return new WaitForSeconds(5f);
+        CollectibleUI.SetActive(false);
     }
 
 
