@@ -43,12 +43,12 @@ public class MovableObjectBehaviour : MonoBehaviour
             if(isPushing)
             {
                 rb.isKinematic = false;
-                this.animator.SetBool("pushing", true);
+                //this.animator.SetBool("pushing", true);
             }
             else if (!isPushing)
             {
                 rb.isKinematic = true;
-                this.animator.SetBool("pushing", false);
+                //this.animator.SetBool("pushing", false);
             }
 
 

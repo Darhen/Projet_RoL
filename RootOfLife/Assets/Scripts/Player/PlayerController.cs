@@ -114,18 +114,6 @@ public class PlayerController : MonoBehaviour
             plantIsPlugged = true;
         }
 
-
-        if (Input.GetKey(KeyCode.P) || Input.GetButton("Fire3"))
-        {
-            playerIsPushing = true;
-        }
-        else
-        {
-            playerIsPushing = false;
-        }
-
-
-
         //Bool is jumping residu du animator, a verifier si encore utile dans un autre script
 
         if (Input.GetButton("Jump"))
