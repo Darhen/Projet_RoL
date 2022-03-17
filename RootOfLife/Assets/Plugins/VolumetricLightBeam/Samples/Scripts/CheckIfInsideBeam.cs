@@ -27,12 +27,12 @@ namespace VLB_Samples
                 m_Material.SetColor("_Color", isInsideBeam ? Color.green : Color.red);
             }
         }
-
+        
         void FixedUpdate()
         {
             isInsideBeam = false;
         }
-
+        
         void OnTriggerStay(Collider trigger)
         {
             var dynamicOcclusion = trigger.GetComponent<VLB.DynamicOcclusionRaycasting>();

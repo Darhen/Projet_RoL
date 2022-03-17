@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VLB;
+
 
 
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(MeshRenderer))]
@@ -9,6 +11,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform respawnPoint;
 
+    
     public bool isInsideBeam = false;
     Collider m_Collider = null;
 
@@ -24,8 +27,9 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     public int maxT;
     public int minT;
     public float midT;
-   /* private bool flag;*/
+    /* private bool flag;*/
 
+    
     Renderer _renderer;
 
     void Awake()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5902639267955150865}
   - component: {fileID: 8958867820225622204}
   - component: {fileID: 8958867820225622203}
+  - component: {fileID: 7154752435173431710}
   - component: {fileID: 8958867820225622201}
   m_Layer: 0
   m_Name: "Lumiere volum\xE9trique"
@@ -173,7 +174,7 @@ MonoBehaviour:
   planeAlignment: 0
   planeOffset: 0
   fadeDistanceToSurface: 2.44
---- !u!114 &8958867820225622201
+--- !u!114 &7154752435173431710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,6 +182,20 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5798945947908343509}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5217c9f8723a447824a7530d14c03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setIsTrigger: 1
+  rangeMultiplier: 1
+--- !u!114 &8958867820225622201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798945947908343509}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28fdd95a0258bb6499d20f448840494a, type: 3}
   m_Name: 
