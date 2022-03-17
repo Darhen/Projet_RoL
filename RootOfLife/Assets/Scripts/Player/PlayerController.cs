@@ -121,7 +121,15 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
         }
 
-
+        //pushing
+        if (Input.GetKey(KeyCode.P) || Input.GetButton("Fire3"))
+        {
+            playerIsPushing = true;
+        }
+        else
+        {
+            playerIsPushing = false;
+        }
     }
 
     private void FixedUpdate()
