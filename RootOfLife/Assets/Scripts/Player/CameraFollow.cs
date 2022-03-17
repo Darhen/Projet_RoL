@@ -52,7 +52,7 @@ public class CameraFollow : MonoBehaviour
         {
             target = GameObject.FindWithTag("FollowMe");
 
-            if(target == null)
+            if(GameObject.FindWithTag("FollowMe") == null)
             {
                 count++;
             }
@@ -72,6 +72,7 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
