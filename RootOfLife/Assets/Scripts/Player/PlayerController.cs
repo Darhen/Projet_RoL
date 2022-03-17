@@ -122,6 +122,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //pushing
+        /*
         if (Input.GetKey(KeyCode.P) || Input.GetButton("Fire3"))
         {
             playerIsPushing = true;
@@ -130,6 +131,7 @@ public class PlayerController : MonoBehaviour
         {
             playerIsPushing = false;
         }
+        */
     }
 
     private void FixedUpdate()
