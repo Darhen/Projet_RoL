@@ -25,25 +25,18 @@ public class LookAtPlayer : MonoBehaviour
 
         if (PlayerDetected)
         {
-            /*Vector3 directionToFace = sphere.position - this.transform.position;
-            transform.rotation = Quaternion.LookRotation(directionToFace);*/
-
-            /*originPoint.rotation = Quaternion.LookRotation(sphere.position, Vector3.forward);
-            Debug.DrawLine(originPoint.position, originPoint.position + originPoint.forward * 15, Color.blue);
-            Debug.DrawLine(originPoint.position, originPoint.position + originPoint.up * 15, Color.green);*/
-
-            //transform.rotation = Quaternion.Euler(new Vector3(0, sphere.transform.position.y, 0));
-
-            /*var lookPos = sphere.position - transform.position;
-            lookPos.y = 0;
-            var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);*/
-
-            transform.LookAt(sphere);
+            StartCoroutine("PlayerDetection");
         }
         else
         {
-            
+            PlayerDetected = false;
+            StopCoroutine("PlayerDetection");
         }
+    }
+    IEnumerator PlayerDetection()
+    {
+        yield return new WaitForSeconds(0.75f);
+        transform.LookAt(sphere);
+        yield return new WaitForSeconds(8f);
     }
 }

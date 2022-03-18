@@ -10,11 +10,17 @@ public class DetectionPlayer : MonoBehaviour
     Collider m_Collider = null;
     public Animator animator;
 
+    Animator animatorDrone;
+    Animator animatorDetection;
+    public GameObject bras;
+    public GameObject brasDetector;
+
     void Start()
     {
         m_Collider = GetComponent<Collider>();
         Debug.Assert(m_Collider);
-
+        animatorDrone = bras.GetComponent<Animator>();
+        animatorDetection = brasDetector.GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -26,19 +32,29 @@ public class DetectionPlayer : MonoBehaviour
     {
         var dynamicOcclusion = trigger.GetComponent<VLB.DynamicOcclusionRaycasting>();
 
-        if (dynamicOcclusion)
+        if (trigger.gameObject.tag == "DetectionEnnemi")
         {
-            // This GameObject is inside the beam's TriggerZone.
-            // Make sure it's not hidden by an occluder
-            playerInside = !dynamicOcclusion.IsColliderHiddenByDynamicOccluder(m_Collider);
-            
-        }
-        else
-        {
-            playerInside = true;
-        }
+            if (dynamicOcclusion)
+            {
+                // This GameObject is inside the beam's TriggerZone.
+                // Make sure it's not hidden by an occluder
+                playerInside = !dynamicOcclusion.IsColliderHiddenByDynamicOccluder(m_Collider);
+            }
+            else
+            {
+                playerInside = true;
+            }
+        } 
     }
 
+    private void OnTriggerExit(Collider trigger)
+    {
+        if (trigger.gameObject.tag == "DetectionEnnemi")
+        {
+            playerInside = false;
+        }
+
+    }
     void Update()
     {
         if (playerInside)
@@ -46,12 +62,6 @@ public class DetectionPlayer : MonoBehaviour
             playerIsDetected = true;
             animator.Play("WhiteToRed");
 
-            /* Vector3 direction = sphere.position - transform.position;
-             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);*/
-
-            //robot.transform.rotation = Quaternion.Euler(new Vector3(0, sphere.transform.rotation.y, 0));
         }
         else
         {
