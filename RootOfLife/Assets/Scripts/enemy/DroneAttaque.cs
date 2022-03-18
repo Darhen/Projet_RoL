@@ -6,16 +6,15 @@ public class DroneAttaque : MonoBehaviour
 {
 
     public GameObject sphere;
-    public GameObject drone;
     public Transform spherePosition;
     DroneDetecteur droneDetecteur;
     public bool isInsideDroneBeam;
     public bool PlayerIsDetected;
+    public bool isShooting = false;
 
     void Start()
     {
         droneDetecteur = sphere.GetComponent<DroneDetecteur>();
-
     }
 
 
@@ -31,11 +30,20 @@ public class DroneAttaque : MonoBehaviour
         {
             PlayerIsDetected = false;
         }
+/*
+        if (isShooting == true)
+        {
+            blabla
+        }
+        */
     }
     
     IEnumerator PlayerDetected()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
         transform.LookAt(spherePosition);
+        yield return new WaitForSeconds(8f);
+        isShooting = true;
+
     }
 }
