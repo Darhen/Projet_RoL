@@ -470,7 +470,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.35
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -577,7 +577,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.9607843, g: 0.45490196, b: 0.26666668, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -962,7 +962,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.5
+      scalar: -1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10760,7 +10760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058b53753c9610147ba69bee445dbaee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPrefab: {fileID: 8884946090903062660, guid: 07fe13e48b8ea88429cf1d5b86b30cb3, type: 3}
+  myPrefab: {fileID: 8884946090903062660, guid: b97bec561e27a38479f431b0ba0b2581, type: 3}
   spawnPos: {fileID: 15443215}
   sac: {fileID: 8887326981273654995}
   sacPlug: {fileID: 1875654653}
@@ -11764,6 +11764,8 @@ MonoBehaviour:
   playerInside: 0
   playerIsDetected: 0
   animator: {fileID: 0}
+  bras: {fileID: 0}
+  brasDetector: {fileID: 0}
 --- !u!1 &7644625209351667606
 GameObject:
   m_ObjectHideFlags: 0
@@ -16500,7 +16502,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2314
+  m_VersionIndex: 2305
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

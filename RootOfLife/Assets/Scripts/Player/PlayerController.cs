@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Untagged")
+        if (other.gameObject.layer == 6)
         {
             CreateDust();
         }
