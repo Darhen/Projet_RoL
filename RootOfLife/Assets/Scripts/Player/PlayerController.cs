@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.30f, groundLayer);
 
         //Active le script de déplacement
-        if (xInput != 0)
+        if (xInput != 0 && !plantIsPlugged)
         {
             isMoving = true;
             movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour
         if(plantIsPlugged)
         {
             speed = 0;
+            myRigidbody.velocity = new Vector3(0, 0, 0);
         }
 
         if(!plantIsPlugged)
