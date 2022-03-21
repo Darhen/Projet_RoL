@@ -12,7 +12,9 @@ public class DroneDetecteur : MonoBehaviour
     Animator animatorDetection;
     public GameObject drone;
     public GameObject droneDetector;
+    public GameObject player;
     public bool playerDetected = false;
+    RespawnMerged respawn;
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class DroneDetecteur : MonoBehaviour
         _renderer = GetComponent<Renderer>();
         animatorDrone = drone.GetComponent<Animator>();
         animatorDetection = droneDetector.GetComponent<Animator>();
+        respawn = player.GetComponent<RespawnMerged>();
     }
 
 
@@ -69,6 +72,7 @@ public class DroneDetecteur : MonoBehaviour
             animatorDrone.enabled = true;
             animatorDetection.Play("RedToWhite");
         }
+
     }
 
 

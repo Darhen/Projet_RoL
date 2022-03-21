@@ -12,8 +12,10 @@ public class RespawnMerged : MonoBehaviour
     NewCheckIfIsInsideBeam newCheckIfIsInsideBeam;
     ActivateCheckIfIsInside activateCheckIfIsInside;
     CouleurEmmissiveSac couleurEmissiveSac;
+    DroneAttaque droneDetectePlayer;
     public GameObject sphere;
     public GameObject myLight;
+    public GameObject DroneDetecteur;
     PlayerController playerController;
     public bool isDying;
 
@@ -22,10 +24,10 @@ public class RespawnMerged : MonoBehaviour
     {
 
         playerController = GetComponentInParent<PlayerController>();
-
+        
         newCheckIfIsInsideBeam = sphere.GetComponent<NewCheckIfIsInsideBeam>();
         activateCheckIfIsInside = sphere.GetComponent<ActivateCheckIfIsInside>();
-
+        droneDetectePlayer = DroneDetecteur.GetComponent<DroneAttaque>();
         respawnPoint = player.transform.position;
     }
 
@@ -62,7 +64,7 @@ public class RespawnMerged : MonoBehaviour
 
     IEnumerator RespawnCollision()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         FadeOutScreen.SetActive(true);
         yield return new WaitForSeconds(2f);
         isDying = false;
@@ -71,7 +73,8 @@ public class RespawnMerged : MonoBehaviour
         activateCheckIfIsInside.activated = false;
         myLight.SetActive(false);
         player.transform.position = respawnPoint;
-        
+        droneDetectePlayer.PlayerIsDetected = false;
+
         // Physics.SyncTransforms();
     }
 
