@@ -69,7 +69,10 @@ public class MoveObject : MonoBehaviour
         {
             playerController.enabled = true;
         }
-
+        if(otherBox = null)
+        {
+            return;
+        }
     }
 
     private void FixedUpdate()
@@ -81,10 +84,11 @@ public class MoveObject : MonoBehaviour
             otherBox.transform.parent = this.gameObject.transform;
             otherBox.GetComponent<Rigidbody>().velocity = movementVector;
         }
+       /*
         else
         {
             otherBox.transform.parent = null;
-        }
+        }*/
     }
    
     private void OnCollisionEnter(Collision collision)
