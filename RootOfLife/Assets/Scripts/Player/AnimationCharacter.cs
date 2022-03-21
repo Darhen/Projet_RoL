@@ -17,12 +17,16 @@ public class AnimationCharacter : MonoBehaviour
     public bool isDying;
     public bool isGrounded;
     public bool isFalling;
+    public bool pushingController;
+    public int direction;
 
     //SCRIPTS
     LedgeClimb ledgeClimb;
     PlayerClimbing playerClimbing;
     RespawnMerged respawnMerged;
     PlayerController playerController;
+    MoveObject moveObject;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,7 @@ public class AnimationCharacter : MonoBehaviour
         playerClimbing = GetComponent<PlayerClimbing>();
         respawnMerged = GetComponent<RespawnMerged>();
         playerController = GetComponent<PlayerController>();
+        moveObject = GetComponent<MoveObject>();
     }
 
     // Update is called once per frame
@@ -47,6 +52,7 @@ public class AnimationCharacter : MonoBehaviour
 
         //update bools
         isGrounded = playerController.isGrounded;
+        pushingController = moveObject.pushingController;
 
         //UPDATE BOOLS ANIMATION
 
@@ -96,6 +102,25 @@ public class AnimationCharacter : MonoBehaviour
         {
             animator.SetBool("dieAir", true);
             StartCoroutine(Respawn());
+        }
+
+        //Animation controller pushing
+        direction = moveObject.direction;
+        if (pushingController)
+        {
+            if (direction == 1)
+            {
+                animator.SetBool("pushingDroit", true);
+            }
+            if (direction == -1)
+            {
+                animator.SetBool("pushingGauche", true);
+            }
+        }
+        if (!pushingController)
+        {
+            animator.SetBool("pushingDroit", false);
+            animator.SetBool("pushingGauche", false);
         }
     }
 

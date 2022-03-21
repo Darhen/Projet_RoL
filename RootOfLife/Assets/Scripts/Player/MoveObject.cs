@@ -90,6 +90,7 @@ public class MoveObject : MonoBehaviour
         if (!pushingController)
         {
             otherBox.GetComponent<Rigidbody>().isKinematic = true;
+            otherBox.transform.parent = null;
         }
        /*
         else
