@@ -69,10 +69,12 @@ public class MoveObject : MonoBehaviour
         {
             playerController.enabled = true;
         }
+        /*
         if(otherBox = null)
         {
             return;
         }
+        */
     }
 
     private void FixedUpdate()
@@ -83,6 +85,11 @@ public class MoveObject : MonoBehaviour
             myRigidbody.velocity = movementVector;
             otherBox.transform.parent = this.gameObject.transform;
             otherBox.GetComponent<Rigidbody>().velocity = movementVector;
+            otherBox.GetComponent<Rigidbody>().isKinematic = false;
+        }
+        if (!pushingController)
+        {
+            otherBox.GetComponent<Rigidbody>().isKinematic = true;
         }
        /*
         else
