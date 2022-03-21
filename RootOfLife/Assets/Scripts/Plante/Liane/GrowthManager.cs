@@ -46,7 +46,10 @@ public class GrowthManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            StartCoroutine("DestroyRoots");
+            if (currentCap > 1)
+            {
+                StartCoroutine("DestroyRoots");
+            }
             //Lance une coroutine de destruction de child
         }
 

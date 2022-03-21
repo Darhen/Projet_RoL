@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
         {
             plantIsPlugged = true;
+            movementVector = new Vector3(0, myRigidbody.velocity.y, 0);
         }
 
         //Bool is jumping residu du animator, a verifier si encore utile dans un autre script
@@ -141,6 +142,8 @@ public class PlayerController : MonoBehaviour
         {
             myRigidbody.velocity = movementVector;
         }
+        else
+            myRigidbody.velocity = new Vector3(0, 0, 0);
 
         //si player au sol, alors on autorise le Jump 
         if (isGrounded)
