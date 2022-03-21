@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float xInput;
     private Vector3 movementVector;
 
+
     public int playerJumpForce = 50;
     public int fallMultiplier = 15;
     public float lowJumpMultiplier = 15f;
@@ -58,7 +59,8 @@ public class PlayerController : MonoBehaviour
     {
         //On stock dans un float l'input x qu'on insert dans un vector3 multiplié par speed et en ignorant la vélocité y du rigidbody ("évite les conflits de physique")
         xInput = Input.GetAxis("Horizontal");
-        movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
+        //movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
+        //deplacementX = xInput * speed;
 
         //Animation horizontal
         this.animator.SetFloat("horizontal", xInput);
@@ -70,11 +72,12 @@ public class PlayerController : MonoBehaviour
         if (xInput != 0)
         {
             isMoving = true;
+            movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
         }
         else
         {
             isMoving = false;
-            //myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, 0);
+            myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, 0);
         }
 
         //Active jump si input est maintenu 
@@ -133,6 +136,15 @@ public class PlayerController : MonoBehaviour
             playerIsPushing = false;
         }
         */
+        if(plantIsPlugged)
+        {
+            speed = 0;
+        }
+
+        if(!plantIsPlugged)
+        {
+            speed = 10;
+        }
     }
 
     private void FixedUpdate()
@@ -141,9 +153,8 @@ public class PlayerController : MonoBehaviour
         if (isMoving)
         {
             myRigidbody.velocity = movementVector;
+
         }
-        else
-            myRigidbody.velocity = new Vector3(0, 0, 0);
 
         //si player au sol, alors on autorise le Jump 
         if (isGrounded)
