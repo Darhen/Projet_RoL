@@ -15,6 +15,7 @@ public class DroneDetecteur : MonoBehaviour
     public GameObject player;
     PlayerController playerController;
     public bool playerDetected = false;
+    private Stop_Drone stop_drone;
 
 
     void Start()
@@ -25,6 +26,7 @@ public class DroneDetecteur : MonoBehaviour
         animatorDrone = drone.GetComponent<Animator>();
         animatorDetection = droneDetector.GetComponent<Animator>();
         playerController = player.GetComponent<PlayerController>();
+        stop_drone = drone.GetComponent<Stop_Drone>();
     }
 
 
@@ -61,7 +63,7 @@ public class DroneDetecteur : MonoBehaviour
 
     void Update()
     {
-        if (isInsideDroneBeam)
+        if (isInsideDroneBeam || stop_drone.amDead == true)
         {
             playerController.speed = 7.5f;
             playerDetected = true;
@@ -77,6 +79,7 @@ public class DroneDetecteur : MonoBehaviour
         }
 
     }
+
 
 
 }
