@@ -7,6 +7,7 @@ public class PlugPlant : MonoBehaviour
 
     public GameObject myPrefab;
     private GameObject myClone;
+    private GameObject cloneSac;
     Transform startPos;
     public GameObject spawnPos;
     public GameObject sac;
@@ -15,6 +16,8 @@ public class PlugPlant : MonoBehaviour
 
     PlayerController playerController;
     private bool plantPlugged;
+
+    private float maxHeigthRay = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +32,32 @@ public class PlugPlant : MonoBehaviour
     {
         plantPlugged = playerController.plantIsPlugged;
 
+        RaycastHit hit;
+        Ray landingRay = new Ray(spawnPos.transform.position, Vector3.down);
+
+
         if (count == 0)
         {
             sac.SetActive(true);
             sacPlug.SetActive(false);
-
-            if (plantPlugged)
+            if(Physics.Raycast(landingRay, out hit, maxHeigthRay))
             {
-                playerController.enabled = false;
-                SpawnBranch();
-                count++;
+                if (hit.collider == null)
+                {
+                    return;
+                }
+
+                if (hit.collider.gameObject.layer == 6)
+                {
+                    if(plantPlugged)
+                    {
+                        cloneSac = Instantiate(sacPlug, hit.point, startPos.transform.rotation);
+                        cloneSac.transform.SetParent(startPos);
+                        playerController.enabled = false;
+                        SpawnBranch();
+                        count++;
+                    }
+                }
             }
         }
     }
@@ -48,7 +67,6 @@ public class PlugPlant : MonoBehaviour
         myClone = Instantiate(myPrefab, spawnPos.transform.position, Quaternion.identity);
         myClone.transform.SetParent(startPos);
         sac.SetActive(false);
-        sacPlug.SetActive(true);
         Destroy(GameObject.FindWithTag("Trampoline"));
     }
 }
