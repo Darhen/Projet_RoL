@@ -9,6 +9,7 @@ public class collectible : MonoBehaviour
 
     public GameObject Collectible1;
     public GameObject CollectibleUI;
+    public bool collectibleActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +17,10 @@ public class collectible : MonoBehaviour
         collectibles = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             Debug.Log("You have: " + collectibles + " collectibles");
         }
@@ -28,9 +29,12 @@ public class collectible : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Collectible")
+        if (other.gameObject.tag == "Collectible")
         {
             collectibles++;
+            
+            collectibleActive = true;
+            
             StartCoroutine(imageOff());
             other.gameObject.SetActive(false);
             CollectibleUI.SetActive(true);
@@ -41,7 +45,7 @@ public class collectible : MonoBehaviour
 
     IEnumerator imageOff()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         CollectibleUI.SetActive(false);
     }
 

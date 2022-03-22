@@ -29,7 +29,7 @@ public class CollectibleExit : MonoBehaviour
     }
 
     public void Resume ()
-    {
+    {   
         MenuCollectiblesUI.SetActive(false);
         CollectibleUI.SetActive(false);
         Time.timeScale = 1f;
