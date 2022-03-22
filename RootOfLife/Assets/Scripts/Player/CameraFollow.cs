@@ -24,6 +24,15 @@ public class CameraFollow : MonoBehaviour
     public int slopeOffsetZ;
     public bool isSliding;
 
+    //offset de direction
+    public int direction;
+    public Vector3 xOffset;
+    private Vector3 forwardOffset;
+    private float xInput;
+    PlayerClimbing playerClimbing;
+    public bool isClimbing;
+
+    
     private void Start()
     {
         count = 0;
@@ -34,10 +43,41 @@ public class CameraFollow : MonoBehaviour
         plane = player.GetComponent<Plane>();
 
         slopeDetector = player.GetComponent<SlopeDetector>();
+
+        //commencer le niveau avec le offset vers la droite
+        direction = 1;
+        playerClimbing = player.GetComponent<PlayerClimbing>();
     }
+
 
     private void Update()
     {
+        //calcul du forward
+        xInput = playerController.xInput;
+        if(xInput > 0)
+        {
+            direction = 1;
+        }
+        if(xInput < 0)
+        {
+            direction = -1;
+        }
+        
+        //actualiser le forward selon la direction----------
+
+        //annulation du offset en X si climbing
+        isClimbing = playerClimbing.isClimbing;
+        if(isClimbing)
+        {
+            forwardOffset = new Vector3 (0, 0, 0);
+        }
+        else
+        {
+            forwardOffset = xOffset * direction;
+        }
+
+        //--------------------------------------------------
+
         plantPlugged = playerController.plantIsPlugged;
 
         isSliding = slopeDetector.sliding;
@@ -73,7 +113,7 @@ public class CameraFollow : MonoBehaviour
     private void FixedUpdate()
     {
 
-        Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset;
+        Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
 
