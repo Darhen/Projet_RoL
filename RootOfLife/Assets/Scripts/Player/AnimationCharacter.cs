@@ -6,7 +6,7 @@ public class AnimationCharacter : MonoBehaviour
 {
     public GameObject avatar;
     public Animator animator;
-    
+    [SerializeField] ParticleSystem particleHit = null;
 
     //VARIABLES
     public bool isLedgeClimbing;
@@ -37,6 +37,7 @@ public class AnimationCharacter : MonoBehaviour
         respawnMerged = GetComponent<RespawnMerged>();
         playerController = GetComponent<PlayerController>();
         moveObject = GetComponent<MoveObject>();
+        ParticleSystem particleHit = GameObject.Find("Particle Hit").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -145,6 +146,13 @@ public class AnimationCharacter : MonoBehaviour
         if (collision.gameObject.CompareTag("EnnemiGround"))
         {
             animator.SetBool("spiderDeath", true);
+            StartCoroutine(Respawn());
+        }
+        //Mort robot drone (voir coroutine Respawn pour la suite)
+        if (collision.gameObject.CompareTag("EnnemiDrone"))
+        {
+            particleHit.Play();
+            animator.SetBool("dieAir", true);
             StartCoroutine(Respawn());
         }
     }

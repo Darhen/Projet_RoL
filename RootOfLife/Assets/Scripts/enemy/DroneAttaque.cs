@@ -11,14 +11,17 @@ public class DroneAttaque : MonoBehaviour
     DroneDetecteur droneDetecteur;
     public bool isInsideDroneBeam;
     public bool PlayerIsDetected;
-    public bool isShooting = false;
+    private float elapsed;
 
     public float timeBtwShots;
     public float startTimeBtwShots;
 
+    public bool isCreated;
+
     void Start()
     {
         droneDetecteur = sphere.GetComponent<DroneDetecteur>();
+        isCreated = false;
     }
 
 
@@ -29,33 +32,47 @@ public class DroneAttaque : MonoBehaviour
 
         if (PlayerIsDetected)
         {
-            StartCoroutine(PlayerDetected());
-            
+            StartCoroutine(LookAtPlayer());
+            StartCoroutine(ShootPlayer());
         }
-        else 
+        else if (!PlayerIsDetected)
         {
-            PlayerIsDetected = false;
+            StopCoroutine(ShootPlayer());
+            isCreated = false;
         }
         
     }
-    
-    IEnumerator PlayerDetected()
+
+    IEnumerator LookAtPlayer()
     {
         yield return new WaitForSeconds(0.5f);
         transform.LookAt(spherePosition);
-        yield return new WaitForSeconds(3f);
-        isShooting = true;
-        
-        if (timeBtwShots <= 0)
+    }
+    IEnumerator ShootPlayer()
+    {
+        elapsed = 0;
+        while(elapsed < 3f)
+        {
+            yield return null;
+            elapsed += Time.deltaTime;
+        }
+
+        if (!isCreated && PlayerIsDetected)
         {
             Instantiate(projectile, transform.position, this.gameObject.transform.rotation);
-            timeBtwShots = startTimeBtwShots;
+            isCreated = true;
         }
-        else
-        {
-            timeBtwShots -= Time.deltaTime;
-        }
-    }
+        /* yield return new WaitForSeconds(3f);
 
+         if (!isCreated && PlayerIsDetected)
+         { 
+             Instantiate(projectile, transform.position, this.gameObject.transform.rotation);
+             isCreated = true;
+         }*/
+    }
+       
+   
 }
+
+
 
