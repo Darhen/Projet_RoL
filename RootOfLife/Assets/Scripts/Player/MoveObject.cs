@@ -17,6 +17,8 @@ public class MoveObject : MonoBehaviour
     private Rigidbody myRigidbody;
     public GameObject otherBox;
 
+    public float otherboxPositionX;
+
     PlayerController playerController;
 
     // Start is called before the first frame update
@@ -39,7 +41,7 @@ public class MoveObject : MonoBehaviour
         xInput = Input.GetAxis("Horizontal");
 
         //player controller en push (déplacement)
-        movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
+        movementVector = new Vector3(xInput * speed, 0, 0);
 
         //définir si le player utilise le input pour pousser
         if (Input.GetKey(KeyCode.P) || Input.GetButton("Fire3"))
@@ -55,8 +57,7 @@ public class MoveObject : MonoBehaviour
         if(canPush && playerIsPushing)
         {
             pushingController = true;
-            //le player est placé a une distance fixe du edge de la box lorsqu'il est en is pushing
-            //this.transform.position = new Vector3 (edgeBox.x, transform.position.y, transform.position.z) + new Vector3(offsetX * -direction, 0, 0);
+          
             //desactiver le player controller quand on push
             playerController.enabled = false;
         }
@@ -64,21 +65,18 @@ public class MoveObject : MonoBehaviour
         {
             pushingController = false;
         }
+
         //réactiver le player controller lorsqu'on lâche le bouton push
         if (Input.GetKeyUp(KeyCode.P) || Input.GetButtonUp("Fire3"))
         {
             playerController.enabled = true;
         }
-        /*
-        if(otherBox = null)
-        {
-            return;
-        }
-        */
+
         if (pushingController)
         {
             otherBox.transform.parent = this.gameObject.transform;
-            otherBox.GetComponent<Rigidbody>().velocity = movementVector;
+            otherboxPositionX = playerPosition.x + 2.7f * direction;
+            otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
             otherBox.GetComponent<Rigidbody>().isKinematic = false;
         }
         if (!pushingController)
@@ -93,6 +91,11 @@ public class MoveObject : MonoBehaviour
                 otherBox.transform.parent = null;
             }
             
+        }
+        //update la vitesse de deplacement selon la mass de la box
+        if (otherBox != null)
+        {
+            speed = 10 / otherBox.GetComponent<Rigidbody>().mass;
         }
     }
 
