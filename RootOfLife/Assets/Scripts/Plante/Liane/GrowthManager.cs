@@ -13,9 +13,6 @@ public class GrowthManager : MonoBehaviour
     public Transform lastChild;
     GrowBehaviour growthBehaviour;
 
-    CameraFollow cameraFollow;
-    GameObject cam;
-
     PlugPlant plugPlant;
     PlayerController playerController;
 
@@ -24,8 +21,6 @@ public class GrowthManager : MonoBehaviour
 
     private void Awake()
     {
-        cam = GameObject.FindWithTag("MainCamera");
-        cameraFollow = cam.GetComponent<CameraFollow>();
 
         plugPlant = GetComponentInParent<PlugPlant>();
 

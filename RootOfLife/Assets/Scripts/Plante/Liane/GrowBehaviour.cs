@@ -54,7 +54,7 @@ public class GrowBehaviour : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))
             {
                 Instantiate(pont, endPoint.transform.position, Quaternion.identity);
-                growthManager.StartCoroutine("DestroyRoots");
+                growthManager.StartCoroutine("DestroyRoots"); // à remplacer pour permettre au branches de rester pour le trampoline
                 this.gameObject.tag = "FollowMe";
             }
 

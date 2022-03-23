@@ -15,7 +15,6 @@ public class CameraFollow : MonoBehaviour
     GameObject player;
     private bool plantPlugged;
 
-    //Script du sac/plante
     GrowthManager growthManager;
 
     //script du parachute
@@ -45,6 +44,7 @@ public class CameraFollow : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
         plane = player.GetComponent<Plane>();
         growthManager = player.GetComponentInChildren<GrowthManager>();
+
         slopeDetector = player.GetComponent<SlopeDetector>();
 
         //commencer le niveau avec le offset vers la droite
@@ -93,20 +93,20 @@ public class CameraFollow : MonoBehaviour
 
         if (count == 1)
         {
-            if (growthManager.currentCap >= 1)
+            target = GameObject.FindWithTag("FollowMe");
+
+            if(GameObject.FindWithTag("FollowMe") == null)
             {
-                target = growthManager.lastChild.gameObject;
-            }
-            if (growthManager.currentCap < 1)
-            {
-                target = GameObject.FindWithTag("Player");
                 count++;
             }
         }
 
         if (plantPlugged && count == 0)
         {
-            count++;
+            if (growthManager.currentCap == 1)
+            {
+                count++;
+            }
         }
 
         if (count >= 2)
