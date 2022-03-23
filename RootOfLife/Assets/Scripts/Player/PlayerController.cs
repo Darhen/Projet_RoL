@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             jumpQueued = true;
             Debug.Log("Jump!");
-            CreateDust();
+            //CreateDust();
         }
 
         //Active le low Jump si input est "juste préssé"
@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            myRigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime; // Fake Gravité
         }
 
         //physique de la fake gravité
@@ -190,7 +190,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == 6)
+        /*if (other.gameObject.layer == 6)
+        {
+            CreateDust();
+        }*/
+        if(other.gameObject.tag == "Slope")
         {
             CreateDust();
         }

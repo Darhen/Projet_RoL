@@ -10,7 +10,7 @@ public class GrowthManager : MonoBehaviour
 
     public GameObject pont;
 
-    Transform lastChild;
+    public Transform lastChild;
     GrowBehaviour growthBehaviour;
 
     CameraFollow cameraFollow;
