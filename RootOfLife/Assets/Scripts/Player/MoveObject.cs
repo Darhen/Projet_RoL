@@ -70,6 +70,7 @@ public class MoveObject : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.P) || Input.GetButtonUp("Fire3"))
         {
             playerController.enabled = true;
+            canPush = false;
         }
 
         if (pushingController)
@@ -81,16 +82,21 @@ public class MoveObject : MonoBehaviour
         }
         if (!pushingController)
         {
-            if(otherBox == null)
+            otherBox.GetComponent<Rigidbody>().isKinematic = true;
+            otherBox.transform.parent = null;
+            otherboxPositionX = otherBox.transform.position.x;
+
+            if (otherBox == null)
             {
                 return;
             }
+            /*
             else
             {
                 otherBox.GetComponent<Rigidbody>().isKinematic = true;
                 otherBox.transform.parent = null;
             }
-            
+            */
         }
         //update la vitesse de deplacement selon la mass de la box
         if (otherBox != null)
@@ -138,12 +144,13 @@ public class MoveObject : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Box")
+        if (collision.gameObject.tag == "Box" && !playerIsPushing)
         {
-            canPush = true;
+            canPush = false;
             edgeBox = collision.gameObject.transform.position;
 
         }
+
     }
 
 }
