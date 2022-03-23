@@ -11,12 +11,14 @@ public class Trampoline : MonoBehaviour
     public float velocityCheck;
     public float velocityLimit;
     public bool bounceSpeedChecked;
+    public bool bounce;
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = GetComponent<PlayerController>();
         rb = this.gameObject.GetComponent<Rigidbody>();
+        bounce = false;
     }
 
     // Update is called once per frame
@@ -47,6 +49,9 @@ public class Trampoline : MonoBehaviour
         {
 
             this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
+            //jouer animation bounce feuille
+            //collision.gameObject.GetComponent<Animator>().Play("trampoline_bounce");
+            collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
         }
         else
         {

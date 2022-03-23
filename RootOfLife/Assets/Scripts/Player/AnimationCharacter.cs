@@ -6,6 +6,7 @@ public class AnimationCharacter : MonoBehaviour
 {
     public GameObject avatar;
     public Animator animator;
+    public Animator trampolineAnimator;
     [SerializeField] ParticleSystem particleHit = null;
 
     //VARIABLES
@@ -19,6 +20,9 @@ public class AnimationCharacter : MonoBehaviour
     public bool isFalling;
     public bool pushingController;
     public int direction;
+    public bool plantIsPlugged;
+    private float yVelocity;
+    private Rigidbody myRigidbody;
 
     //SCRIPTS
     LedgeClimb ledgeClimb;
@@ -38,6 +42,7 @@ public class AnimationCharacter : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         moveObject = GetComponent<MoveObject>();
         ParticleSystem particleHit = GameObject.Find("Particle Hit").GetComponent<ParticleSystem>();
+        myRigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -48,13 +53,17 @@ public class AnimationCharacter : MonoBehaviour
         yInput = Input.GetAxis("Vertical");
         animator.SetFloat("horizontal", xInput);
         animator.SetFloat("vertical", yInput);
-        isDying = respawnMerged.isDying;
-        isFalling = playerController.isFalling;
+        animator.SetFloat("yVelocity", yVelocity);
+
+        //update velocity
+        yVelocity = myRigidbody.velocity.y;
 
         //update bools
         isGrounded = playerController.isGrounded;
         pushingController = moveObject.pushingController;
-
+        plantIsPlugged = playerController.plantIsPlugged;
+        isDying = respawnMerged.isDying;
+        isFalling = playerController.isFalling;
         //UPDATE BOOLS ANIMATION
 
         //grounded
@@ -123,7 +132,18 @@ public class AnimationCharacter : MonoBehaviour
             animator.SetBool("pushingDroit", false);
             animator.SetBool("pushingGauche", false);
         }
+
+        //Animation plug plant
+        if (plantIsPlugged)
+        {
+            animator.SetBool("growing", true);
+        }
+        if (!plantIsPlugged)
+        {
+            animator.SetBool("growing", false);
+        }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
