@@ -11,12 +11,13 @@ public class LedgeClimb : MonoBehaviour
     Rigidbody rbPlayer;
 
     public float offset;
-    public float realOffset;
     public int direction;
     public bool isJumping;
     public bool isLedgeClimbing;
     public float timerAnimation;
     public bool isLadderClimbing;
+    public int directionLedge;
+    public Transform model;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +28,12 @@ public class LedgeClimb : MonoBehaviour
         offset = 1f;
         timerAnimation = 1.2f;
         rbPlayer = GetComponent<Rigidbody>();
+        directionLedge = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        realOffset = offset * direction;
         isJumping = playerController.isJumping;
         isLadderClimbing = playerClimbing.isClimbing;
 
@@ -55,16 +56,21 @@ public class LedgeClimb : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ledge") && isJumping )
         {
+            //Determiner la direction du ledge climb
+            directionLedge = other.gameObject.GetComponent<LedgeClimbDirection>().direction;
             //Lors de la collision, on va chercher la position du endPoint enfant du ledge climb actif
             endPosition = other.gameObject.transform.GetChild(0).position;
             //On reset la position du player au endPoint, au sommet du ledgeClimb avec le offset dans la direction appropriée
-            transform.position = endPosition + new Vector3 (realOffset, 0, 0);
+            transform.position = endPosition + new Vector3(offset * directionLedge, 0, 0);
             //Départ de la coroutine pour desactiver le script PlayerController le temps de l'animation;
             StartCoroutine(Waiter());
             //Éliminer la vélocité du player
             rbPlayer.velocity = new Vector3 (0, 0, 0);
             //Déclarer que le player ledge climb pour l'animation
             isLedgeClimbing = true;
+            //Tourner le player vers la direction du ledge
+            Quaternion turnModel = Quaternion.LookRotation(new Vector3(directionLedge, 0, 0));
+            model.rotation = turnModel;
         }
     }
     //Ce IEnumator desactive les contrôles du player pour la durée de l'animation
