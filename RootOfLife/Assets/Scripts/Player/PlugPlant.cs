@@ -19,54 +19,84 @@ public class PlugPlant : MonoBehaviour
 
     private float maxHeigthRay = 1f;
 
+    GrowthManager growthManager;
+
     // Start is called before the first frame update
     void Start()
     {
         count = 0;
         startPos = spawnPos.GetComponent<Transform>();
         playerController = GetComponentInParent<PlayerController>();
+        growthManager = spawnPos.GetComponent<GrowthManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        plantPlugged = playerController.plantIsPlugged;
+        plantPlugged = playerController.plantIsPlugged; // on stock l'information du "pressage de l'input
 
         RaycastHit hit;
         Ray landingRay = new Ray(spawnPos.transform.position, Vector3.down);
 
-
-        if (count == 0)
+        //if (count <= 0)
+        if(plantPlugged)
         {
-            sac.SetActive(true);
-            sacPlug.SetActive(false);
-            if(Physics.Raycast(landingRay, out hit, maxHeigthRay))
+            if(count <= 0)
             {
-                if (hit.collider == null)
+                if (Physics.Raycast(landingRay, out hit, maxHeigthRay))
                 {
-                    return;
-                }
-
-                if (hit.collider.gameObject.layer == 6)
-                {
-                    if(plantPlugged)
+                    if (hit.collider.gameObject.layer == 6) // si le rayon tape le layer "Ground"
                     {
-                        cloneSac = Instantiate(sacPlug, hit.point, startPos.transform.rotation);
-                        cloneSac.transform.SetParent(startPos);
+                        sac.SetActive(false);
+                        cloneSac = Instantiate(sacPlug, hit.point, startPos.transform.rotation); // créer un sac au sol sur la position de la collision du raycast
                         playerController.enabled = false;
                         SpawnBranch();
                         count++;
                     }
                 }
+                else // si le rayon ne tape rien alors on "reset" la situation / Player retrouve ses controls
+                {
+                    growthManager.playerIsActif = true;
+                    playerController.plantIsPlugged = false;
+
+                    // **INSERT ANIMATION DE CANCEL DE POSAGE DE SAC ICI**
+                }
             }
+            else
+            {
+                if (growthManager.currentCap > 0)
+                {
+                    spawnPos.GetComponent<Transform>().GetChild(0).gameObject.SetActive(true);
+                }
+            }
+                
         }
+
+        if (!plantPlugged && count == 0)
+        {
+            sac.SetActive(true);
+            if(growthManager.currentCap > 0)
+            {
+                spawnPos.GetComponent<Transform>().GetChild(0).gameObject.SetActive(false);
+            }
+            
+            /*if(spawnPos.GetComponent<Transform>().childCount > 1)
+            {
+                spawnPos.GetComponent<Transform>().GetChild(0).gameObject.SetActive(false);
+            }*/
+            //sacPlug.SetActive(false);
+
+        }
+
     }
 
     void SpawnBranch()
     {
-        myClone = Instantiate(myPrefab, spawnPos.transform.position, Quaternion.identity);
+        cloneSac.transform.SetParent(startPos);
+        var offsetBranche = new Vector3(0, 0.5f, 0);
+        myClone = Instantiate(myPrefab, cloneSac.transform.position + offsetBranche, Quaternion.identity); //Instantie une "branche" pour la pousse (voir growBehaviour)
         myClone.transform.SetParent(startPos);
-        sac.SetActive(false);
-        Destroy(GameObject.FindWithTag("Trampoline"));
+        Destroy(GameObject.FindWithTag("Trampoline")); // détruit trampoline (s'il y en a)
+        Destroy(spawnPos.GetComponent<Transform>().GetChild(0).gameObject); //détruit l'ancien sac au sol
     }
 }

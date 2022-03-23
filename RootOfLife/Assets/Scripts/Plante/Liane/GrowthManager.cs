@@ -34,13 +34,20 @@ public class GrowthManager : MonoBehaviour
     }
     private void Update()
     {
-        currentCap = this.gameObject.transform.childCount;
-        lastChild = this.gameObject.transform.GetChild(this.gameObject.transform.childCount - 1);
-        growthBehaviour = lastChild.GetComponentInChildren<GrowBehaviour>();
+        currentCap = this.gameObject.transform.childCount;// on stock le nb d'enfants de l'objet dans l'int
+
+        if (currentCap > 0) // "Filtre" pour éviter les erreurs quand l'objet n'a pas d'enfants
+        {
+            lastChild = this.gameObject.transform.GetChild(this.gameObject.transform.childCount - 1); // stock l'info de l'enfant le + récent
+
+            growthBehaviour = lastChild.GetComponentInChildren<GrowBehaviour>(); // on get le script du dernier enfant
+        }
+
+        
          
         if (currentCap >= maxCap)
         {
-            growthBehaviour.canClone = false;
+            growthBehaviour.canClone = false; 
             //Chope le dernier child et désactive son script et le détag.
         }
 
@@ -59,12 +66,11 @@ public class GrowthManager : MonoBehaviour
             SpawnPont();
         }
 
-        if (currentCap == 1)
+        if (currentCap <= 1)
         {
             StopCoroutine("DestroyRoots");
             cr_Running = false;
             plugPlant.count = 0;
-            plugPlant.sacPlug.tag = "Untagged";
             //Quand le bool est strictement égale à 1 on stop la coroutine (SacPlug est le 1er enfant de l'objet et on ne veut pas le détruire)
             if (playerIsActif)
             {
@@ -80,23 +86,23 @@ public class GrowthManager : MonoBehaviour
     }
 
     //Coroutine de destruction de child
-    //Prend le dernier child (le + récent) et le détruit, puis au bout de 0.1 sec détruit le prochain child
+    //Prend le dernier child (le + récent) et le détruit, puis au bout de 0.05 sec détruit le prochain child
     IEnumerator DestroyRoots()
     {
         cr_Running = true;
-        playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "repose" de la plante
+        playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "re-pose" du sac
         playerIsActif = true;
         Destroy(lastChild.gameObject);
         while (true)
         {
             yield return new WaitForSeconds(0.05f);
-            //lastChild.gameObject.tag = "FollowMe";
             Destroy(lastChild.gameObject);
         }
     }
 
     public void OnCollisionEnterChild(Collision other)
     {
+        if(currentCap >= 2 )
         StartCoroutine("DestroyRoots");
     }
 
