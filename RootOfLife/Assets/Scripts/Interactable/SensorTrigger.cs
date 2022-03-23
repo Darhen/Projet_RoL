@@ -9,6 +9,8 @@ public class SensorTrigger : MonoBehaviour
     public Material activeMat;
     public Material notActiveMat;
 
+    //bool a cocher si on veut que ce trigger fonctionne avec la plante
+    public bool activateWithPlant;
 
     private void Update()
     {
@@ -22,9 +24,17 @@ public class SensorTrigger : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("FollowMe") || other.CompareTag("OldRoot"))
+        {
+            isActive = true;
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Box") /*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
+        if (!activateWithPlant && other.CompareTag("Player") || !activateWithPlant && other.CompareTag("Box") /*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
         {
             isActive = true;
         }  
@@ -32,7 +42,7 @@ public class SensorTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Box") /*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
+        if (!activateWithPlant && other.CompareTag("Player") || !activateWithPlant && other.CompareTag("Box") /*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
         {
             isActive = false;
         }
