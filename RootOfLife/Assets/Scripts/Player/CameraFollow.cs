@@ -34,6 +34,13 @@ public class CameraFollow : MonoBehaviour
     PlayerClimbing playerClimbing;
     public bool isClimbing;
 
+    //camera boundaries
+    public bool leftBoundary;
+    public bool rightBoundary;
+    private GameObject cameraBoundary;
+    public bool inWall;
+    private Vector3 boundaryPosition;
+    private int lastDirection;
     
     private void Start()
     {
@@ -60,12 +67,18 @@ public class CameraFollow : MonoBehaviour
         if(xInput > 0)
         {
             direction = 1;
+            StartCoroutine("CheckDirectionChange");
         }
         if(xInput < 0)
         {
             direction = -1;
+            StartCoroutine("CheckDirectionChange");
         }
-        
+        if (direction != lastDirection)
+        {
+            StartCoroutine("XOffsetSmooth");
+        }
+
         //actualiser le forward selon la direction----------
 
         //annulation du offset en X si climbing
@@ -118,27 +131,128 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!inWall)
+        {
+            Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+            transform.position = smoothedPosition;
 
-        Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-        transform.position = smoothedPosition;
+            if (isGliding)
+            {
+                parachuteOffset = new Vector3(0, 0, parachuteOffsetZ);
+            }
+            else
+            {
+                parachuteOffset = new Vector3(0, 0, 0);
+            }
 
-        if(isGliding)
-        {
-            parachuteOffset = new Vector3(0, 0, parachuteOffsetZ);
+            if (isSliding)
+            {
+                slopeOffset = new Vector3(0, 0, slopeOffsetZ);
+            }
+            else
+            {
+                slopeOffset = new Vector3(0, 0, 0);
+            }
         }
-        else
+        if (inWall)
         {
-            parachuteOffset = new Vector3(0, 0, 0);
-        }
+            if (leftBoundary && xInput <= 0)
+            {
+                Vector3 desiredPosition = new Vector3(boundaryPosition.x, target.transform.position.y + offset.y, transform.position.z);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
+            }
+            else
+            {
+                Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
 
-        if(isSliding)
-        {
-            slopeOffset = new Vector3(0, 0, slopeOffsetZ);
+                if (isGliding)
+                {
+                    parachuteOffset = new Vector3(0, 0, parachuteOffsetZ);
+                }
+                else
+                {
+                    parachuteOffset = new Vector3(0, 0, 0);
+                }
+
+                if (isSliding)
+                {
+                    slopeOffset = new Vector3(0, 0, slopeOffsetZ);
+                }
+                else
+                {
+                    slopeOffset = new Vector3(0, 0, 0);
+                }
+            }
+            if (rightBoundary && xInput >= 0)
+            {
+                Vector3 desiredPosition = new Vector3(boundaryPosition.x, target.transform.position.y + offset.y, transform.position.z);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
+            }
+            else
+            {
+                Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
+
+                if (isGliding)
+                {
+                    parachuteOffset = new Vector3(0, 0, parachuteOffsetZ);
+                }
+                else
+                {
+                    parachuteOffset = new Vector3(0, 0, 0);
+                }
+
+                if (isSliding)
+                {
+                    slopeOffset = new Vector3(0, 0, slopeOffsetZ);
+                }
+                else
+                {
+                    slopeOffset = new Vector3(0, 0, 0);
+                }
+            }
+
         }
-        else
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "CameraBound")
         {
-            slopeOffset = new Vector3(0, 0, 0);
+            cameraBoundary = other.gameObject;
+            leftBoundary = cameraBoundary.GetComponent<CameraBound>().leftBoundary;
+            rightBoundary = cameraBoundary.GetComponent<CameraBound>().rightBoundary;
+            boundaryPosition = other.gameObject.transform.position;
+            inWall = true;
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "CameraBound")
+        {
+            cameraBoundary = null;
+            inWall = false;
+        }
+    }
+
+    IEnumerator CheckDirectionChange()
+    {
+        yield return new WaitForSeconds(0.5f);
+        lastDirection = direction;
+    }
+
+    IEnumerator XOffsetSmooth()
+    {
+        smoothSpeed = 2f;
+        yield return new WaitForSeconds(0.3f);
+        smoothSpeed = 2.8f;
+        yield return new WaitForSeconds(0.4f);
+        smoothSpeed = 3.5f;
     }
 }

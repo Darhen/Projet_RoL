@@ -6,6 +6,7 @@ public class CameraBound : MonoBehaviour
 {
     public bool leftBoundary;
     public bool rightBoundary;
+
     // Start is called before the first frame update
     void Start()
     {
