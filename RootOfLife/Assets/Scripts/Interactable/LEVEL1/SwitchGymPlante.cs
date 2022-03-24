@@ -7,8 +7,7 @@ public class SwitchGymPlante : MonoBehaviour
     private GameObject player;
     private Vector3 playerPosition;
     public GameObject animationPosition;
-    public Animator animatorSwitch;
-    public Animator animator;
+    public Animator animatorWindow;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +38,6 @@ public class SwitchGymPlante : MonoBehaviour
     {
         //animator.SetTrigger("switch");
         yield return new WaitForSeconds(0.8f);
-        animatorSwitch.SetTrigger("switchDown");
-        animator.SetTrigger("gymMode");
+        animatorWindow.SetTrigger("gymMode");
     }
 }
