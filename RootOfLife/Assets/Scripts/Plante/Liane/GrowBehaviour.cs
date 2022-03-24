@@ -16,12 +16,18 @@ public class GrowBehaviour : MonoBehaviour
     public GameObject endPoint;
     GameObject spawnPoint;
     Transform startPos;
+
     GrowthManager growthManager;
+    /*PlugPlant plugPlant;
+    PlayerController playerController;
+    CameraFollow cameraFollow;
+    GameObject cam;*/
 
     public bool canClone;
     public bool keyIsReleased;
 
     public GameObject pont;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +36,13 @@ public class GrowBehaviour : MonoBehaviour
         spawnPoint = GameObject.Find("SpawnPos");
         startPos = spawnPoint.GetComponent<Transform>();
         keyIsReleased = false;
+
         growthManager = transform.parent.GetComponent<GrowthManager>();
+
+       /* plugPlant = GetComponentInParent<PlugPlant>();
+        playerController = GetComponentInParent<PlayerController>();
+        cam = GameObject.FindWithTag("MainCamera");
+        cameraFollow = cam.GetComponent<CameraFollow>();*/
     }
 
     private void OnEnable()
@@ -56,6 +68,10 @@ public class GrowBehaviour : MonoBehaviour
                 Instantiate(pont, endPoint.transform.position, Quaternion.identity);
                 growthManager.StartCoroutine("DestroyRoots"); // à remplacer pour permettre au branches de rester pour le trampoline
                 this.gameObject.tag = "FollowMe";
+                //
+                /*plugPlant.count = 0;
+                playerController.enabled = true;
+                cameraFollow.count = 0;*/
             }
 
             if (xInput >= 0)//(Input.GetKey(KeyCode.RightArrow))
@@ -93,9 +109,9 @@ public class GrowBehaviour : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Box" || other.gameObject.tag == "Untagged" || other.gameObject.tag == "Slope")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Box" || other.gameObject.tag == "Untagged" || other.gameObject.tag == "Slope" || other.gameObject.tag == "Switch")
         {
-            Debug.Log("Hit");
+            Debug.Log("PlanteHitObject");
             growthManager.OnCollisionEnterChild(other);
         }
     }

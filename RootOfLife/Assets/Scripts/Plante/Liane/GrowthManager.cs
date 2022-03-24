@@ -97,14 +97,14 @@ public class GrowthManager : MonoBehaviour
 
     public void OnCollisionEnterChild(Collision other)
     {
-        if(currentCap >= 2 )
-        StartCoroutine("DestroyRoots");
+        if (currentCap >= 2)
+            StartCoroutine("DestroyRoots");
     }
+
 
     private void SpawnPont()
     {
         Instantiate(pont, lastChild.transform.position, Quaternion.identity);
-        
     }
 
 }

@@ -12,6 +12,9 @@ public class TimerPont : MonoBehaviour
     public float colorChangeTime;
     public int seconds;
 
+    GrowthManager growthManager;
+    GameObject player;
+
 
     void Awake()
     {
@@ -20,6 +23,9 @@ public class TimerPont : MonoBehaviour
         myRenderer.material.color = startColor;
         currentColor = startColor;
         colorChangeTime = 0.0035f;
+
+        player = GameObject.FindWithTag("Player");
+        growthManager = player.GetComponentInChildren<GrowthManager>();
     }
 
     private void FixedUpdate()
@@ -34,6 +40,7 @@ public class TimerPont : MonoBehaviour
     void DoStuff()
     {
         Destroy(this.gameObject);
+        //growthManager.StartCoroutine("DestroyRoots");
     }
 
     IEnumerator Countdown()

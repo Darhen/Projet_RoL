@@ -2148,6 +2148,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1880351111}
     - target: {fileID: 1629032479, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629032479, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: brasDetector
       value: 
       objectReference: {fileID: 1880351105}
@@ -16330,9 +16334,9 @@ MonoBehaviour:
   spherePosition: {fileID: 1629032478}
   isInsideDroneBeam: 0
   PlayerIsDetected: 0
-  isShooting: 0
   timeBtwShots: 0
   startTimeBtwShots: 20
+  isCreated: 0
 --- !u!114 &1425582223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20172,6 +20176,9 @@ MonoBehaviour:
   slopeOffset: {x: 0, y: 0, z: 0}
   slopeOffsetZ: 0
   isSliding: 0
+  direction: 0
+  xOffset: {x: 0, y: 0, z: 0}
+  isClimbing: 0
 --- !u!114 &1926221423
 MonoBehaviour:
   m_ObjectHideFlags: 0
