@@ -33,6 +33,7 @@ public class CameraFollow : MonoBehaviour
     private float xInput;
     PlayerClimbing playerClimbing;
     public bool isClimbing;
+    private int lastDirection;
 
     
     private void Start()
@@ -50,6 +51,7 @@ public class CameraFollow : MonoBehaviour
         //commencer le niveau avec le offset vers la droite
         direction = 1;
         playerClimbing = player.GetComponent<PlayerClimbing>();
+
     }
 
 
@@ -60,12 +62,17 @@ public class CameraFollow : MonoBehaviour
         if(xInput > 0)
         {
             direction = 1;
+            StartCoroutine("CheckDirectionChange");
         }
         if(xInput < 0)
         {
             direction = -1;
+            StartCoroutine("CheckDirectionChange");
         }
-        
+        if (direction != lastDirection)
+        {
+            StartCoroutine("XOffsetSmooth");
+        }
         //actualiser le forward selon la direction----------
 
         //annulation du offset en X si climbing
@@ -141,4 +148,20 @@ public class CameraFollow : MonoBehaviour
             slopeOffset = new Vector3(0, 0, 0);
         }
     }
+    
+    IEnumerator CheckDirectionChange()
+    {
+        yield return new WaitForSeconds(0.5f);
+        lastDirection = direction;
+    }
+    
+    IEnumerator XOffsetSmooth()
+    {
+        smoothSpeed = 2f;
+        yield return new WaitForSeconds(0.3f);
+        smoothSpeed = 2.8f;
+        yield return new WaitForSeconds(0.4f);
+        smoothSpeed = 3.5f;
+    }
+    
 }

@@ -82,10 +82,13 @@ public class MoveObject : MonoBehaviour
         }
         if (!pushingController)
         {
-            otherBox.GetComponent<Rigidbody>().isKinematic = true;
+            //otherBox.GetComponent<Rigidbody>().isKinematic = true;
             otherBox.transform.parent = null;
             otherboxPositionX = otherBox.transform.position.x;
-
+            if (otherBox != null)
+            {
+                otherBox.GetComponent<Rigidbody>().isKinematic = true;
+            }
             if (otherBox == null)
             {
                 return;
