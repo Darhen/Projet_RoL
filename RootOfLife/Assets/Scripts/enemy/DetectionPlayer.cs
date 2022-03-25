@@ -10,8 +10,8 @@ public class DetectionPlayer : MonoBehaviour
     Collider m_Collider = null;
     public Animator animator;
 
-    Animator animatorDrone;
-    Animator animatorDetection;
+    Animator animatorBras;
+    Animator BrasDetection;
     public GameObject bras;
     public GameObject brasDetector;
 
@@ -19,8 +19,8 @@ public class DetectionPlayer : MonoBehaviour
     {
         m_Collider = GetComponent<Collider>();
         Debug.Assert(m_Collider);
-        animatorDrone = bras.GetComponent<Animator>();
-        animatorDetection = brasDetector.GetComponent<Animator>();
+        animatorBras = bras.GetComponent<Animator>();
+        BrasDetection = brasDetector.GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -61,12 +61,14 @@ public class DetectionPlayer : MonoBehaviour
         {
             playerIsDetected = true;
             animator.Play("WhiteToRed");
+            animatorBras.enabled = false;
 
         }
         else
         {
             playerIsDetected = false;
             animator.Play("RedToWhite");
+            animatorBras.enabled = true;
         }
     }
 }
