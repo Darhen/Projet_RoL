@@ -108,7 +108,7 @@ public class CameraFollow : MonoBehaviour
         {
             target = growthManager.lastChild.gameObject;
 
-            if(GameObject.FindWithTag("FollowMe") == null)
+            if(growthManager.currentCap <= 1)
             {
                 count++;
             }
@@ -116,7 +116,7 @@ public class CameraFollow : MonoBehaviour
 
         if (plantPlugged && count == 0)
         {
-            if (growthManager.currentCap == 1)
+            if (growthManager.currentCap <= 1)
             {
                 count++;
             }
