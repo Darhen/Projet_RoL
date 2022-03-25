@@ -37,6 +37,7 @@ public class ActivateCheckIfIsInside : MonoBehaviour
             newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
             StartCoroutine("ChangeBoolNeg");
             myLight.SetActive(false);
+            Debug.Log("blabla");
         }
 
     }
