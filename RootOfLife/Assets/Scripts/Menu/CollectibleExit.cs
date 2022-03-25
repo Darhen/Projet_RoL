@@ -13,7 +13,7 @@ public class CollectibleExit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CollectibleUI.SetActive(true);
+        //CollectibleUI.SetActive(false);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

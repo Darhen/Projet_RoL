@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SolAttaque1 : MonoBehaviour
 {
-    /*
     public GameObject sphere;
     public Transform spherePosition;
     DroneDetecteur droneDetecteur;
@@ -25,7 +24,7 @@ public class SolAttaque1 : MonoBehaviour
 
     void Update()
     {
-        PlayerIsDetected = droneDetecteur.playerDetectedSol;
+        PlayerIsDetected = droneDetecteur.playerDetected;
 
         playerPosition = player.transform.position;
         
@@ -65,7 +64,6 @@ public class SolAttaque1 : MonoBehaviour
         }
     }
        
-   */
 }
 
 
