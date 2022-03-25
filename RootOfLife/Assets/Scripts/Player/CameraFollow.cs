@@ -101,12 +101,12 @@ public class CameraFollow : MonoBehaviour
 
         if (count == 0)
         {
-            target = GameObject.FindWithTag("Player");
+            target = player.gameObject;
         }
 
         if (count == 1)
         {
-            target = GameObject.FindWithTag("FollowMe");
+            target = growthManager.lastChild.gameObject;
 
             if(GameObject.FindWithTag("FollowMe") == null)
             {

@@ -80,16 +80,16 @@ public class MoveObject : MonoBehaviour
             otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
             otherBox.GetComponent<Rigidbody>().isKinematic = false;
         }
+
         if (!pushingController)
         {
-            otherBox.GetComponent<Rigidbody>().isKinematic = true;
-            otherBox.transform.parent = null;
-            otherboxPositionX = otherBox.transform.position.x;
-
             if (otherBox == null)
             {
                 return;
             }
+            otherBox.GetComponent<Rigidbody>().isKinematic = true;
+            otherBox.transform.parent = null;
+            otherboxPositionX = otherBox.transform.position.x;
             /*
             else
             {
