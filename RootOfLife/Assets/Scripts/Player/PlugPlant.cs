@@ -24,9 +24,6 @@ public class PlugPlant : MonoBehaviour
 
     GrowthManager growthManager;
 
-    GameObject cam;
-    CameraFollow cameraFollow;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +34,6 @@ public class PlugPlant : MonoBehaviour
 
         growthManager = spawnPos.GetComponent<GrowthManager>();
 
-        cam = GameObject.FindWithTag("MainCamera");
-        cameraFollow = cam.GetComponent<CameraFollow>();
     }
 
     // Update is called once per frame
@@ -64,7 +59,6 @@ public class PlugPlant : MonoBehaviour
                         playerController.enabled = false;
                         SpawnBranch();
                         count++; 
-                        cameraFollow.count = 1; // changement du count de la cam
                     }
                 }
                 else // si le rayon ne tape rien alors on "reset" la situation / Player retrouve ses controls

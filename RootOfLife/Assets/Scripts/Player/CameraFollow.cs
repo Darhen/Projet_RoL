@@ -118,7 +118,7 @@ public class CameraFollow : MonoBehaviour
             //target = plugPlant.cloneSac.gameObject;
         }
 
-        if (growthManager.currentCap <= 1)
+        if (growthManager.currentCap <= 2)
         {
             if (!plantPlugged)
             {
