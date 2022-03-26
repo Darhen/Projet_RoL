@@ -19,17 +19,102 @@
 				</Folder>
 				<Folder Name="Player" ID="{61695592-E491-493C-8D3A-2144606FBF0B}" ShortID="679182670">
 					<PropertyList>
-						<Property Name="Color" Type="int16" Value="12"/>
+						<Property Name="Color" Type="int16" Value="24"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Event Name="Player_Spawn" ID="{E2A45C9F-DDCC-482D-BEA0-502B0DEF1CC9}"/>
-						<Event Name="Player_Respawn" ID="{B46C9A90-3EC8-4B53-ACDB-5DB47602CCCF}"/>
-						<Event Name="Player_Suffocate" ID="{86A4C30A-5D5E-45B9-9814-656E8E7C0EE4}"/>
-						<Event Name="Player_Shot" ID="{1075A33E-1B46-47FB-BCE5-F12129AE62A4}"/>
-						<Event Name="Player_Ram" ID="{8FCC619D-FC33-4529-B2BE-7C803548427B}"/>
-						<Event Name="Player_Fall" ID="{E01CFB54-80DB-4148-A803-067F9BB0AD59}"/>
-						<Event Name="Player_Death" ID="{2DB8F321-2F29-4F58-84E2-BB6622ED2DE1}"/>
+						<Folder Name="Death" ID="{1322BC9A-9AF6-4ED1-8157-F1B24A02896E}" ShortID="502678424">
+							<ChildrenList>
+								<Event Name="Player_Suffocate" ID="{86A4C30A-5D5E-45B9-9814-656E8E7C0EE4}"/>
+								<Event Name="Player_Spawn" ID="{E2A45C9F-DDCC-482D-BEA0-502B0DEF1CC9}"/>
+								<Event Name="Player_Respawn" ID="{B46C9A90-3EC8-4B53-ACDB-5DB47602CCCF}"/>
+								<Event Name="Player_Shot" ID="{1075A33E-1B46-47FB-BCE5-F12129AE62A4}"/>
+								<Event Name="Player_Ram" ID="{8FCC619D-FC33-4529-B2BE-7C803548427B}"/>
+								<Event Name="Player_Fall" ID="{E01CFB54-80DB-4148-A803-067F9BB0AD59}"/>
+								<Event Name="Player_Death" ID="{2DB8F321-2F29-4F58-84E2-BB6622ED2DE1}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Movement" ID="{FCEBAE11-70CF-4613-86E5-7E662AA1EC51}" ShortID="927345839">
+							<ChildrenList>
+								<Event Name="Player_Footstep" ID="{C14E4FA5-395F-42D6-9648-93D8862E04D8}"/>
+								<Event Name="Player_Landing" ID="{3522576F-4E7B-4076-932C-7E6FB37C4359}"/>
+								<Event Name="Player_Jump" ID="{09B4E164-EDC9-430C-8277-41874F075418}"/>
+								<Event Name="Open_Hangglider" ID="{3D6068CE-3497-400A-964B-149ADDB5DF84}"/>
+								<Event Name="Close_Hangglider" ID="{FB934B7E-4088-4828-9D64-94FF684A906B}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Actions" ID="{5E9A0AB0-487A-4A6A-9A7B-3AC7D19BD099}" ShortID="310769895">
+							<ChildrenList>
+								<Event Name="Move_Box" ID="{404812F3-A94C-4F6C-9D13-84AE80A9903E}"/>
+								<Event Name="Pickup" ID="{4B5B9E7E-3821-4EF4-9481-D1D1E24EF819}"/>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Objects" ID="{497F16F9-1F48-4CAD-9C29-01CEE909F36D}" ShortID="735519728">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="17"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Plant" ID="{699F3FEF-B3B2-42D6-B989-5E35154A04C6}" ShortID="449023897">
+							<ChildrenList>
+								<Event Name="BackpackLight_Green" ID="{18D78F27-DBAE-451C-BE36-DF78EBCD7574}"/>
+								<Event Name="BackpackLight_Yellow" ID="{E8983E5A-806B-442A-86CD-6E1F91E7E6B5}"/>
+								<Event Name="BackpackLight_Red" ID="{ADF76909-41B4-421A-B0DF-89C61EDC7875}"/>
+								<Event Name="BackpackLight_Flashing" ID="{FCA4EE31-FBBB-4BE9-B5F6-6BE09DBB51C1}"/>
+								<Event Name="Light_TouchPlant" ID="{9A3F74A6-7184-4032-981A-6C2E47DB61C3}"/>
+								<Event Name="Plant_Death" ID="{D48C9D8C-9021-4929-9941-62DBCE1FB631}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Buttons and Switches" ID="{DB2F7604-146C-4DA1-BAAB-93431A9FFE23}" ShortID="631562959">
+							<ChildrenList>
+								<Event Name="Door_Button_Click" ID="{723474E8-BECD-4D73-ABE9-E411F6AB41D2}"/>
+								<Event Name="Trap_Button_Click" ID="{F48AB6EB-1EEE-4B0D-962C-022E99A3FBD2}"/>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{E6476FD0-AF49-4BCB-AD21-9FAD69AC9D43}" ShortID="731567417">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="20"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
+				<Folder Name="Enemies" ID="{0C413C05-0774-412C-AACF-09DB7788A1CE}" ShortID="186971875">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Walker" ID="{5DEDF7F3-42E2-4430-8D00-FF4D674AAF0B}" ShortID="989040054">
+							<ChildrenList>
+								<Event Name="Walker_Footstep" ID="{93CD7904-1417-4567-ABEA-6B15CE5B2C2D}"/>
+								<Event Name="Walker_Alert" ID="{3E60FAA8-6AB5-410A-8460-0AF1E2D78587}"/>
+								<Event Name="Walker_Ram" ID="{3F4745E6-50A4-4A8D-80A0-80601E9A3C7C}"/>
+								<Event Name="Walker_ReturnToPost" ID="{4F1DCE4A-C16D-4E32-A2B8-C23CB9424687}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Drone" ID="{53DCD9C2-836E-4BF6-9D62-272CC091D6DA}" ShortID="516581124">
+							<ChildrenList>
+								<Event Name="Drone_Hover" ID="{4FE2C508-2CB3-40D3-8D95-A7961C82E288}"/>
+								<Event Name="Drone_Alert" ID="{360562B6-54DB-4676-B0EA-F02ADB903E48}"/>
+								<Event Name="Drone_Fire" ID="{1E0552D6-69E0-4921-AF49-130D01827690}"/>
+								<Event Name="Drone_ReturnToPost" ID="{836CE6B1-8B11-4271-AF79-20F3C35AB3AD}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Sentry Arm" ID="{DDDD20A2-073E-4B88-9728-F3755DEACD3D}" ShortID="588030959">
+							<ChildrenList>
+								<Event Name="Arm_Swivel" ID="{1AC8D01C-2EF3-4DAC-B941-68C680AA6B18}"/>
+								<Event Name="Arm_Alert" ID="{C864B529-0C44-4F2F-B25A-5E85A048591E}"/>
+								<Event Name="Arm_ReturnToPost" ID="{EF82B05C-6111-421F-B835-D871417AD278}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Guardian Arm Boss" ID="{37BF8390-0F47-40EC-926E-8496854DEB3B}" ShortID="45278336">
+							<ChildrenList>
+								<Event Name="GuardianArm_Swivel" ID="{8A994783-BB34-429B-AF01-CF8E16E05720}"/>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

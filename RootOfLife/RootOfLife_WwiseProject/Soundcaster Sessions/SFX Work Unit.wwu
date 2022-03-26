@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{49CD3225-8B78-4D74-AC91-97D38989238E}" SchemaVersion="103">
+<WwiseDocument Type="WorkUnit" ID="{5426528C-0848-49D4-A73A-F8ADD1367358}" SchemaVersion="103">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{49CD3225-8B78-4D74-AC91-97D38989238E}" PersistMode="Standalone">
+		<WorkUnit Name="SFX Work Unit" ID="{5426528C-0848-49D4-A73A-F8ADD1367358}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="24"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
-				<SoundcasterSession Name="Master" ID="{7DA43470-203C-4175-9BB8-4D3EE669369B}">
+				<SoundcasterSession Name="Sfx" ID="{F16B1AD0-BB4F-416B-A044-B47486A34808}">
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="SFX_Volume" ID="{5337D0B3-0958-45FB-B8F2-F242D232B899}"/>
-							<Value>100</Value>
+							<Value>50</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Master_Volume" ID="{E4B3977B-486D-4C5F-8C46-2B5063F3EA5D}"/>
-							<Value>100</Value>
+							<Value>50</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Music_Volume" ID="{F12A1E53-374A-4EAE-A026-418B44188B6B}"/>
-							<Value>100</Value>
+							<Value>50</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>

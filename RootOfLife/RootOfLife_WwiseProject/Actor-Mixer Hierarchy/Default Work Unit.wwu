@@ -1,6 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Player" ID="{7F210D84-A097-426C-8B49-82391DEF35D6}" ShortID="455487902">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="24"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Movement" ID="{F031C4AD-4403-4739-AC9B-9681B6DE9105}" ShortID="458532749"/>
+						<Folder Name="Actions" ID="{7DCDD003-19AA-4DE3-85E3-5FF06626F389}" ShortID="751646061">
+							<ChildrenList>
+								<SwitchContainer Name="Player_Footstep" ID="{91B16B30-072D-42CA-9B52-CB9B5981D0DE}" ShortID="321410313">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+										</Reference>
+										<Reference Name="DefaultSwitchOrState">
+											<ObjectRef Name="Dirt" ID="{26E6C451-9704-4001-8C1B-C813526E1D46}" WorkUnitID="{EBAEAF86-1CB8-4B4B-9096-DF6610A74BA9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+										</Reference>
+										<Reference Name="SwitchGroupOrStateGroup">
+											<ObjectRef Name="Surfaces" ID="{F54FC1B4-0C55-4A62-AC4B-70A17102DFF4}" WorkUnitID="{EBAEAF86-1CB8-4B4B-9096-DF6610A74BA9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="Player_FS_Sand" ID="{62C11018-75EB-4026-966D-B0129316E593}" ShortID="436886380">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Player_FS_Metal" ID="{CF38655B-15D3-4163-9F38-04F1C8C1C55C}" ShortID="323146372">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Player_FS_Dirt" ID="{8638B941-C21E-47D4-BBFA-3C7A44BA2ADE}" ShortID="718585521">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<ObjectLists/>
+									<GroupingInfo>
+										<GroupingBehaviorList>
+											<GroupingBehavior>
+												<ItemRef Name="Player_FS_Sand" ID="{62C11018-75EB-4026-966D-B0129316E593}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="Player_FS_Dirt" ID="{8638B941-C21E-47D4-BBFA-3C7A44BA2ADE}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="Player_FS_Metal" ID="{CF38655B-15D3-4163-9F38-04F1C8C1C55C}"/>
+											</GroupingBehavior>
+										</GroupingBehaviorList>
+										<GroupingList>
+											<Grouping>
+												<SwitchRef Name="Dirt" ID="{26E6C451-9704-4001-8C1B-C813526E1D46}"/>
+												<ItemList>
+													<ItemRef Name="Player_FS_Dirt" ID="{8638B941-C21E-47D4-BBFA-3C7A44BA2ADE}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Metal" ID="{453DD2CE-CDDF-4578-9BD6-8E791D6255DB}"/>
+												<ItemList>
+													<ItemRef Name="Player_FS_Metal" ID="{CF38655B-15D3-4163-9F38-04F1C8C1C55C}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Sand" ID="{158D1CE6-BC9C-4353-858D-ED81A295B1DF}"/>
+												<ItemList>
+													<ItemRef Name="Player_FS_Sand" ID="{62C11018-75EB-4026-966D-B0129316E593}"/>
+												</ItemList>
+											</Grouping>
+										</GroupingList>
+									</GroupingInfo>
+								</SwitchContainer>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Breaths and Grunts" ID="{35A9F8B5-A9ED-479F-AFA4-73E82696B380}" ShortID="580890195"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemies" ID="{5B269ADA-CD74-44BC-9E0B-A9C5FA6903BD}" ShortID="1021833243">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Sentry Arm" ID="{FA80A3A8-BE3C-43F1-B2E4-4FABC81C6496}" ShortID="608616864"/>
+						<Folder Name="Walker" ID="{73DE78E1-E258-49A2-B30B-79C3277D9F28}" ShortID="1589777"/>
+						<Folder Name="Guardian Arm Boss" ID="{075F09FF-5A43-4D5F-B824-7ED6E28E366B}" ShortID="665939500"/>
+						<Folder Name="Drone" ID="{98344D82-C89F-474C-9951-0F4A8A85122D}" ShortID="189285752"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="UI" ID="{81890D1F-1241-40EC-9D44-A156C78191EE}" ShortID="217538584">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="15"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
+				<Folder Name="Objects" ID="{AAA4AF9A-479F-4ED3-81AC-24A8F3BADC71}" ShortID="787165978">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="17"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Plant" ID="{F7F10B04-3B9C-4270-8907-B91E9C435834}" ShortID="894334436"/>
+						<Folder Name="Doors" ID="{16FFCEAD-9475-4D27-A8F6-132A6E5596C8}" ShortID="711266323"/>
+						<Folder Name="Traps" ID="{253B3342-46F2-4DB7-AA97-C0545AFD69E3}" ShortID="702336069"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{3AA51C06-2DC8-4D34-9942-23491E9AE1F8}" ShortID="949271195">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="20"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

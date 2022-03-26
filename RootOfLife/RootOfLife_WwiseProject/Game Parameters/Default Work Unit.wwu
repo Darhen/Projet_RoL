@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{48A0017C-B44B-4490-8C9D-46F3150429DD}" SchemaVersion="103">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{48A0017C-B44B-4490-8C9D-46F3150429DD}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{48A0017C-B44B-4490-8C9D-46F3150429DD}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="UI" ID="{E19F566B-BBD1-420F-B038-34363F807E82}" ShortID="324867478">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="15"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<GameParameter Name="Music_Volume" ID="{F12A1E53-374A-4EAE-A026-418B44188B6B}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="SFX_Volume" ID="{5337D0B3-0958-45FB-B8F2-F242D232B899}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="Master_Volume" ID="{E4B3977B-486D-4C5F-8C46-2B5063F3EA5D}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>
