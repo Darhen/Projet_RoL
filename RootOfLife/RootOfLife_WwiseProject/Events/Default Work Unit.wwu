@@ -36,7 +36,17 @@
 						</Folder>
 						<Folder Name="Movement" ID="{FCEBAE11-70CF-4613-86E5-7E662AA1EC51}" ShortID="927345839">
 							<ChildrenList>
-								<Event Name="Player_Footstep" ID="{C14E4FA5-395F-42D6-9648-93D8862E04D8}"/>
+								<Event Name="Player_Footstep" ID="{C14E4FA5-395F-42D6-9648-93D8862E04D8}">
+									<ChildrenList>
+										<Action Name="" ID="{532807B2-656B-4CA2-9AC4-8EA90A57708A}" ShortID="494591124">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Footstep" ID="{91B16B30-072D-42CA-9B52-CB9B5981D0DE}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Player_Landing" ID="{3522576F-4E7B-4076-932C-7E6FB37C4359}"/>
 								<Event Name="Player_Jump" ID="{09B4E164-EDC9-430C-8277-41874F075418}"/>
 								<Event Name="Open_Hangglider" ID="{3D6068CE-3497-400A-964B-149ADDB5DF84}"/>
