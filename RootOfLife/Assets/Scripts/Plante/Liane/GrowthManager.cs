@@ -19,6 +19,7 @@ public class GrowthManager : MonoBehaviour
     public bool cr_Running;
     public bool playerIsActif;
 
+
     private void Awake()
     {
 
@@ -26,7 +27,9 @@ public class GrowthManager : MonoBehaviour
 
         playerController = GetComponentInParent<PlayerController>();
         playerIsActif = false;
+
     }
+
     private void Update()
     {
         currentCap = this.gameObject.transform.childCount;// on stock le nb d'enfants de l'objet dans l'int

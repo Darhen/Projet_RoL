@@ -16,6 +16,7 @@ public class CameraFollow : MonoBehaviour
     private bool plantPlugged;
 
     GrowthManager growthManager;
+    PlugPlant plugPlant;
 
     //script du parachute
     Plane plane;
@@ -51,7 +52,9 @@ public class CameraFollow : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         plane = player.GetComponent<Plane>();
+
         growthManager = player.GetComponentInChildren<GrowthManager>();
+        plugPlant = player.GetComponent<PlugPlant>();
 
         slopeDetector = player.GetComponent<SlopeDetector>();
 
@@ -102,26 +105,38 @@ public class CameraFollow : MonoBehaviour
 
         if (count == 0)
         {
-            target = player.gameObject;
+            target = player.gameObject;   
         }
 
         if (count == 1)
         {
-            target = growthManager.lastChild.gameObject;
-
-            if(growthManager.currentCap <= 1)
+            if (growthManager.lastChild.gameObject == null)
             {
-                count++;
+                return;
+            }
+            target = growthManager.lastChild.gameObject;
+            //target = plugPlant.cloneSac.gameObject;
+        }
+
+        if (growthManager.currentCap <= 1)
+        {
+            if (!plantPlugged)
+            {
+                count = 0;
+            }
+            else
+            {
+                count = 1;
             }
         }
 
-        if (plantPlugged && count == 0)
+        /*if (plantPlugged && count == 0)
         {
             if (growthManager.currentCap <= 1)
             {
                 count++;
             }
-        }
+        }*/
 
         if (count >= 2)
         {

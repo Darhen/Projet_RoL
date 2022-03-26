@@ -6,10 +6,13 @@ public class PlugPlant : MonoBehaviour
 {
 
     public GameObject myPrefab;
+
     private GameObject myClone;
-    private GameObject cloneSac;
+    public GameObject cloneSac;
+
     Transform startPos;
     public GameObject spawnPos;
+
     public GameObject sac;
     public GameObject sacPlug;
     public int count;
@@ -19,17 +22,23 @@ public class PlugPlant : MonoBehaviour
 
     private float maxHeigthRay = 1f;
 
-
     GrowthManager growthManager;
+
+    GameObject cam;
+    CameraFollow cameraFollow;
 
     // Start is called before the first frame update
     void Start()
     {
         count = 0;
+
         startPos = spawnPos.GetComponent<Transform>();
         playerController = GetComponentInParent<PlayerController>();
+
         growthManager = spawnPos.GetComponent<GrowthManager>();
-        
+
+        cam = GameObject.FindWithTag("MainCamera");
+        cameraFollow = cam.GetComponent<CameraFollow>();
     }
 
     // Update is called once per frame
@@ -51,10 +60,11 @@ public class PlugPlant : MonoBehaviour
                     {
                         sac.SetActive(false);
                         cloneSac = Instantiate(sacPlug, hit.point, startPos.transform.rotation); // créer un sac au sol sur la position de la collision du raycast
-
+                        cloneSac.transform.SetParent(startPos);
                         playerController.enabled = false;
                         SpawnBranch();
-                        count++;
+                        count++; 
+                        cameraFollow.count = 1; // changement du count de la cam
                     }
                 }
                 else // si le rayon ne tape rien alors on "reset" la situation / Player retrouve ses controls
@@ -95,7 +105,6 @@ public class PlugPlant : MonoBehaviour
 
     void SpawnBranch()
     {
-        cloneSac.transform.SetParent(startPos);
         var offsetBranche = new Vector3(0, 0.5f, 0);
         myClone = Instantiate(myPrefab, cloneSac.transform.position + offsetBranche, Quaternion.identity); //Instantie une "branche" pour la pousse (voir growBehaviour)
         myClone.transform.SetParent(startPos);
