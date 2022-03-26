@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}" SchemaVersion="103">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Level" ID="{51E06965-C708-4563-9DAE-2F395CA289A2}">
+					<ChildrenList>
+						<State Name="None" ID="{03523C2F-AD49-4B63-9534-70D34C6422F5}"/>
+						<State Name="Bunker" ID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}"/>
+						<State Name="City" ID="{032367C0-4700-4697-9463-468FA0C461E7}"/>
+						<State Name="Cave" ID="{B1525950-3904-4C50-BBC3-D03E253F5510}"/>
+						<State Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="573090577">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2866347260">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -23,6 +23,87 @@
 				<GameParameter Id="1564184899" Name="SFX_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\SFX_Volume"/>
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX" Hash="1393230061">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3676974778" Name="Arm_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_Alert" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2110043727" Name="Arm_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_ReturnToPost" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4214178660" Name="Arm_Swivel" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_Swivel" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1721747022" Name="BackpackLight_Flashing" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Flashing" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1472878853" Name="BackpackLight_Green" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Green" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2782421265" Name="BackpackLight_Red" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Red" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2188239484" Name="BackpackLight_Yellow" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Yellow" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1118645644" Name="Checkpoint_Reached" ObjectPath="\Events\Default Work Unit\UI\Checkpoint_Reached" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3213624757" Name="Close_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Close_Hangglider" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3169467041" Name="Door_Button_Click" ObjectPath="\Events\Default Work Unit\Objects\Buttons and Switches\Door_Button_Click" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2055526214" Name="Drone_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Alert" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2781585832" Name="Drone_Fire" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Fire" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2955752450" Name="Drone_Hover" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Hover" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2345618075" Name="Drone_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_ReturnToPost" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2772308904" Name="Game_Pause" ObjectPath="\Events\Default Work Unit\UI\Game_Pause" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1359982855" Name="Game_Unpause" ObjectPath="\Events\Default Work Unit\UI\Game_Unpause" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\UI\GameOver" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3294862893" Name="GuardianArm_Swivel" ObjectPath="\Events\Default Work Unit\Enemies\Guardian Arm Boss\GuardianArm_Swivel" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3375032870" Name="Light_TouchPlant" ObjectPath="\Events\Default Work Unit\Objects\Plant\Light_TouchPlant" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1954644116" Name="Move_Box" ObjectPath="\Events\Default Work Unit\Player\Actions\Move_Box" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1675190527" Name="Open_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Open_Hangglider" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="964983010" Name="Open_MainMenu" ObjectPath="\Events\Default Work Unit\UI\Open_MainMenu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3978245845" Name="Pickup" ObjectPath="\Events\Default Work Unit\Player\Actions\Pickup" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2998183107" Name="Plant_Death" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Death" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Death" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2551268862" Name="Player_Fall" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Fall" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2453392179" Name="Player_Footstep" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Footstep" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1282282006" Name="Player_Landing" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Landing" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1337349819" Name="Player_Ram" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Ram" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2161713971" Name="Player_Respawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Respawn" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3359302305" Name="Player_Shot" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Shot" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1028635762" Name="Player_Spawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Spawn" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1457412937" Name="Player_Suffocate" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Suffocate" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1661329569" Name="ReturnTo_MainMenu" ObjectPath="\Events\Default Work Unit\UI\ReturnTo_MainMenu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1224425817" Name="SetLevel_Bunker" ObjectPath="\Events\Music work unit\Music\SetLevel_Bunker" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2647120390" Name="Bunker" ObjectPath="\States\Default Work Unit\Level\Bunker"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2511242657" Name="SetLevel_Cave" ObjectPath="\Events\Music work unit\Music\SetLevel_Cave" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="4122393694" Name="Cave" ObjectPath="\States\Default Work Unit\Level\Cave"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2275076219" Name="SetLevel_City" ObjectPath="\Events\Music work unit\Music\SetLevel_City" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="3888786832" Name="City" ObjectPath="\States\Default Work Unit\Level\City"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1777656929" Name="SetLevel_Tower" ObjectPath="\Events\Music work unit\Music\SetLevel_Tower" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="1737926756" Name="Tower" ObjectPath="\States\Default Work Unit\Level\Tower"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3789515518" Name="Trap_Button_Click" ObjectPath="\Events\Default Work Unit\Objects\Buttons and Switches\Trap_Button_Click" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1029784236" Name="Walker_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Alert" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1606606892" Name="Walker_Footstep" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Footstep" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2456363482" Name="Walker_Ram" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Ram" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2742300585" Name="Walker_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_ReturnToPost" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+			</IncludedEvents>
+			<StateGroups>
+				<StateGroup Id="1737926756" Name="Tower" ObjectPath="\States\Default Work Unit\Level\Tower" GUID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2647120390" Name="Bunker" ObjectPath="\States\Default Work Unit\Level\Bunker" GUID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="3888786832" Name="City" ObjectPath="\States\Default Work Unit\Level\City" GUID="{032367C0-4700-4697-9463-468FA0C461E7}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="4122393694" Name="Cave" ObjectPath="\States\Default Work Unit\Level\Cave" GUID="{B1525950-3904-4C50-BBC3-D03E253F5510}">
+					<States/>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Music work unit" ID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Music" ID="{E6476FD0-AF49-4BCB-AD21-9FAD69AC9D43}" ShortID="731567417">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="20"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="SetLevel_Bunker" ID="{C06B4BE5-6C68-41F1-B058-D4A07905B69D}">
+							<ChildrenList>
+								<Action Name="" ID="{63D9CF4E-C13F-4ECE-AC93-05ECACBB05AE}" ShortID="408809605">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bunker" ID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SetLevel_City" ID="{C9B58AC4-C9D2-4914-9331-449643D5BEA8}">
+							<ChildrenList>
+								<Action Name="" ID="{684EE035-3AD1-4BF0-B4D1-6B9228B58873}" ShortID="580376528">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="City" ID="{032367C0-4700-4697-9463-468FA0C461E7}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SetLevel_Cave" ID="{C6CFFBC8-10F5-4124-AED0-C406B2082D8B}">
+							<ChildrenList>
+								<Action Name="" ID="{CF9AB925-294F-42FE-994E-A595C86F747E}" ShortID="585139885">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cave" ID="{B1525950-3904-4C50-BBC3-D03E253F5510}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SetLevel_Tower" ID="{DF3C00E9-B48D-44D6-BF96-F7A2639C6DC7}">
+							<ChildrenList>
+								<Action Name="" ID="{F18D4CF3-09F1-473D-92F8-44F7583490B6}" ShortID="917353711">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

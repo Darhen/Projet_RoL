@@ -11,6 +11,72 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID ARM_ALERT = 3676974778U;
+        static const AkUniqueID ARM_RETURNTOPOST = 2110043727U;
+        static const AkUniqueID ARM_SWIVEL = 4214178660U;
+        static const AkUniqueID BACKPACKLIGHT_FLASHING = 1721747022U;
+        static const AkUniqueID BACKPACKLIGHT_GREEN = 1472878853U;
+        static const AkUniqueID BACKPACKLIGHT_RED = 2782421265U;
+        static const AkUniqueID BACKPACKLIGHT_YELLOW = 2188239484U;
+        static const AkUniqueID CHECKPOINT_REACHED = 1118645644U;
+        static const AkUniqueID CLOSE_HANGGLIDER = 3213624757U;
+        static const AkUniqueID DOOR_BUTTON_CLICK = 3169467041U;
+        static const AkUniqueID DRONE_ALERT = 2055526214U;
+        static const AkUniqueID DRONE_FIRE = 2781585832U;
+        static const AkUniqueID DRONE_HOVER = 2955752450U;
+        static const AkUniqueID DRONE_RETURNTOPOST = 2345618075U;
+        static const AkUniqueID GAME_PAUSE = 2772308904U;
+        static const AkUniqueID GAME_UNPAUSE = 1359982855U;
+        static const AkUniqueID GAMEOVER = 4158285989U;
+        static const AkUniqueID GUARDIANARM_SWIVEL = 3294862893U;
+        static const AkUniqueID LIGHT_TOUCHPLANT = 3375032870U;
+        static const AkUniqueID MOVE_BOX = 1954644116U;
+        static const AkUniqueID OPEN_HANGGLIDER = 1675190527U;
+        static const AkUniqueID OPEN_MAINMENU = 964983010U;
+        static const AkUniqueID PICKUP = 3978245845U;
+        static const AkUniqueID PLANT_DEATH = 2998183107U;
+        static const AkUniqueID PLAYER_DEATH = 3083087645U;
+        static const AkUniqueID PLAYER_FALL = 2551268862U;
+        static const AkUniqueID PLAYER_FOOTSTEP = 2453392179U;
+        static const AkUniqueID PLAYER_JUMP = 1305133589U;
+        static const AkUniqueID PLAYER_LANDING = 1282282006U;
+        static const AkUniqueID PLAYER_RAM = 1337349819U;
+        static const AkUniqueID PLAYER_RESPAWN = 2161713971U;
+        static const AkUniqueID PLAYER_SHOT = 3359302305U;
+        static const AkUniqueID PLAYER_SPAWN = 1028635762U;
+        static const AkUniqueID PLAYER_SUFFOCATE = 1457412937U;
+        static const AkUniqueID RETURNTO_MAINMENU = 1661329569U;
+        static const AkUniqueID SETLEVEL_BUNKER = 1224425817U;
+        static const AkUniqueID SETLEVEL_CAVE = 2511242657U;
+        static const AkUniqueID SETLEVEL_CITY = 2275076219U;
+        static const AkUniqueID SETLEVEL_TOWER = 1777656929U;
+        static const AkUniqueID TRAP_BUTTON_CLICK = 3789515518U;
+        static const AkUniqueID WALKER_ALERT = 1029784236U;
+        static const AkUniqueID WALKER_FOOTSTEP = 1606606892U;
+        static const AkUniqueID WALKER_RAM = 2456363482U;
+        static const AkUniqueID WALKER_RETURNTOPOST = 2742300585U;
+    } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace LEVEL
+        {
+            static const AkUniqueID GROUP = 2782712965U;
+
+            namespace STATE
+            {
+                static const AkUniqueID BUNKER = 2647120390U;
+                static const AkUniqueID CAVE = 4122393694U;
+                static const AkUniqueID CITY = 3888786832U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID TOWER = 1737926756U;
+            } // namespace STATE
+        } // namespace LEVEL
+
+    } // namespace STATES
+
     namespace SWITCHES
     {
         namespace ENEMYALERTLEVEL
@@ -44,6 +110,12 @@ namespace AK
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
         static const AkUniqueID SFX_VOLUME = 1564184899U;
     } // namespace GAME_PARAMETERS
+
+    namespace BANKS
+    {
+        static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID MAIN = 3161908922U;
+    } // namespace BANKS
 
     namespace BUSSES
     {
