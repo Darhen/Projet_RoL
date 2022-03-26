@@ -5,20 +5,21 @@ using UnityEngine;
 public class CouleurEmmissiveSac : MonoBehaviour
 {
     public Material EmissiveMaterial;
-    public GameObject Sac;
-    public GameObject Sphere;
+    //public GameObject Sac;
+    private GameObject sphere;
     public float emissiveIntensity;
     public Color emissiveColor;
 
     void Start()
     {
+        sphere = GameObject.Find("Sphere");
         emissiveIntensity = 4f;
-        EmissiveMaterial = Sac.GetComponent<Renderer>().material;
+        EmissiveMaterial = this.gameObject.GetComponent<Renderer>().material;
     }
 
     private void Update()
     {
-        emissiveColor = Sphere.GetComponent<NewCheckIfIsInsideBeam>().lerpedColor;
+        emissiveColor = sphere.GetComponent<NewCheckIfIsInsideBeam>().lerpedColor;
         EmissiveMaterial.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
     }
 }

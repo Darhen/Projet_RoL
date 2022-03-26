@@ -19,6 +19,7 @@ public class PlugPlant : MonoBehaviour
 
     private float maxHeigthRay = 1f;
 
+
     GrowthManager growthManager;
 
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class PlugPlant : MonoBehaviour
         startPos = spawnPos.GetComponent<Transform>();
         playerController = GetComponentInParent<PlayerController>();
         growthManager = spawnPos.GetComponent<GrowthManager>();
+        
     }
 
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class PlugPlant : MonoBehaviour
                     {
                         sac.SetActive(false);
                         cloneSac = Instantiate(sacPlug, hit.point, startPos.transform.rotation); // créer un sac au sol sur la position de la collision du raycast
+
                         playerController.enabled = false;
                         SpawnBranch();
                         count++;

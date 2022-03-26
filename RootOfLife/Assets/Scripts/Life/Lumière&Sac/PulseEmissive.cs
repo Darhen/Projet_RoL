@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PulseEmissive : MonoBehaviour
 {
-    public GameObject Sac;
+   // public GameObject Sac;
     public float maxIntensity = 5f;
     public float minIntensity = 0f;
     public float pulseSpeed = 20f; //here, a value of 0.5f would take 2 seconds and a value of 2f would take half a second
@@ -13,11 +13,11 @@ public class PulseEmissive : MonoBehaviour
 
     void Start()
     {
-        emissiveIntensity = Sac.GetComponent<CouleurEmmissiveSac>().emissiveIntensity;
+        emissiveIntensity = this.gameObject.GetComponent<CouleurEmmissiveSac>().emissiveIntensity;
     }
     void Update()
     {
-        emissiveIntensity = Mathf.MoveTowards(Sac.GetComponent<CouleurEmmissiveSac>().emissiveIntensity, targetIntensity, Time.deltaTime * pulseSpeed);
+        emissiveIntensity = Mathf.MoveTowards(this.gameObject.GetComponent<CouleurEmmissiveSac>().emissiveIntensity, targetIntensity, Time.deltaTime * pulseSpeed);
         if (emissiveIntensity >= maxIntensity)
         {
             emissiveIntensity = maxIntensity;
@@ -28,7 +28,7 @@ public class PulseEmissive : MonoBehaviour
             emissiveIntensity = minIntensity;
             targetIntensity = maxIntensity;
         }
-        Sac.GetComponent<CouleurEmmissiveSac>().emissiveIntensity = emissiveIntensity;
+        this.gameObject.GetComponent<CouleurEmmissiveSac>().emissiveIntensity = emissiveIntensity;
 
     }
 }

@@ -6,16 +6,17 @@ public class PulseEmissiveActivation : MonoBehaviour
 {
     public bool pulseActiv;
     public float variable;
-    public GameObject Sphere;
+    private GameObject Sphere;
     CouleurEmmissiveSac couleurEmissiveSac;
-    public GameObject sac;
+    //public GameObject sac;
 
     // Start is called before the first frame update
     void Start()
     {
         this.GetComponent<PulseEmissive>().enabled = false;
-        couleurEmissiveSac = sac.GetComponent<CouleurEmmissiveSac>();
+        couleurEmissiveSac = this.gameObject.GetComponent<CouleurEmmissiveSac>();
         pulseActiv = false;
+        Sphere = GameObject.Find("Sphere");
 
     }
 
