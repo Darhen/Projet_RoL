@@ -18,6 +18,7 @@ public class PickupSac : MonoBehaviour
     public Animator animatorPlayer;
     private GameObject mainDroitePlayer;
     private Vector3 positionMainDroitePlayer;
+    private MoveObject moveObject;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PickupSac : MonoBehaviour
         animatorPlayer = GameObject.Find("TestCharacter27_janvier").GetComponent<Animator>();
         playerController = player.GetComponent<PlayerController>();
         mainDroitePlayer = GameObject.Find("mixamorig:RightHand");
+        moveObject = player.GetComponent<MoveObject>();
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class PickupSac : MonoBehaviour
     {
         //desactive le playercontroller le temps de la sequence
         playerController.enabled = false;
+        moveObject.enabled = false;
         //animation du pickup de sac
         animatorPlayer.SetTrigger("PickupObject");
         //transfert du sac prop dans la main
@@ -72,6 +75,7 @@ public class PickupSac : MonoBehaviour
         growthManager.enabled = true;
         //reactivation du playerController
         playerController.enabled = true;
+        moveObject.enabled = true;
         //desactiver le trigger
         this.gameObject.SetActive(false);
     }

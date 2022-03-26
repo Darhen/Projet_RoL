@@ -41,6 +41,7 @@ public class CameraFollow : MonoBehaviour
     public bool inWall;
     private Vector3 boundaryPosition;
     private int lastDirection;
+    public bool boundary;
     
     private void Start()
     {
@@ -127,11 +128,20 @@ public class CameraFollow : MonoBehaviour
             count = 0;
         }
 
+        //declarer que si la cam est inWall on active le boundary
+        if(inWall)
+        {
+            boundary = true;
+        }
+        else
+        {
+            boundary = false;
+        }
     }
 
     private void FixedUpdate()
     {
-        if (!inWall)
+        if (!boundary)
         {
             Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
@@ -155,13 +165,14 @@ public class CameraFollow : MonoBehaviour
                 slopeOffset = new Vector3(0, 0, 0);
             }
         }
-        if (inWall)
+        if (boundary)
         {
             if (leftBoundary && xInput <= 0)
             {
                 Vector3 desiredPosition = new Vector3(boundaryPosition.x, target.transform.position.y + offset.y, transform.position.z);
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
                 transform.position = smoothedPosition;
+                
             }
             else
             {
