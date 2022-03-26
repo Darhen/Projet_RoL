@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class DetectionPlayer : MonoBehaviour
 {
+
     public bool playerInside = false;
     public bool playerIsDetected;
     Collider m_Collider = null;
@@ -14,6 +15,7 @@ public class DetectionPlayer : MonoBehaviour
     Animator BrasDetection;
     public GameObject bras;
     public GameObject brasDetector;
+
 
     void Start()
     {
@@ -53,8 +55,8 @@ public class DetectionPlayer : MonoBehaviour
         {
             playerInside = false;
         }
-
     }
+
     void Update()
     {
         if (playerInside)

@@ -6,16 +6,12 @@ public class LookAtPlayer : MonoBehaviour
 {
     public bool PlayerDetected;
     public Transform sphere;
-    public int speed = 10;
-    
 
-    //public Transform originPoint;
     DetectionPlayer detectionPlayer;
 
     void Start()
     {
         detectionPlayer = sphere.GetComponent<DetectionPlayer>();
-        
     }
 
     // Update is called once per frame
@@ -29,14 +25,14 @@ public class LookAtPlayer : MonoBehaviour
         }
         else
         {
-            PlayerDetected = false;
             StopCoroutine("PlayerDetection");
         }
     }
+
     IEnumerator PlayerDetection()
     {
         yield return new WaitForSeconds(0.75f);
         transform.LookAt(sphere);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(1f);
     }
 }
