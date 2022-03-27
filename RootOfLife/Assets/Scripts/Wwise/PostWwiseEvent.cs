@@ -11,6 +11,6 @@ public class PostWwiseEvent : MonoBehaviour
     public void PlayFootstepSound()
     {
         MyEvent.Post(gameObject);
-        Debug.Log("SoundPlayed");
+        //Debug.Log("SoundPlayed");
     }
 }
