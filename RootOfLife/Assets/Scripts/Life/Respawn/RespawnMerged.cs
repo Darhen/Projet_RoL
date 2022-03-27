@@ -73,8 +73,8 @@ public class RespawnMerged : MonoBehaviour
         isDying = false;
         newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
         newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
-        activateCheckIfIsInside.activated = false;
-        myLight.SetActive(false);
+        //activateCheckIfIsInside.activated = false;
+        //myLight.SetActive(false);
         player.transform.position = respawnPoint;
         droneDetectePlayer.PlayerIsDetected = false;
         playerController.enabled = true;
