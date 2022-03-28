@@ -110,7 +110,20 @@
 						<Folder Name="Sentry Arm" ID="{DDDD20A2-073E-4B88-9728-F3755DEACD3D}" ShortID="588030959">
 							<ChildrenList>
 								<Event Name="Arm_Swivel" ID="{1AC8D01C-2EF3-4DAC-B941-68C680AA6B18}"/>
-								<Event Name="Arm_Alert" ID="{C864B529-0C44-4F2F-B25A-5E85A048591E}"/>
+								<Event Name="Arm_Alert" ID="{C864B529-0C44-4F2F-B25A-5E85A048591E}">
+									<ChildrenList>
+										<Action Name="" ID="{C6ACFD0D-7490-4CAF-8084-B66FE651D332}" ShortID="358784332">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="35"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="New_Trigger" ID="{A64425E2-C105-4F66-BD9D-01DD0DF325B9}" WorkUnitID="{0DA1E156-B881-49A1-9937-78F8E56A494A}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Arm_ReturnToPost" ID="{EF82B05C-6111-421F-B835-D871417AD278}"/>
 							</ChildrenList>
 						</Folder>
