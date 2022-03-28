@@ -20,6 +20,8 @@ public class DroneDetecteur : MonoBehaviour
 
     void Start()
     {
+        //drone = GameObject.FindWithTag("EnnemiDrone");
+        //droneDetector = GameObject.FindWithTag("DetectionEnnemi");
         m_Collider = GetComponent<Collider>();
         Debug.Assert(m_Collider);
         _renderer = GetComponent<Renderer>();

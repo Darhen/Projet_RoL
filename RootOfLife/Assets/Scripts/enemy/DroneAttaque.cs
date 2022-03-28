@@ -51,7 +51,7 @@ public class DroneAttaque : MonoBehaviour
     IEnumerator ShootPlayer()
     {
         elapsed = 0;
-        while(elapsed < 3f)
+        while(elapsed < 2f)
         {
             yield return null;
             elapsed += Time.deltaTime;
