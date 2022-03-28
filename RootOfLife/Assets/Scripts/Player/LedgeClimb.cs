@@ -69,21 +69,25 @@ public class LedgeClimb : MonoBehaviour
             //Déclarer que le player ledge climb pour l'animation
             isLedgeClimbing = true;
             //Tourner le player vers la direction du ledge
-            Quaternion turnModel = Quaternion.LookRotation(new Vector3(directionLedge, 0, 0));
-            model.rotation = turnModel;
+            /*Quaternion turnModel = Quaternion.LookRotation(new Vector3(directionLedge, 0, 0));
+            model.rotation = turnModel;*/
         }
     }
     //Ce IEnumator desactive les contrôles du player pour la durée de l'animation
     IEnumerator Waiter()
     {
+        //Tourner le player vers la direction du ledge
+        Quaternion turnModel = Quaternion.LookRotation(new Vector3(directionLedge, 0, 0));
+        model.rotation = turnModel;
+        //Ledge Climb
         playerController.enabled = false;
-        plane.enabled = false;
+        //plane.enabled = false;
         rbPlayer.isKinematic = true;
         Debug.Log("playerController enabled false");
         yield return new WaitForSeconds(timerAnimation);
         isLedgeClimbing = false;
         playerController.enabled = true;
-        plane.enabled = true;
+        //plane.enabled = true;
         //Éliminer la vélocité du player
         rbPlayer.velocity = new Vector3(0, 0, 0);
         rbPlayer.isKinematic = false;
