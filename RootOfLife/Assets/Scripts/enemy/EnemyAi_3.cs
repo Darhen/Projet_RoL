@@ -5,13 +5,15 @@ using UnityEngine.AI;
 
 public class EnemyAi_3 : MonoBehaviour
 {
-    //public NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
     public float health;
+
+    private Animator anim;
 
     //public bool isSearching;
 
@@ -32,13 +34,13 @@ public class EnemyAi_3 : MonoBehaviour
 
     //public GameObject projPos;
 
-    //private void Awake()
-    //{
+    private void Awake()
+    {
     //    player = GameObject.Find("Player").transform;
-    //    agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
     //    isSearching = false;
     //    Patroling();
-    //}
+    }
 
     private void Update()
     {
@@ -46,17 +48,18 @@ public class EnemyAi_3 : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-      // if (!playerInSightRange && !playerInAttackRange) Patroling();
-      // if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+       if (!playerInSightRange && !playerInAttackRange) Patroling();
+       if (playerInSightRange && !playerInAttackRange) ChasePlayer();
        if (playerInAttackRange && playerInSightRange) AttackPlayer();
 
 
         
     }
 
-    /*private void Patroling()
+    private void Patroling()
     {
-       if (walkPointSet == false)
+        anim.Play("walk");
+        /*if (walkPointSet == false)
             SearchWalkPoint();
 
         if (walkPointSet == true)
@@ -70,9 +73,9 @@ public class EnemyAi_3 : MonoBehaviour
         {
             walkPointSet = false;
         }
-       
+       */
     }
-
+    /*
     private void SearchWalkPoint()
     {
         //Caalculate random point in range
@@ -84,47 +87,47 @@ public class EnemyAi_3 : MonoBehaviour
        // if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
     }
-
+    */
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        GetComponent<NavMeshAgent>().speed = 50f;
-        GetComponent<NavMeshAgent>().acceleration = 50f;
-        walkPointSet = false;
+        GetComponent<NavMeshAgent>().speed = 6f;
+        GetComponent<NavMeshAgent>().acceleration = 6f;
+        //walkPointSet = false;
     }
 
-    */
+
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
-     //   agent.SetDestination(transform.position);
-     //   GetComponent<NavMeshAgent>().speed = 50f;
-     //   GetComponent<NavMeshAgent>().acceleration = 50f;
-     //   walkPointSet = false;
-     //   transform.LookAt(player);
-        this.GetComponent<Animator>().Play("attack");
+        agent.SetDestination(transform.position);
+        GetComponent<NavMeshAgent>().speed = 50f;
+        GetComponent<NavMeshAgent>().acceleration = 50f;
+        //walkPointSet = false;
+        transform.LookAt(player);
 
-        //   if (Vector3.Distance(walkPoint, player.position) > 1.0f)
-        //   {
-        //      walkPoint = player.position;
-        //       agent.destination = walkPoint;
-        //   }
-
+        /*
+        if (Vector3.Distance(walkPoint, player.position) > 1.0f)
+        {
+            walkPoint = player.position;
+            agent.destination = walkPoint;
+        }
+        */
 
         //if (!alreadyAttacked)
-        //{
-        ///Attack code here
-        // Rigidbody rb = Instantiate(projectile, projPos.transform.position, projPos.transform.rotation/*Quaternion.identity*/).GetComponent<Rigidbody>();
-        // rb.AddForce(transform.forward * 1000f, ForceMode.Impulse);
-        // rb.AddForce(transform.up * 1f, ForceMode.Impulse);
+        {
+            ///Attack code here
+            // Rigidbody rb = Instantiate(projectile, projPos.transform.position, projPos.transform.rotation/*Quaternion.identity*/).GetComponent<Rigidbody>();
+            // rb.AddForce(transform.forward * 1000f, ForceMode.Impulse);
+            // rb.AddForce(transform.up * 1f, ForceMode.Impulse);
 
-        ///
+            ///
 
-        //alreadyAttacked = true;
-        //Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        //}
+            //alreadyAttacked = true;
+            //Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
     }
-    
+
     private void ResetAttack()
     {
         alreadyAttacked = false;
