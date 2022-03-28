@@ -16,6 +16,7 @@ public class MoveObject : MonoBehaviour
     public Vector3 movementVector;
     private Rigidbody myRigidbody;
     public GameObject otherBox;
+    public bool pushMovement;
 
     public float otherboxPositionX;
 
@@ -75,10 +76,40 @@ public class MoveObject : MonoBehaviour
 
         if (pushingController)
         {
-            otherBox.transform.parent = this.gameObject.transform;
-            otherboxPositionX = playerPosition.x + 2.7f * direction;
-            otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
-            otherBox.GetComponent<Rigidbody>().isKinematic = false;
+            if(direction == 1)
+            {
+                otherBox.transform.parent = this.gameObject.transform;
+                otherboxPositionX = playerPosition.x + 2.7f;
+                otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
+                if (xInput == 0)
+                {
+                    otherBox.GetComponent<Rigidbody>().isKinematic = true;
+                    pushMovement = false;
+                }
+                if (xInput != 0)
+                {
+                    otherBox.GetComponent<Rigidbody>().isKinematic = false;
+                    pushMovement = true;
+                }
+            }
+            if(direction == -1)
+            {
+                otherBox.transform.parent = this.gameObject.transform;
+                //otherboxPositionX = playerPosition.x - 2.7f;
+                otherboxPositionX = playerPosition.x - 3f;
+                otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
+                if (xInput == 0)
+                {
+                    otherBox.GetComponent<Rigidbody>().isKinematic = true;
+                    pushMovement = false;
+                }
+                if (xInput != 0)
+                {
+                    otherBox.GetComponent<Rigidbody>().isKinematic = false;
+                    pushMovement = true;
+                }
+            }
+            
         }
 
         if (!pushingController)
@@ -108,16 +139,15 @@ public class MoveObject : MonoBehaviour
     private void FixedUpdate()
     {
         //Controller dédié aux box
-        if (pushingController)
+        if (pushingController && pushMovement)
         {
             myRigidbody.velocity = movementVector;
         }
 
-       /*
-        else
+        if(pushingController && !pushMovement)
         {
-            otherBox.transform.parent = null;
-        }*/
+            myRigidbody.velocity = new Vector3 (0, 0, 0);
+        }
     }
    
     private void OnCollisionEnter(Collision collision)

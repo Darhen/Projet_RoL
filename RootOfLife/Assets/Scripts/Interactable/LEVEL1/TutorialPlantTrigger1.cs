@@ -7,6 +7,8 @@ public class TutorialPlantTrigger1 : MonoBehaviour
     public SensorTrigger sensorTrigger;
     public Animator triggerAnimator;
     public bool isActive;
+    public GameObject nextObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +31,6 @@ public class TutorialPlantTrigger1 : MonoBehaviour
         triggerAnimator.SetTrigger("deactivate");
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
+        nextObject.SetActive(true);
     }
 }

@@ -11,6 +11,7 @@ public class SensorTrigger : MonoBehaviour
     public ParticleSystem spark;
     public Light redLight;
     public Light greenLight;
+    public bool onTriggerEnterPlayer;
 
     //bool a cocher si on veut que ce trigger fonctionne avec la plante
     public bool activateWithPlant;
@@ -36,7 +37,15 @@ public class SensorTrigger : MonoBehaviour
             redLight.enabled = false;
             greenLight.enabled = true;
         }
+        if(other.CompareTag("Player") && onTriggerEnterPlayer)
+        {
+            isActive = true;
+            spark.Play();
+            redLight.enabled = false;
+            greenLight.enabled = true;
+        }
     }
+
 
     private void OnTriggerStay(Collider other)
     {

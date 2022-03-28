@@ -25,6 +25,7 @@ public class TutorialPlayerTrigger1 : MonoBehaviour
         if(other.tag == "Player")
         {
             trigger1.SetActive(true);
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
