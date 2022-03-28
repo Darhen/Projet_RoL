@@ -125,6 +125,8 @@ public class PlayerClimbing : MonoBehaviour
             isClimbing = true;
             //calcul du offset en x
             offsetX = -directionX * 0.5f;
+            //desactiver le script player controller
+            playerController.enabled = false;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -133,6 +135,7 @@ public class PlayerClimbing : MonoBehaviour
         {
             isClimbing = false;
             rbPlayer.isKinematic = false;
+            playerController.enabled = true;
         }
         
     }

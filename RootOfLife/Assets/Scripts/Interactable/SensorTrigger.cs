@@ -8,6 +8,9 @@ public class SensorTrigger : MonoBehaviour
     public bool isActive;
     public Material activeMat;
     public Material notActiveMat;
+    public ParticleSystem spark;
+    public Light redLight;
+    public Light greenLight;
 
     //bool a cocher si on veut que ce trigger fonctionne avec la plante
     public bool activateWithPlant;
@@ -29,6 +32,9 @@ public class SensorTrigger : MonoBehaviour
         if (other.CompareTag("FollowMe") || other.CompareTag("OldRoot"))
         {
             isActive = true;
+            spark.Play();
+            redLight.enabled = false;
+            greenLight.enabled = true;
         }
     }
 

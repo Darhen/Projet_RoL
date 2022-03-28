@@ -81,9 +81,9 @@ public class LedgeClimb : MonoBehaviour
         rbPlayer.isKinematic = true;
         Debug.Log("playerController enabled false");
         yield return new WaitForSeconds(timerAnimation);
+        isLedgeClimbing = false;
         playerController.enabled = true;
         plane.enabled = true;
-        isLedgeClimbing = false;
         //Éliminer la vélocité du player
         rbPlayer.velocity = new Vector3(0, 0, 0);
         rbPlayer.isKinematic = false;

@@ -16,6 +16,10 @@ public class SwitchGymPlante : MonoBehaviour
     public GrowthManager growthManager;
     private MoveObject moveObject;
 
+    public GameObject lamp1;
+    public GameObject pad;
+    public ParticleSystem spark;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,12 +57,19 @@ public class SwitchGymPlante : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         //jouer animation player
         animatorPlayer.SetTrigger("powerSwitch");
+        animatorPlayer.SetBool("cinematic", true);
         //animator.SetTrigger("switch");
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.4f);
+        spark.Play();
         animatorWindow.SetTrigger("gymMode");
         //reactiver le player controller et autres fonctions
         GameplayMode();
-       
+        animatorPlayer.SetBool("cinematic", false);
+        //allumer les lampes apres la fermeture de la fenetre
+        yield return new WaitForSeconds(8f);
+        lamp1.gameObject.SetActive(true);
+        pad.gameObject.SetActive(true);
+
     }
 
     //desactiver le player controller et autres fonctions pour une cinematique

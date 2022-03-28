@@ -58,6 +58,7 @@ public class PickupSac : MonoBehaviour
         moveObject.enabled = false;
         //animation du pickup de sac
         animatorPlayer.SetTrigger("PickupObject");
+        animatorPlayer.SetBool("cinematic", true);
         //transfert du sac prop dans la main
         yield return new WaitForSeconds(0.5f);
         sacProp.GetComponent<Transform>().position = positionMainDroitePlayer;
@@ -76,6 +77,7 @@ public class PickupSac : MonoBehaviour
         //reactivation du playerController
         playerController.enabled = true;
         moveObject.enabled = true;
+        animatorPlayer.SetBool("cinematic", false);
         //desactiver le trigger
         this.gameObject.SetActive(false);
     }
