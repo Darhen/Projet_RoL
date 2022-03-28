@@ -3103,6 +3103,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002286970}
   m_CullTransparentMesh: 1
+--- !u!1 &2043952874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6764732775457254973, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
+  m_PrefabInstance: {fileID: 1229615773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2043952875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5931885997261577503, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
+  m_PrefabInstance: {fileID: 1229615773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2059858278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3170,5 +3180,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 651437435592630360, guid: 33603ce8c6800fa4a88cca9d4893d69e, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 2043952874}
+    - target: {fileID: 651437435592630360, guid: 33603ce8c6800fa4a88cca9d4893d69e, type: 3}
+      propertyPath: spherePosition
+      value: 
+      objectReference: {fileID: 2043952875}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33603ce8c6800fa4a88cca9d4893d69e, type: 3}
