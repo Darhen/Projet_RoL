@@ -6,12 +6,16 @@ public class LookAtPlayer : MonoBehaviour
 {
     public bool PlayerDetected;
     public Transform sphere;
+    public bool isAttacking;
 
     DetectionPlayer detectionPlayer;
+    RespawnMerged respawnMerged;
 
     void Start()
     {
         detectionPlayer = sphere.GetComponent<DetectionPlayer>();
+        isAttacking = false;
+        respawnMerged = sphere.GetComponentInParent<RespawnMerged>();
     }
 
     // Update is called once per frame
@@ -22,10 +26,12 @@ public class LookAtPlayer : MonoBehaviour
         if (PlayerDetected)
         {
             StartCoroutine("PlayerDetection");
+            StartCoroutine("AttackPlayer");
         }
         else
         {
             StopCoroutine("PlayerDetection");
+            isAttacking = false;
         }
     }
 
@@ -33,6 +39,24 @@ public class LookAtPlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(0.75f);
         transform.LookAt(sphere);
-        yield return new WaitForSeconds(1f);
+    }
+
+    IEnumerator AttackPlayer()
+    {
+        float elapsed = 0;
+        while (elapsed < 2f)
+        {
+            yield return null;
+            elapsed += Time.deltaTime;
+        }
+
+        if (!isAttacking && PlayerDetected)
+        {
+            //LANCER ANIMATION BRAS ATTACK
+            Debug.Log("Anim BrasAttack");
+            isAttacking = true;
+            respawnMerged.isDead(); // On call la mort du player
+            StopCoroutine("PlayerDetection");
+        }
     }
 }
