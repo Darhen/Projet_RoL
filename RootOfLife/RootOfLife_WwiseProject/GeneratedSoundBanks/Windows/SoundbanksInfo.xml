@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -24,12 +24,16 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="290117088">
+		<SoundBank Id="3161908922" Language="SFX" Hash="491066056">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3676974778" Name="Arm_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_Alert" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3676974778" Name="Arm_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_Alert" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionTrigger>
+						<ActionTriggerEntry Id="4163741908" Name="New_Trigger" ObjectPath="\Triggers\Default Work Unit\New_Trigger"/>
+					</ActionTrigger>
+				</Event>
 				<Event Id="2110043727" Name="Arm_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_ReturnToPost" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="4214178660" Name="Arm_Swivel" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_Swivel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1721747022" Name="BackpackLight_Flashing" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Flashing" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
@@ -106,7 +110,14 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1282282006" Name="Player_Landing" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Landing" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1282282006" Name="Player_Landing" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Landing" DurationType="OneShot" DurationMin="7.68" DurationMax="7.68">
+					<IncludedMemoryFiles>
+						<File Id="169007319" Language="SFX">
+							<ShortName>Oneshot_Chord.wav</ShortName>
+							<Path>SFX\Oneshot_Chord_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1337349819" Name="Player_Ram" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Ram" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2161713971" Name="Player_Respawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Respawn" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3359302305" Name="Player_Shot" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Shot" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
@@ -162,6 +173,9 @@
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
+			<Triggers>
+				<Trigger Id="4163741908" Name="New_Trigger" ObjectPath="\Triggers\Default Work Unit\New_Trigger"/>
+			</Triggers>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

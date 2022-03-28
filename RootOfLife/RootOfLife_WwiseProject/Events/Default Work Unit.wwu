@@ -47,7 +47,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Player_Landing" ID="{3522576F-4E7B-4076-932C-7E6FB37C4359}"/>
+								<Event Name="Player_Landing" ID="{3522576F-4E7B-4076-932C-7E6FB37C4359}">
+									<ChildrenList>
+										<Action Name="" ID="{D6C46929-2B3D-449A-8B22-C18CF7AB6D2C}" ShortID="825831184">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Oneshot_Chord" ID="{1989605F-316C-4786-BD94-42FC48C356A2}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Player_Jump" ID="{09B4E164-EDC9-430C-8277-41874F075418}"/>
 								<Event Name="Open_Hangglider" ID="{3D6068CE-3497-400A-964B-149ADDB5DF84}"/>
 								<Event Name="Close_Hangglider" ID="{FB934B7E-4088-4828-9D64-94FF684A906B}"/>
