@@ -5,12 +5,17 @@ using UnityEngine;
 public class PostWwiseEvent : MonoBehaviour
 {
 
-    public AK.Wwise.Event MyEvent;
+    public AK.Wwise.Event Player_Footstep;
+    public AK.Wwise.Event Player_Jump;
 
 
     public void PlayFootstepSound()
     {
-        MyEvent.Post(gameObject);
-        //Debug.Log("SoundPlayed");
+        Player_Footstep.Post(gameObject);
+    }
+
+    public void PlayJumpSound()
+    {
+        Player_Jump.Post(gameObject);
     }
 }
