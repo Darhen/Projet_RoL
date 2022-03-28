@@ -55,7 +55,7 @@ public class LookAtPlayer : MonoBehaviour
             //LANCER ANIMATION BRAS ATTACK
             Debug.Log("Anim BrasAttack");
             isAttacking = true;
-            respawnMerged.isDead(); // On call la mort du player
+            //respawnMerged.isDead(); // On call la mort du player
             StopCoroutine("PlayerDetection");
         }
     }
