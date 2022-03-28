@@ -14,6 +14,7 @@ public class DroneDetecteur : MonoBehaviour
     public GameObject droneDetector;
     public GameObject player;
     PlayerController playerController;
+    RespawnMerged respawn;
     public bool playerDetected = false;
     private Stop_Drone stop_drone;
 
@@ -25,13 +26,26 @@ public class DroneDetecteur : MonoBehaviour
         m_Collider = GetComponent<Collider>();
         Debug.Assert(m_Collider);
         _renderer = GetComponent<Renderer>();
-        animatorDrone = drone.GetComponent<Animator>();
-        animatorDetection = droneDetector.GetComponent<Animator>();
+
+        respawn = player.GetComponent<RespawnMerged>();
         playerController = player.GetComponent<PlayerController>();
-        stop_drone = drone.GetComponent<Stop_Drone>();
+        
     }
 
-
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "DetectionEnnemi")
+        {
+            drone = other.GetComponentInParent<Stop_Drone>().gameObject;
+            droneDetector = drone.GetComponentInChildren<DroneAttaque>().gameObject;
+            animatorDetection = droneDetector.GetComponent<Animator>();
+            animatorDrone = drone.GetComponent<Animator>();
+            stop_drone = drone.GetComponent<Stop_Drone>();
+        }
+        
+        //drone;
+    }
+    
     void OnTriggerStay(Collider trigger)
     {
         var dynamicOcclusion = trigger.GetComponent<VLB.DynamicOcclusionRaycasting>();
@@ -43,10 +57,12 @@ public class DroneDetecteur : MonoBehaviour
                 // This GameObject is inside the beam's TriggerZone.
                 // Make sure it's not hidden by an occluder
                 isInsideDroneBeam = !dynamicOcclusion.IsColliderHiddenByDynamicOccluder(m_Collider);
+                droneDetector.GetComponent<DroneAttaque>().PlayerIsDetected = isInsideDroneBeam;
             }
             else
             {
                 isInsideDroneBeam = true;
+                droneDetector.GetComponent<DroneAttaque>().PlayerIsDetected = isInsideDroneBeam;
             }
         }
         
@@ -58,27 +74,35 @@ public class DroneDetecteur : MonoBehaviour
         if (trigger.gameObject.tag == "DetectionEnnemi")
         {
             isInsideDroneBeam = false;
-            
+            droneDetector.GetComponent<DroneAttaque>().PlayerIsDetected = isInsideDroneBeam;
         }
             
     }
 
     void Update()
     {
+
         if (isInsideDroneBeam || stop_drone.amDead == true)
         {
             playerController.speed = 7.5f;
             playerDetected = true;
-            animatorDrone.enabled = false;
-            animatorDetection.Play("WhiteToRed");
+            if (animatorDrone != null) animatorDrone.enabled = false;
+            if (animatorDetection != null) animatorDetection.Play("WhiteToRed");
         }
         else
         {
+            if (respawn.isDying == true)
+            {
+                isInsideDroneBeam = false;
+            }
+
             playerController.speed = 10f;
             playerDetected = false;
-            animatorDrone.enabled = true;
-            animatorDetection.Play("RedToWhite");
+            if(animatorDrone != null)animatorDrone.enabled = true;
+            if(animatorDetection != null)animatorDetection.Play("RedToWhite");
         }
+
+        
 
     }
 

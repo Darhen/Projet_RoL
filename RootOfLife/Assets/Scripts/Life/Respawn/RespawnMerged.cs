@@ -13,13 +13,12 @@ public class RespawnMerged : MonoBehaviour
     ActivateCheckIfIsInside activateCheckIfIsInside;
     CouleurEmmissiveSac couleurEmissiveSac;
 
-    public DroneAttaque droneDetectePlayer;
-
+    DroneDetecteur droneDetecteur;
+    DroneAttaque droneAttaque;
 
     public GameObject sphere;
     public GameObject myLight;
-
-    public GameObject DroneDetecteur;
+    //public GameObject beamDetecteur;
 
     PlayerController playerController;
     public bool isDying = false;
@@ -33,7 +32,9 @@ public class RespawnMerged : MonoBehaviour
         newCheckIfIsInsideBeam = sphere.GetComponent<NewCheckIfIsInsideBeam>();
         activateCheckIfIsInside = sphere.GetComponent<ActivateCheckIfIsInside>();
 
-        droneDetectePlayer = DroneDetecteur.GetComponent<DroneAttaque>();
+        droneDetecteur = sphere.GetComponent<DroneDetecteur>();
+        //beamDetecteur = GameObject.FindWithTag("DetectionEnnemi");
+        //droneAttaque = beamDetecteur.GetComponent<DroneAttaque>();
 
         respawnPoint = player.transform.position;
     }
@@ -42,7 +43,9 @@ public class RespawnMerged : MonoBehaviour
     {
         if (other.CompareTag("Ennemi") || other.CompareTag("EnnemiGround") || other.CompareTag("EnnemiDrone"))
         {
+            //droneDetecteur.isInsideDroneBeam = false;
             isDead();
+            droneAttaque.isCreated = false;
         }
         else if (other.CompareTag("Trou"))
         {
@@ -83,7 +86,7 @@ public class RespawnMerged : MonoBehaviour
         //activateCheckIfIsInside.activated = false;
         //myLight.SetActive(false);
         player.transform.position = respawnPoint;
-        droneDetectePlayer.PlayerIsDetected = false;
+        
         playerController.enabled = true;
         Debug.Log("Test");
         // Physics.SyncTransforms();

@@ -7,8 +7,10 @@ public class DroneAttaque : MonoBehaviour
 
     public GameObject sphere;
     public GameObject projectile;
+    public GameObject player;
     public Transform spherePosition;
     DroneDetecteur droneDetecteur;
+    RespawnMerged respawn;
     public bool isInsideDroneBeam;
     public bool PlayerIsDetected;
     private float elapsed;
@@ -22,18 +24,19 @@ public class DroneAttaque : MonoBehaviour
     {
         droneDetecteur = sphere.GetComponent<DroneDetecteur>();
         isCreated = false;
+        respawn = player.GetComponent<RespawnMerged>();
     }
 
 
     void Update()
     {
-        PlayerIsDetected = droneDetecteur.playerDetected;
-        
+        //PlayerIsDetected = droneDetecteur.isInsideDroneBeam;
 
         if (PlayerIsDetected)
         {
             StartCoroutine(LookAtPlayer());
             StartCoroutine(ShootPlayer());
+            
         }
         else if (!PlayerIsDetected)
         {
@@ -41,6 +44,11 @@ public class DroneAttaque : MonoBehaviour
             isCreated = false;
         }
         
+       /* if (respawn.isDying)
+        {
+            StopCoroutine(ShootPlayer());
+            isCreated = false;
+        }*/
     }
 
     IEnumerator LookAtPlayer()
@@ -62,6 +70,7 @@ public class DroneAttaque : MonoBehaviour
             Instantiate(projectile, transform.position, this.gameObject.transform.rotation);
             isCreated = true;
         }
+
         /* yield return new WaitForSeconds(3f);
 
          if (!isCreated && PlayerIsDetected)
