@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 6994756583786134835}
   - component: {fileID: 6994756583786134828}
   - component: {fileID: 6994756583786134829}
-  - component: {fileID: 6994756583786134830}
+  - component: {fileID: 8843728651719233192}
   m_Layer: 0
   m_Name: "Dr\xF4ne"
   m_TagString: EnnemiDrone
@@ -302,7 +302,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.55
   m_Center: {x: 0, y: -0.0000000018626451, z: 0.03901615}
---- !u!114 &6994756583786134830
+--- !u!114 &8843728651719233192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,10 +311,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6994756583786134824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c81f1383e529484e8b6702a42d28a83, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ed78f4223a798646b21cc526647dd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drone: {fileID: 6994756583786134824}
   amDead: 0
 --- !u!1 &6994756583900126025
 GameObject:
@@ -618,9 +617,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphere: {fileID: 0}
   projectile: {fileID: 3257588788874881209, guid: 01c1abea787fa91459c24dd6b9a74f63, type: 3}
+  player: {fileID: 0}
   spherePosition: {fileID: 0}
-  isInsideDroneBeam: 0
   PlayerIsDetected: 0
+  PlayerIsDetectedSol: 0
   timeBtwShots: 0
   startTimeBtwShots: 20
   isCreated: 0

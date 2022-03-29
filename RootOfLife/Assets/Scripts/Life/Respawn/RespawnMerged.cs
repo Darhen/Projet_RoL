@@ -15,6 +15,8 @@ public class RespawnMerged : MonoBehaviour
 
     DroneDetecteur droneDetecteur;
     DroneAttaque droneAttaque;
+    enemy_sol_mouvement ennemiSolMouv;
+    private GameObject ennemiSol;
 
     public GameObject sphere;
     public GameObject myLight;
@@ -22,6 +24,7 @@ public class RespawnMerged : MonoBehaviour
 
     PlayerController playerController;
     public bool isDying = false;
+    public bool estMort = false;
 
 
     private void Start()
@@ -33,6 +36,8 @@ public class RespawnMerged : MonoBehaviour
         activateCheckIfIsInside = sphere.GetComponent<ActivateCheckIfIsInside>();
 
         droneDetecteur = sphere.GetComponent<DroneDetecteur>();
+        ennemiSol = droneDetecteur.ennemiSol;
+        ennemiSolMouv = ennemiSol.GetComponent<enemy_sol_mouvement>();
         //beamDetecteur = GameObject.FindWithTag("DetectionEnnemi");
         //droneAttaque = beamDetecteur.GetComponent<DroneAttaque>();
 
@@ -44,15 +49,29 @@ public class RespawnMerged : MonoBehaviour
         if (other.CompareTag("Ennemi") || other.CompareTag("EnnemiGround") || other.CompareTag("EnnemiDrone"))
         {
             //droneDetecteur.isInsideDroneBeam = false;
+            /*if (other.gameObject.tag == "EnnemiGround")
+            {
+                ennemiSolMouv.speed = 0;
+            }*/
+
             isDead();
-            droneAttaque.isCreated = false;
+            
+            if (other.CompareTag("EnnemiGround"))
+            {
+                ennemiSolMouv.speed = 0;
+                StartCoroutine(ResetEnnemiSol());
+            }
+               
         }
-        else if (other.CompareTag("Trou"))
+        
+        if (other.CompareTag("Trou"))
         {
             isDead();
         }
-        else if (other.gameObject.tag == "CheckPoint")
+        
+        if (other.gameObject.tag == "CheckPoint")
         {
+            Debug.Log("CheckPoint!");
             respawnPoint = player.transform.position;
         }
     }
@@ -61,20 +80,21 @@ public class RespawnMerged : MonoBehaviour
     {
         if (newCheckIfIsInsideBeam.variableT >= newCheckIfIsInsideBeam.maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
         {
+            isDying = true;
             isDead();
         }
     }
 
     public void isDead()
     {
-        
-        isDying = true;
-        StartCoroutine(RespawnCollision());
+
+        estMort = true;
+        StartCoroutine(Respawn());
         FadeOutScreen.SetActive(false);
         
     }
 
-    IEnumerator RespawnCollision()
+    IEnumerator Respawn()
     {
         playerController.enabled = false;
         yield return new WaitForSeconds(1f);
@@ -86,10 +106,19 @@ public class RespawnMerged : MonoBehaviour
         //activateCheckIfIsInside.activated = false;
         //myLight.SetActive(false);
         player.transform.position = respawnPoint;
-        
+        estMort = false;
         playerController.enabled = true;
         Debug.Log("Test");
+        
         // Physics.SyncTransforms();
     }
+
+    IEnumerator ResetEnnemiSol()
+    {
+        Debug.Log("ALLO!");
+        yield return new WaitForSeconds(3f);
+        ennemiSolMouv.speed = 5;
+    }
+
 
 }

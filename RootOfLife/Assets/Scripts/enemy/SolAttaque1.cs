@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SolAttaque1 : MonoBehaviour
 {
-    public GameObject sphere;
+   /* public GameObject sphere;
     public Transform spherePosition;
     DroneDetecteur droneDetecteur;
     public bool isInsideDroneBeam;
@@ -63,7 +63,7 @@ public class SolAttaque1 : MonoBehaviour
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, playerPosition, Time.deltaTime * 40f);
         }
     }
-       
+       */
 }
 
 

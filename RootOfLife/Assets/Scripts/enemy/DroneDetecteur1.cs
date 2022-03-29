@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(MeshRenderer))]
 public class DroneDetecteur1 : MonoBehaviour
 {
-    public bool isInsideDroneBeam = false;
+    /*public bool isInsideDroneBeam = false;
     public bool isInsideSolBeam = false;
     Collider m_Collider = null;
     Renderer _renderer;
@@ -115,6 +115,6 @@ public class DroneDetecteur1 : MonoBehaviour
 
     }
 
-
+    */
 
 }

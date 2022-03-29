@@ -497,7 +497,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5985878588488295895}
   - component: {fileID: 4438331643150895277}
-  - component: {fileID: 1614725261957939592}
+  - component: {fileID: 6919058165653995617}
+  - component: {fileID: 7817247287622901631}
+  - component: {fileID: 8752246788413632316}
+  - component: {fileID: 23459793091904527}
   m_Layer: 0
   m_Name: transformer_robot
   m_TagString: Untagged
@@ -540,7 +543,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1614725261957939592
+--- !u!114 &6919058165653995617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -549,10 +552,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 7298440556640786372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8618014384a63649853e58e88a5e552, type: 3}
+  m_Script: {fileID: 11500000, guid: d06d5cc1c99f6024c92f11c90e2f24b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  waypoints: []
+  speed: 5
+--- !u!114 &7817247287622901631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298440556640786372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed78f4223a798646b21cc526647dd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amDead: 0
+--- !u!65 &8752246788413632316
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298440556640786372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.109209, y: 7.629576, z: 9.534238}
+  m_Center: {x: -0.019957984, y: 2.857369, z: -0.3136555}
+--- !u!65 &23459793091904527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298440556640786372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.484976, y: 9.088286, z: 10.262142}
+  m_Center: {x: 0.13288216, y: 2.6069782, z: -0.2551228}
 --- !u!1 &7501629780028618995
 GameObject:
   m_ObjectHideFlags: 0

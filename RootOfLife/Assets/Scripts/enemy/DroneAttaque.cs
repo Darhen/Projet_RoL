@@ -9,10 +9,15 @@ public class DroneAttaque : MonoBehaviour
     public GameObject projectile;
     public GameObject player;
     public Transform spherePosition;
+    Animator animatorSol;
     DroneDetecteur droneDetecteur;
-    RespawnMerged respawn;
-    public bool isInsideDroneBeam;
+    enemy_sol_mouvement ennemiSolMouv;
+    private GameObject ennemiSol;
+    //DroneDetecteur droneDetecteur;
+    //RespawnMerged respawn;
+    //public bool isInsideDroneBeam;
     public bool PlayerIsDetected;
+    public bool PlayerIsDetectedSol;
     private float elapsed;
 
     public float timeBtwShots;
@@ -22,9 +27,13 @@ public class DroneAttaque : MonoBehaviour
 
     void Start()
     {
-        droneDetecteur = sphere.GetComponent<DroneDetecteur>();
+        //droneDetecteur = sphere.GetComponent<DroneDetecteur>();
         isCreated = false;
-        respawn = player.GetComponent<RespawnMerged>();
+        droneDetecteur = sphere.GetComponent<DroneDetecteur>();
+        ennemiSol = droneDetecteur.ennemiSol;
+        ennemiSolMouv = ennemiSol.GetComponent<enemy_sol_mouvement>();
+        //animatorSol = droneDetecteur.GetComponent<Animator>.animatorSol;
+        //respawn = player.GetComponent<RespawnMerged>();
     }
 
 
@@ -32,23 +41,33 @@ public class DroneAttaque : MonoBehaviour
     {
         //PlayerIsDetected = droneDetecteur.isInsideDroneBeam;
 
+        //Si détecté par ennemi drone
         if (PlayerIsDetected)
         {
             StartCoroutine(LookAtPlayer());
             StartCoroutine(ShootPlayer());
             
         }
-        else if (!PlayerIsDetected)
+        if (!PlayerIsDetected)
         {
             StopCoroutine(ShootPlayer());
             isCreated = false;
         }
         
-       /* if (respawn.isDying)
+
+        //Si détecté par ennemi sol
+        if (PlayerIsDetectedSol)
         {
-            StopCoroutine(ShootPlayer());
-            isCreated = false;
-        }*/
+            StartCoroutine(LookAtPlayer());
+            StartCoroutine(ChargePlayer());
+        }
+
+        if (!PlayerIsDetectedSol)
+        {
+            StopCoroutine(ChargePlayer());
+            StopCoroutine(LookAtPlayer());
+        }
+
     }
 
     IEnumerator LookAtPlayer()
@@ -70,17 +89,24 @@ public class DroneAttaque : MonoBehaviour
             Instantiate(projectile, transform.position, this.gameObject.transform.rotation);
             isCreated = true;
         }
-
-        /* yield return new WaitForSeconds(3f);
-
-         if (!isCreated && PlayerIsDetected)
-         { 
-             Instantiate(projectile, transform.position, this.gameObject.transform.rotation);
-             isCreated = true;
-         }*/
     }
-       
-   
+
+   IEnumerator ChargePlayer()
+    {
+        elapsed = 0;
+        while (elapsed < 1f)
+        {
+            yield return null;
+            elapsed += Time.deltaTime;
+            
+        }
+
+        if (PlayerIsDetectedSol)
+        {
+            ennemiSolMouv.speed = 20;
+        }
+    }
+
 }
 
 
