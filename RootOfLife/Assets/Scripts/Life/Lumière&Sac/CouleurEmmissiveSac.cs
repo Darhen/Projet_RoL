@@ -14,7 +14,7 @@ public class CouleurEmmissiveSac : MonoBehaviour
     {
         sphere = GameObject.Find("Sphere");
         emissiveIntensity = 4f;
-        EmissiveMaterial = this.gameObject.GetComponent<Renderer>().material;
+        //EmissiveMaterial = this.gameObject.GetComponent<Renderer>().material;
     }
 
     private void Update()

@@ -11623,7 +11623,7 @@ PrefabInstance:
       objectReference: {fileID: 3124496072062757464}
     - target: {fileID: 394126053626346263, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6280970534928005066, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
       propertyPath: m_RootOrder
@@ -11676,7 +11676,7 @@ PrefabInstance:
     - target: {fileID: 8778336691585744960, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
       propertyPath: myLight
       value: 
-      objectReference: {fileID: 150772784}
+      objectReference: {fileID: 8522380566845396615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
 --- !u!1 &6764732775457254973 stripped
@@ -11710,7 +11710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265326678391199340, guid: f58e7e88a824d2b439b0193bacac6dba, type: 3}
       propertyPath: m_VersionIndex
-      value: 2347
+      value: 2971
       objectReference: {fileID: 0}
     - target: {fileID: 2265326678391199340, guid: f58e7e88a824d2b439b0193bacac6dba, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -12086,6 +12086,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SacADos Final
       objectReference: {fileID: 0}
+    - target: {fileID: 4193646477957181324, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+      propertyPath: m_Range
+      value: 3.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193646477957181324, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+      propertyPath: m_Intensity
+      value: 3.82
+      objectReference: {fileID: 0}
     - target: {fileID: 4193646477957181326, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: Sphere
       value: 
@@ -12094,13 +12102,37 @@ PrefabInstance:
       propertyPath: Sphere
       value: 
       objectReference: {fileID: 6764732775457254973}
+    - target: {fileID: 4193646477957181330, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1122311
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193646477957181330, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1122311
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193646477957181330, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6549149
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193646477957181330, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.115
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193646477957181330, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.464
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193646477957181330, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.058
+      objectReference: {fileID: 0}
     - target: {fileID: 4193646478371564492, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4193646478371564492, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_VersionIndex
-      value: 2485
+      value: 2635
       objectReference: {fileID: 0}
     - target: {fileID: 4193646478371564492, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -12268,7 +12300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4193646479134784259, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_VersionIndex
-      value: 2494
+      value: 2644
       objectReference: {fileID: 0}
     - target: {fileID: 4193646479134784259, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -12491,6 +12523,11 @@ PrefabInstance:
 --- !u!4 &8200820200785897844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4447421445358178400, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+  m_PrefabInstance: {fileID: 5509943830003562772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8522380566845396615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4193646477957181331, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
   m_PrefabInstance: {fileID: 5509943830003562772}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8828456224828732366 stripped
