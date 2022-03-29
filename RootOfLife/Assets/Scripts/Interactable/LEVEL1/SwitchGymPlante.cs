@@ -17,6 +17,7 @@ public class SwitchGymPlante : MonoBehaviour
     private MoveObject moveObject;
 
     public GameObject lamp1;
+    public GameObject lamp2;
     public GameObject pad;
     public ParticleSystem spark;
 
@@ -68,6 +69,7 @@ public class SwitchGymPlante : MonoBehaviour
         //allumer les lampes apres la fermeture de la fenetre
         yield return new WaitForSeconds(8f);
         lamp1.gameObject.SetActive(true);
+        lamp2.gameObject.SetActive(true);
         pad.gameObject.SetActive(true);
 
     }

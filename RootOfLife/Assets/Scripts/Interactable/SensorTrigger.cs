@@ -26,6 +26,7 @@ public class SensorTrigger : MonoBehaviour
         {
             this.gameObject.GetComponent<Renderer>().material = notActiveMat;
         }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,9 +41,6 @@ public class SensorTrigger : MonoBehaviour
         if(other.CompareTag("Player") && onTriggerEnterPlayer)
         {
             isActive = true;
-            spark.Play();
-            redLight.enabled = false;
-            greenLight.enabled = true;
         }
     }
 
@@ -57,7 +55,7 @@ public class SensorTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!activateWithPlant && other.CompareTag("Player") || !activateWithPlant && other.CompareTag("Box") /*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
+        if (!activateWithPlant && other.CompareTag("Player") && !onTriggerEnterPlayer || !activateWithPlant && other.CompareTag("Box") && !onTriggerEnterPlayer/*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
         {
             isActive = false;
         }

@@ -11,7 +11,7 @@ public class MoveObject : MonoBehaviour
     public float offsetX;
     public float xInput;
     public Vector3 playerPosition;
-    public Vector3 edgeBox;
+    public float edgeBox;
     public float speed;
     public Vector3 movementVector;
     private Rigidbody myRigidbody;
@@ -19,6 +19,7 @@ public class MoveObject : MonoBehaviour
     public bool pushMovement;
 
     public float otherboxPositionX;
+    public float otherBoxXDimension;
 
     PlayerController playerController;
 
@@ -79,7 +80,7 @@ public class MoveObject : MonoBehaviour
             if(direction == 1)
             {
                 otherBox.transform.parent = this.gameObject.transform;
-                otherboxPositionX = playerPosition.x + 2.7f;
+                otherboxPositionX = playerPosition.x + edgeBox;
                 otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
                 if (xInput == 0)
                 {
@@ -96,7 +97,7 @@ public class MoveObject : MonoBehaviour
             {
                 otherBox.transform.parent = this.gameObject.transform;
                 //otherboxPositionX = playerPosition.x - 2.7f;
-                otherboxPositionX = playerPosition.x - 3f;
+                otherboxPositionX = playerPosition.x - edgeBox;
                 otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
                 if (xInput == 0)
                 {
@@ -166,8 +167,9 @@ public class MoveObject : MonoBehaviour
         if (collision.gameObject.tag == "Box")
         {
             canPush = true;
-            edgeBox = collision.gameObject.transform.position;
             otherBox = collision.gameObject;
+            otherBoxXDimension = otherBox.GetComponent<BoxCollider>().bounds.size.x;
+            edgeBox = (otherBoxXDimension/2) + 0.7f;
         }
     }
     
@@ -177,7 +179,7 @@ public class MoveObject : MonoBehaviour
         if (collision.gameObject.tag == "Box" && !playerIsPushing)
         {
             canPush = false;
-            edgeBox = collision.gameObject.transform.position;
+            edgeBox = (otherBoxXDimension / 2);
 
         }
 
