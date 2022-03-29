@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemy_sol_mouvement : MonoBehaviour
 {
     public Transform[] waypoints;
-    public int speed = 5;
+    public float speed;
 
     private int waypointIndex;
     private float dist;
@@ -14,6 +14,7 @@ public class enemy_sol_mouvement : MonoBehaviour
     {
         waypointIndex = 0;
         transform.LookAt(waypoints[waypointIndex].position);
+        speed = 5f;
     }
 
     void Update()

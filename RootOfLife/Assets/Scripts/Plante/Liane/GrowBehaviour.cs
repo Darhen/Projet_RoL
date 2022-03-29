@@ -28,6 +28,10 @@ public class GrowBehaviour : MonoBehaviour
 
     public GameObject pont;
 
+    public bool isTouchingGround;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +60,8 @@ public class GrowBehaviour : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
 
+        isTouchingGround = Physics.CheckSphere(groundCheck.position, 4f, groundLayer);
+
         if (this.transform.localScale.y <= 0.2f)
         {
             if (Input.GetKey(KeyCode.F) || Input.GetButton("Fire2"))
@@ -65,9 +71,14 @@ public class GrowBehaviour : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))
             {
-                Instantiate(pont, endPoint.transform.position, Quaternion.identity);
+                
                 growthManager.StartCoroutine("DestroyRoots"); // à remplacer pour permettre au branches de rester pour le trampoline
                 this.gameObject.tag = "FollowMe";
+
+                if (!isTouchingGround)
+                {
+                    Instantiate(pont, endPoint.transform.position, Quaternion.identity);
+                }
                 //
                 /*plugPlant.count = 0;
                 playerController.enabled = true;
@@ -100,6 +111,7 @@ public class GrowBehaviour : MonoBehaviour
             this.enabled = false;
         }
     }
+        
     void SpawnClone()
     {
         prefabClone = Instantiate(myPrefab, endPoint.transform.position, endPoint.transform.rotation) as GameObject;
@@ -116,3 +128,4 @@ public class GrowBehaviour : MonoBehaviour
         }
     }
 }
+

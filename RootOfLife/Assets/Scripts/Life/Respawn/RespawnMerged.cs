@@ -25,6 +25,7 @@ public class RespawnMerged : MonoBehaviour
     PlayerController playerController;
     public bool isDying = false;
     public bool estMort = false;
+    public bool deadBySol = false;
 
 
     private void Start()
@@ -58,7 +59,8 @@ public class RespawnMerged : MonoBehaviour
             
             if (other.CompareTag("EnnemiGround"))
             {
-                ennemiSolMouv.speed = 0;
+                deadBySol = true;
+                //ennemiSolMouv.speed = 0;
                 StartCoroutine(ResetEnnemiSol());
             }
                
@@ -117,7 +119,8 @@ public class RespawnMerged : MonoBehaviour
     {
         Debug.Log("ALLO!");
         yield return new WaitForSeconds(3f);
-        ennemiSolMouv.speed = 5;
+        deadBySol = false;
+        //ennemiSolMouv.speed = 5;
     }
 
 

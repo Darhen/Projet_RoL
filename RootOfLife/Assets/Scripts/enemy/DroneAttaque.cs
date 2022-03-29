@@ -13,6 +13,7 @@ public class DroneAttaque : MonoBehaviour
     DroneDetecteur droneDetecteur;
     enemy_sol_mouvement ennemiSolMouv;
     private GameObject ennemiSol;
+    RespawnMerged respawn;
     //DroneDetecteur droneDetecteur;
     //RespawnMerged respawn;
     //public bool isInsideDroneBeam;
@@ -32,6 +33,7 @@ public class DroneAttaque : MonoBehaviour
         droneDetecteur = sphere.GetComponent<DroneDetecteur>();
         ennemiSol = droneDetecteur.ennemiSol;
         ennemiSolMouv = ennemiSol.GetComponent<enemy_sol_mouvement>();
+        respawn = player.GetComponent<RespawnMerged>();
         //animatorSol = droneDetecteur.GetComponent<Animator>.animatorSol;
         //respawn = player.GetComponent<RespawnMerged>();
     }
@@ -58,13 +60,14 @@ public class DroneAttaque : MonoBehaviour
         //Si détecté par ennemi sol
         if (PlayerIsDetectedSol)
         {
+            Debug.Log("PlayerDetected");
             StartCoroutine(LookAtPlayer());
-            StartCoroutine(ChargePlayer());
+            //StartCoroutine(ChargePlayer());
         }
 
         if (!PlayerIsDetectedSol)
         {
-            StopCoroutine(ChargePlayer());
+            //StopCoroutine(ChargePlayer());
             StopCoroutine(LookAtPlayer());
         }
 
@@ -90,7 +93,7 @@ public class DroneAttaque : MonoBehaviour
             isCreated = true;
         }
     }
-
+/*
    IEnumerator ChargePlayer()
     {
         elapsed = 0;
@@ -101,11 +104,13 @@ public class DroneAttaque : MonoBehaviour
             
         }
 
-        if (PlayerIsDetectedSol)
+        yield return new WaitForSeconds(0.1f);
+
+       if (respawn.deadBySol == false)
         {
             ennemiSolMouv.speed = 20;
         }
-    }
+    }*/
 
 }
 
