@@ -59,8 +59,8 @@ public class RespawnMerged : MonoBehaviour
             
             if (other.CompareTag("EnnemiGround"))
             {
+                Debug.Log("Allo");
                 deadBySol = true;
-                //ennemiSolMouv.speed = 0;
                 StartCoroutine(ResetEnnemiSol());
             }
                
@@ -105,19 +105,14 @@ public class RespawnMerged : MonoBehaviour
         isDying = false;
         newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
         newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
-        //activateCheckIfIsInside.activated = false;
-        //myLight.SetActive(false);
         player.transform.position = respawnPoint;
         estMort = false;
         playerController.enabled = true;
-        Debug.Log("Test");
-        
-        // Physics.SyncTransforms();
+
     }
 
     IEnumerator ResetEnnemiSol()
     {
-        Debug.Log("ALLO!");
         yield return new WaitForSeconds(3f);
         deadBySol = false;
         //ennemiSolMouv.speed = 5;

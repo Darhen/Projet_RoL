@@ -24,6 +24,7 @@ public class DroneDetecteur : MonoBehaviour
     public bool playerDetected = false;
     public bool playerDetectedSol = false;
     StopAnim stopAnim;
+    //public Vector3 rotaTempo;
 
 
     void Start()
@@ -124,13 +125,16 @@ public class DroneDetecteur : MonoBehaviour
 
             if (isInsideSolBeam == false)
             {
+                //solDetector.transform.rotation = Quaternion.Euler(rotaTempo);
                 playerController.speed = 10f;
                 playerDetectedSol = false;
                 ennemiSolMouv.speed = 5f;
                 if (animatorSol != null) animatorSol.enabled = true;
                 animatorSol.SetBool("IsCharging", false);
                 if (animatorDetectionSol != null) animatorDetectionSol.Play("RedToWhite");
-                solDetector.transform.rotation = Quaternion.Euler(new Vector3(14, 0, -90));
+                //solDetector.transform.Rotate(14, 0, -90);
+                //animBeamSol.enabled = true;
+                //solDetector.transform.rotation = Quaternion.Euler(new Vector3(14, 0, -90));
             }
         }
 
@@ -151,6 +155,8 @@ public class DroneDetecteur : MonoBehaviour
 
             if (isInsideSolBeam)
             {
+                //store value rotation SolDectetor
+                //rotaTempo = solDetector.transform.rotation.eulerAngles;
                 Debug.Log("PlayerIsDetected!");
                 playerController.speed = 7.5f;
                 playerDetectedSol = true;
@@ -158,7 +164,9 @@ public class DroneDetecteur : MonoBehaviour
                 //ennemiSolMouv.speed = 0;
                 //if (animatorSol != null) animatorSol.enabled = false;
                 animatorSol.SetBool("IsCharging", true);
-                if (animatorDetectionSol != null) animatorDetectionSol.Play("WhiteToRed");
+                if (animatorDetectionSol != null) animatorDetectionSol.Play("WhiteToRedSol");
+                //animBeamSol.enabled = false;
+                
             }
 
         }
