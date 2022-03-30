@@ -20,7 +20,6 @@ public class RespawnMerged : MonoBehaviour
 
     public GameObject sphere;
     public GameObject myLight;
-    //public GameObject beamDetecteur;
 
     PlayerController playerController;
     public bool isDying = false;
@@ -39,24 +38,19 @@ public class RespawnMerged : MonoBehaviour
         droneDetecteur = sphere.GetComponent<DroneDetecteur>();
         ennemiSol = droneDetecteur.ennemiSol;
         ennemiSolMouv = ennemiSol.GetComponent<enemy_sol_mouvement>();
-        //beamDetecteur = GameObject.FindWithTag("DetectionEnnemi");
-        //droneAttaque = beamDetecteur.GetComponent<DroneAttaque>();
 
         respawnPoint = player.transform.position;
     }
 
     void OnTriggerEnter(Collider other)
     {
+        //Mort par ennemi robot
         if (other.CompareTag("Ennemi") || other.CompareTag("EnnemiGround") || other.CompareTag("EnnemiDrone"))
         {
-            //droneDetecteur.isInsideDroneBeam = false;
-            /*if (other.gameObject.tag == "EnnemiGround")
-            {
-                ennemiSolMouv.speed = 0;
-            }*/
 
             isDead();
             
+            //Mort par ennemi sol
             if (other.CompareTag("EnnemiGround"))
             {
                 Debug.Log("Allo");
@@ -66,11 +60,13 @@ public class RespawnMerged : MonoBehaviour
                
         }
         
+        //Mort par trou
         if (other.CompareTag("Trou"))
         {
             isDead();
         }
         
+        //CheckPoint
         if (other.gameObject.tag == "CheckPoint")
         {
             Debug.Log("CheckPoint!");
@@ -80,6 +76,7 @@ public class RespawnMerged : MonoBehaviour
 
     private void Update()
     {
+        //Mort par manque de lumière
         if (newCheckIfIsInsideBeam.variableT >= newCheckIfIsInsideBeam.maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
         {
             isDying = true;
@@ -115,7 +112,6 @@ public class RespawnMerged : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         deadBySol = false;
-        //ennemiSolMouv.speed = 5;
     }
 
 

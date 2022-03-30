@@ -24,17 +24,14 @@ public class DroneDetecteur : MonoBehaviour
     public bool playerDetected = false;
     public bool playerDetectedSol = false;
     StopAnim stopAnim;
-    //public Vector3 rotaTempo;
 
 
     void Start()
     {
-        //drone = GameObject.FindWithTag("EnnemiDrone");
-        //droneDetector = GameObject.FindWithTag("DetectionEnnemi");
+
         m_Collider = GetComponent<Collider>();
         Debug.Assert(m_Collider);
         _renderer = GetComponent<Renderer>();
-
         respawn = player.GetComponent<RespawnMerged>();
         playerController = player.GetComponent<PlayerController>();
         
@@ -105,6 +102,8 @@ public class DroneDetecteur : MonoBehaviour
     
     private void OnTriggerExit(Collider trigger)
     {
+
+        //Sort de la détection ennemi drone
         if (trigger.gameObject.tag == "DetectionEnnemi")
         {
             isInsideDroneBeam = false;
@@ -118,6 +117,7 @@ public class DroneDetecteur : MonoBehaviour
             }
         }
         
+        //Sort de la détection ennemi sol
         if (trigger.gameObject.tag == "DetectionEnnemiSol")
         {
             isInsideSolBeam = false;
@@ -125,16 +125,18 @@ public class DroneDetecteur : MonoBehaviour
 
             if (isInsideSolBeam == false)
             {
-                //solDetector.transform.rotation = Quaternion.Euler(rotaTempo);
                 playerController.speed = 10f;
                 playerDetectedSol = false;
                 ennemiSolMouv.speed = 5f;
                 if (animatorSol != null) animatorSol.enabled = true;
                 animatorSol.SetBool("IsCharging", false);
                 if (animatorDetectionSol != null) animatorDetectionSol.Play("RedToWhite");
-                //solDetector.transform.Rotate(14, 0, -90);
-                //animBeamSol.enabled = true;
-                //solDetector.transform.rotation = Quaternion.Euler(new Vector3(14, 0, -90));
+                if (respawn.deadBySol == true)
+                {
+                    Debug.Log("T'es mort");
+                    ennemiSolMouv.speed = 0f;
+                    if (animatorSol != null) animatorSol.enabled = false;
+                }
             }
         }
 
@@ -142,9 +144,10 @@ public class DroneDetecteur : MonoBehaviour
 
     void Update()
     {
-        // Détection ennemi drone
+        
         if (isInsideDroneBeam || isInsideSolBeam || stopAnim.amDead == true)
         {
+            // Détection ennemi drone
             if (isInsideDroneBeam)
             {
                 playerController.speed = 7.5f;
@@ -153,93 +156,27 @@ public class DroneDetecteur : MonoBehaviour
                 if (animatorDetection != null) animatorDetection.Play("WhiteToRed");
             }
 
+            // Détection ennemi sol
             if (isInsideSolBeam)
             {
-                //store value rotation SolDectetor
-                //rotaTempo = solDetector.transform.rotation.eulerAngles;
+                
                 Debug.Log("PlayerIsDetected!");
                 playerController.speed = 7.5f;
                 playerDetectedSol = true;
                 ennemiSolMouv.speed = 15f;
-                //ennemiSolMouv.speed = 0;
-                //if (animatorSol != null) animatorSol.enabled = false;
                 animatorSol.SetBool("IsCharging", true);
                 if (animatorDetectionSol != null) animatorDetectionSol.Play("WhiteToRedSol");
-                //animBeamSol.enabled = false;
-                
+                if (respawn.deadBySol == true)
+                {
+                    Debug.Log("T'es mort");
+                    ennemiSolMouv.speed = 0f;
+                    if (animatorSol != null) animatorSol.enabled = false;
+                }
+
             }
 
         }
 
-        if (/*isInsideSolBeam && */respawn.deadBySol == true)
-        {
-            Debug.Log("T'es mort");
-            ennemiSolMouv.speed = 0f;
-            if (animatorSol != null) animatorSol.enabled = false;
-        }
-        /*
-        if(respawn.deadBySol == false)
-        {
-            ennemiSolMouv.speed = 5f;
-        }*/
-
-        /*
-                if (!isInsideDroneBeam)
-                {
-                    playerController.speed = 10f;
-                    playerDetected = false;
-                    if (animatorDrone != null) animatorDrone.enabled = true;
-                    if (animatorDetection != null) animatorDetection.Play("RedToWhitde");
-                }
-
-                if (isInsideSolBeam == false)
-                {
-                    playerController.speed = 10f;
-                    playerDetectedSol = false;
-                    if (animatorSol != null) animatorSol.enabled = true;
-                    if (animatorDetectionSol != null) animatorDetectionSol.Play("RedToWhite");
-                }*/
-        /*else
-        {
-            Debug.Log("PlayerIsNotDetected!");
-            playerController.speed = 10f;
-            playerDetected = false;
-            playerDetectedSol = false;
-            if(animatorDrone != null)animatorDrone.enabled = true;
-            if(animatorDetection != null)animatorDetection.Play("RedToWhitde");
-            if (animatorSol != null) animatorSol.enabled = true;
-            if (animatorDetectionSol != null) animatorDetectionSol.Play("RedToWhite");
-        }*/
-
-        /*
-        //Détection ennemi sol
-        if (isInsideSolBeam == true || stopAnim.amDead == true)
-        {
-            Debug.Log("PlayerIsDetected!");
-            playerController.speed = 7.5f;
-            playerDetectedSol = true;
-            //if (animatorSol != null) animatorSol.enabled = false;
-            if (animatorDetectionSol != null) animatorDetectionSol.Play("WhiteToRed");
-        }
-        else if (!isInsideSolBeam)
-        {
-            playerController.speed = 10f;
-            playerDetectedSol = false;
-            if (animatorSol != null) animatorSol.enabled = true;
-            if (animatorDetectionSol != null) animatorDetectionSol.Play("RedToWhite");
-        }
-        */
-
-        //Reset isInsideBeam après mort
-        /*if (respawn.isDying == true)
-        {
-            isInsideDroneBeam = false;
-            isInsideSolBeam = false;
-        }*/
-
-
     }
-
-
 
 }
