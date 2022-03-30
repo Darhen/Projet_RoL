@@ -6,6 +6,9 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
 {
     public GameObject player;
     public GameObject nextObject;
+    public GameObject nextLight;
+    public GameObject oldObject;
+    public Animator oldObjectAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,7 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,7 +33,11 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
     IEnumerator ActivateTrigger()
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        oldObjectAnimator.SetTrigger("deactivate");
         yield return new WaitForSeconds(1f);
+        oldObject.SetActive(false);
         nextObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        nextLight.SetActive(true);
     }
 }

@@ -35,7 +35,10 @@ public class Trampoline : MonoBehaviour
         {
             bounceSpeedChecked = false;
         }
-
+        if (velocityCheck < 0)
+        {
+            bounce = false;
+        }
     }
 
     private void FixedUpdate()
@@ -52,6 +55,7 @@ public class Trampoline : MonoBehaviour
             //jouer animation bounce feuille
             //collision.gameObject.GetComponent<Animator>().Play("trampoline_bounce");
             collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
+            bounce = true;
         }
         else
         {

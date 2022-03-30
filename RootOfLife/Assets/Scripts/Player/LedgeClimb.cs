@@ -9,6 +9,7 @@ public class LedgeClimb : MonoBehaviour
     Plane plane;
     Vector3 endPosition;
     Rigidbody rbPlayer;
+    Trampoline trampoline;
 
     public float offset;
     public int direction;
@@ -18,6 +19,7 @@ public class LedgeClimb : MonoBehaviour
     public bool isLadderClimbing;
     public int directionLedge;
     public Transform model;
+    public bool bounce;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class LedgeClimb : MonoBehaviour
         timerAnimation = 1.2f;
         rbPlayer = GetComponent<Rigidbody>();
         directionLedge = 1;
+        trampoline = GetComponent<Trampoline>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class LedgeClimb : MonoBehaviour
     {
         isJumping = playerController.isJumping;
         isLadderClimbing = playerClimbing.isClimbing;
+        bounce = trampoline.bounce;
 
         //On détermine la direction du joueur pour orienter son offset
         if (Input.GetAxis("Horizontal") > 0)
@@ -54,7 +58,7 @@ public class LedgeClimb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ledge") && isJumping )
+        if (other.gameObject.CompareTag("Ledge") && isJumping || other.gameObject.CompareTag("Ledge") && bounce)
         {
             //Determiner la direction du ledge climb
             directionLedge = other.gameObject.GetComponent<LedgeClimbDirection>().direction;

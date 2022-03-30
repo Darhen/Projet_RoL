@@ -6,6 +6,7 @@ public class CameraTrigger1 : MonoBehaviour
 {
     public GameObject mainCamera;
     CameraFollow cameraFollow;
+    public Vector3 cinematicOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class CameraTrigger1 : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            cameraFollow.cinematicOffset = new Vector3(0, 0, -7f);
+            cameraFollow.cinematicOffset = cinematicOffset;
         }
     }
 }
