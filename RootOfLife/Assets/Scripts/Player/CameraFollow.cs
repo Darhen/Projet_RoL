@@ -43,6 +43,9 @@ public class CameraFollow : MonoBehaviour
     private Vector3 boundaryPosition;
     private int lastDirection;
     public bool boundary;
+
+    //offset cinematique
+    public Vector3 cinematicOffset;
     
     private void Start()
     {
@@ -158,7 +161,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (!boundary)
         {
-            Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
+            Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset + cinematicOffset;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
             transform.position = smoothedPosition;
 
@@ -191,7 +194,7 @@ public class CameraFollow : MonoBehaviour
             }
             else
             {
-                Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
+                Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset + cinematicOffset;
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
                 transform.position = smoothedPosition;
 
