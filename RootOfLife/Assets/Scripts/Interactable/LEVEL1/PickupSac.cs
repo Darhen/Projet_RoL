@@ -77,6 +77,7 @@ public class PickupSac : MonoBehaviour
         //reactivation du playerController
         playerController.enabled = true;
         moveObject.enabled = true;
+        playerController.canSpawnSac = true;
         animatorPlayer.SetBool("cinematic", false);
         //desactiver le trigger
         this.gameObject.SetActive(false);

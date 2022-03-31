@@ -45,7 +45,6 @@ public class PlayerClimbing : MonoBehaviour
         //calcul des inputs
         yInput = Input.GetAxis("Vertical");
         xInput = Input.GetAxis("Horizontal");
-
         
 
         //permettre la collision avec le ladder une fois grounded apres un jump
@@ -92,9 +91,6 @@ public class PlayerClimbing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //calcul de la position en y du joueur par rapport au input y
-        offsetY = yInput * Time.deltaTime * climbSpeed;
-
         //lors de isClimbing, la position du joueur est en x,z la meme chose que le ladder et en y est un offset avec le input vertical
         if (isClimbing)
         {
