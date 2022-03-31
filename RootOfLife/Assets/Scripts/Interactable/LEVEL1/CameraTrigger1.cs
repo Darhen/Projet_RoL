@@ -29,7 +29,7 @@ public class CameraTrigger1 : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && activeCinematique)
         {
-            StartCoroutine("cinematique");
+            StartCoroutine("Cinematique");
         }
         if (other.gameObject.tag == "Player" && !activeCinematique)
         {
