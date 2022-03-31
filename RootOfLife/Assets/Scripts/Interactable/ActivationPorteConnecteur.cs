@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivationPorte : MonoBehaviour
+public class ActivationPorteConnecteur : MonoBehaviour
 {
-
     public Animator porteAnimator;
     public bool switchActivated;
     public GameObject Porte;
@@ -21,19 +20,15 @@ public class ActivationPorte : MonoBehaviour
     // Update is called once per frame
     void OnTriggerStay(Collider trigger)
     {
-        if (trigger.CompareTag("Player")){
-            
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Debug.Log("Ca fonctionne");
+        if (trigger.CompareTag("Player"))
+        {
                 switchActivated = true;
                 porteAnimator.SetBool("Activated", true);
-            }
         }
     }
     void Update()
     {
-        if (respawnMerged.isDying == true)
+        if (respawnMerged.estMort == true)
         {
             switchActivated = false;
             porteAnimator.SetBool("Activated", false);

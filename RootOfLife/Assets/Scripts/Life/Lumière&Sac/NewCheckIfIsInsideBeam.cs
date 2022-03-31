@@ -27,8 +27,6 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     public int maxT;
     public int minT;
     public float midT;
-    /* private bool flag;*/
-
     
     Renderer _renderer;
 
@@ -42,24 +40,8 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         midT = 0.5f;
         minT = 0;
 
-        /* var meshRenderer = GetComponent<MeshRenderer>();
-         if (meshRenderer)
-             m_Material = meshRenderer.material;
-         Debug.Assert(m_Material);*/
     }
-    /*
-    void Update()
-    {
-        if (m_Material)
-        {
-            m_Material.SetColor("_Color", isInsideBeam ? Color.green : Color.red);
-        }
-    }*/
 
-    void FixedUpdate()
-    {
-       // isInsideBeam = false;
-    }
 
     void OnTriggerStay(Collider trigger)
     {
@@ -74,6 +56,11 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         else
         {
             isInsideBeam = true;
+        }
+
+        if (!trigger.CompareTag("LumiereVolu"))
+        {
+            isInsideBeam = false;
         }
     }
 
@@ -116,48 +103,6 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
             variableT = minT;
         }
 
-
-
-        /*lerpedColor = Color.Lerp(colorIni, colorFin, variableT);
-        _renderer.material.color = lerpedColor;
-
-        if (isInsideBeam)
-        {
-            Debug.Log("Coucou");
-            if(variableT > minT)
-            {
-                variableT -= Time.deltaTime / durationUp;
-
-            }   
-        }
-        else if (!isInsideBeam)
-        {
-            variableT += Time.deltaTime / durationDown;
-            durationUp = 5f;
-
-        }
-
-        if(variableT < 0)
-        {
-            variableT = minT;
-        }*/
-        /*
-        //Respawn
-        if (variableT >= maxT) //Si lumière devient rouge, commencer la séquence de mort. Après séquence de mort, revenir au checkpoint.
-       {
-           StartCoroutine(Respawn());
-           //_renderer.material.color = lerpedColor;
-       }*/
     }
-    /*  
-     IEnumerator Respawn()
-      {
-          //animator.SetTrigger("LightDeath");
-          yield return new WaitForSeconds(0.1f);
-          variableT = minT;
-          yield return new WaitForSeconds(0.1f);
-          player.transform.position = respawnPoint.transform.position;
-          //fadeOutMenuUI.SetActive(true);
-          //Instantiate(player, checkPoint1.position, checkPoint1.rotation);
-      }*/
+
 }

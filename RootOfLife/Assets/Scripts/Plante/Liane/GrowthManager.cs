@@ -64,7 +64,7 @@ public class GrowthManager : MonoBehaviour
         if (currentCap >= maxCap)
         {
             StartCoroutine("DestroyRoots");
-            //SpawnPont();
+            SpawnPont();
         }
 
         if (currentCap <= 1)
