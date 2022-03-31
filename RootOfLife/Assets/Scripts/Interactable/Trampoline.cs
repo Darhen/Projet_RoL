@@ -35,7 +35,7 @@ public class Trampoline : MonoBehaviour
         {
             bounceSpeedChecked = false;
         }
-        if (velocityCheck < 0)
+        if (isGrounded)
         {
             bounce = false;
         }
@@ -48,19 +48,24 @@ public class Trampoline : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Trampoline") && bounceSpeedChecked && isGrounded)
+        if(collision.gameObject.CompareTag("Trampoline") && bounceSpeedChecked)
         {
-
-            this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
+            StartCoroutine("TrampolineJump");
+            //this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
             //jouer animation bounce feuille
             //collision.gameObject.GetComponent<Animator>().Play("trampoline_bounce");
             collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
-            bounce = true;
+            //bounce = true;
         }
         else
         {
            return;
         }
     }
-
+    IEnumerator TrampolineJump()
+    {
+        this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
+        yield return new WaitForSeconds(0.01f);
+        bounce = true;
+    }
 }
