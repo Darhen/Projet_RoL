@@ -24,7 +24,7 @@ public class PlugPlant : MonoBehaviour
 
     GrowthManager growthManager;
 
-    TimerPont timerPont;
+    TrampolineManager trampo;
     GameObject TrampolineParent;
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class PlugPlant : MonoBehaviour
 
         growthManager = spawnPos.GetComponent<GrowthManager>();
         TrampolineParent = GameObject.Find("TrampolineParent");
-        timerPont = TrampolineParent.GetComponent<TimerPont>();
+        trampo = TrampolineParent.GetComponent<TrampolineManager>();
     }
 
     // Update is called once per frame
@@ -108,9 +108,9 @@ public class PlugPlant : MonoBehaviour
         myClone.transform.SetParent(startPos);
         Destroy(spawnPos.GetComponent<Transform>().GetChild(0).gameObject); //détruit l'ancien sac au sol
 
-        if(timerPont.currentCap > 0)
+        if(trampo.currentCap > 0)
         {
-            timerPont.StartCoroutine("DestroyChildren"); // détruit trampoline & branches (s'il y en as)
+            trampo.StartCoroutine("DestroyChildren"); // détruit trampoline & branches (s'il y en as)
         }
     }
 }

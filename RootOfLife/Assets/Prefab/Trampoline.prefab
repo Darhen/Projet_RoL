@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2382716474244820965}
   - component: {fileID: 3431557231252898076}
   - component: {fileID: 6420917548052693535}
-  - component: {fileID: 2887608246743807135}
   - component: {fileID: 8546139209072164032}
   - component: {fileID: 2109330643646826058}
+  - component: {fileID: -5593482853287039224}
   m_Layer: 6
   m_Name: Trampoline
   m_TagString: Trampoline
@@ -123,21 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   animatorTrampoline: {fileID: 0}
---- !u!114 &2887608246743807135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382716474244820971}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd250bc7869d664eaf87a37c24768d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seconds: 10
-  lastChild: {fileID: 0}
-  currentCap: 0
 --- !u!114 &8546139209072164032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +359,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5593482853287039224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382716474244820971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194bb1b70b0c6c44f9b15c3b9cfdc727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 1, g: 1, b: 1, a: 0}
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  colorChangeTime: 0.05
+  seconds: 10
+  counter: 0
 --- !u!1001 &568205072720441197
 PrefabInstance:
   m_ObjectHideFlags: 0

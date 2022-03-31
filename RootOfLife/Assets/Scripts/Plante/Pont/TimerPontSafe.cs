@@ -11,10 +11,10 @@ public class TimerPontSafe : MonoBehaviour
     public Color startColor, endColor;
     public float colorChangeTime;
     public int seconds;
+    public int counter;
 
-    GrowthManager growthManager;
-    GameObject player;
-
+    GameObject TrampolineParent;
+    TrampolineManager trampo;
 
     void Awake()
     {
@@ -22,10 +22,10 @@ public class TimerPontSafe : MonoBehaviour
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = startColor;
         currentColor = startColor;
-        colorChangeTime = 0.0035f;
+        colorChangeTime = 1;
+        TrampolineParent = GameObject.Find("TrampolineParent");
+        trampo = TrampolineParent.GetComponent<TrampolineManager>();
 
-        player = GameObject.FindWithTag("Player");
-        growthManager = player.GetComponentInChildren<GrowthManager>();
     }
 
     private void FixedUpdate()
@@ -39,13 +39,12 @@ public class TimerPontSafe : MonoBehaviour
 
     void DoStuff()
     {
-        Destroy(this.gameObject);
-        //growthManager.StartCoroutine("DestroyRoots");
+        trampo.StartCoroutine("DestroyChildren");
     }
 
     IEnumerator Countdown()
     {
-        int counter = seconds;
+        counter = seconds;
         while (counter > 0)
         {
             yield return new WaitForSeconds(1);
