@@ -22,6 +22,7 @@ public class PlayerClimbing : MonoBehaviour
     public bool jumpingOff;
     public bool isGrounded;
     public bool isLedgeClimbing;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -135,7 +136,11 @@ public class PlayerClimbing : MonoBehaviour
         {
             isClimbing = false;
             rbPlayer.isKinematic = false;
-            playerController.enabled = true;
+            if(!isLedgeClimbing)
+            {
+                playerController.enabled = true;
+            }
+            
         }
         
     }
