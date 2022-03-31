@@ -32,10 +32,18 @@ public class GrowBehaviour : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    GameObject TrampolineParent;
+
+    GameObject clonePont;
+
+    public Rigidbody myRigidbody;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        myRigidbody = GetComponent<Rigidbody>();
+
         canClone = true;
         spawnPoint = GameObject.Find("SpawnPos");
         startPos = spawnPoint.GetComponent<Transform>();
@@ -43,10 +51,12 @@ public class GrowBehaviour : MonoBehaviour
 
         growthManager = transform.parent.GetComponent<GrowthManager>();
 
-       /* plugPlant = GetComponentInParent<PlugPlant>();
-        playerController = GetComponentInParent<PlayerController>();
-        cam = GameObject.FindWithTag("MainCamera");
-        cameraFollow = cam.GetComponent<CameraFollow>();*/
+        TrampolineParent = GameObject.Find("TrampolineParent");
+
+        /* plugPlant = GetComponentInParent<PlugPlant>();
+         playerController = GetComponentInParent<PlayerController>();
+         cam = GameObject.FindWithTag("MainCamera");
+         cameraFollow = cam.GetComponent<CameraFollow>();*/
     }
 
     private void OnEnable()
@@ -71,13 +81,18 @@ public class GrowBehaviour : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))
             {
-                
-                growthManager.StartCoroutine("DestroyRoots"); // à remplacer pour permettre au branches de rester pour le trampoline
                 this.gameObject.tag = "FollowMe";
 
-                if (!isTouchingGround)
+                if (isTouchingGround)
                 {
-                    Instantiate(pont, endPoint.transform.position, Quaternion.identity);
+                    growthManager.StartCoroutine("DestroyRoots");
+                }
+                else
+                {
+                    clonePont = Instantiate(pont, endPoint.transform.position, Quaternion.identity);
+                    clonePont.transform.SetParent(TrampolineParent.transform);
+
+                    growthManager.StartCoroutine("ReplaceRoots"); // à remplacer pour permettre au branches de rester pour le trampoline
                 }
                 //
                 /*plugPlant.count = 0;
@@ -108,6 +123,8 @@ public class GrowBehaviour : MonoBehaviour
         else if (!canClone)
         {
             this.gameObject.tag = "OldRoot";
+            myRigidbody.isKinematic = true;
+            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
             this.enabled = false;
         }
     }

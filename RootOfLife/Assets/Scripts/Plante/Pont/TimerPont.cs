@@ -5,41 +5,43 @@ using UnityEngine;
 public class TimerPont : MonoBehaviour
 {
 
-    Color currentColor;
-    MeshRenderer myRenderer;
 
-    public Color startColor, endColor;
-    public float colorChangeTime;
     public int seconds;
 
     GrowthManager growthManager;
     GameObject player;
 
+    public Transform lastChild;
+
+    public int currentCap;
+
 
     void Awake()
     {
-        StartCoroutine("Countdown");
-        myRenderer = GetComponent<MeshRenderer>();
-        myRenderer.material.color = startColor;
-        currentColor = startColor;
-        colorChangeTime = 0.0035f;
-
+        
         player = GameObject.FindWithTag("Player");
         growthManager = player.GetComponentInChildren<GrowthManager>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (currentColor == startColor)
+        currentCap = this.gameObject.transform.childCount;
+
+        if(currentCap >= 1)
         {
-            currentColor = endColor;
+            StartCoroutine("Countdown");
         }
-        myRenderer.material.color = Color.Lerp(myRenderer.material.color, currentColor, colorChangeTime);
+
+        if(currentCap <= 0)
+        {
+            StopCoroutine("CountDown");
+        }
     }
 
     void DoStuff()
     {
-        Destroy(this.gameObject);
+        StartCoroutine("DestroyChildren");
+        //Destroy(.gameObject);
         //growthManager.StartCoroutine("DestroyRoots");
     }
 
@@ -52,5 +54,15 @@ public class TimerPont : MonoBehaviour
             counter--;
         }
         DoStuff();
+    }
+
+    IEnumerator DestroyChildren()
+    {
+        Destroy(transform.GetChild(0).gameObject);
+        while (true)
+        {
+            yield return new WaitForSeconds(0.05f);
+            Destroy(transform.GetChild(0).gameObject);
+        }
     }
 }

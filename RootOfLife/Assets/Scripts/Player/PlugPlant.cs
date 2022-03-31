@@ -24,6 +24,9 @@ public class PlugPlant : MonoBehaviour
 
     GrowthManager growthManager;
 
+    TimerPont timerPont;
+    GameObject TrampolineParent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +36,8 @@ public class PlugPlant : MonoBehaviour
         playerController = GetComponentInParent<PlayerController>();
 
         growthManager = spawnPos.GetComponent<GrowthManager>();
-
+        TrampolineParent = GameObject.Find("TrampolineParent");
+        timerPont = TrampolineParent.GetComponent<TimerPont>();
     }
 
     // Update is called once per frame
@@ -102,7 +106,11 @@ public class PlugPlant : MonoBehaviour
         var offsetBranche = new Vector3(0, 0.5f, 0);
         myClone = Instantiate(myPrefab, cloneSac.transform.position + offsetBranche, Quaternion.identity); //Instantie une "branche" pour la pousse (voir growBehaviour)
         myClone.transform.SetParent(startPos);
-        Destroy(GameObject.FindWithTag("Trampoline")); // détruit trampoline (s'il y en a)
         Destroy(spawnPos.GetComponent<Transform>().GetChild(0).gameObject); //détruit l'ancien sac au sol
+
+        if(timerPont.currentCap > 0)
+        {
+            timerPont.StartCoroutine("DestroyChildren"); // détruit trampoline & branches (s'il y en as)
+        }
     }
 }

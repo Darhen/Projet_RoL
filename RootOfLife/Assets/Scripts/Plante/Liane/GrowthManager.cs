@@ -18,6 +18,7 @@ public class GrowthManager : MonoBehaviour
 
     public bool cr_Running;
     public bool playerIsActif;
+    GameObject TrampolineParent;
 
 
     private void Awake()
@@ -27,6 +28,8 @@ public class GrowthManager : MonoBehaviour
 
         playerController = GetComponentInParent<PlayerController>();
         playerIsActif = false;
+
+        TrampolineParent = GameObject.Find("TrampolineParent");
 
     }
 
@@ -61,12 +64,13 @@ public class GrowthManager : MonoBehaviour
         if (currentCap >= maxCap)
         {
             StartCoroutine("DestroyRoots");
-            SpawnPont();
+            //SpawnPont();
         }
 
         if (currentCap <= 1)
         {
             StopCoroutine("DestroyRoots");
+            StopCoroutine("ReplaceRoots");
             cr_Running = false;
             plugPlant.count = 0;
             //Quand le bool est strictement égale à 1 on stop la coroutine (SacPlug est le 1er enfant de l'objet et on ne veut pas le détruire)
@@ -95,6 +99,20 @@ public class GrowthManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.05f);
             Destroy(lastChild.gameObject);
+        }
+    }
+
+    IEnumerator ReplaceRoots()
+    {
+        cr_Running = true;
+        playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "re-pose" du sac
+        playerIsActif = true;
+        growthBehaviour.canClone = false;
+        lastChild.transform.SetParent(TrampolineParent.transform);
+        while (true)
+        {
+            yield return new WaitForSeconds(0.05f);
+            lastChild.transform.SetParent(TrampolineParent.transform);
         }
     }
 
