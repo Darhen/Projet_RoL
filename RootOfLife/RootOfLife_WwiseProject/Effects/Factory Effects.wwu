@@ -1066,24 +1066,27 @@
 								</Effect>
 								<Effect Name="Dirty_Washing_Machine" ID="{824764DD-7364-411D-AF50-DEDF8E3DCC48}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
-										<Property Name="DecayTime" Type="Real32" Value="0.3"/>
-										<Property Name="Density" Type="Real32" Value="19"/>
+										<Property Name="DecayTime" Type="Real32" Value="0.55"/>
+										<Property Name="Density" Type="Real32" Value="42"/>
 										<Property Name="Diffusion" Type="Real32" Value="55"/>
 										<Property Name="ERLevel" Type="Real32" Value="-17"/>
 										<Property Name="ERPattern" Type="int32" Value="26"/>
 										<Property Name="Filter1Freq" Type="Real32" Value="590"/>
 										<Property Name="Filter1Gain" Type="Real32" Value="-7"/>
+										<Property Name="Filter1InsertPos" Type="int32" Value="0"/>
 										<Property Name="Filter2Freq" Type="Real32" Value="780"/>
 										<Property Name="Filter2Gain" Type="Real32" Value="12"/>
-										<Property Name="Filter3Freq" Type="Real32" Value="8440"/>
-										<Property Name="Filter3Gain" Type="Real32" Value="0.5"/>
-										<Property Name="HFDamping" Type="Real32" Value="0.5"/>
-										<Property Name="PreDelay" Type="Real32" Value="12"/>
+										<Property Name="Filter2InsertPos" Type="int32" Value="0"/>
+										<Property Name="Filter3Freq" Type="Real32" Value="8250"/>
+										<Property Name="Filter3Gain" Type="Real32" Value="-5"/>
+										<Property Name="Filter3InsertPos" Type="int32" Value="0"/>
+										<Property Name="HFDamping" Type="Real32" Value="0.8"/>
+										<Property Name="PreDelay" Type="Real32" Value="7"/>
 										<Property Name="Quality" Type="int32" Value="2"/>
 										<Property Name="ReverbLevel" Type="Real32" Value="-14"/>
-										<Property Name="RoomShape" Type="Real32" Value="51"/>
+										<Property Name="RoomShape" Type="Real32" Value="37"/>
 										<Property Name="RoomSize" Type="Real32" Value="-100"/>
-										<Property Name="StereoWidth" Type="Real32" Value="0"/>
+										<Property Name="StereoWidth" Type="Real32" Value="42"/>
 									</PropertyList>
 								</Effect>
 								<Effect Name="Phone_Booth" ID="{180A35FE-BF4E-4BCD-8D7F-872B580E55EC}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">

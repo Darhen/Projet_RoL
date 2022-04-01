@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	766957479	Pull_Level			\Default Work Unit\Player\Actions\Pull_Level	
 	964983010	Open_MainMenu			\Default Work Unit\UI\Open_MainMenu	
 	1028635762	Player_Spawn			\Default Work Unit\Player\Death\Player_Spawn	
 	1029784236	Walker_Alert			\Default Work Unit\Enemies\Walker\Walker_Alert	
@@ -21,15 +22,18 @@ Event	ID	Name			Wwise Object Path	Notes
 	2161713971	Player_Respawn			\Default Work Unit\Player\Death\Player_Respawn	
 	2188239484	BackpackLight_Yellow			\Default Work Unit\Objects\Plant\BackpackLight_Yellow	
 	2275076219	SetLevel_City			\Music work unit\Music\SetLevel_City	
+	2325694684	Player_Kneel			\Default Work Unit\Player\Actions\Player_Kneel	
 	2345618075	Drone_ReturnToPost			\Default Work Unit\Enemies\Drone\Drone_ReturnToPost	
 	2453392179	Player_Footstep			\Default Work Unit\Player\Movement\Player_Footstep	
 	2456363482	Walker_Ram			\Default Work Unit\Enemies\Walker\Walker_Ram	
 	2511242657	SetLevel_Cave			\Music work unit\Music\SetLevel_Cave	
 	2551268862	Player_Fall			\Default Work Unit\Player\Death\Player_Fall	
+	2609528332	Player_Slide			\Default Work Unit\Player\Movement\Player_Slide	
 	2742300585	Walker_ReturnToPost			\Default Work Unit\Enemies\Walker\Walker_ReturnToPost	
 	2772308904	Game_Pause			\Default Work Unit\UI\Game_Pause	
 	2781585832	Drone_Fire			\Default Work Unit\Enemies\Drone\Drone_Fire	
 	2782421265	BackpackLight_Red			\Default Work Unit\Objects\Plant\BackpackLight_Red	
+	2862110540	Player_Glide_Humming			\Default Work Unit\Player\Movement\Player_Glide_Humming	
 	2955752450	Drone_Hover			\Default Work Unit\Enemies\Drone\Drone_Hover	
 	2998183107	Plant_Death			\Default Work Unit\Objects\Plant\Plant_Death	
 	3083087645	Player_Death			\Default Work Unit\Player\Death\Player_Death	
@@ -43,14 +47,20 @@ Event	ID	Name			Wwise Object Path	Notes
 	3978245845	Pickup			\Default Work Unit\Player\Actions\Pickup	
 	4158285989	GameOver			\Default Work Unit\UI\GameOver	
 	4214178660	Arm_Swivel			\Default Work Unit\Enemies\Sentry Arm\Arm_Swivel	
+	4254001083	Player_Slide_Stop			\Default Work Unit\Player\Movement\Player_Slide_Stop	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	3714303081	Surfaces			\Default Work Unit\Surfaces	
 
 Switch	ID	Name	Switch Group			Notes
 	803837735	Sand	Surfaces			
+	1216965916	Stone	Surfaces			
+	1407130077	Ladder	Surfaces			
+	2058049674	Wood	Surfaces			
+	2185786256	Gravel	Surfaces			
 	2195636714	Dirt	Surfaces			
 	2473969246	Metal	Surfaces			
+	2654748154	Water	Surfaces			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	168511782	SFX_BIBLE_FOOTSTEPS_WORK_BOOTS_SLOW_WALK_ON_SAND_03	C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\.cache\Mac\SFX\SFX_BIBLE_FOOTSTEPS_WORK_BOOTS_SLOW_WALK_ON_SAND_01_C3375F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Movement\Player_Footstep\Player_FS_Sand\SFX_BIBLE_FOOTSTEPS_WORK_BOOTS_SLOW_WALK_ON_SAND_03		46280

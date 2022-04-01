@@ -110,6 +110,11 @@
 							</PropertyList>
 							<ChildrenList>
 								<AuxBus Name="Ambient_Reverb" ID="{61D4E81A-F29E-4152-B93C-607CDF2AC865}">
+									<ReferenceList>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Dirty_Washing_Machine" ID="{824764DD-7364-411D-AF50-DEDF8E3DCC48}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+									</ReferenceList>
 									<ObjectLists/>
 								</AuxBus>
 							</ChildrenList>

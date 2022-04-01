@@ -40,13 +40,18 @@ namespace AK
         static const AkUniqueID PLAYER_DEATH = 3083087645U;
         static const AkUniqueID PLAYER_FALL = 2551268862U;
         static const AkUniqueID PLAYER_FOOTSTEP = 2453392179U;
+        static const AkUniqueID PLAYER_GLIDE_HUMMING = 2862110540U;
         static const AkUniqueID PLAYER_JUMP = 1305133589U;
+        static const AkUniqueID PLAYER_KNEEL = 2325694684U;
         static const AkUniqueID PLAYER_LANDING = 1282282006U;
         static const AkUniqueID PLAYER_RAM = 1337349819U;
         static const AkUniqueID PLAYER_RESPAWN = 2161713971U;
         static const AkUniqueID PLAYER_SHOT = 3359302305U;
+        static const AkUniqueID PLAYER_SLIDE = 2609528332U;
+        static const AkUniqueID PLAYER_SLIDE_STOP = 4254001083U;
         static const AkUniqueID PLAYER_SPAWN = 1028635762U;
         static const AkUniqueID PLAYER_SUFFOCATE = 1457412937U;
+        static const AkUniqueID PULL_LEVEL = 766957479U;
         static const AkUniqueID RETURNTO_MAINMENU = 1661329569U;
         static const AkUniqueID SETLEVEL_BUNKER = 1224425817U;
         static const AkUniqueID SETLEVEL_CAVE = 2511242657U;
@@ -97,8 +102,13 @@ namespace AK
             namespace SWITCH
             {
                 static const AkUniqueID DIRT = 2195636714U;
+                static const AkUniqueID GRAVEL = 2185786256U;
+                static const AkUniqueID LADDER = 1407130077U;
                 static const AkUniqueID METAL = 2473969246U;
                 static const AkUniqueID SAND = 803837735U;
+                static const AkUniqueID STONE = 1216965916U;
+                static const AkUniqueID WATER = 2654748154U;
+                static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
         } // namespace SURFACES
 

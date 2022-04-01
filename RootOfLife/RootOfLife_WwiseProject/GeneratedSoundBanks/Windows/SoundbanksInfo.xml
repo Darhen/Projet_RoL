@@ -24,7 +24,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1744922992">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3992758089">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -109,7 +109,9 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="2862110540" Name="Player_Glide_Humming" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Glide_Humming" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2325694684" Name="Player_Kneel" ObjectPath="\Events\Default Work Unit\Player\Actions\Player_Kneel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1282282006" Name="Player_Landing" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Landing" DurationType="OneShot" DurationMin="7.68" DurationMax="7.68">
 					<IncludedMemoryFiles>
 						<File Id="169007319" Language="SFX">
@@ -121,8 +123,11 @@
 				<Event Id="1337349819" Name="Player_Ram" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Ram" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2161713971" Name="Player_Respawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Respawn" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3359302305" Name="Player_Shot" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Shot" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2609528332" Name="Player_Slide" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Slide" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4254001083" Name="Player_Slide_Stop" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Slide_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1028635762" Name="Player_Spawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Spawn" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1457412937" Name="Player_Suffocate" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Suffocate" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="766957479" Name="Pull_Level" ObjectPath="\Events\Default Work Unit\Player\Actions\Pull_Level" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1661329569" Name="ReturnTo_MainMenu" ObjectPath="\Events\Default Work Unit\UI\ReturnTo_MainMenu" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1224425817" Name="SetLevel_Bunker" ObjectPath="\Events\Music work unit\Music\SetLevel_Bunker" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<ActionSetState>
@@ -170,6 +175,11 @@
 						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\Default Work Unit\Surfaces\Dirt" GUID="{26E6C451-9704-4001-8C1B-C813526E1D46}"/>
 						<Switch Id="2473969246" Name="Metal" ObjectPath="\Switches\Default Work Unit\Surfaces\Metal" GUID="{453DD2CE-CDDF-4578-9BD6-8E791D6255DB}"/>
 						<Switch Id="803837735" Name="Sand" ObjectPath="\Switches\Default Work Unit\Surfaces\Sand" GUID="{158D1CE6-BC9C-4353-858D-ED81A295B1DF}"/>
+						<Switch Id="1216965916" Name="Stone" ObjectPath="\Switches\Default Work Unit\Surfaces\Stone" GUID="{6318CCD1-8CDB-4FF9-A5BA-9F9D209794B3}"/>
+						<Switch Id="1407130077" Name="Ladder" ObjectPath="\Switches\Default Work Unit\Surfaces\Ladder" GUID="{B6E2BF82-6F83-4416-9CF9-FC3A5F41E697}"/>
+						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\Surfaces\Wood" GUID="{818B3927-72A1-4AA2-8A18-A9D86F17F36D}"/>
+						<Switch Id="2185786256" Name="Gravel" ObjectPath="\Switches\Default Work Unit\Surfaces\Gravel" GUID="{44E1369B-DF8E-49E5-A5B8-6670D88C8195}"/>
+						<Switch Id="2654748154" Name="Water" ObjectPath="\Switches\Default Work Unit\Surfaces\Water" GUID="{E48B2133-13FA-40FF-AECC-FDE5A679FC5D}"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
