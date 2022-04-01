@@ -23,6 +23,7 @@ public class ActivateBrasMove : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             brasMove.isMoving = true;
+            Destroy(this.gameObject);
         }
     }
 }
