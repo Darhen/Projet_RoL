@@ -89,6 +89,11 @@ public class PlayerController : MonoBehaviour
             jumpQueued = true;
             Debug.Log("Jump!");
 
+            if(isGrounded)
+            {
+                JumpPs();
+            }
+
         }
 
         //Active le low Jump si input est "juste préssé"
@@ -126,7 +131,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             isJumping = true;
-            JumpPs();
+            
         }
 
         //pushing
