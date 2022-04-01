@@ -51,7 +51,7 @@ namespace AK
         static const AkUniqueID PLAYER_SLIDE_STOP = 4254001083U;
         static const AkUniqueID PLAYER_SPAWN = 1028635762U;
         static const AkUniqueID PLAYER_SUFFOCATE = 1457412937U;
-        static const AkUniqueID PULL_LEVEL = 766957479U;
+        static const AkUniqueID PULL_LEVER = 766957497U;
         static const AkUniqueID RETURNTO_MAINMENU = 1661329569U;
         static const AkUniqueID SETLEVEL_BUNKER = 1224425817U;
         static const AkUniqueID SETLEVEL_CAVE = 2511242657U;
