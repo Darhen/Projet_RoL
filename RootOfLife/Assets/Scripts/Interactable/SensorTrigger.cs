@@ -25,6 +25,8 @@ public class SensorTrigger : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<Renderer>().material = notActiveMat;
+            redLight.enabled = true;
+            greenLight.enabled = false;
         }
 
     }

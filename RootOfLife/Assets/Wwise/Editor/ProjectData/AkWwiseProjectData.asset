@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 2514fd092500394aa19964cd6fd58c47
     GuidInternal: 
-    m_lastTime: -8585531225997294236
+    m_lastTime: -8585532982871736025
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 1b93bf493072b44987ace6dea7b2a70f
     GuidInternal: 
-    m_lastTime: -8585531226017340604
+    m_lastTime: -8585528304707565627
     List:
     - name: Ambient_Reverb
       guid: 1ae8d4619ef25241b93c607cdf2ac865
@@ -120,7 +120,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 3454e01eb14d194ab326b4460b025f3b
     GuidInternal: 
-    m_lastTime: -8585531225997364062
+    m_lastTime: -8585532817729673745
     List:
     - name: Main
       guid: 1f5913ba1b53d9449e56a9bc2d604682
@@ -148,7 +148,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 97406b27e9e45b4aa4d02307752b4c0a
     GuidInternal: 
-    m_lastTime: -8585531039029277046
+    m_lastTime: -8585528304708395871
     List:
     - name: Actions
       guid: b00a9a5e7a486a4a9a7b3ac7d19bd099
@@ -947,6 +947,29 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.859365
       minDuration: 0
+    - name: Player_Glide_Humming
+      guid: 1123534a1ff1404ab8773ba7ba494564
+      id: 2862110540
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Player
+        ObjectType: 4
+        guid: 9255696191e43c498d3a2144606fbf0b
+      - ElementName: Movement
+        ObjectType: 4
+        guid: 11aeebfccf70134686e57e662aa1ec51
+      - ElementName: Player_Glide_Humming
+        ObjectType: 3
+        guid: 1123534a1ff1404ab8773ba7ba494564
+      Path: Events\Default Work Unit\Player\Movement\Player_Glide_Humming
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Player_Jump
       guid: 64e1b409c9ed0c43827741874f075418
       id: 1305133589
@@ -967,6 +990,29 @@ MonoBehaviour:
         ObjectType: 3
         guid: 64e1b409c9ed0c43827741874f075418
       Path: Events\Default Work Unit\Player\Movement\Player_Jump
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Player_Kneel
+      guid: 0fe7d25c1e650a4cb1466cef4585f008
+      id: 2325694684
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Player
+        ObjectType: 4
+        guid: 9255696191e43c498d3a2144606fbf0b
+      - ElementName: Actions
+        ObjectType: 4
+        guid: b00a9a5e7a486a4a9a7b3ac7d19bd099
+      - ElementName: Player_Kneel
+        ObjectType: 3
+        guid: 0fe7d25c1e650a4cb1466cef4585f008
+      Path: Events\Default Work Unit\Player\Actions\Player_Kneel
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1062,6 +1108,52 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Player_Slide
+      guid: f0ab968d1c6fdd49aa44d3db38e45579
+      id: 2609528332
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Player
+        ObjectType: 4
+        guid: 9255696191e43c498d3a2144606fbf0b
+      - ElementName: Movement
+        ObjectType: 4
+        guid: 11aeebfccf70134686e57e662aa1ec51
+      - ElementName: Player_Slide
+        ObjectType: 3
+        guid: f0ab968d1c6fdd49aa44d3db38e45579
+      Path: Events\Default Work Unit\Player\Movement\Player_Slide
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Player_Slide_Stop
+      guid: 3d24e85271ef5441b1650750035d2180
+      id: 4254001083
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Player
+        ObjectType: 4
+        guid: 9255696191e43c498d3a2144606fbf0b
+      - ElementName: Movement
+        ObjectType: 4
+        guid: 11aeebfccf70134686e57e662aa1ec51
+      - ElementName: Player_Slide_Stop
+        ObjectType: 3
+        guid: 3d24e85271ef5441b1650750035d2180
+      Path: Events\Default Work Unit\Player\Movement\Player_Slide_Stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Player_Spawn
       guid: 9f5ca4e2ccdd2d48bea0502b0def1cc9
       id: 1028635762
@@ -1105,6 +1197,29 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0ac3a4865e5db9459814656e8e7c0ee4
       Path: Events\Default Work Unit\Player\Death\Player_Suffocate
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Pull_Level
+      guid: 8b13a6fe172ca4438b00a2308da09759
+      id: 766957479
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Player
+        ObjectType: 4
+        guid: 9255696191e43c498d3a2144606fbf0b
+      - ElementName: Actions
+        ObjectType: 4
+        guid: b00a9a5e7a486a4a9a7b3ac7d19bd099
+      - ElementName: Pull_Level
+        ObjectType: 3
+        guid: 8b13a6fe172ca4438b00a2308da09759
+      Path: Events\Default Work Unit\Player\Actions\Pull_Level
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1311,7 +1426,7 @@ MonoBehaviour:
     ParentPath: Events\Music work unit
     guid: 9ff9bffb509e9341a65d3b0c64ebb4e4
     GuidInternal: 
-    m_lastTime: -8585531226017510152
+    m_lastTime: -8585532817783001679
     List:
     - name: Music
       guid: d06f47e649afcb4bad219fad69ac9d43
@@ -1422,7 +1537,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 7c01a0484bb490448c9d46f3150429dd
     GuidInternal: 
-    m_lastTime: -8585531226017500184
+    m_lastTime: -8585532982872051678
     List:
     - name: Master_Volume
       guid: 7b97b3e46d485f4c8c462b5063f3ea5d
@@ -1501,7 +1616,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 0e4bd1e06fbcba4f8067919caa78f7e1
     GuidInternal: 
-    m_lastTime: -8585531225997324154
+    m_lastTime: -8585532817729514142
     List:
     - name: Level
       guid: 6569e05108c763459dae2f395ca289a2
@@ -1613,7 +1728,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 86afaeebb81c4b4b9096df6610a74ba9
     GuidInternal: 
-    m_lastTime: -8585531225997314179
+    m_lastTime: -8585528304706726046
     List:
     - name: EnemyAlertLevel
       guid: dc1ee70454b90e449b4ec7b3aa230e4a
@@ -1696,6 +1811,38 @@ MonoBehaviour:
         - ElementName: Dirt
           ObjectType: 10
           guid: 51c4e626049701408c1bc813526e1d46
+      - name: Gravel
+        guid: 9b36e1448edfe549a5b86670d88c8195
+        id: 2185786256
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 86afaeebb81c4b4b9096df6610a74ba9
+        - ElementName: Surfaces
+          ObjectType: 11
+          guid: b4c14ff5550c624aac4b70a17102dff4
+        - ElementName: Gravel
+          ObjectType: 10
+          guid: 9b36e1448edfe549a5b86670d88c8195
+      - name: Ladder
+        guid: 82bfe2b6836f16449cf9fc3a5f41e697
+        id: 1407130077
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 86afaeebb81c4b4b9096df6610a74ba9
+        - ElementName: Surfaces
+          ObjectType: 11
+          guid: b4c14ff5550c624aac4b70a17102dff4
+        - ElementName: Ladder
+          ObjectType: 10
+          guid: 82bfe2b6836f16449cf9fc3a5f41e697
       - name: Metal
         guid: ced23d45dfcd78459bd68e791d6255db
         id: 2473969246
@@ -1728,6 +1875,54 @@ MonoBehaviour:
         - ElementName: Sand
           ObjectType: 10
           guid: e61c8d159cbc5343858ded81a295b1df
+      - name: Stone
+        guid: d1cc1863db8cf94fa5ba9f9d209794b3
+        id: 1216965916
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 86afaeebb81c4b4b9096df6610a74ba9
+        - ElementName: Surfaces
+          ObjectType: 11
+          guid: b4c14ff5550c624aac4b70a17102dff4
+        - ElementName: Stone
+          ObjectType: 10
+          guid: d1cc1863db8cf94fa5ba9f9d209794b3
+      - name: Water
+        guid: 33218be4fa13ff40aeccfde5a679fc5d
+        id: 2654748154
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 86afaeebb81c4b4b9096df6610a74ba9
+        - ElementName: Surfaces
+          ObjectType: 11
+          guid: b4c14ff5550c624aac4b70a17102dff4
+        - ElementName: Water
+          ObjectType: 10
+          guid: 33218be4fa13ff40aeccfde5a679fc5d
+      - name: Wood
+        guid: 27398b81a172a24a8a18a9d86f17f36d
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 86afaeebb81c4b4b9096df6610a74ba9
+        - ElementName: Surfaces
+          ObjectType: 11
+          guid: b4c14ff5550c624aac4b70a17102dff4
+        - ElementName: Wood
+          ObjectType: 10
+          guid: 27398b81a172a24a8a18a9d86f17f36d
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -1743,7 +1938,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 56e1a10d81b8a149993778f8e56a494a
     GuidInternal: 
-    m_lastTime: -8585531039020630502
+    m_lastTime: -8585529602025758171
     List:
     - name: New_Trigger
       guid: e22544a605c1664fbd9d01dd0df325b9
@@ -1763,5 +1958,5 @@ MonoBehaviour:
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 

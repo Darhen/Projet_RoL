@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class ActivationPorteConnecteur : MonoBehaviour
 {
-    public Animator porteAnimator;
+    private Animator porteAnimator;
     public bool switchActivated;
     public GameObject Porte;
     public GameObject player;
     RespawnMerged respawnMerged;
+    SensorTrigger sensorTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
         porteAnimator = Porte.GetComponent<Animator>();
         respawnMerged = player.GetComponent<RespawnMerged>();
+        sensorTrigger = this.gameObject.GetComponent<SensorTrigger>();
     }
 
-    // Update is called once per frame
-    void OnTriggerStay(Collider trigger)
-    {
-        if (trigger.CompareTag("Player"))
-        {
-                switchActivated = true;
-                porteAnimator.SetBool("Activated", true);
-        }
-    }
+
     void Update()
     {
+        if (sensorTrigger.isActive)
+        {
+            switchActivated = true;
+            porteAnimator.SetBool("Activated", true);
+        }
+
         if (respawnMerged.estMort == true)
         {
+            sensorTrigger.isActive = false;
             switchActivated = false;
             porteAnimator.SetBool("Activated", false);
         }

@@ -9,6 +9,7 @@ public class GrowthManager : MonoBehaviour
     public int currentCap;
 
     public GameObject pont;
+    private GameObject cloneTrampo;
 
     public Transform lastChild;
     GrowBehaviour growthBehaviour;
@@ -63,7 +64,7 @@ public class GrowthManager : MonoBehaviour
 
         if (currentCap >= maxCap)
         {
-            StartCoroutine("DestroyRoots");
+            StartCoroutine("ReplaceRoots");
             SpawnPont();
         }
 
@@ -125,7 +126,8 @@ public class GrowthManager : MonoBehaviour
 
     private void SpawnPont()
     {
-        Instantiate(pont, lastChild.transform.position, Quaternion.identity);
+        cloneTrampo = Instantiate(pont, lastChild.transform.position, Quaternion.identity);
+        cloneTrampo.transform.SetParent(TrampolineParent.transform);
     }
 
 }

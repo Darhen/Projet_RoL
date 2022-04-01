@@ -70,7 +70,7 @@ public class GrowBehaviour : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
 
-        isTouchingGround = Physics.CheckSphere(groundCheck.position, 4f, groundLayer);
+        isTouchingGround = Physics.CheckSphere(groundCheck.position, 3.5f, groundLayer);
 
         if (this.transform.localScale.y <= 0.2f)
         {
