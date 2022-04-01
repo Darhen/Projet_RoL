@@ -10,6 +10,7 @@ public class TimerPontSafe : MonoBehaviour
 
     public Color startColor, endColor;
     public float colorChangeTime;
+
     public int seconds;
     public int counter;
 

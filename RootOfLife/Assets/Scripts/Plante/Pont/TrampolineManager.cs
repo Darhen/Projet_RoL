@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class TrampolineManager : MonoBehaviour
 {
-    public int seconds;
-    public Transform lastChild;
     public int currentCap;
-
 
     private void Update()
     {
