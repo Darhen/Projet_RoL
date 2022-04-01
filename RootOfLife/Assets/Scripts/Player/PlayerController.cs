@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     public bool playerIsPushing;
 
     public ParticleSystem dust;
+    public ParticleSystem jump;
 
     public bool isJumping;
     private bool isActivated;
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
         {
             jumpQueued = true;
             Debug.Log("Jump!");
-            //CreateDust();
+
         }
 
         //Active le low Jump si input est "juste préssé"
@@ -125,6 +126,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             isJumping = true;
+            JumpPs();
         }
 
         //pushing
@@ -204,6 +206,11 @@ public class PlayerController : MonoBehaviour
     void CreateDust()
     {
         dust.Play();
+    }
+
+    void JumpPs()
+    {
+        jump.Play();
     }
 
 }
