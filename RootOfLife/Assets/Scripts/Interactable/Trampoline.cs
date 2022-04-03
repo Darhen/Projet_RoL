@@ -35,9 +35,9 @@ public class Trampoline : MonoBehaviour
         {
             bounceSpeedChecked = false;
         }
-        if (isGrounded)
+        if (isGrounded && bounce)
         {
-            bounce = false;
+            StartCoroutine("DeactivateBounce");
         }
     }
 
@@ -67,5 +67,10 @@ public class Trampoline : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
         yield return new WaitForSeconds(0.01f);
         bounce = true;
+    }
+    IEnumerator DeactivateBounce()
+    {
+        yield return new WaitForSeconds(2f);
+        bounce = false;
     }
 }

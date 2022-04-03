@@ -42,7 +42,6 @@ public class LedgeClimb : MonoBehaviour
         bounce = trampoline.bounce;
 
         //On détermine la direction du joueur pour orienter son offset
-        /*
         if (Input.GetAxis("Horizontal") > 0)
         {
             direction = 1;
@@ -51,7 +50,6 @@ public class LedgeClimb : MonoBehaviour
         {
             direction = -1;
         }
-        */
         if (isLedgeClimbing)
         {
             rbPlayer.velocity = new Vector3(0, 0, 0);
@@ -62,6 +60,7 @@ public class LedgeClimb : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ledge") && isJumping || other.gameObject.CompareTag("Ledge") && bounce)
         {
+            Debug.Log("LedgeClimb");
             //Determiner la direction du ledge climb
             directionLedge = other.gameObject.GetComponent<LedgeClimbDirection>().direction;
             //Lors de la collision, on va chercher la position du endPoint enfant du ledge climb actif
