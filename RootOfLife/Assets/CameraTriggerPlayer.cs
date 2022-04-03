@@ -26,7 +26,7 @@ public class CameraTriggerPlayer : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player" /*|| other.gameObject.tag == "FollowMe" || other.gameObject.tag == "OldRoot"*/)
+        if (other.gameObject.tag == "Player" /* other.gameObject.tag == "FollowMe" || other.gameObject.tag == "OldRoot"*/)
         {
             cameraFollow.walkThroughOffset = new Vector3(0, 0, 0);
         }
