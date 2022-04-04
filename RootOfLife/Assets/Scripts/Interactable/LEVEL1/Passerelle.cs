@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Passerelle : MonoBehaviour
 {
-    Rigidbody myRb;
-    public GameObject stairs;
+    public Rigidbody myRb;
+    public GameObject passerelle;
+    public ParticleSystem sparks1;
+    public ParticleSystem sparks2;
+    public ParticleSystem sparks3;
+    public ParticleSystem sparks4;
 
     // Start is called before the first frame update
     void Start()
     {
-        myRb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -23,17 +27,23 @@ public class Passerelle : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            myRb.isKinematic = false;
-            stairs.GetComponent<Rigidbody>().isKinematic = false;
+            
             StartCoroutine("DelaiKinematic");
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 
     IEnumerator DelaiKinematic()
     {
+        sparks1.Play();
+        sparks2.Play();
+        sparks3.Play();
+        sparks4.Play();
+        myRb.isKinematic = false;
+        passerelle.GetComponent<Rigidbody>().isKinematic = false;
         yield return new WaitForSeconds(3f);
         myRb.isKinematic = true;
-        stairs.GetComponent<Rigidbody>().isKinematic = true;
+        passerelle.GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Passerelle>().enabled = false;
 
     }

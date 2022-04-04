@@ -10,6 +10,7 @@ public class CameraTrigger1 : MonoBehaviour
     public bool activeCinematique;
     public float cinematicDuration;
     PlayerController playerController;
+    public bool playOnlyOnce;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,10 @@ public class CameraTrigger1 : MonoBehaviour
         playerController.enabled = false;
         yield return new WaitForSeconds(cinematicDuration);
         cinematicOffset = new Vector3(0, 0, 0);
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        if (playOnlyOnce)
+        {
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
         yield return new WaitForSeconds(1f);
         playerController.enabled = true;
     }
