@@ -20,6 +20,7 @@ public class SwitchGymPlante : MonoBehaviour
     public GameObject lamp2;
     public GameObject pad;
     public ParticleSystem spark;
+    public GameObject beamLight;
 
     // Start is called before the first frame update
     void Start()
@@ -66,8 +67,11 @@ public class SwitchGymPlante : MonoBehaviour
         //reactiver le player controller et autres fonctions
         GameplayMode();
         animatorPlayer.SetBool("cinematic", false);
+        //éteindre beam de lumiere avec window
+        yield return new WaitForSeconds(7f);
+        beamLight.gameObject.SetActive(false);
         //allumer les lampes apres la fermeture de la fenetre
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(0.5f);
         lamp1.gameObject.SetActive(true);
         lamp2.gameObject.SetActive(true);
         pad.gameObject.SetActive(true);

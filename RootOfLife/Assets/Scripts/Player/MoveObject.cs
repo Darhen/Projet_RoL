@@ -153,23 +153,24 @@ public class MoveObject : MonoBehaviour
    
     private void OnCollisionEnter(Collision collision)
     {
-        //définir la direction a l,entrée dans le trigger
-        if (xInput > 0)
-        {
-            direction = 1;
-        }
-        if (xInput < 0)
-        {
-            direction = -1;
-        }
 
         //définir que le player peut push a l'intérieur du trigger
         if (collision.gameObject.tag == "Box")
         {
+            //définir la direction a l,entrée dans le trigger
+            if (xInput > 0)
+            {
+                direction = 1;
+            }
+            if (xInput < 0)
+            {
+                direction = -1;
+            }
             canPush = true;
             otherBox = collision.gameObject;
             otherBoxXDimension = otherBox.GetComponent<BoxCollider>().bounds.size.x;
-            edgeBox = (otherBoxXDimension/2) + 0.7f;
+            //edgeBox = (otherBoxXDimension/2) + 0.7f;
+            edgeBox = (otherBoxXDimension / 2) + offsetX;
         }
     }
     
