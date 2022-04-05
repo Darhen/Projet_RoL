@@ -32,7 +32,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
     void Awake()
     {
-        m_Collider = GetComponent<Collider>();
+        m_Collider = GetComponent<CapsuleCollider>();
         Debug.Assert(m_Collider);
         _renderer = GetComponent<Renderer>();
 

@@ -6,30 +6,36 @@ using UnityEngine;
 public class DroneDetecteur : MonoBehaviour
 {
     public bool isInsideDroneBeam = false;
+    public bool IsInsideBrasBeam = false;
     public bool isInsideSolBeam = false;
     Collider m_Collider = null;
     Renderer _renderer;
     Animator animatorDrone;
+    Animator animatorBras;
     Animator animatorDetection;
+    Animator animatorDetectionBras;
     Animator animatorDetectionSol;
     Animator animatorSol;
     public GameObject drone;
+    public GameObject bras;
     public GameObject ennemiSol;
     public GameObject droneDetector;
+    public GameObject brasDetector;
     public GameObject solDetector;
     public GameObject player;
     PlayerController playerController;
     enemy_sol_mouvement ennemiSolMouv;
     RespawnMerged respawn;
     public bool playerDetected = false;
+    public bool playerDetectedBras = false;
     public bool playerDetectedSol = false;
     StopAnim stopAnim;
 
 
     void Start()
     {
-
-        m_Collider = GetComponent<Collider>();
+        //player = GameObject.FindWithTag("Player");
+        m_Collider = GetComponent<CapsuleCollider>();
         Debug.Assert(m_Collider);
         _renderer = GetComponent<Renderer>();
         respawn = player.GetComponent<RespawnMerged>();
@@ -48,7 +54,17 @@ public class DroneDetecteur : MonoBehaviour
             animatorDrone = drone.GetComponent<Animator>();
             stopAnim = drone.GetComponent<StopAnim>();
         }
-        
+
+        //Permet que fonctionne si plusieurs bras dans meme scene
+        if (other.gameObject.tag == "DetectionEnnemiBras")
+        {
+            bras = other.GetComponentInParent<StopAnim>().gameObject;
+            brasDetector = bras.GetComponentInChildren<DroneAttaque>().gameObject;
+            animatorDetectionBras = brasDetector.GetComponent<Animator>();
+            animatorBras = bras.GetComponent<Animator>();
+            stopAnim = bras.GetComponent<StopAnim>();
+        }
+
         // Permet de fonctionner si plusieurs ennemis sol dans meme scene
         if (other.gameObject.tag == "DetectionEnnemiSol")
         {
@@ -81,7 +97,21 @@ public class DroneDetecteur : MonoBehaviour
                 droneDetector.GetComponent<DroneAttaque>().PlayerIsDetected = isInsideDroneBeam;
             }
         }
-        
+
+        //Détection ennemi bras
+        if (trigger.gameObject.tag == "DetectionEnnemiBras")
+        {
+            if (dynamicOcclusion)
+            {
+                IsInsideBrasBeam = !dynamicOcclusion.IsColliderHiddenByDynamicOccluder(m_Collider);
+                brasDetector.GetComponent<DroneAttaque>().PlayerIsDetectedBras = IsInsideBrasBeam;
+            }
+            else
+            {
+                IsInsideBrasBeam = true;
+                brasDetector.GetComponent<DroneAttaque>().PlayerIsDetectedBras = IsInsideBrasBeam;
+            }
+        }
         //Détection ennemi sol
         if (trigger.gameObject.tag == "DetectionEnnemiSol")
         {
@@ -116,7 +146,21 @@ public class DroneDetecteur : MonoBehaviour
                 if (animatorDetection != null) animatorDetection.Play("RedToWhite");
             }
         }
-        
+
+        //Sort de la détection ennemi bras
+        if (trigger.gameObject.tag == "DetectionEnnemiBras")
+        {
+            IsInsideBrasBeam = false;
+            brasDetector.GetComponent<DroneAttaque>().PlayerIsDetectedBras = IsInsideBrasBeam;
+            if (IsInsideBrasBeam == false)
+            {
+                playerController.speed = 10f;
+                playerDetectedBras = false;
+                if (animatorBras != null) animatorBras.enabled = true;
+                if (animatorDetectionBras != null) animatorDetectionBras.Play("RedToWhite");
+            }
+        }
+
         //Sort de la détection ennemi sol
         if (trigger.gameObject.tag == "DetectionEnnemiSol")
         {
@@ -145,7 +189,7 @@ public class DroneDetecteur : MonoBehaviour
     void Update()
     {
         
-        if (isInsideDroneBeam || isInsideSolBeam || stopAnim.amDead == true)
+        if (isInsideDroneBeam || isInsideSolBeam || IsInsideBrasBeam || stopAnim.amDead == true)
         {
             // Détection ennemi drone
             if (isInsideDroneBeam)
@@ -154,6 +198,15 @@ public class DroneDetecteur : MonoBehaviour
                 playerDetected = true;
                 if (animatorDrone != null) animatorDrone.enabled = false;
                 if (animatorDetection != null) animatorDetection.Play("WhiteToRed");
+            }
+
+            // Détection ennemi bras
+            if (IsInsideBrasBeam)
+            {
+                playerController.speed = 7.5f;
+                playerDetectedBras = true;
+                if (animatorBras != null) animatorBras.enabled = false;
+                if (animatorDetectionBras != null) animatorDetectionBras.Play("WhiteToRed");
             }
 
             // Détection ennemi sol
