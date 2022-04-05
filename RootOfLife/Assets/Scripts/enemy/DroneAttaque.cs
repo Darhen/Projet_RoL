@@ -17,6 +17,9 @@ public class DroneAttaque : MonoBehaviour
     private float elapsed;
     public float timeBtwShots;
     public float startTimeBtwShots;
+
+    public bool lookingAtYou = false;
+    public Vector3 target;
     
 
     void Start()
@@ -27,21 +30,27 @@ public class DroneAttaque : MonoBehaviour
 
     void Update()
     {
+        target = player.transform.position;
 
         //Si détecté par ennemi drone
         if (PlayerIsDetected)
         {
-            
             StartCoroutine(LookAtPlayer());
             StartCoroutine(ShootPlayer());
-            
         }
         if (!PlayerIsDetected)
         {
+            StopCoroutine(LookAtPlayer());
             StopCoroutine(ShootPlayer());
             isCreated = false;
+            lookingAtYou = false;
         }
 
+        if (!PlayerIsDetected && lookingAtYou == false)
+        {
+            StopCoroutine(LookAtPlayer());
+        }
+        /*
         //Si détecté par ennemi bras
         if (PlayerIsDetectedBras)
         {
@@ -54,16 +63,25 @@ public class DroneAttaque : MonoBehaviour
         {
             StopCoroutine(ShootPlayerBras());
             isCreatedBras = false;
-        }
+        }*/
 
+    }
+
+    public void LookAtMe()
+    {
+        this.transform.LookAt(target);
     }
 
     IEnumerator LookAtPlayer()
     {
-        
         yield return new WaitForSeconds(0.5f);
-        transform.LookAt(player.transform);
+        //transform.LookAt(player.transform);
+        lookingAtYou = true;
         Debug.Log("Ca rentre!");
+        if (lookingAtYou)
+        {
+            LookAtMe();
+        }
     }
     IEnumerator ShootPlayer()
     {
@@ -80,7 +98,7 @@ public class DroneAttaque : MonoBehaviour
             isCreated = true;
         }
     }
-
+    /*
     IEnumerator LookAtPlayerBras()
     {
 
@@ -102,7 +120,7 @@ public class DroneAttaque : MonoBehaviour
             Instantiate(projectile, transform.position, this.gameObject.transform.rotation);
             isCreatedBras = true;
         }
-    }
+    }*/
 
 }
 
