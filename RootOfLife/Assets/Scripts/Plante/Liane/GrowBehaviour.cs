@@ -28,15 +28,17 @@ public class GrowBehaviour : MonoBehaviour
 
     public GameObject pont;
 
-    public bool isTouchingGround;
+    //public bool isTouchingGround;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public LayerMask playerLayer;
 
     GameObject TrampolineParent;
 
     GameObject clonePont;
 
     public Rigidbody myRigidbody;
+    public bool playerIsTouched;
 
 
     // Start is called before the first frame update
@@ -70,7 +72,16 @@ public class GrowBehaviour : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
 
-        isTouchingGround = Physics.CheckSphere(groundCheck.position, 3.5f, groundLayer);
+        //isTouchingGround = Physics.CheckSphere(groundCheck.position, 3.5f, groundLayer);
+
+        Collider[] hitColliders = Physics.OverlapSphere(groundCheck.position, 2.5f, playerLayer);
+        if (hitColliders.Length > 0)
+        {
+            if (hitColliders[0].gameObject.tag == "Player")
+            {
+                playerIsTouched = true;
+            }
+        }
 
         if (this.transform.localScale.y <= 0.2f)
         {
@@ -83,21 +94,17 @@ public class GrowBehaviour : MonoBehaviour
             {
                 this.gameObject.tag = "FollowMe";
 
-                if (isTouchingGround)
+                if (playerIsTouched)
                 {
+                    playerIsTouched = false;
                     growthManager.StartCoroutine("DestroyRoots");
                 }
                 else
                 {
                     clonePont = Instantiate(pont, endPoint.transform.position, Quaternion.identity);
                     clonePont.transform.SetParent(TrampolineParent.transform);
-
-                    growthManager.StartCoroutine("ReplaceRoots"); // à remplacer pour permettre au branches de rester pour le trampoline
+                    growthManager.StartCoroutine("ReplaceRoots");
                 }
-                //
-                /*plugPlant.count = 0;
-                playerController.enabled = true;
-                cameraFollow.count = 0;*/
             }
 
             if (xInput >= 0)//(Input.GetKey(KeyCode.RightArrow))
@@ -128,7 +135,7 @@ public class GrowBehaviour : MonoBehaviour
             this.enabled = false;
         }
     }
-        
+
     void SpawnClone()
     {
         prefabClone = Instantiate(myPrefab, endPoint.transform.position, endPoint.transform.rotation) as GameObject;
