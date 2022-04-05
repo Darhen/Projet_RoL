@@ -2521,7 +2521,7 @@ PrefabInstance:
       objectReference: {fileID: 1361676156}
     - target: {fileID: 2218541684080700517, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_VersionIndex
-      value: 62
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2218541684080700517, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_Tangents.Array.data[964].x
@@ -4121,7 +4121,7 @@ PrefabInstance:
       objectReference: {fileID: 1749664857}
     - target: {fileID: 8522380565676212759, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_VersionIndex
-      value: 2566
+      value: 2569
       objectReference: {fileID: 0}
     - target: {fileID: 8522380565676212759, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -4285,7 +4285,7 @@ PrefabInstance:
       objectReference: {fileID: 863000871}
     - target: {fileID: 8522380566439400152, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_VersionIndex
-      value: 2560
+      value: 2563
       objectReference: {fileID: 0}
     - target: {fileID: 8522380566439400152, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -28871,8 +28871,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.615566, g: 0.67415845, b: 0.8207547, a: 1}
-  m_Intensity: 0.06
+  m_Color: {r: 0.30277675, g: 0.31505874, b: 0.33962262, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -33686,6 +33686,8 @@ MonoBehaviour:
   isCreated: 0
   timeBtwShots: 0
   startTimeBtwShots: 0
+  lookingAtYou: 0
+  target: {x: 0, y: 0, z: 0}
 --- !u!1001 &1889491294
 PrefabInstance:
   m_ObjectHideFlags: 0

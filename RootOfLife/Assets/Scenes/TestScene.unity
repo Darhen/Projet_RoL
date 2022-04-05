@@ -43794,7 +43794,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-172992
+  m_Name: pb_Mesh-348828
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -48884,7 +48884,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-172968
+  m_Name: pb_Mesh-348804
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59660,7 +59660,7 @@ PrefabInstance:
       objectReference: {fileID: 2072254468}
     - target: {fileID: 2218541684080700517, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_VersionIndex
-      value: 53
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 2218541684080700517, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_Tangents.Array.data[964].x
@@ -61246,6 +61246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3124496072062757464, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3124496072062757465, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: canSpawnSac
       value: 1
@@ -61268,7 +61272,7 @@ PrefabInstance:
       objectReference: {fileID: 1227786702}
     - target: {fileID: 8522380565676212759, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_VersionIndex
-      value: 2554
+      value: 2557
       objectReference: {fileID: 0}
     - target: {fileID: 8522380565676212759, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -61432,7 +61436,7 @@ PrefabInstance:
       objectReference: {fileID: 1123506106}
     - target: {fileID: 8522380566439400152, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_VersionIndex
-      value: 2548
+      value: 2551
       objectReference: {fileID: 0}
     - target: {fileID: 8522380566439400152, guid: 04836fb58a53bd84883139e8c513faf3, type: 3}
       propertyPath: m_Tangents.Array.data[117].x
@@ -72262,6 +72266,7 @@ MonoBehaviour:
   inWall: 0
   boundary: 0
   cinematicOffset: {x: 0, y: 0, z: 0}
+  walkThroughOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &2025967682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72785,7 +72790,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-173128
+  m_Name: pb_Mesh-348964
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
