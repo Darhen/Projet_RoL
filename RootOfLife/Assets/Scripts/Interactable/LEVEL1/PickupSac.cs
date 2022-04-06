@@ -16,6 +16,7 @@ public class PickupSac : MonoBehaviour
     public GrowthManager growthManager;
     private PlayerController playerController;
     public Animator animatorPlayer;
+    public Animator animatorSocle;
     private GameObject mainDroitePlayer;
     private Vector3 positionMainDroitePlayer;
     private MoveObject moveObject;
@@ -59,6 +60,7 @@ public class PickupSac : MonoBehaviour
         //animation du pickup de sac
         animatorPlayer.SetTrigger("PickupObject");
         animatorPlayer.SetBool("cinematic", true);
+        animatorSocle.SetTrigger("deactivateSocle");
         //transfert du sac prop dans la main
         yield return new WaitForSeconds(0.5f);
         sacProp.GetComponent<Transform>().position = positionMainDroitePlayer;
