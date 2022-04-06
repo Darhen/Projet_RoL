@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         isFastJumping = false;
         plantIsPlugged = false;
 
+        dust.gameObject.SetActive(false);
         //liane = GameObject.Find("LianeRigide");
         //ladderClimb = liane.GetComponent<LadderClimb>();
 
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
             jumpQueued = true;
             Debug.Log("Jump!");
 
-            if(isGrounded)
+            if (isGrounded)
             {
                 JumpPs();
             }
@@ -131,7 +132,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             isJumping = true;
-            
+
         }
 
         //pushing
@@ -145,13 +146,13 @@ public class PlayerController : MonoBehaviour
             playerIsPushing = false;
         }
         */
-        if(plantIsPlugged)
+        if (plantIsPlugged)
         {
             speed = 0;
             myRigidbody.velocity = new Vector3(0, 0, 0);
         }
 
-        if(!plantIsPlugged)
+        if (!plantIsPlugged)
         {
             speed = 10;
         }
@@ -203,13 +204,30 @@ public class PlayerController : MonoBehaviour
         {
             CreateDust();
         }*/
-        if(other.gameObject.tag == "Slope")
+        if (other.gameObject.tag == "Slope")
         {
             CreateDust();
         }
     }
+
+    private void OnCollisionExit(Collision other)
+    {
+
+        if (other.gameObject.tag == "Slope")
+        {
+            StartCoroutine("TimerDust");
+        }
+    }
+
+    IEnumerator TimerDust()
+    {
+        yield return new WaitForSeconds(.25f);
+        dust.gameObject.SetActive(false);
+    }
     void CreateDust()
     {
+        StopCoroutine("TimerDust");
+        dust.gameObject.SetActive(true);
         dust.Play();
     }
 
