@@ -38,6 +38,7 @@ public class CameraFollow : MonoBehaviour
     //camera boundaries
     public bool leftBoundary;
     public bool rightBoundary;
+    public bool topBoundary;
     private GameObject cameraBoundary;
     public bool inWall;
     private Vector3 boundaryPosition;
@@ -248,6 +249,37 @@ public class CameraFollow : MonoBehaviour
                 }
             }
 
+            if (topBoundary)
+            {
+                Vector3 desiredPosition = new Vector3(target.transform.position.x + offset.x, boundaryPosition.y, transform.position.z);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
+            }
+            else
+            {
+                Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset;
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
+
+                if (isGliding)
+                {
+                    parachuteOffset = new Vector3(0, 0, parachuteOffsetZ);
+                }
+                else
+                {
+                    parachuteOffset = new Vector3(0, 0, 0);
+                }
+
+                if (isSliding)
+                {
+                    slopeOffset = new Vector3(0, 0, slopeOffsetZ);
+                }
+                else
+                {
+                    slopeOffset = new Vector3(0, 0, 0);
+                }
+            }
+
         }
     }
 
@@ -258,6 +290,7 @@ public class CameraFollow : MonoBehaviour
             cameraBoundary = other.gameObject;
             leftBoundary = cameraBoundary.GetComponent<CameraBound>().leftBoundary;
             rightBoundary = cameraBoundary.GetComponent<CameraBound>().rightBoundary;
+            topBoundary = cameraBoundary.GetComponent<CameraBound>().topBoundary;
             boundaryPosition = other.gameObject.transform.position;
             inWall = true;
         }

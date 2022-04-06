@@ -47,6 +47,11 @@ public class DroneAttaque : MonoBehaviour
             isCreated = false;
             lookingAtYou = false;
         }
+
+        if (!PlayerIsDetected && lookingAtYou == false)
+        {
+            StopCoroutine(LookAtPlayer());
+        }
         /*
         //Si détecté par ennemi bras
         if (PlayerIsDetectedBras)
@@ -64,12 +69,23 @@ public class DroneAttaque : MonoBehaviour
 
     }
 
+    public void LookAtMe()
+    {
+        this.transform.LookAt(target);
+    }
+
     IEnumerator LookAtPlayer()
     {
         
         yield return new WaitForSeconds(0.5f);
         transform.LookAt(player.transform);
+        lookingAtYou = true;
         Debug.Log("Ca rentre!");
+
+        if (lookingAtYou)
+        {
+            LookAtMe();
+        }
     }
     IEnumerator ShootPlayer()
     {
@@ -86,7 +102,7 @@ public class DroneAttaque : MonoBehaviour
             isCreated = true;
         }
     }
-
+/*
     IEnumerator LookAtPlayerBras()
     {
 
@@ -109,7 +125,7 @@ public class DroneAttaque : MonoBehaviour
             isCreatedBras = true;
         }
     }
-
+*/
 }
 
 
