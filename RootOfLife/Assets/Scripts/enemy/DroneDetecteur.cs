@@ -189,8 +189,8 @@ public class DroneDetecteur : MonoBehaviour
     void Update()
     {
         
-        if (isInsideDroneBeam || isInsideSolBeam || IsInsideBrasBeam || stopAnim.amDead == true)
-        {
+       /* if (isInsideDroneBeam || isInsideSolBeam || IsInsideBrasBeam || stopAnim.amDead == true)
+        {*/
             // Détection ennemi drone
             if (isInsideDroneBeam)
             {
@@ -228,7 +228,7 @@ public class DroneDetecteur : MonoBehaviour
 
             }
 
-        }
+        //}
 
     }
 

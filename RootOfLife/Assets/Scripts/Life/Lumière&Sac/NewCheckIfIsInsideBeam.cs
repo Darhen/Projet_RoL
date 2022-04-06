@@ -35,6 +35,8 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         m_Collider = GetComponent<CapsuleCollider>();
         Debug.Assert(m_Collider);
         _renderer = GetComponent<Renderer>();
+        Physics.IgnoreLayerCollision(0, 9);
+        Physics.IgnoreLayerCollision(6, 9);
 
         maxT = 1;
         midT = 0.5f;

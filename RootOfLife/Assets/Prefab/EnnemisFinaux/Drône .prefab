@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7372362062251175343}
   - component: {fileID: 7372362062251175328}
   - component: {fileID: 7372362062251175329}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spot Light
   m_TagString: DetectionEnnemi
   m_Icon: {fileID: 0}
@@ -213,10 +213,14 @@ MonoBehaviour:
   player: {fileID: 0}
   spherePosition: {fileID: 0}
   PlayerIsDetected: 0
+  PlayerIsDetectedBras: 0
   PlayerIsDetectedSol: 0
+  isCreated: 0
+  isCreatedBras: 0
   timeBtwShots: 0
   startTimeBtwShots: 20
-  isCreated: 0
+  lookingAtYou: 0
+  target: {x: 0, y: 0, z: 0}
 --- !u!95 &7372362062251175329
 Animator:
   serializedVersion: 3
@@ -227,7 +231,7 @@ Animator:
   m_GameObject: {fileID: 7372362062251175331}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a423bfb346331e64bac7d74d7ded18be, type: 2}
+  m_Controller: {fileID: 9100000, guid: f6ff53f8c14aa104b975f777a8548e48, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -245,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7372362062814451435}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Robot_Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7372362062931154252}
   - component: {fileID: 7372362062931154251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7372362063246246677}
   - component: {fileID: 7372362063246246676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Oeil_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7372362063426603862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Robot_Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,9 +686,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7372362062814451435}
     m_Modifications:
+    - target: {fileID: 1460372035339818429, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1614725261957939592, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2991436557843313387, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874255242090245451, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4438331643150895277, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
       propertyPath: m_Enabled
@@ -738,6 +754,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: transformer_robot_drone
       objectReference: {fileID: 0}
+    - target: {fileID: 7298440556640786372, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7501629780028618995, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7714125811036220208, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -758,6 +782,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1793a67eeb487414690abb3d35bfb38e, type: 2}
+    - target: {fileID: 8274626161314048529, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686894781684184580, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823059607792148622, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a9469d26a585046a3d4760e7a8fcb4, type: 3}
 --- !u!4 &3845503300665495729 stripped

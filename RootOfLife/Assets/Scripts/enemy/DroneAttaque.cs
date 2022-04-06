@@ -17,7 +17,10 @@ public class DroneAttaque : MonoBehaviour
     private float elapsed;
     public float timeBtwShots;
     public float startTimeBtwShots;
-    
+
+    public bool lookingAtYou = false;
+    public Vector3 target;
+
 
     void Start()
     {
@@ -27,6 +30,7 @@ public class DroneAttaque : MonoBehaviour
 
     void Update()
     {
+        target = player.transform.position;
 
         //Si détecté par ennemi drone
         if (PlayerIsDetected)
@@ -38,10 +42,12 @@ public class DroneAttaque : MonoBehaviour
         }
         if (!PlayerIsDetected)
         {
+            StopCoroutine(LookAtPlayer());
             StopCoroutine(ShootPlayer());
             isCreated = false;
+            lookingAtYou = false;
         }
-
+        /*
         //Si détecté par ennemi bras
         if (PlayerIsDetectedBras)
         {
@@ -54,7 +60,7 @@ public class DroneAttaque : MonoBehaviour
         {
             StopCoroutine(ShootPlayerBras());
             isCreatedBras = false;
-        }
+        }*/
 
     }
 

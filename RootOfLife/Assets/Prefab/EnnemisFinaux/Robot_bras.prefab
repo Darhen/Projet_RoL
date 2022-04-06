@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 1804007595016102204}
   - component: {fileID: 1804007595016102207}
   - component: {fileID: 1804007595016102193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight and Beam
   m_TagString: DetectionEnnemi
   m_Icon: {fileID: 0}
@@ -455,10 +455,14 @@ MonoBehaviour:
   player: {fileID: 0}
   spherePosition: {fileID: 0}
   PlayerIsDetected: 0
+  PlayerIsDetectedBras: 0
   PlayerIsDetectedSol: 0
   isCreated: 0
+  isCreatedBras: 0
   timeBtwShots: 0
   startTimeBtwShots: 0
+  lookingAtYou: 0
+  target: {x: 0, y: 0, z: 0}
 --- !u!1 &1804007595767924423
 GameObject:
   m_ObjectHideFlags: 0
