@@ -28,9 +28,10 @@ public class GrowBehaviour : MonoBehaviour
 
     public GameObject pont;
 
-    public bool isTouchingGround;
+    public bool isTouchingPlayer;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public LayerMask playerLayer;
 
     GameObject TrampolineParent;
 
@@ -53,10 +54,6 @@ public class GrowBehaviour : MonoBehaviour
 
         TrampolineParent = GameObject.Find("TrampolineParent");
 
-        /* plugPlant = GetComponentInParent<PlugPlant>();
-         playerController = GetComponentInParent<PlayerController>();
-         cam = GameObject.FindWithTag("MainCamera");
-         cameraFollow = cam.GetComponent<CameraFollow>();*/
     }
 
     private void OnEnable()
@@ -70,7 +67,15 @@ public class GrowBehaviour : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
 
-        isTouchingGround = Physics.CheckSphere(groundCheck.position, 3.5f, groundLayer);
+        Collider[] hitColliders = Physics.OverlapSphere(groundCheck.position, 1.6f, playerLayer);
+        if (hitColliders.Length > 0)
+        {
+            if (hitColliders[0].gameObject.tag == "Player")
+            {
+                isTouchingPlayer = true;
+            }
+
+        }
 
         if (this.transform.localScale.y <= 0.2f)
         {
@@ -83,7 +88,7 @@ public class GrowBehaviour : MonoBehaviour
             {
                 this.gameObject.tag = "FollowMe";
 
-                if (isTouchingGround)
+                if (isTouchingPlayer)
                 {
                     growthManager.StartCoroutine("DestroyRoots");
                 }
@@ -92,12 +97,8 @@ public class GrowBehaviour : MonoBehaviour
                     clonePont = Instantiate(pont, endPoint.transform.position, Quaternion.identity);
                     clonePont.transform.SetParent(TrampolineParent.transform);
 
-                    growthManager.StartCoroutine("ReplaceRoots"); // à remplacer pour permettre au branches de rester pour le trampoline
+                    growthManager.StartCoroutine("ReplaceRoots"); 
                 }
-                //
-                /*plugPlant.count = 0;
-                playerController.enabled = true;
-                cameraFollow.count = 0;*/
             }
 
             if (xInput >= 0)//(Input.GetKey(KeyCode.RightArrow))

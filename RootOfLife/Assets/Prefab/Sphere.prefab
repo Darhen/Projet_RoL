@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8778336691585744960}
   - component: {fileID: 394126054059342538}
   - component: {fileID: 394126053626346263}
-  - component: {fileID: 6974899478924000505}
+  - component: {fileID: 3788896947297682908}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: LifeLight
@@ -190,15 +190,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInsideDroneBeam: 0
+  IsInsideBrasBeam: 0
   isInsideSolBeam: 0
   drone: {fileID: 0}
+  bras: {fileID: 0}
   ennemiSol: {fileID: 0}
   droneDetector: {fileID: 0}
+  brasDetector: {fileID: 0}
   solDetector: {fileID: 0}
   player: {fileID: 0}
   playerDetected: 0
+  playerDetectedBras: 0
   playerDetectedSol: 0
---- !u!136 &6974899478924000505
+--- !u!136 &3788896947297682908
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +212,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.50000006
-  m_Height: 14.870974
+  m_Radius: 0.1
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: -0.00012209018, y: -5.3315477, z: 0}
+  m_Center: {x: 0, y: -0.28, z: 0.42}

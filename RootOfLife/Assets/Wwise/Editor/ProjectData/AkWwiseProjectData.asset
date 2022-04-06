@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 2514fd092500394aa19964cd6fd58c47
     GuidInternal: 
-    m_lastTime: -8585528317920634907
+    m_lastTime: -8585528619914575485
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 1b93bf493072b44987ace6dea7b2a70f
     GuidInternal: 
-    m_lastTime: -8585528317948483259
+    m_lastTime: -8585528311926056804
     List:
     - name: Ambient_Reverb
       guid: 1ae8d4619ef25241b93c607cdf2ac865
@@ -120,7 +120,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 3454e01eb14d194ab326b4460b025f3b
     GuidInternal: 
-    m_lastTime: -8585528317920704636
+    m_lastTime: -8585528619914720916
     List:
     - name: Main
       guid: 1f5913ba1b53d9449e56a9bc2d604682
@@ -148,7 +148,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 97406b27e9e45b4aa4d02307752b4c0a
     GuidInternal: 
-    m_lastTime: -8585525146034801733
+    m_lastTime: -8585527725389152803
     List:
     - name: Actions
       guid: b00a9a5e7a486a4a9a7b3ac7d19bd099
@@ -191,8 +191,8 @@ MonoBehaviour:
         guid: 29b564c8440c2f4fb25a5e85a048591e
       Path: Events\Default Work Unit\Enemies\Sentry Arm\Arm_Alert
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Arm_ReturnToPost
       guid: 5cb082ef11611f42b835d871417ad278
       id: 2110043727
@@ -214,8 +214,8 @@ MonoBehaviour:
         guid: 5cb082ef11611f42b835d871417ad278
       Path: Events\Default Work Unit\Enemies\Sentry Arm\Arm_ReturnToPost
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Arm_Swivel
       guid: 1cd0c81af32eac4db94168c680aa6b18
       id: 4214178660
@@ -237,8 +237,8 @@ MonoBehaviour:
         guid: 1cd0c81af32eac4db94168c680aa6b18
       Path: Events\Default Work Unit\Enemies\Sentry Arm\Arm_Swivel
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: BackpackLight_Flashing
       guid: 31eea4fcbbfbe94bb5f66be09dbb51c1
       id: 1721747022
@@ -260,8 +260,8 @@ MonoBehaviour:
         guid: 31eea4fcbbfbe94bb5f66be09dbb51c1
       Path: Events\Default Work Unit\Objects\Plant\BackpackLight_Flashing
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: BackpackLight_Green
       guid: 278fd718aedb1c45be36df78ebcd7574
       id: 1472878853
@@ -283,8 +283,8 @@ MonoBehaviour:
         guid: 278fd718aedb1c45be36df78ebcd7574
       Path: Events\Default Work Unit\Objects\Plant\BackpackLight_Green
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: BackpackLight_Red
       guid: 0969f7adb4411a42b0df89c61edc7875
       id: 2782421265
@@ -306,8 +306,8 @@ MonoBehaviour:
         guid: 0969f7adb4411a42b0df89c61edc7875
       Path: Events\Default Work Unit\Objects\Plant\BackpackLight_Red
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: BackpackLight_Yellow
       guid: 5a3e98e86b802a4486cd6e1f91e7e6b5
       id: 2188239484
@@ -329,8 +329,8 @@ MonoBehaviour:
         guid: 5a3e98e86b802a4486cd6e1f91e7e6b5
       Path: Events\Default Work Unit\Objects\Plant\BackpackLight_Yellow
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Buttons and Switches
       guid: 04762fdb6c14a14dbaab93431a9ffe23
       id: 3095570453
@@ -369,8 +369,8 @@ MonoBehaviour:
         guid: 2e8c0b2557395042b8adf303fbe10ad6
       Path: Events\Default Work Unit\UI\Checkpoint_Reached
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Close_Hangglider
       guid: 7e4b93fb884028489d6494ff684a906b
       id: 3213624757
@@ -392,8 +392,8 @@ MonoBehaviour:
         guid: 7e4b93fb884028489d6494ff684a906b
       Path: Events\Default Work Unit\Player\Movement\Close_Hangglider
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Death
       guid: 9abc2213f69ad14e8157f1b24a02896e
       id: 779278001
@@ -435,8 +435,8 @@ MonoBehaviour:
         guid: e8743472cdbe734dabe9e411f6ab41d2
       Path: Events\Default Work Unit\Objects\Buttons and Switches\Door_Button_Click
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Drone
       guid: c2d9dc536e83f64b9d62272cc091d6da
       id: 2739838641
@@ -478,8 +478,8 @@ MonoBehaviour:
         guid: b6620536db547646b0eaf02adb903e48
       Path: Events\Default Work Unit\Enemies\Drone\Drone_Alert
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Drone_Fire
       guid: d652051ee0692149af49130d01827690
       id: 2781585832
@@ -501,8 +501,8 @@ MonoBehaviour:
         guid: d652051ee0692149af49130d01827690
       Path: Events\Default Work Unit\Enemies\Drone\Drone_Fire
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Drone_Hover
       guid: 08c5e24fb32cd3408d95a7961c82e288
       id: 2955752450
@@ -524,8 +524,8 @@ MonoBehaviour:
         guid: 08c5e24fb32cd3408d95a7961c82e288
       Path: Events\Default Work Unit\Enemies\Drone\Drone_Hover
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Drone_ReturnToPost
       guid: b1e66c83118b7142af7920f3c35ab3ad
       id: 2345618075
@@ -547,8 +547,8 @@ MonoBehaviour:
         guid: b1e66c83118b7142af7920f3c35ab3ad
       Path: Events\Default Work Unit\Enemies\Drone\Drone_ReturnToPost
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Enemies
       guid: 053c410c74072c41aacf09db7788a1ce
       id: 2242381963
@@ -584,8 +584,8 @@ MonoBehaviour:
         guid: c90cb4d2ef0f4646b6ac421b3d6fc833
       Path: Events\Default Work Unit\UI\Game_Pause
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Game_Unpause
       guid: 082a0a7a6146974ba2fe5c147acd798e
       id: 1359982855
@@ -604,8 +604,8 @@ MonoBehaviour:
         guid: 082a0a7a6146974ba2fe5c147acd798e
       Path: Events\Default Work Unit\UI\Game_Unpause
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: GameOver
       guid: 7cd1a2dcbe9e184fa730c0b0abbc5f51
       id: 4158285989
@@ -624,8 +624,8 @@ MonoBehaviour:
         guid: 7cd1a2dcbe9e184fa730c0b0abbc5f51
       Path: Events\Default Work Unit\UI\GameOver
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Guardian Arm Boss
       guid: 9083bf37470fec40926e8496854deb3b
       id: 97797873
@@ -667,8 +667,8 @@ MonoBehaviour:
         guid: 8347998a34bb9b42af01cf8e16e05720
       Path: Events\Default Work Unit\Enemies\Guardian Arm Boss\GuardianArm_Swivel
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Light_TouchPlant
       guid: a6743f9a84713240981a6c2e47db61c3
       id: 3375032870
@@ -690,8 +690,8 @@ MonoBehaviour:
         guid: a6743f9a84713240981a6c2e47db61c3
       Path: Events\Default Work Unit\Objects\Plant\Light_TouchPlant
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Move_Box
       guid: f31248404ca96c4f9d1384ae80a9903e
       id: 1954644116
@@ -713,8 +713,8 @@ MonoBehaviour:
         guid: f31248404ca96c4f9d1384ae80a9903e
       Path: Events\Default Work Unit\Player\Actions\Move_Box
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Movement
       guid: 11aeebfccf70134686e57e662aa1ec51
       id: 2129636626
@@ -773,8 +773,8 @@ MonoBehaviour:
         guid: ce68603d97340a40964b149addb5df84
       Path: Events\Default Work Unit\Player\Movement\Open_Hangglider
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Open_MainMenu
       guid: f4e1262e373e774eb574790ae5b0943b
       id: 964983010
@@ -793,8 +793,8 @@ MonoBehaviour:
         guid: f4e1262e373e774eb574790ae5b0943b
       Path: Events\Default Work Unit\UI\Open_MainMenu
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Pickup
       guid: 7e9e5b4b2138f44e9481d1d1e24ef819
       id: 3978245845
@@ -816,8 +816,8 @@ MonoBehaviour:
         guid: 7e9e5b4b2138f44e9481d1d1e24ef819
       Path: Events\Default Work Unit\Player\Actions\Pickup
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Plant
       guid: ef3f9f69b2b3d642b9895e35154a04c6
       id: 114672780
@@ -859,8 +859,8 @@ MonoBehaviour:
         guid: 8c9d8cd421902949994162dbce1fb631
       Path: Events\Default Work Unit\Objects\Plant\Plant_Death
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player
       guid: 9255696191e43c498d3a2144606fbf0b
       id: 1069431850
@@ -899,8 +899,8 @@ MonoBehaviour:
         guid: 21f3b82d292f584f84e2bb6622ed2de1
       Path: Events\Default Work Unit\Player\Death\Player_Death
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Fall
       guid: 54fb1ce0db804841a803067f9bb0ad59
       id: 2551268862
@@ -922,8 +922,8 @@ MonoBehaviour:
         guid: 54fb1ce0db804841a803067f9bb0ad59
       Path: Events\Default Work Unit\Player\Death\Player_Fall
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Footstep
       guid: a54f4ec15f39d642964893d8862e04d8
       id: 2453392179
@@ -945,8 +945,8 @@ MonoBehaviour:
         guid: a54f4ec15f39d642964893d8862e04d8
       Path: Events\Default Work Unit\Player\Movement\Player_Footstep
       maxAttenuation: 0
-      maxDuration: 0.859365
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Glide_Humming
       guid: 1123534a1ff1404ab8773ba7ba494564
       id: 2862110540
@@ -968,8 +968,8 @@ MonoBehaviour:
         guid: 1123534a1ff1404ab8773ba7ba494564
       Path: Events\Default Work Unit\Player\Movement\Player_Glide_Humming
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Jump
       guid: 64e1b409c9ed0c43827741874f075418
       id: 1305133589
@@ -991,8 +991,8 @@ MonoBehaviour:
         guid: 64e1b409c9ed0c43827741874f075418
       Path: Events\Default Work Unit\Player\Movement\Player_Jump
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Kneel
       guid: 0fe7d25c1e650a4cb1466cef4585f008
       id: 2325694684
@@ -1014,8 +1014,8 @@ MonoBehaviour:
         guid: 0fe7d25c1e650a4cb1466cef4585f008
       Path: Events\Default Work Unit\Player\Actions\Player_Kneel
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Landing
       guid: 6f5722357b4e7640932c7e6fb37c4359
       id: 1282282006
@@ -1037,8 +1037,8 @@ MonoBehaviour:
         guid: 6f5722357b4e7640932c7e6fb37c4359
       Path: Events\Default Work Unit\Player\Movement\Player_Landing
       maxAttenuation: 0
-      maxDuration: 7.68
-      minDuration: 7.68
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Ram
       guid: 9d61cc8f33fc2945b2be7c803548427b
       id: 1337349819
@@ -1060,8 +1060,8 @@ MonoBehaviour:
         guid: 9d61cc8f33fc2945b2be7c803548427b
       Path: Events\Default Work Unit\Player\Death\Player_Ram
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Respawn
       guid: 909a6cb4c83e534bacdb5db47602cccf
       id: 2161713971
@@ -1083,8 +1083,8 @@ MonoBehaviour:
         guid: 909a6cb4c83e534bacdb5db47602cccf
       Path: Events\Default Work Unit\Player\Death\Player_Respawn
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Shot
       guid: 3ea37510461bfb47bce5f12129ae62a4
       id: 3359302305
@@ -1106,8 +1106,8 @@ MonoBehaviour:
         guid: 3ea37510461bfb47bce5f12129ae62a4
       Path: Events\Default Work Unit\Player\Death\Player_Shot
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Slide
       guid: f0ab968d1c6fdd49aa44d3db38e45579
       id: 2609528332
@@ -1129,8 +1129,8 @@ MonoBehaviour:
         guid: f0ab968d1c6fdd49aa44d3db38e45579
       Path: Events\Default Work Unit\Player\Movement\Player_Slide
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Slide_Stop
       guid: 3d24e85271ef5441b1650750035d2180
       id: 4254001083
@@ -1152,8 +1152,8 @@ MonoBehaviour:
         guid: 3d24e85271ef5441b1650750035d2180
       Path: Events\Default Work Unit\Player\Movement\Player_Slide_Stop
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Spawn
       guid: 9f5ca4e2ccdd2d48bea0502b0def1cc9
       id: 1028635762
@@ -1175,8 +1175,8 @@ MonoBehaviour:
         guid: 9f5ca4e2ccdd2d48bea0502b0def1cc9
       Path: Events\Default Work Unit\Player\Death\Player_Spawn
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player_Suffocate
       guid: 0ac3a4865e5db9459814656e8e7c0ee4
       id: 1457412937
@@ -1198,8 +1198,8 @@ MonoBehaviour:
         guid: 0ac3a4865e5db9459814656e8e7c0ee4
       Path: Events\Default Work Unit\Player\Death\Player_Suffocate
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Pull_Lever
       guid: 8b13a6fe172ca4438b00a2308da09759
       id: 766957497
@@ -1221,8 +1221,8 @@ MonoBehaviour:
         guid: 8b13a6fe172ca4438b00a2308da09759
       Path: Events\Default Work Unit\Player\Actions\Pull_Lever
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: ReturnTo_MainMenu
       guid: 4e9585d716ac594192ba36c3f40b4da5
       id: 1661329569
@@ -1241,8 +1241,8 @@ MonoBehaviour:
         guid: 4e9585d716ac594192ba36c3f40b4da5
       Path: Events\Default Work Unit\UI\ReturnTo_MainMenu
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Sentry Arm
       guid: a220dddd3e07884b9728f3755deacd3d
       id: 1305439494
@@ -1284,8 +1284,8 @@ MonoBehaviour:
         guid: ebb68af4ee1e0d4b962c022e99a3fbd2
       Path: Events\Default Work Unit\Objects\Buttons and Switches\Trap_Button_Click
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: UI
       guid: b852b0a76e16884a92514b42faa65bf4
       id: 1551306167
@@ -1344,8 +1344,8 @@ MonoBehaviour:
         guid: a8fa603eb56a0a4184600af1e2d78587
       Path: Events\Default Work Unit\Enemies\Walker\Walker_Alert
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Walker_Footstep
       guid: 0479cd9317146745abea6b15ce5b2c2d
       id: 1606606892
@@ -1367,8 +1367,8 @@ MonoBehaviour:
         guid: 0479cd9317146745abea6b15ce5b2c2d
       Path: Events\Default Work Unit\Enemies\Walker\Walker_Footstep
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Walker_Ram
       guid: e645473fa4508d4a80a080601e9a3c7c
       id: 2456363482
@@ -1390,8 +1390,8 @@ MonoBehaviour:
         guid: e645473fa4508d4a80a080601e9a3c7c
       Path: Events\Default Work Unit\Enemies\Walker\Walker_Ram
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Walker_ReturnToPost
       guid: 4ace1d4f6dc1324ea2b8c23cb9424687
       id: 2742300585
@@ -1413,8 +1413,8 @@ MonoBehaviour:
         guid: 4ace1d4f6dc1324ea2b8c23cb9424687
       Path: Events\Default Work Unit\Enemies\Walker\Walker_ReturnToPost
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Music work unit.wwu
     PathAndIcons:
     - ElementName: Events
@@ -1426,7 +1426,7 @@ MonoBehaviour:
     ParentPath: Events\Music work unit
     guid: 9ff9bffb509e9341a65d3b0c64ebb4e4
     GuidInternal: 
-    m_lastTime: -8585528317948932066
+    m_lastTime: -8585528619947403742
     List:
     - name: Music
       guid: d06f47e649afcb4bad219fad69ac9d43
@@ -1463,8 +1463,8 @@ MonoBehaviour:
         guid: e54b6bc0686cf141b058d4a07905b69d
       Path: Events\Music work unit\Music\SetLevel_Bunker
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: SetLevel_Cave
       guid: c8fbcfc6f5102441aed0c406b2082d8b
       id: 2511242657
@@ -1483,8 +1483,8 @@ MonoBehaviour:
         guid: c8fbcfc6f5102441aed0c406b2082d8b
       Path: Events\Music work unit\Music\SetLevel_Cave
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: SetLevel_City
       guid: c48ab5c9d2c914499331449643d5bea8
       id: 2275076219
@@ -1503,8 +1503,8 @@ MonoBehaviour:
         guid: c48ab5c9d2c914499331449643d5bea8
       Path: Events\Music work unit\Music\SetLevel_City
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: SetLevel_Tower
       guid: e9003cdf8db4d644bf96f7a2639c6dc7
       id: 1777656929
@@ -1523,8 +1523,8 @@ MonoBehaviour:
         guid: e9003cdf8db4d644bf96f7a2639c6dc7
       Path: Events\Music work unit\Music\SetLevel_Tower
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -1537,7 +1537,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 7c01a0484bb490448c9d46f3150429dd
     GuidInternal: 
-    m_lastTime: -8585528317948922094
+    m_lastTime: -8585528619947403742
     List:
     - name: Master_Volume
       guid: 7b97b3e46d485f4c8c462b5063f3ea5d
@@ -1616,7 +1616,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 0e4bd1e06fbcba4f8067919caa78f7e1
     GuidInternal: 
-    m_lastTime: -8585528317920674799
+    m_lastTime: -8585528619914595455
     List:
     - name: Level
       guid: 6569e05108c763459dae2f395ca289a2
@@ -1728,7 +1728,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 86afaeebb81c4b4b9096df6610a74ba9
     GuidInternal: 
-    m_lastTime: -8585528317920654770
+    m_lastTime: -8585528311919761606
     List:
     - name: EnemyAlertLevel
       guid: dc1ee70454b90e449b4ec7b3aa230e4a
@@ -1938,7 +1938,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 56e1a10d81b8a149993778f8e56a494a
     GuidInternal: 
-    m_lastTime: -8585528317920644880
+    m_lastTime: -8585528619914585461
     List:
     - name: New_Trigger
       guid: e22544a605c1664fbd9d01dd0df325b9
