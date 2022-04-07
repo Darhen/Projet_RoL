@@ -79,9 +79,9 @@ public class MoveObject : MonoBehaviour
         {
             if(direction == 1)
             {
-                otherBox.transform.parent = this.gameObject.transform;
-                otherboxPositionX = playerPosition.x + edgeBox;
-                otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
+                //otherBox.transform.parent = this.gameObject.transform;
+                //otherboxPositionX = playerPosition.x + edgeBox;
+                //otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
                 if (xInput == 0)
                 {
                     otherBox.GetComponent<Rigidbody>().isKinematic = true;
@@ -95,10 +95,10 @@ public class MoveObject : MonoBehaviour
             }
             if(direction == -1)
             {
-                otherBox.transform.parent = this.gameObject.transform;
+                //otherBox.transform.parent = this.gameObject.transform;
                 //otherboxPositionX = playerPosition.x - 2.7f;
-                otherboxPositionX = playerPosition.x - edgeBox;
-                otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
+                //otherboxPositionX = playerPosition.x - edgeBox;
+                //otherBox.GetComponent<Transform>().position = new Vector3(otherboxPositionX, otherBox.transform.position.y, otherBox.transform.position.z);
                 if (xInput == 0)
                 {
                     otherBox.GetComponent<Rigidbody>().isKinematic = true;
@@ -120,8 +120,8 @@ public class MoveObject : MonoBehaviour
                 return;
             }
             otherBox.GetComponent<Rigidbody>().isKinematic = true;
-            otherBox.transform.parent = null;
-            otherboxPositionX = otherBox.transform.position.x;
+            //otherBox.transform.parent = null;
+            //otherboxPositionX = otherBox.transform.position.x;
             /*
             else
             {
@@ -143,11 +143,13 @@ public class MoveObject : MonoBehaviour
         if (pushingController && pushMovement)
         {
             myRigidbody.velocity = movementVector;
+            otherBox.GetComponent<Rigidbody>().velocity = movementVector;
         }
 
         if(pushingController && !pushMovement)
         {
             myRigidbody.velocity = new Vector3 (0, 0, 0);
+            otherBox.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
     }
    
@@ -162,7 +164,7 @@ public class MoveObject : MonoBehaviour
         {
             direction = -1;
         }
-
+        /*
         //définir que le player peut push a l'intérieur du trigger
         if (collision.gameObject.tag == "Box")
         {
@@ -171,8 +173,22 @@ public class MoveObject : MonoBehaviour
             otherBoxXDimension = otherBox.GetComponent<BoxCollider>().bounds.size.x;
             edgeBox = (otherBoxXDimension/2) + 0.7f;
         }
+        */
     }
-    
+
+    private void OnCollisionStay(Collision collision)
+    {
+        //définir que le player peut push a l'intérieur du trigger
+        if (collision.gameObject.tag == "Box")
+        {
+            canPush = true;
+            otherBox = collision.gameObject;
+            otherBoxXDimension = otherBox.GetComponent<BoxCollider>().bounds.size.x;
+            edgeBox = (otherBoxXDimension / 2) + 0.7f;
+        }
+
+    }
+
 
     private void OnCollisionExit(Collision collision)
     {

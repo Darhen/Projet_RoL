@@ -8,6 +8,8 @@ public class TutorialPlantTrigger1 : MonoBehaviour
     public Animator triggerAnimator;
     public bool isActive;
     public GameObject nextObject;
+    public Animator nextCercleBlancAnimator;
+    public Animator oldCercleBlancAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +34,9 @@ public class TutorialPlantTrigger1 : MonoBehaviour
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
         nextObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        oldCercleBlancAnimator.SetTrigger("off");
+        yield return new WaitForSeconds(0.3f);
+        nextCercleBlancAnimator.SetTrigger("on");
     }
 }

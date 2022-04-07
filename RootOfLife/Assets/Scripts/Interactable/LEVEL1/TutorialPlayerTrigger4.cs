@@ -6,7 +6,12 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
 {
     public GameObject player;
     public GameObject nextLight;
+    public GameObject nextLight2;
     public GameObject wallLights;
+    public GameObject ciblesParachute;
+    public Animator oldCercleBlancAnimator;
+    public Animator nextCercleBlancAnimator; 
+    public Animator nextCercleBlancAnimator2;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +36,15 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     IEnumerator ActivateTrigger()
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        oldCercleBlancAnimator.SetTrigger("off");
         yield return new WaitForSeconds(1f);
+        ciblesParachute.SetActive(true);
         wallLights.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        nextCercleBlancAnimator.SetTrigger("on");
+        nextCercleBlancAnimator2.SetTrigger("on");
+        yield return new WaitForSeconds(0.5f);
         nextLight.SetActive(true);
+        nextLight2.SetActive(true);
     }
 }

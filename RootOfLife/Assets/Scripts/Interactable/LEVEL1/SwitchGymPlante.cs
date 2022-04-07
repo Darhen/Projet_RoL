@@ -9,6 +9,7 @@ public class SwitchGymPlante : MonoBehaviour
     public GameObject animationPosition;
     public Animator animatorWindow;
     public Animator animatorPlayer;
+    public Animator cercleBlancAnimator;
 
     PlayerController playerController;
     private PlugPlant plugplant;
@@ -71,7 +72,7 @@ public class SwitchGymPlante : MonoBehaviour
         lamp1.gameObject.SetActive(true);
         lamp2.gameObject.SetActive(true);
         pad.gameObject.SetActive(true);
-
+        cercleBlancAnimator.SetTrigger("on");
     }
 
     //desactiver le player controller et autres fonctions pour une cinematique

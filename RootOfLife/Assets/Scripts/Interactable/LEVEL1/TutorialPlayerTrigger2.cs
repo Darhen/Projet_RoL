@@ -8,6 +8,9 @@ public class TutorialPlayerTrigger2 : MonoBehaviour
     public GameObject nextObject;
     public Animator triggerAnimator;
     public GameObject oldLight;
+    public Animator oldCercleBlancAnimator;
+    public Animator nextCercleBlancAnimator;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +35,10 @@ public class TutorialPlayerTrigger2 : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         nextObject.SetActive(true);
+        oldCercleBlancAnimator.SetTrigger("off");
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         oldLight.gameObject.SetActive(false);
+        nextCercleBlancAnimator.SetTrigger("on");
     }
 }
