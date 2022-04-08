@@ -23,8 +23,8 @@ public class EnnemiSolBoss : MonoBehaviour
     Plane plane;
     MoveObject moveObject;
 
-    public Transform originalPosition;
-    public Quaternion originalRotation;
+    public Transform initialPosition;
+
 
     void Start()
     {
@@ -36,12 +36,11 @@ public class EnnemiSolBoss : MonoBehaviour
         plane = player.GetComponent<Plane>();
         moveObject = player.GetComponent<MoveObject>();
         ennemiSolBossActive = robotSolBoss.GetComponent<EnnemiSolBossActive>();
+        respawn = player.GetComponent<RespawnMerged>();
 
         ennemiSolBossActive.speed = 0f;
         SpotLight.SetActive(false);
         animatorLightSol = SpotLight.GetComponent<Animator>();
-
-        originalRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -59,17 +58,21 @@ public class EnnemiSolBoss : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             StopCoroutine(AttaqueBossSol());
+            cameraFollow.walkThroughOffset = new Vector3(0, 0, 0);
             ennemiSolBossActive.enabled = false;
             robotSolBoss.GetComponent<Animator>().enabled = false;
             robotSolBoss.GetComponent<Animator>().SetBool("IsCharging", false);
             ennemiSolBossActive.speed = 0f;
+            SpotLight.SetActive(false);
 
-            if (respawn.estMort)
-            {
-                Debug.Log("ChuiTuMort");
-                robotSolBoss.transform.position = new Vector3(0, 0, 2.44f);
-                robotSolBoss.transform.rotation = Quaternion.Slerp(transform.rotation, originalRotation, Time.time * 20);
-            }
+        }
+    }
+
+    private void Update()
+    {
+        if (respawn.estMort == true)
+        {
+            StartCoroutine(MortParBossSol());
         }
     }
 
@@ -82,12 +85,25 @@ public class EnnemiSolBoss : MonoBehaviour
         cameraFollow.walkThroughOffset = cineOffset;
         animatorLightSol.Play("WhiteToRedBossSol");
         yield return new WaitForSeconds(2f);
-        cameraFollow.walkThroughOffset = new Vector3(0, 0, 0);
+        cameraFollow.walkThroughOffset = new Vector3(-2f, 0, -3.56f);
         animatorPlayer.SetBool("cinematic", false);
         GameplayMode();
         yield return new WaitForSeconds(0.5f);
 
         ChargeEnnemi();
+    }
+
+    IEnumerator MortParBossSol()
+    {
+        ennemiSolBossActive.enabled = false;
+        robotSolBoss.GetComponent<Animator>().enabled = false;
+        robotSolBoss.GetComponent<Animator>().SetBool("IsCharging", false);
+        ennemiSolBossActive.speed = 0f;
+
+        yield return new WaitForSeconds(2f);
+
+        robotSolBoss.transform.position = initialPosition.position;
+        SpotLight.SetActive(false);
     }
 
 
@@ -116,16 +132,8 @@ public class EnnemiSolBoss : MonoBehaviour
     {
         ennemiSolBossActive.enabled = true;
     }
-    /*
-    private void Update()
-    {
-        if (respawn.estMort)
-        {
-            Debug.Log("ChuiTuMort");
-            robotSolBoss.transform.position = new Vector3(0, 0, 2.44f);
-
-        }
-    }*/
+    
+    
 
 
 }

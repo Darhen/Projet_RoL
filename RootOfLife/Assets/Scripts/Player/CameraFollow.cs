@@ -54,14 +54,6 @@ public class CameraFollow : MonoBehaviour
     public Vector3 cinematicOffset;
     public Vector3 walkThroughOffset;
     public Vector3 plantPlayerOffset;
-
-    private GameObject plantPlayerTrigger;
-    private GameObject cinematicTrigger;
-    private GameObject walkThroughTrigger;
-
-    CamTriggerPlayerPlante camTriggerPlayerPlante;
-    CameraTriggerPlante cameraTriggerPlante;
-    CameraTriggerPlayer cameraTriggerPlayer;
     
     private void Start()
     {
@@ -81,15 +73,6 @@ public class CameraFollow : MonoBehaviour
         //commencer le niveau avec le offset vers la droite
         direction = 1;
         playerClimbing = player.GetComponent<PlayerClimbing>();
-
-        //offset cinematique
-        /*plantPlayerTrigger = GameObject.FindWithTag("plantPlayerTrigger");
-        cinematicTrigger = GameObject.FindWithTag("cinematicTrigger");
-        walkThroughTrigger = GameObject.FindWithTag("walkThroughTrigger");
-
-        camTriggerPlayerPlante = plantPlayerTrigger.GetComponent<CamTriggerPlayerPlante>();
-        cameraTriggerPlante = cinematicTrigger.GetComponent<CameraTriggerPlante>();
-        cameraTriggerPlayer = walkThroughTrigger.GetComponent<CameraTriggerPlayer>();*/
     }
 
 
@@ -173,7 +156,7 @@ public class CameraFollow : MonoBehaviour
         }
 
         //declarer que si la cam est inWall on active le boundary
-        /*
+        
         if(inWall)
         {
             boundary = true;
@@ -182,7 +165,7 @@ public class CameraFollow : MonoBehaviour
         {
             boundary = false;
         }
-        */
+        
     }
 
     private void FixedUpdate()
@@ -322,7 +305,7 @@ public class CameraFollow : MonoBehaviour
                 {
                     slopeOffset = new Vector3(0, 0, 0);
                 }
-            }
+            }*/
 
             if (topBoundary)
             {
@@ -355,13 +338,13 @@ public class CameraFollow : MonoBehaviour
                 }
             }
 
-        }
-        */
+      //  }
+        
     }
-    /*
+    
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "CameraBound")
+        if (other.gameObject.tag == "CameraBoundInitial")
         {
             cameraBoundary = other.gameObject;
             leftBoundary = cameraBoundary.GetComponent<CameraBound>().leftBoundary;
@@ -373,13 +356,13 @@ public class CameraFollow : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "CameraBound")
+        if (other.gameObject.tag == "CameraBoundInitial")
         {
             cameraBoundary = null;
             inWall = false;
         }
     }
-    */
+    
     IEnumerator CheckDirectionChange()
     {
         yield return new WaitForSeconds(0.5f);

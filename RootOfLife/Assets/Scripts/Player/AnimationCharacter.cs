@@ -153,23 +153,23 @@ public class AnimationCharacter : MonoBehaviour
             animator.Play("LedgeClimb");
             animator.SetBool("jump", false);
         }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
+   /* }
+    private void OnTriggerEnter(Collider other)
+    {*/
         //Mort Bras robot (voir coroutine Respawn pour la suite)
-        if (collision.gameObject.CompareTag("Ennemi"))
+        if (other.gameObject.CompareTag("Ennemi"))
         {
             animator.SetBool("armDeath", true);
             StartCoroutine(Respawn());
         }
         //Mort robot spider (voir coroutine Respawn pour la suite)
-        if (collision.gameObject.CompareTag("EnnemiGround"))
+        if (other.gameObject.CompareTag("EnnemiGround"))
         {
             animator.SetBool("spiderDeath", true);
             StartCoroutine(Respawn());
         }
         //Mort robot drone (voir coroutine Respawn pour la suite)
-        if (collision.gameObject.CompareTag("EnnemiDrone"))
+        if (other.gameObject.CompareTag("EnnemiDrone"))
         {
             particleHit.Play();
             animator.SetBool("dieAir", true);
