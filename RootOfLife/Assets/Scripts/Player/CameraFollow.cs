@@ -45,6 +45,11 @@ public class CameraFollow : MonoBehaviour
     private int lastDirection;
     public bool boundary;
 
+    public bool activeBoundary;
+    public Vector3 boundCamPosition;
+    public bool xFree;
+    public bool yFree;
+
     //offset cinematique
     public Vector3 cinematicOffset;
     public Vector3 walkThroughOffset;
@@ -168,6 +173,7 @@ public class CameraFollow : MonoBehaviour
         }
 
         //declarer que si la cam est inWall on active le boundary
+        /*
         if(inWall)
         {
             boundary = true;
@@ -176,10 +182,60 @@ public class CameraFollow : MonoBehaviour
         {
             boundary = false;
         }
+        */
     }
 
     private void FixedUpdate()
     {
+        if (!activeBoundary)
+        {
+            Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset + cinematicOffset + walkThroughOffset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+            transform.position = smoothedPosition;
+
+            if (isGliding)
+            {
+                parachuteOffset = new Vector3(0, 0, parachuteOffsetZ);
+            }
+            else
+            {
+                parachuteOffset = new Vector3(0, 0, 0);
+            }
+
+            if (isSliding)
+            {
+                slopeOffset = new Vector3(0, 0, slopeOffsetZ);
+            }
+            else
+            {
+                slopeOffset = new Vector3(0, 0, 0);
+            }
+        }
+
+        if (activeBoundary)
+        {
+            if (xFree)
+            {
+                Vector3 desiredPosition = new Vector3(target.transform.position.x + offset.x, boundCamPosition.y, boundCamPosition.z);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
+            }
+            if (yFree)
+            {
+                Vector3 desiredPosition = new Vector3(boundCamPosition.x, target.transform.position.y + offset.y, boundCamPosition.z);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
+            }
+            else
+            {
+                Vector3 desiredPosition = boundCamPosition;
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                transform.position = smoothedPosition;
+            }
+
+        }
+
+        /*
         if (!boundary)
         {
             Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset + cinematicOffset + walkThroughOffset + plantPlayerOffset;
@@ -300,8 +356,9 @@ public class CameraFollow : MonoBehaviour
             }
 
         }
+        */
     }
-
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "CameraBound")
@@ -322,7 +379,7 @@ public class CameraFollow : MonoBehaviour
             inWall = false;
         }
     }
-
+    */
     IEnumerator CheckDirectionChange()
     {
         yield return new WaitForSeconds(0.5f);

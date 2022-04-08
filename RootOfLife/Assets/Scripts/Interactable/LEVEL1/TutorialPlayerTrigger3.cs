@@ -34,9 +34,9 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
     }
     IEnumerator ActivateTrigger()
     {
+        oldCercleBlancAnimator.SetTrigger("off");
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         oldObjectAnimator.SetTrigger("deactivate");
-        oldCercleBlancAnimator.SetTrigger("off");
         yield return new WaitForSeconds(1f);
         oldObject.SetActive(false);
         nextObject.SetActive(true);

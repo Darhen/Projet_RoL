@@ -7,6 +7,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     public GameObject player;
     public GameObject nextLight;
     public GameObject nextLight2;
+    public GameObject oldLight;
     public GameObject wallLights;
     public GameObject ciblesParachute;
     public Animator oldCercleBlancAnimator;
@@ -37,6 +38,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         oldCercleBlancAnimator.SetTrigger("off");
+        oldLight.SetActive(false);
         yield return new WaitForSeconds(1f);
         ciblesParachute.SetActive(true);
         wallLights.SetActive(true);

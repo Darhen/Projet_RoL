@@ -64,11 +64,12 @@ public class SwitchGymPlante : MonoBehaviour
         yield return new WaitForSeconds(1.4f);
         spark.Play();
         animatorWindow.SetTrigger("gymMode");
+        animatorPlayer.SetBool("cinematic", false);
+        yield return new WaitForSeconds(2f);
         //reactiver le player controller et autres fonctions
         GameplayMode();
-        animatorPlayer.SetBool("cinematic", false);
         //allumer les lampes apres la fermeture de la fenetre
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(6f);
         lamp1.gameObject.SetActive(true);
         lamp2.gameObject.SetActive(true);
         pad.gameObject.SetActive(true);

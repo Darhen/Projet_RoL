@@ -16,6 +16,7 @@ public class TutorialPlayerTrigger2 : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        oldCercleBlancAnimator.SetTrigger("on");
     }
 
     // Update is called once per frame
@@ -33,9 +34,9 @@ public class TutorialPlayerTrigger2 : MonoBehaviour
     }
     IEnumerator ActivateTrigger()
     {
+        oldCercleBlancAnimator.SetTrigger("off");
         yield return new WaitForSeconds(1f);
         nextObject.SetActive(true);
-        oldCercleBlancAnimator.SetTrigger("off");
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         oldLight.gameObject.SetActive(false);

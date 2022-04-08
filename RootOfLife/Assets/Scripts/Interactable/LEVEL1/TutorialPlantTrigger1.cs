@@ -25,18 +25,16 @@ public class TutorialPlantTrigger1 : MonoBehaviour
         if(isActive)
         {
             StartCoroutine("ActivateTrigger");
+            isActive = false;
         }
     }
 
     IEnumerator ActivateTrigger()
     {
         triggerAnimator.SetTrigger("deactivate");
-        yield return new WaitForSeconds(1f);
-        this.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2f);
         nextObject.SetActive(true);
         yield return new WaitForSeconds(1f);
-        oldCercleBlancAnimator.SetTrigger("off");
-        yield return new WaitForSeconds(0.3f);
-        nextCercleBlancAnimator.SetTrigger("on");
+        this.gameObject.SetActive(false);
     }
 }
