@@ -19,13 +19,13 @@ public class CameraBound : MonoBehaviour
     {
         cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollow>();
         cameraFollow.activeBoundary = false;
-        cameraTarget = cameraBoundaryPosition.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        cameraTarget = cameraBoundaryPosition.position;
     }
 
     private void OnTriggerStay(Collider other)

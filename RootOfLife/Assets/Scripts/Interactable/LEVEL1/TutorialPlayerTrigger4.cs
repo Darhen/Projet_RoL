@@ -13,6 +13,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     public Animator oldCercleBlancAnimator;
     public Animator nextCercleBlancAnimator; 
     public Animator nextCercleBlancAnimator2;
+    public GameObject oldCameraBoundary;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         oldCercleBlancAnimator.SetTrigger("off");
         oldLight.SetActive(false);
+        oldCameraBoundary.SetActive(false);
         yield return new WaitForSeconds(1f);
         ciblesParachute.SetActive(true);
         wallLights.SetActive(true);

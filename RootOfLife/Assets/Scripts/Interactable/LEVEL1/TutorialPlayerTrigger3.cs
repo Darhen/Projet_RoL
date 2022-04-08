@@ -11,6 +11,7 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
     public Animator oldObjectAnimator;
     public Animator oldCercleBlancAnimator;
     public Animator nextCercleBlancAnimator;
+    public GameObject oldCameraBoundary;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         oldObjectAnimator.SetTrigger("deactivate");
         yield return new WaitForSeconds(1f);
+        oldCameraBoundary.SetActive(false);
         oldObject.SetActive(false);
         nextObject.SetActive(true);
         yield return new WaitForSeconds(1f);
