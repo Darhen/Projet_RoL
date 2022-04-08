@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3054746688658884367}
   - component: {fileID: 3054746688658884366}
   - component: {fileID: 3054746688658884361}
-  - component: {fileID: 3054746688658884360}
+  - component: {fileID: 7912438895384485816}
   m_Layer: 0
   m_Name: CameraTrigger
   m_TagString: Untagged
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3054746688658884360
+--- !u!114 &7912438895384485816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,8 +106,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3054746688658884363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d65ec83d8216caa46ab2e3d7335f5bdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 073c4ff912115154b9b03ddea5520995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  cinematicOffset: {x: -4, y: 2, z: -7}
+  spawnPos: {fileID: 0}
+  walkThroughOffset: {x: 0, y: -3, z: 0}
+  playerInsideCollider: 0
+  planteSortDuCollider: 0

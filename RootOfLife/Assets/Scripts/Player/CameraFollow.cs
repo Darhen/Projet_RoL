@@ -48,12 +48,22 @@ public class CameraFollow : MonoBehaviour
     //offset cinematique
     public Vector3 cinematicOffset;
     public Vector3 walkThroughOffset;
+    public Vector3 plantPlayerOffset;
+
+    private GameObject plantPlayerTrigger;
+    private GameObject cinematicTrigger;
+    private GameObject walkThroughTrigger;
+
+    CamTriggerPlayerPlante camTriggerPlayerPlante;
+    CameraTriggerPlante cameraTriggerPlante;
+    CameraTriggerPlayer cameraTriggerPlayer;
     
     private void Start()
     {
         count = 0;
         target = GameObject.FindWithTag("Player");
 
+        
         player = GameObject.FindWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         plane = player.GetComponent<Plane>();
@@ -66,6 +76,15 @@ public class CameraFollow : MonoBehaviour
         //commencer le niveau avec le offset vers la droite
         direction = 1;
         playerClimbing = player.GetComponent<PlayerClimbing>();
+
+        //offset cinematique
+        /*plantPlayerTrigger = GameObject.FindWithTag("plantPlayerTrigger");
+        cinematicTrigger = GameObject.FindWithTag("cinematicTrigger");
+        walkThroughTrigger = GameObject.FindWithTag("walkThroughTrigger");
+
+        camTriggerPlayerPlante = plantPlayerTrigger.GetComponent<CamTriggerPlayerPlante>();
+        cameraTriggerPlante = cinematicTrigger.GetComponent<CameraTriggerPlante>();
+        cameraTriggerPlayer = walkThroughTrigger.GetComponent<CameraTriggerPlayer>();*/
     }
 
 
@@ -163,7 +182,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (!boundary)
         {
-            Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset + cinematicOffset + walkThroughOffset;
+            Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset + cinematicOffset + walkThroughOffset + plantPlayerOffset;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
             transform.position = smoothedPosition;
 
@@ -196,7 +215,7 @@ public class CameraFollow : MonoBehaviour
             }
             else
             {
-                Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset + cinematicOffset + walkThroughOffset;
+                Vector3 desiredPosition = target.transform.position + offset + parachuteOffset + slopeOffset + forwardOffset + cinematicOffset + walkThroughOffset + plantPlayerOffset;
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
                 transform.position = smoothedPosition;
 

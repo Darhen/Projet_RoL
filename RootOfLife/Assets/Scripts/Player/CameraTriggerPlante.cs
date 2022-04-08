@@ -33,7 +33,6 @@ public class CameraTriggerPlante : MonoBehaviour
         {
             cameraFollow.cinematicOffset = cinematicOffset;
         }
-
     }
 
 }

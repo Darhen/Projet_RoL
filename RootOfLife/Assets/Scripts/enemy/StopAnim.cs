@@ -7,9 +7,15 @@ public class StopAnim : MonoBehaviour
     //Animator animator;
     //public GameObject drone;
     public bool amDead = false;
+    enemy_sol_mouvement ennemiSolMouv;
+    DroneDetecteur droneDetecteur;
+    GameObject sphere;
 
     void Start()
     {
+        sphere = GameObject.FindWithTag("LifeLight");
+        ennemiSolMouv = this.gameObject.GetComponent<enemy_sol_mouvement>();
+        droneDetecteur = sphere.GetComponent<DroneDetecteur>();
         //animator = this.gameObject.GetComponent<Animator>();
     }
 
@@ -29,5 +35,13 @@ public class StopAnim : MonoBehaviour
         yield return new WaitForSeconds(3f);
         amDead = false;
 
+    }
+
+    private void Update()
+    {
+        if(amDead == false && droneDetecteur.isInsideSolBeam == false)
+        {
+            ennemiSolMouv.speed = 5f;
+        }
     }
 }

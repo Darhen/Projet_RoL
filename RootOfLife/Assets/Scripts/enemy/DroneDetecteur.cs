@@ -181,6 +181,11 @@ public class DroneDetecteur : MonoBehaviour
                     ennemiSolMouv.speed = 0f;
                     if (animatorSol != null) animatorSol.enabled = false;
                 }
+                else
+                {
+                    ennemiSolMouv.speed = 5f;
+                    if (animatorSol != null) animatorSol.enabled = true;
+                }
             }
         }
 
@@ -227,6 +232,7 @@ public class DroneDetecteur : MonoBehaviour
                 }
 
             }
+
 
         //}
 
