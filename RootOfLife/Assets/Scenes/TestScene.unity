@@ -868,7 +868,7 @@ LightingSettings:
   m_IndirectOutputScale: 1
   m_UsingShadowmask: 1
   m_BakeBackend: 1
-  m_LightmapMaxSize: 1024
+  m_LightmapMaxSize: 2048
   m_BakeResolution: 40
   m_Padding: 2
   m_TextureCompression: 1
@@ -76962,8 +76962,13 @@ MonoBehaviour:
   topBoundary: 0
   inWall: 0
   boundary: 0
+  activeBoundary: 0
+  boundCamPosition: {x: 0, y: 0, z: 0}
+  xFree: 0
+  yFree: 0
   cinematicOffset: {x: 0, y: 0, z: 0}
   walkThroughOffset: {x: 0, y: 0, z: 0}
+  plantPlayerOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &2025967682
 MonoBehaviour:
   m_ObjectHideFlags: 0

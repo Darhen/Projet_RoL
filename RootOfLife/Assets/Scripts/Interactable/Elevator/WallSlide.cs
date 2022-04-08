@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class WallSlide : MonoBehaviour
 {
-    public GameObject walls;
-    public GameObject startPos;
+    GameObject target;
+    public float speed;
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if(other.gameObject.tag == "Untagged")
-        {
-            Instantiate(walls, startPos.transform.position, Quaternion.identity);
-        }
+        speed = 15f;
+        target = GameObject.Find("WallTarget");
+    }
+    private void Update()
+    {
+        float step = speed * Time.deltaTime;
+
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
     }
 }
