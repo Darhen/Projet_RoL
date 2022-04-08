@@ -81,7 +81,7 @@ public class GrowBehaviour : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.F) || Input.GetButton("Fire2"))
             {
-                this.transform.localScale = this.transform.localScale + (new Vector3(0f, 1f, 0f) * Time.deltaTime);
+                this.transform.localScale = this.transform.localScale + (new Vector3(0f, .75f, 0f) * Time.deltaTime);
             }
 
             if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))
@@ -125,7 +125,7 @@ public class GrowBehaviour : MonoBehaviour
         {
             this.gameObject.tag = "OldRoot";
             myRigidbody.isKinematic = true;
-            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
             this.enabled = false;
         }
     }
