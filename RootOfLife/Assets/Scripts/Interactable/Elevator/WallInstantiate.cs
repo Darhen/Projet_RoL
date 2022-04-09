@@ -12,7 +12,8 @@ public class WallInstantiate : MonoBehaviour
     {
         if (other.gameObject.tag == "Untagged")
         {
-           newWall = Instantiate(wallPrefab, startPos.transform.position, Quaternion.identity);
+            newWall = Instantiate(wallPrefab, startPos.transform.position, Quaternion.identity);
+            newWall.transform.SetParent(this.gameObject.transform);
         }
     }
 }
