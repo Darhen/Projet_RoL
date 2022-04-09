@@ -8,22 +8,56 @@ public class EnnemiSolBossActive : MonoBehaviour
     Animator animatorBossSol;
     public float speed;
     Rigidbody rb;
+    public bool isMoving;
+    public bool isCollided;
+    RespawnMerged respawn;
 
     void Start()
     {
         speed = 0f;
         rb = this.gameObject.GetComponent<Rigidbody>();
         animatorBossSol = this.gameObject.GetComponent<Animator>();
-
+        isMoving = true;
+        respawn = GameObject.FindWithTag("Player").GetComponent<RespawnMerged>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        animatorBossSol.enabled = true;
-        animatorBossSol.SetBool("IsCharging", true);
-        speed = 13f;
-        transform.LookAt(player);
-        transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        if (isMoving == true && isCollided == false)
+        {
+            animatorBossSol.enabled = true;
+            animatorBossSol.SetBool("IsCharging", true);
+            speed = 12f;
+            transform.LookAt(player);
+            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            //rb.velocity = Vector3.forward * speed;
+        }
+
+        if (isMoving == true && isCollided == true)
+        {
+            speed = 0f;
+        }
+
+        if (isMoving == false)
+        {
+            speed = 0f;
+        }
+
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Mur")
+        {
+            isCollided = true;
+        }
+        else
+        {
+            isCollided = false;
+            isMoving = true;
+        }
+    }
+
 }

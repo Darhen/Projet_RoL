@@ -7,7 +7,7 @@ public class EnnemiSolBoss : MonoBehaviour
 
     Transform player;
     Rigidbody rb_player;
-  public GameObject robotSolBoss;
+    public GameObject robotSolBoss;
     public GameObject SpotLight;
     public GameObject mainCamera;
     public Vector3 cineOffset;
@@ -17,7 +17,7 @@ public class EnnemiSolBoss : MonoBehaviour
 
     RespawnMerged respawn;
     EnnemiSolBossActive ennemiSolBossActive;
-    CameraFollow cameraFollow;
+    CameraFollowGrotte cameraFollow;
     PlayerController playerController;
     PlugPlant plugplant;
     Plane plane;
@@ -30,7 +30,7 @@ public class EnnemiSolBoss : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         rb_player = player.GetComponent<Rigidbody>();
-        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollow>();
+        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollowGrotte>();
         playerController = player.GetComponent<PlayerController>();
         plugplant = player.GetComponent<PlugPlant>();
         plane = player.GetComponent<Plane>();
@@ -57,12 +57,12 @@ public class EnnemiSolBoss : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            StopCoroutine(AttaqueBossSol());
             cameraFollow.walkThroughOffset = new Vector3(0, 0, 0);
             ennemiSolBossActive.enabled = false;
             robotSolBoss.GetComponent<Animator>().enabled = false;
             robotSolBoss.GetComponent<Animator>().SetBool("IsCharging", false);
             ennemiSolBossActive.speed = 0f;
+            //ennemiSolBossActive.isMoving = true;
             SpotLight.SetActive(false);
 
         }
@@ -131,9 +131,6 @@ public class EnnemiSolBoss : MonoBehaviour
    void ChargeEnnemi()
     {
         ennemiSolBossActive.enabled = true;
+        ennemiSolBossActive.isMoving = true;
     }
-    
-    
-
-
 }

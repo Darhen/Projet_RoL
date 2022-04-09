@@ -6,7 +6,7 @@ public class CameraTriggerPlayer : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameObject spawnPos;
-    CameraFollow cameraFollow;
+    CameraFollowGrotte cameraFollow;
     GrowthManager growthManager;
     public Vector3 walkThroughOffset;
     public bool playerInsideCollider;
@@ -15,7 +15,7 @@ public class CameraTriggerPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollow>();
+        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollowGrotte>();
         growthManager = spawnPos.GetComponent<GrowthManager>();
         playerInsideCollider = false;
         planteSortDuCollider = false;

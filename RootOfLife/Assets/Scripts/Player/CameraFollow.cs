@@ -41,7 +41,7 @@ public class CameraFollow : MonoBehaviour
     public bool topBoundary;
     private GameObject cameraBoundary;
     public bool inWall;
-    private Vector3 boundaryPosition;
+    public Vector3 boundaryPosition;
     private int lastDirection;
     public bool boundary;
 
@@ -156,7 +156,7 @@ public class CameraFollow : MonoBehaviour
         }
 
         //declarer que si la cam est inWall on active le boundary
-        
+        /*
         if(inWall)
         {
             boundary = true;
@@ -164,7 +164,7 @@ public class CameraFollow : MonoBehaviour
         else
         {
             boundary = false;
-        }
+        }*/
         
     }
 
@@ -305,7 +305,7 @@ public class CameraFollow : MonoBehaviour
                 {
                     slopeOffset = new Vector3(0, 0, 0);
                 }
-            }*/
+            }
 
             if (topBoundary)
             {
@@ -338,18 +338,18 @@ public class CameraFollow : MonoBehaviour
                 }
             }
 
-      //  }
+        }*/
         
     }
-    
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "CameraBoundInitial")
         {
             cameraBoundary = other.gameObject;
-            leftBoundary = cameraBoundary.GetComponent<CameraBound>().leftBoundary;
-            rightBoundary = cameraBoundary.GetComponent<CameraBound>().rightBoundary;
-            topBoundary = cameraBoundary.GetComponent<CameraBound>().topBoundary;
+            //leftBoundary = cameraBoundary.GetComponent<CameraBoundInitial>().leftBoundary;
+            //rightBoundary = cameraBoundary.GetComponent<CameraBoundInitial>().rightBoundary;
+            topBoundary = cameraBoundary.GetComponent<CameraBoundInitial>().topBoundary;
             boundaryPosition = other.gameObject.transform.position;
             inWall = true;
         }
@@ -359,9 +359,10 @@ public class CameraFollow : MonoBehaviour
         if (other.gameObject.tag == "CameraBoundInitial")
         {
             cameraBoundary = null;
+            //boundaryPosition = new Vector3(0, 0, 0);
             inWall = false;
         }
-    }
+    }*/
     
     IEnumerator CheckDirectionChange()
     {

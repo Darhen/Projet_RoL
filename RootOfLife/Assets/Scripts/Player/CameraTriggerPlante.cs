@@ -6,7 +6,7 @@ public class CameraTriggerPlante : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameObject spawnPos;
-    CameraFollow cameraFollow;
+    CameraFollowGrotte cameraFollow;
     GrowthManager growthManager;
     public Vector3 cinematicOffset;
 
@@ -14,7 +14,7 @@ public class CameraTriggerPlante : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollow>();
+        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollowGrotte>();
         growthManager = spawnPos.GetComponent<GrowthManager>();
 
     }
