@@ -96,6 +96,8 @@ public class EnnemiSolBoss : MonoBehaviour
     IEnumerator MortParBossSol()
     {
         ennemiSolBossActive.enabled = false;
+        ennemiSolBossActive.isCollided = false;
+        //ennemiSolBossActive.isMoving = true;
         robotSolBoss.GetComponent<Animator>().enabled = false;
         robotSolBoss.GetComponent<Animator>().SetBool("IsCharging", false);
         ennemiSolBossActive.speed = 0f;

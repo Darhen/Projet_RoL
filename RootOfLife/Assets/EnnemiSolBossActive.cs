@@ -29,7 +29,7 @@ public class EnnemiSolBossActive : MonoBehaviour
         {
             animatorBossSol.enabled = true;
             animatorBossSol.SetBool("IsCharging", true);
-            speed = 12f;
+            speed = 14f;
             transform.LookAt(player);
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             //rb.velocity = Vector3.forward * speed;
@@ -53,11 +53,11 @@ public class EnnemiSolBossActive : MonoBehaviour
         {
             isCollided = true;
         }
-        else
+        /*else
         {
             isCollided = false;
             isMoving = true;
-        }
+        }*/
     }
 
 }

@@ -77,7 +77,7 @@ public class DroneAttaque : MonoBehaviour
     IEnumerator LookAtPlayer()
     {
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         transform.LookAt(player.transform);
         lookingAtYou = true;
         Debug.Log("Ca rentre!");

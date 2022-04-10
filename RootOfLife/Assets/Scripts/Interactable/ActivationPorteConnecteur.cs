@@ -8,8 +8,10 @@ public class ActivationPorteConnecteur : MonoBehaviour
     public bool switchActivated;
     public GameObject Porte;
     public GameObject player;
+
     RespawnMerged respawnMerged;
     SensorTrigger sensorTrigger;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +19,8 @@ public class ActivationPorteConnecteur : MonoBehaviour
         porteAnimator = Porte.GetComponent<Animator>();
         respawnMerged = player.GetComponent<RespawnMerged>();
         sensorTrigger = this.gameObject.GetComponent<SensorTrigger>();
+        
     }
-
-
     void Update()
     {
         if (sensorTrigger.isActive)
