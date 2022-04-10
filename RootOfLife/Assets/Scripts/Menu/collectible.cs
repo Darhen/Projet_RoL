@@ -7,15 +7,15 @@ public class collectible : MonoBehaviour
 
     private int collectibles;
 
-    public GameObject Collectible1;
-    public GameObject Collectible2;
-    public GameObject Collectible3;
-    public GameObject Collectible4;
-    public GameObject Collectible5;
-    public GameObject Collectible6;
-    public GameObject Collectible7;
-    public GameObject Collectible8;
-    public GameObject Collectible9;
+    public GameObject Collectible_1;
+    public GameObject Collectible_2;
+    public GameObject Collectible_3;
+    public GameObject Collectible_4;
+    public GameObject Collectible_5;
+    public GameObject Collectible_6;
+    public GameObject Collectible_7;
+    public GameObject Collectible_8;
+    public GameObject Collectible_9;
     public GameObject CollectibleUI;
     public GameObject CollectibleUI2;
     public GameObject CollectibleUI3;
@@ -25,7 +25,16 @@ public class collectible : MonoBehaviour
     public GameObject CollectibleUI7;
     public GameObject CollectibleUI8;
     public GameObject CollectibleUI9;
+
     public bool collectibleActive = false;
+    public bool collectibleActive2 = false;
+    public bool collectibleActive3 = false;
+    public bool collectibleActive4 = false;
+    public bool collectibleActive5 = false;
+    public bool collectibleActive6 = false;
+    public bool collectibleActive7 = false;
+    public bool collectibleActive8 = false;
+    public bool collectibleActive9 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -56,117 +65,124 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI.SetActive(true);
             
-            Collectible1.SetActive(true);
+            Collectible_1.SetActive(true);
+        }
 
-            if (other.gameObject.tag == "Collectible2")
-            {
-                collectibles++;
+        if (other.gameObject.tag == "Collectible2")
+        {
+            collectibles++;
 
-                collectibleActive = true;
+            collectibleActive2 = true;
 
-                StartCoroutine(imageOff());
+            StartCoroutine(imageOff());
 
-                other.gameObject.SetActive(false);
-                CollectibleUI2.SetActive(true);
+            other.gameObject.SetActive(false);
+            CollectibleUI2.SetActive(true);
 
-                Collectible2.SetActive(true);
-            }
-            if (other.gameObject.tag == "Collectible3")
-            {
-                collectibles++;
+            Collectible_2.SetActive(true);
+        }
 
-                collectibleActive = true;
+        if (other.gameObject.tag == "Collectible3")
+        {
+            collectibles++;
 
-                StartCoroutine(imageOff());
+            collectibleActive3 = true;
 
-                other.gameObject.SetActive(false);
-                CollectibleUI3.SetActive(true);
+            StartCoroutine(imageOff());
 
-                Collectible3.SetActive(true);
-            }
-            if (other.gameObject.tag == "Collectible4")
-            {
-                collectibles++;
+            other.gameObject.SetActive(false);
+            CollectibleUI3.SetActive(true);
 
-                collectibleActive = true;
+            Collectible_3.SetActive(true);
+        }
 
-                StartCoroutine(imageOff());
+        if (other.gameObject.tag == "Collectible4")
+        {
+            collectibles++;
 
-                other.gameObject.SetActive(false);
-                CollectibleUI4.SetActive(true);
+            collectibleActive4 = true;
 
-                Collectible4.SetActive(true);
-            }
-            if (other.gameObject.tag == "Collectible5")
-            {
-                collectibles++;
+            StartCoroutine(imageOff());
 
-                collectibleActive = true;
+            other.gameObject.SetActive(false);
+            CollectibleUI4.SetActive(true);
 
-                StartCoroutine(imageOff());
+            Collectible_4.SetActive(true);
+        }
 
-                other.gameObject.SetActive(false);
-                CollectibleUI5.SetActive(true);
+        if (other.gameObject.tag == "Collectible5")
+        {
+            collectibles++;
 
-                Collectible5.SetActive(true);
-            }   
-                            if (other.gameObject.tag == "Collectible6")
-                            {
-                                collectibles++;
+            collectibleActive5 = true;
 
-                                collectibleActive = true;
+            StartCoroutine(imageOff());
 
-                                StartCoroutine(imageOff());
+            other.gameObject.SetActive(false);
+            CollectibleUI5.SetActive(true);
 
-                                other.gameObject.SetActive(false);
-                                CollectibleUI6.SetActive(true);
+            Collectible_5.SetActive(true);
+        }
 
-                            Collectible6.SetActive(true);
-                            }
-                                if (other.gameObject.tag == "Collectible7")
-                                {
-                                    collectibles++;
+        if (other.gameObject.tag == "Collectible6")
+        {
+            collectibles++;
 
-                                    collectibleActive = true;
+            collectibleActive6 = true;
 
-                                    StartCoroutine(imageOff());
+            StartCoroutine(imageOff());
 
-                                    other.gameObject.SetActive(false);
-                                    CollectibleUI7.SetActive(true);
+            other.gameObject.SetActive(false);
+            CollectibleUI6.SetActive(true);
 
-                                    Collectible7.SetActive(true);
-                                }
-                                    if (other.gameObject.tag == "Collectible8")
-                                    {
-                                        collectibles++;
+            Collectible_6.SetActive(true);
+        }
 
-                                        collectibleActive = true;
+        if (other.gameObject.tag == "Collectible7")
+        {
+            collectibles++;
 
-                                        StartCoroutine(imageOff());
-                                        
-                                        other.gameObject.SetActive(false);
-                                        CollectibleUI8.SetActive(true);
+            collectibleActive7 = true;
 
-                                        Collectible8.SetActive(true);
-                                    }
-                                        if (other.gameObject.tag == "Collectible9")
-                                        {
-                                            collectibles++;
+            StartCoroutine(imageOff());
 
-                                            collectibleActive = true;
+            other.gameObject.SetActive(false);
+            CollectibleUI7.SetActive(true);
 
-                                            StartCoroutine(imageOff());
-                                          
-                                            other.gameObject.SetActive(false);
-                                            CollectibleUI9.SetActive(true);
+            Collectible_7.SetActive(true);
+        }
 
-                                            Collectible9.SetActive(true);
-                                        }
+        if (other.gameObject.tag == "Collectible8")
+        {
+            collectibles++;
 
- 
+            collectibleActive8 = true;
 
+            StartCoroutine(imageOff());
+
+            other.gameObject.SetActive(false);
+            CollectibleUI8.SetActive(true);
+
+            Collectible_8.SetActive(true);
+        }
+
+        if (other.gameObject.tag == "Collectible9")
+        {
+            collectibles++;
+
+            collectibleActive9 = true;
+
+            StartCoroutine(imageOff());
+
+            other.gameObject.SetActive(false);
+            CollectibleUI9.SetActive(true);
+
+            Collectible_9.SetActive(true);
         }
     }
+
+
+
 
     IEnumerator imageOff()
     {
