@@ -21,7 +21,10 @@ public class MoveObject : MonoBehaviour
     public float otherboxPositionX;
     public float otherBoxXDimension;
 
+    public bool isMoving;
+
     PlayerController playerController;
+    PuzzleBox puzzleBox;
 
     // Start is called before the first frame update
     void Start()
@@ -140,12 +143,24 @@ public class MoveObject : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         //Controller dédié aux box
         if (pushingController && pushMovement)
         {
             myRigidbody.velocity = movementVector;
             otherBox.GetComponent<Rigidbody>().velocity = movementVector;
-            
+
+            //detection si le box isMoving
+            isMoving = puzzleBox.isMoving;
+
+            if (!isMoving)
+            {
+                myRigidbody.velocity = new Vector3(0, 0, 0);
+            }
+        }
+        else
+        {
+            transform.parent = null;
         }
 
         if(pushingController && !pushMovement)
@@ -187,6 +202,7 @@ public class MoveObject : MonoBehaviour
             otherBox = collision.gameObject;
             otherBoxXDimension = otherBox.GetComponent<BoxCollider>().bounds.size.x;
             edgeBox = (otherBoxXDimension / 2) + 0.7f;
+            puzzleBox = otherBox.GetComponent<PuzzleBox>();
         }
 
     }

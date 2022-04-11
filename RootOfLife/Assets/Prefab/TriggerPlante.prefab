@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1981445540594230543}
   - component: {fileID: 1981445540594230542}
   m_Layer: 0
-  m_Name: RedLight
+  m_Name: YellowLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.3254717, b: 0.3254717, a: 1}
+  m_Color: {r: 0.9503755, g: 1, b: 0.32549024, a: 1}
   m_Intensity: 1
   m_Range: 35.15
   m_SpotAngle: 30
@@ -109,7 +109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1981445540781556797
 Transform:
   m_ObjectHideFlags: 0
@@ -131,11 +131,11 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981445540781556795}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.956292, b: 0.5235849, a: 1}
+  m_Color: {r: 0.23921567, g: 1, b: 0.38894275, a: 1}
   m_Intensity: 1
   m_Range: 35.15
   m_SpotAngle: 30
