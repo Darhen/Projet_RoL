@@ -237,6 +237,13 @@ public class PlayerClimbing : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Ladder")
+        {
+            StopLadderClimb();
+        }
+    }
 
     private void OnCollisionStay(Collision collision)
     {
