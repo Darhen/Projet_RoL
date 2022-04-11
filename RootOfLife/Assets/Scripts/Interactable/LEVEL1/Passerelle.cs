@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Passerelle : MonoBehaviour
 {
-    public Rigidbody myRb;
+    //public Rigidbody myRb;
     public GameObject passerelle;
     public ParticleSystem sparks1;
     public ParticleSystem sparks2;
     public ParticleSystem sparks3;
     public ParticleSystem sparks4;
+    public Animator animatorPasserelle;
 
     // Start is called before the first frame update
     void Start()
@@ -35,15 +36,16 @@ public class Passerelle : MonoBehaviour
 
     IEnumerator DelaiKinematic()
     {
+        animatorPasserelle.SetTrigger("falling");
         sparks1.Play();
         sparks2.Play();
         sparks3.Play();
         sparks4.Play();
-        myRb.isKinematic = false;
-        passerelle.GetComponent<Rigidbody>().isKinematic = false;
+        //myRb.isKinematic = false;
+        //passerelle.GetComponent<Rigidbody>().isKinematic = false;
         yield return new WaitForSeconds(3f);
-        myRb.isKinematic = true;
-        passerelle.GetComponent<Rigidbody>().isKinematic = true;
+        //myRb.isKinematic = true;
+        //passerelle.GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Passerelle>().enabled = false;
 
     }

@@ -14,6 +14,8 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     public Animator nextCercleBlancAnimator; 
     public Animator nextCercleBlancAnimator2;
     public GameObject oldCameraBoundary;
+    public GameObject ledgeClimbFinal;
+    public Animator gateAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -50,5 +52,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         nextLight.SetActive(true);
         nextLight2.SetActive(true);
+        ledgeClimbFinal.SetActive(true);
+        gateAnimator.SetTrigger("open");
     }
 }
