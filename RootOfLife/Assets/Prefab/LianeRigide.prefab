@@ -110,6 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9391598faba30884d814b29584526c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  facingLeft: 0
+  facingRight: 0
+  ladderDirection: 0
 --- !u!1001 &1868972465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,11 +130,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.10380125
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.37736052
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
       propertyPath: m_LocalPosition.z

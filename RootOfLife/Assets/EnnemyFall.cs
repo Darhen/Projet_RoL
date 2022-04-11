@@ -11,14 +11,21 @@ public class EnnemyFall : MonoBehaviour
     public GameObject ennemiSol;
     public Transform initialPosition;
     public GameObject mainCamera;
-    CameraFollowGrotte cameraFollow;
+    public GameObject cinematicCamera;
+    public GameObject cameraTrigger1;
+    public GameObject cameraTrigger2;
+    public bool ennemiDead;
+    //CameraFollowGrotte cameraFollow;
     PlayerController playerController;
     Rigidbody ennemiRB;
     enemy_sol_mouvement enemiSolMouvement;
     ActivationPorteConnecteur activationPorte;
     CollisionFall_ collisionFall;
     RespawnMerged respawn;
-    public Vector3 cinematicOffset;
+    PlugPlant plugplant;
+    Plane plane;
+    MoveObject moveObject;
+    //public Vector3 cinematicOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -33,26 +40,33 @@ public class EnnemyFall : MonoBehaviour
         enemiSolMouvement.enabled = true;
         ennemiRB = ennemiSol.GetComponent<Rigidbody>();
         respawn = GameObject.FindWithTag("Player").GetComponent<RespawnMerged>();
-        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollowGrotte>();
+        //cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollowGrotte>();
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        plugplant = GameObject.FindWithTag("Player").GetComponent<PlugPlant>();
+        plane = GameObject.FindWithTag("Player").GetComponent<Plane>();
+        moveObject = GameObject.FindWithTag("Player").GetComponent<MoveObject>();
+        cinematicCamera.SetActive(false);
+        ennemiDead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(activationPorte.switchActivated == true)
+        if(activationPorte.switchActivated == true && ennemiDead == false)
         {
             holeCollider.enabled = true;
             wayPoint.SetActive(true);
             collisionFall.enabled = true;
             StartCoroutine(CinematiqueFall());
-            Debug.Log("Se réactive!");
-            cameraFollow.walkThroughOffset = new Vector3(0, 0, 0) ;
-           // playerController.enabled = true;
-
+            // Debug.Log("Se réactive!");
+            //cameraFollow.walkThroughOffset = new Vector3(0, 0, 0) ;
+            // playerController.enabled = true;
+            ennemiDead = true;
         }
+
         if(activationPorte.switchActivated == false)
         {
+
             holeCollider.enabled = false;
             wayPoint.SetActive(false);
             collisionFall.enabled = false;
@@ -63,6 +77,7 @@ public class EnnemyFall : MonoBehaviour
             enemiSolMouvement.enabled = true;
             ennemiRB.isKinematic = true;
             ennemiSol.transform.position = initialPosition.position;
+            ennemiDead = false;
         }
     }
 
@@ -77,10 +92,39 @@ public class EnnemyFall : MonoBehaviour
 
     IEnumerator CinematiqueFall()
     {
+        CinematicMode();
+        yield return new WaitForSeconds(5f);
+        EndCinematicMode();
         Debug.Log("EnnemiFall");
-       // playerController.enabled = false;
-        cameraFollow.walkThroughOffset = cinematicOffset;
-        yield return new WaitForSeconds(3f);
+        
+    }
+
+    void CinematicMode()
+    {
+        playerController.enabled = false;
+        //animatorPlayer.enabled = false;
+        cameraTrigger1.SetActive(false);
+        cameraTrigger2.SetActive(false);
+        plugplant.enabled = false;
+        plane.enabled = false;
+        moveObject.enabled = false;
+        mainCamera.SetActive(false);
+        cinematicCamera.SetActive(true);
+        
+    }
+
+    void EndCinematicMode()
+    {
+        playerController.enabled = true;
+        //animatorPlayer.enabled = true;
+        plugplant.enabled = true;
+        plane.enabled = true;
+        moveObject.enabled = true;
+        cameraTrigger1.SetActive(true);
+        cameraTrigger2.SetActive(true);
+        cinematicCamera.SetActive(false);
+        mainCamera.SetActive(true);
+        
     }
 
 }

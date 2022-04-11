@@ -6,6 +6,7 @@ public class SlopeDetector : MonoBehaviour
 {
     PlayerController playerController;
     Rigidbody rbPlayer;
+    slopeOrientation SlopeOrientation;
 
     public bool sliding;
     public Vector3 slidingSpeed;
@@ -35,14 +36,14 @@ public class SlopeDetector : MonoBehaviour
        
         if (sliding)
         {
-             if(rbPlayer.velocity.x > 0)
-            {
+            // if(rbPlayer.velocity.x > 0)
+           // {
                 direction = 1;
-            }
-            if(rbPlayer.velocity.x < 0)
-            {
-                direction = -1;
-            }
+           // }
+           // if(rbPlayer.velocity.x < 0)
+           // {
+            //    direction = -1;
+            //}
             Quaternion turnModel = Quaternion.LookRotation(new Vector3(direction, 0, 0));
             model.rotation = turnModel;
         }
@@ -50,7 +51,7 @@ public class SlopeDetector : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (sliding)
+        if (sliding /*&& SlopeOrientation.slidingRight == true*/)
         {
             rbPlayer.velocity = slidingSpeed;
 
@@ -60,11 +61,23 @@ public class SlopeDetector : MonoBehaviour
                 jump = false;
             }
         }
+/*
+        if (sliding && SlopeOrientation.slidingLeft == true)
+        {
+            rbPlayer.velocity = -slidingSpeed;
+
+            if (jump)
+            {
+                rbPlayer.velocity += Vector3.up * jumpForce;
+                jump = false;
+            }
+        }*/
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Slope"))
+        if(collision.gameObject.CompareTag("Slope") /*&& SlopeOrientation.slidingRight == true*/)
         {
             playerController.enabled = false;
             sliding = true;
