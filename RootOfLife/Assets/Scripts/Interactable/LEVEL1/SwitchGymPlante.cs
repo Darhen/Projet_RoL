@@ -19,6 +19,8 @@ public class SwitchGymPlante : MonoBehaviour
 
     public GameObject lamp1;
     public GameObject lamp2;
+    public GameObject lamp3;
+    public GameObject lamp4;
     public GameObject pad;
     public ParticleSystem spark;
 
@@ -63,6 +65,8 @@ public class SwitchGymPlante : MonoBehaviour
         //animator.SetTrigger("switch");
         yield return new WaitForSeconds(1.4f);
         spark.Play();
+        lamp3.SetActive(false);
+        lamp4.SetActive(true);
         animatorWindow.SetTrigger("gymMode");
         animatorPlayer.SetBool("cinematic", false);
         yield return new WaitForSeconds(2f);

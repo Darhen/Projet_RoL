@@ -199,13 +199,13 @@ public class CameraFollow : MonoBehaviour
         {
             if (xFree)
             {
-                Vector3 desiredPosition = new Vector3(target.transform.position.x + offset.x, boundCamPosition.y, boundCamPosition.z);
+                Vector3 desiredPosition = new Vector3(target.transform.position.x + offset.x + boundCamPosition.x, boundCamPosition.y, boundCamPosition.z);
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
                 transform.position = smoothedPosition;
             }
             if (yFree)
             {
-                Vector3 desiredPosition = new Vector3(boundCamPosition.x, target.transform.position.y + offset.y, boundCamPosition.z);
+                Vector3 desiredPosition = new Vector3(boundCamPosition.x, target.transform.position.y + offset.y + boundCamPosition.y, boundCamPosition.z);
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
                 transform.position = smoothedPosition;
             }

@@ -22,6 +22,7 @@ public class PlayerClimbing : MonoBehaviour
     public bool jumpingOff;
     public bool isGrounded;
     public bool isLedgeClimbing;
+    public Transform model;
     
 
     // Start is called before the first frame update
@@ -39,8 +40,9 @@ public class PlayerClimbing : MonoBehaviour
     void Update()
     {
         isJumping = playerController.isJumping;
-        isGrounded = playerController.isGrounded;
+        //isGrounded = playerController.isGrounded;
         isLedgeClimbing = ledgeClimb.isLedgeClimbing;
+
 
         //calcul des inputs
         yInput = Input.GetAxis("Vertical");
@@ -56,6 +58,15 @@ public class PlayerClimbing : MonoBehaviour
         //activer jump
         if (isClimbing)
         {
+            /*
+            if (isGrounded && yInput < 0)
+            {
+                playerController.enabled = true;
+                isClimbing = false;
+                //enlever kinematic
+                rbPlayer.isKinematic = false;
+            }
+            */
             if (Input.GetButtonDown("Jump"))
             {
                 //decalre jumpingOff pour empecher une nouvelle collision avec le ladder
@@ -70,6 +81,7 @@ public class PlayerClimbing : MonoBehaviour
                 playerController.enabled = true;
             }
         }
+        /*
         if(!isClimbing)
         {
             //calcul direction seulement lorsque le player ne climb pas
@@ -82,7 +94,7 @@ public class PlayerClimbing : MonoBehaviour
                 directionX = -1;
             }
         }
-
+        */
         if (isLedgeClimbing)
         {
             isClimbing = false;
@@ -96,22 +108,59 @@ public class PlayerClimbing : MonoBehaviour
         {
             //calcul de la position en y du joueur par rapport au input y
             offsetY = yInput * Time.deltaTime;
+
             //positionnement du joueur
-            transform.position = new Vector3(ladderPosition.x + offsetX, transform.position.y + offsetY, ladderPosition.z);
+            //transform.position = new Vector3(ladderPosition.x + offsetX, transform.position.y + offsetY, ladderPosition.z);
+            transform.position = new Vector3 (ladderPosition.x + offsetX, transform.position.y, transform.position.z);
+            
+            //this.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * Time.deltaTime * 2);
+
+            if (yInput > 0)
+            {
+                rbPlayer.isKinematic = false;
+                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * Time.deltaTime * 100, 0);
+            }
+
+            if (yInput < 0)
+            {
+                rbPlayer.isKinematic = false;
+                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * Time.deltaTime * 200, 0);
+            }
+
+            if (yInput == 0)
+            {
+                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                rbPlayer.isKinematic = true;
+            }
+
             //desactiver le script player controller
             playerController.enabled = false;
-            
+            /*
             //le player glisse plus rapidement en descendant
             if (yInput < 0)
             {
                 transform.position = new Vector3(ladderPosition.x + offsetX, transform.position.y + offsetY * 4, ladderPosition.z);
             }
+            */
+            /*
+        if (yInput == 0)
+            {
+                rbPlayer.isKinematic = true;
+            }
+        if (yInput != 0)
+            {
+                rbPlayer.isKinematic = false;
+            }
+            */
         }
+       
+
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         if (other.gameObject.CompareTag("Ladder") && isJumping && jumpingOff == false)
         {
             //definir la cible ou positionner le perso
@@ -125,19 +174,104 @@ public class PlayerClimbing : MonoBehaviour
             //desactiver le script player controller
             playerController.enabled = false;
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Ladder"))
+        */
+        if (other.gameObject.CompareTag("Ladder") && isJumping && jumpingOff == false)
         {
-            isClimbing = false;
-            rbPlayer.isKinematic = false;
-            if(!isLedgeClimbing)
-            {
-                playerController.enabled = true;
-            }
-            
+            /*
+            //definir la cible ou positionner le perso
+            ladderPosition = other.gameObject.transform.position;
+            //rendre kinematic le player sur le ladder
+            //rbPlayer.isKinematic = true;
+            //activer le bool isClimbing
+            isClimbing = true;
+            //calcul du offset en x
+            offsetX = -directionX * 0.5f;
+            //desactiver le script player controller
+            playerController.enabled = false;
+            */
+            directionX = other.GetComponent<LadderPrefabScript>().ladderDirection;
+            LadderClimb();
         }
-        
+    }
+    private void OnTriggerStay(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Ladder") && jumpingOff == false)
+        {
+            //Le player peut monter dans un ladder en etant grounded
+            if (isGrounded && yInput > 0)
+            {
+                //definir la cible ou positionner le perso
+                ladderPosition = other.gameObject.transform.position;
+                directionX = other.GetComponent<LadderPrefabScript>().ladderDirection;
+                //fonction Ladder
+                LadderClimb();
+            }
+
+            if (isGrounded && yInput < 0 && other.gameObject.CompareTag("Ledge"))
+            {
+                //definir la cible ou positionner le perso
+                ladderPosition = other.gameObject.transform.position;
+                directionX = other.GetComponent<LadderPrefabScript>().ladderDirection;
+                //fonction Ladder
+                LadderClimb();
+            }
+
+            if (isClimbing && yInput == 0)
+            {
+                //definir la cible ou positionner le perso
+                ladderPosition = other.gameObject.transform.position;
+                directionX = other.GetComponent<LadderPrefabScript>().ladderDirection;
+                //fonction Ladder
+                LadderClimb();
+            }
+
+            if (isClimbing && isGrounded && yInput < 0)
+            {
+                StopLadderClimb();
+            }
+            if (isLedgeClimbing)
+            {
+                StopLadderClimb();
+            }
+        }
+    }
+
+
+    private void OnCollisionStay(Collision collision)
+    {
+        //Check Ground
+        if(collision.gameObject.layer == 6)
+        {
+            isGrounded = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            isGrounded = false;
+        }
+    }
+
+    private void LadderClimb()
+    {
+        //rendre kinematic le player sur le ladder
+        isClimbing = true;
+        //tourner le player avatar dans la bonne direction
+        Quaternion turnModel = Quaternion.LookRotation(new Vector3(-directionX, 0, 0));
+        model.rotation = turnModel;
+        //calcul du offset en x
+        offsetX = directionX * 0.5f;
+        //desactiver le script player controller
+        playerController.enabled = false;
+    }
+
+    private void StopLadderClimb()
+    {
+        //rendre kinematic le player sur le ladder
+        isClimbing = false;
+        //desactiver le script player controller
+        playerController.enabled = true;
     }
 }

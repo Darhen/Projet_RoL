@@ -133,7 +133,8 @@ public class MoveObject : MonoBehaviour
         //update la vitesse de deplacement selon la mass de la box
         if (otherBox != null)
         {
-            speed = 10 / otherBox.GetComponent<Rigidbody>().mass;
+            //speed = 10 / otherBox.GetComponent<Rigidbody>().mass;
+            speed = 1;
         }
     }
 
@@ -144,6 +145,7 @@ public class MoveObject : MonoBehaviour
         {
             myRigidbody.velocity = movementVector;
             otherBox.GetComponent<Rigidbody>().velocity = movementVector;
+            
         }
 
         if(pushingController && !pushMovement)

@@ -13,6 +13,7 @@ public class CameraBound : MonoBehaviour
     public CameraFollow cameraFollow;
     public bool xFree;
     public bool yFree;
+    public Vector3 extraOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class CameraBound : MonoBehaviour
         if (other.tag == "Player")
         {
             cameraFollow.activeBoundary = true;
-            cameraFollow.boundCamPosition = cameraTarget;
+            cameraFollow.boundCamPosition = cameraTarget + extraOffset;
             if(xFree)
             {
                 cameraFollow.xFree = true;

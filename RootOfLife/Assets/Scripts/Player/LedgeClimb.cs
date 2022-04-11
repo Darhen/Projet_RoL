@@ -58,7 +58,7 @@ public class LedgeClimb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ledge") && isJumping || other.gameObject.CompareTag("Ledge") && bounce)
+        if (other.gameObject.CompareTag("Ledge") && isJumping || other.gameObject.CompareTag("Ledge") && bounce || other.gameObject.CompareTag("Ledge") && isLadderClimbing)
         {
             Debug.Log("LedgeClimb");
             //Determiner la direction du ledge climb
