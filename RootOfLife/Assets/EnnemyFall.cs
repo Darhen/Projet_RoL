@@ -71,14 +71,14 @@ public class EnnemyFall : MonoBehaviour
             wayPoint.SetActive(false);
             collisionFall.enabled = false;
         }   
-
+        /*
         if(respawn.estMort == true && activationPorte.switchActivated == true)
         {
             enemiSolMouvement.enabled = true;
             ennemiRB.isKinematic = true;
             ennemiSol.transform.position = initialPosition.position;
             ennemiDead = false;
-        }
+        }*/
     }
 
     private void OnTriggerStay(Collider other)

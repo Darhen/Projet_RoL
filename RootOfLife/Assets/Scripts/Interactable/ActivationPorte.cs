@@ -37,12 +37,12 @@ public class ActivationPorte : MonoBehaviour
     void Update()
     {
         playerPosition = player.GetComponent<Transform>().position;
-
+        /*
         if (respawnMerged.estMort == true)
         {
             switchActivated = false;
             porteAnimator.SetBool("Activated", false);
-        }
+        }*/
     }
 
 

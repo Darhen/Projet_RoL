@@ -28,12 +28,12 @@ public class ActivationPorteConnecteur : MonoBehaviour
             switchActivated = true;
             porteAnimator.SetBool("Activated", true);
         }
-
+        /*
         if (respawnMerged.estMort == true)
         {
             sensorTrigger.isActive = false;
             switchActivated = false;
             porteAnimator.SetBool("Activated", false);
-        }
+        }*/
     }
 }

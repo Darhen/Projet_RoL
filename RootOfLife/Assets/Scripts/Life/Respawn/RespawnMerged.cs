@@ -40,6 +40,7 @@ public class RespawnMerged : MonoBehaviour
         ennemiSolMouv = ennemiSol.GetComponent<enemy_sol_mouvement>();
 
         respawnPoint = player.transform.position;
+        FadeOutScreen.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -100,10 +101,11 @@ public class RespawnMerged : MonoBehaviour
         FadeOutScreen.SetActive(true);
         yield return new WaitForSeconds(2f);
         isDying = false;
-        newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
-        newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
         player.transform.position = respawnPoint;
         estMort = false;
+        yield return new WaitForSeconds(0.5f);
+        newCheckIfIsInsideBeam.variableT = newCheckIfIsInsideBeam.minT;
+        newCheckIfIsInsideBeam.lerpedColor = newCheckIfIsInsideBeam.colorIni;
         playerController.enabled = true;
 
     }
