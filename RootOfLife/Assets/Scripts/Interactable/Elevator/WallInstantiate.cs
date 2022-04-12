@@ -6,6 +6,7 @@ public class WallInstantiate : MonoBehaviour
 {
     public GameObject wallPrefab;
     public GameObject world;
+    public GameObject ElevatorLight;
 
     GameObject newWall;
     public GameObject startPos;
@@ -25,6 +26,12 @@ public class WallInstantiate : MonoBehaviour
         else
         {
             world.GetComponent<WallSlide>().enabled = true;
+            StartCoroutine("OffLamp");
         }
+    }
+    IEnumerator OffLamp()
+    {
+        yield return new WaitForSeconds(4f);
+        ElevatorLight.SetActive(false);
     }
 }
