@@ -5,15 +5,26 @@ using UnityEngine;
 public class WallInstantiate : MonoBehaviour
 {
     public GameObject wallPrefab;
+    public GameObject world;
+
     GameObject newWall;
     public GameObject startPos;
+    public int count;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Untagged")
+        if (count < 3)
         {
-            newWall = Instantiate(wallPrefab, startPos.transform.position, Quaternion.identity);
-            newWall.transform.SetParent(this.gameObject.transform);
+            if (other.gameObject.tag == "Untagged")
+            {
+                newWall = Instantiate(wallPrefab, startPos.transform.position, Quaternion.identity);
+                newWall.transform.SetParent(this.gameObject.transform);
+                count++;
+            }
+        }
+        else
+        {
+            world.GetComponent<WallSlide>().enabled = true;
         }
     }
 }

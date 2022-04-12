@@ -9,7 +9,7 @@ public class WallSlide : MonoBehaviour
 
     private void Awake()
     {
-        speed = 15f;
+        speed = 20f;
         target = GameObject.Find("WallTarget");
     }
     private void Update()
