@@ -80,7 +80,7 @@ public class PickupSac : MonoBehaviour
         //reactivation du playerController
         playerController.enabled = true;
         moveObject.enabled = true;
-        playerController.canSpawnSac = true;
+        playerController.plantIsPlugged = false;
         animatorPlayer.SetBool("cinematic", false);
         //desactiver le trigger
         this.gameObject.SetActive(false);

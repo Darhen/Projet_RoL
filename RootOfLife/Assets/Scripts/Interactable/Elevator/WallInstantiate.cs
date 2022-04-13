@@ -8,9 +8,18 @@ public class WallInstantiate : MonoBehaviour
     public GameObject world;
     public GameObject ElevatorLight;
 
+    public GameObject ElevatorEmissive;
+    public Material Emissive1;
+    public Material Emissive2;
+
     GameObject newWall;
     public GameObject startPos;
     public int count;
+
+    private void Start()
+    {
+        ElevatorEmissive.GetComponent<MeshRenderer>().material = Emissive1;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,5 +42,6 @@ public class WallInstantiate : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         ElevatorLight.SetActive(false);
+        ElevatorEmissive.GetComponent<MeshRenderer>().material = Emissive2;
     }
 }

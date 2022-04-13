@@ -53,13 +53,16 @@ public class GrowthManager : MonoBehaviour
             //Chope le dernier child et désactive son script et le détag.
         }
 
-        if (Input.GetKeyDown(KeyCode.H))
+        if(playerController.plantIsPlugged)
         {
-            if (currentCap > 1)
+            if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
             {
-                StartCoroutine("DestroyRoots");
+                if (currentCap > 1)
+                {
+                    StartCoroutine("DestroyRoots");
+                }
+                //Lance une coroutine de destruction de child
             }
-            //Lance une coroutine de destruction de child
         }
 
         if (currentCap >= maxCap)

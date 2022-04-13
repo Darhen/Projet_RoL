@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
     public Transform model;
     public Animator animator;
 
-    public bool canSpawnSac;
-
     //Ladder
 
     LadderClimb ladderClimb;
@@ -121,7 +119,7 @@ public class PlayerController : MonoBehaviour
             isFalling = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && canSpawnSac || Input.GetButtonDown("Fire1") && canSpawnSac)
+        if (Input.GetKeyDown(KeyCode.G) && !plantIsPlugged || Input.GetButtonDown("Fire1") && !plantIsPlugged)
         {
             plantIsPlugged = true;
             movementVector = new Vector3(0, myRigidbody.velocity.y, 0);
