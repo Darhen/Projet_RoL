@@ -20,8 +20,12 @@ public class RespawnMerged : MonoBehaviour
 
     public GameObject sphere;
     public GameObject myLight;
+    public Image fadeOut;
+    private float progressFadeToBlack;
+    private float elapseTime;
 
-    PlayerController playerController;
+
+PlayerController playerController;
     public bool isDying = false;
     public bool estMort = false;
     public bool deadBySol = false;
@@ -89,17 +93,18 @@ public class RespawnMerged : MonoBehaviour
     {
 
         estMort = true;
-        StartCoroutine(Respawn());
-        FadeOutScreen.SetActive(false);
         
+        StartCoroutine(Respawn());
+        StartCoroutine(FadeToBlack());
+        //FadeOutScreen.SetActive(false);
+
     }
 
     IEnumerator Respawn()
     {
         playerController.enabled = false;
-        yield return new WaitForSeconds(1f);
-        FadeOutScreen.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
+        //FadeOutScreen.SetActive(true);
         isDying = false;
         player.transform.position = respawnPoint;
         estMort = false;
@@ -114,6 +119,34 @@ public class RespawnMerged : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         deadBySol = false;
+    }
+
+    IEnumerator FadeToBlack()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        while(progressFadeToBlack < 1)
+        {
+            elapseTime += Time.unscaledDeltaTime;
+            progressFadeToBlack = elapseTime / 1f;
+
+            Color c = fadeOut.color;
+            c.a = progressFadeToBlack;
+            fadeOut.color = c;
+            yield return null;
+        }
+        yield return new WaitForSeconds(2.5f);
+        RemoveFade();
+
+    }
+
+    public void RemoveFade()
+    {
+        Color transparent = fadeOut.color;
+        transparent.a = 0;
+        fadeOut.color = transparent;
+        elapseTime = 0;
+        progressFadeToBlack = 0;
     }
 
 
