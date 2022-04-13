@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     public bool isJumping;
     private bool isActivated;
 
+    public bool canSpawnSac;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -119,10 +121,13 @@ public class PlayerController : MonoBehaviour
             isFalling = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && !plantIsPlugged || Input.GetButtonDown("Fire1") && !plantIsPlugged)
+        if(canSpawnSac)
         {
-            plantIsPlugged = true;
-            movementVector = new Vector3(0, myRigidbody.velocity.y, 0);
+            if (Input.GetKeyDown(KeyCode.G) && !plantIsPlugged || Input.GetButtonDown("Fire1") && !plantIsPlugged)
+            {
+                plantIsPlugged = true;
+                movementVector = new Vector3(0, myRigidbody.velocity.y, 0);
+            }
         }
 
         //Bool is jumping residu du animator, a verifier si encore utile dans un autre script
