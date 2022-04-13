@@ -4,144 +4,91 @@ using UnityEngine;
 
 public class LadderClimb : MonoBehaviour
 {
-    public float speed = 2;
-    private float playerXInput;
-    private float jumpForce;
-
-    public bool moving;
-   
-
-    public Animator animator;
-    public GameObject avatar;
-    public float yInput;
-    public bool playerGrounded;
+    public bool playerCanClimb;
+    public bool isJumping;
     public bool climbing;
-    public GameObject Player;
-    public int initialFallmultiplier;
-    private Vector3 playerPosition;
+
+    private float xInput;
+    private float yInput;
+    private float offsetX;
+
+    public int directionX;
+
+    public Vector3 ladderPosition;
 
     PlayerController playerController;
-    
+    Rigidbody rbPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        moving= false;
-        Player = GameObject.Find("Player");
-        avatar = GameObject.Find("TestCharacter27_janvier");
-        initialFallmultiplier = Player.GetComponent<PlayerController>().fallMultiplier;
-        playerController = Player.GetComponent<PlayerController>();
-        playerPosition = Player.GetComponent<Transform>().position;
+        //ASSIGNER LES VARIABLES ET SCRIPTS AU START
+        playerController = GetComponent<PlayerController>();
+        rbPlayer = GetComponent<Rigidbody>();
     }
     
     private void Update()
     {
+        //CALCUL DES VARIABLES
+        //calcul des inputs
         yInput = Input.GetAxis("Vertical");
-        avatar.GetComponent<Animator>().SetFloat("vertical", yInput);
-        jumpForce = playerController.playerJumpForce;
-        playerXInput = playerController.xInput * playerController.speed;
-        jumpForce = playerController.playerJumpForce;
+        xInput = Input.GetAxis("Horizontal");
 
-        //activation du box collider lorsque le player isGrounded
-        playerGrounded = GameObject.FindWithTag("Player").GetComponent<PlayerController>().isGrounded;
+        //update des bool
+        isJumping = playerController.isJumping;
 
-        //activation du box collider lorsque le player isGrounded
-        if (playerGrounded)
+        //definir si le player peut climb
+        if (playerCanClimb)
         {
-            this.GetComponent<BoxCollider>().enabled = true;
-            //Debug.Log("grounded");
-       
+            offsetX = directionX * 0.5f;
+
+            if (yInput > 0)
+            {
+                StartCoroutine("LadderClimbing");
+            }
+            else if (isJumping)
+            {
+                StartCoroutine("LadderClimbing");
+            }
         }
-       
-        //detection si le player bouge
-
-        if (yInput != 0)
-        {
-            moving = true;
-        }
-
-        //detection si le player bouge pas
-        else
-        {
-            moving = false;
-        }
-
-        //bool animation pour climbing
-        if (climbing)
-        {
-            animator.SetBool("jump", false);
-            animator.SetBool("isClimbing", true);
-        }
-
-        else 
-        {
-            animator.SetBool("isClimbing", false);
-        }
-
-
     }
 
     private void FixedUpdate()
     {
-        //déplacements sur liane
-        if (climbing)
+       if (climbing)
         {
-            playerPosition.x = transform.position.x;
-            playerPosition.z = transform.position.z;
-            //Player.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-
-            Player.GetComponent<PlayerController>().fallMultiplier = 0;
-
-            if (moving)
+            if (yInput == 0)
             {
-                Player.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * speed, 0);
-                Player.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+                rbPlayer.isKinematic = true;
             }
-            else
+            if (yInput > 0)
             {
-                Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+                rbPlayer.isKinematic = false;
+                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * Time.deltaTime * 80, 0);
+                Debug.Log("Monte dans le ladder");
             }
-           
-            if (Input.GetButtonDown("Jump"))
+            if (yInput < 0)
             {
-                Jump();
+                rbPlayer.isKinematic = false;
+                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * Time.deltaTime * 200, 0);
+                Debug.Log("Descend dans le ladder");
+            }
+            if (!playerCanClimb)
+            {
+                climbing = false;
+                playerController.enabled = true;
+                Debug.Log("Debarque du ladder");
             }
         }
-
-        else
-        {
-            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
-            Player.GetComponent<PlayerController>().fallMultiplier = initialFallmultiplier;
-        }
     }
-    private void OnTriggerStay(Collider other)
+
+    private void LadderClimbing()
     {
-
-        if (Input.GetButton("Fire3"))
-            {
-            climbing = true;
-            }
-        else
-        {
-            climbing = false;
-        }
-
+        climbing = true;
+        playerController.enabled = false;
+        transform.position = new Vector3(ladderPosition.x + offsetX, transform.position.y, transform.position.z);
+        Debug.Log("LadderClimb");
     }
-
-        private void OnTriggerExit(Collider other)
-    {
-        other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-
-        animator.SetBool("isClimbing", false);
-
-    }
-
-    void Jump()
-    {
-        
-        
-    }
-
 }
 
 

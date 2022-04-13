@@ -25215,18 +25215,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b36231b28f577a46a056919b1931d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCanClimb: 0
   isJumping: 0
   isClimbing: 0
-  offsetY: 0
-  yInput: 0
-  climbSpeed: 0
-  xInput: 0
-  offsetX: 0
-  jumpForce: 0
-  jumpingOff: 0
   isGrounded: 0
-  isLedgeClimbing: 0
-  model: {fileID: 0}
+  jumpingOff: 0
+  jumpForce: 10
+  directionX: 0
+  ladderPosition: {x: 0, y: 0, z: 0}
+  avatar: {fileID: 2189126246793513207}
 --- !u!114 &1443935752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25240,10 +25237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliding: 0
-  slidingSpeedRight: {x: 0, y: 0, z: 0}
-  slidingSpeedLeft: {x: 0, y: 0, z: 0}
+  slidingSpeed: {x: 0, y: 0, z: 0}
   jumpForce: 0
-  direction: 0
   model: {fileID: 2189126246793513207}
 --- !u!114 &944559224
 MonoBehaviour:
@@ -25271,6 +25266,7 @@ MonoBehaviour:
   pushMovement: 0
   otherboxPositionX: 0
   otherBoxXDimension: 0
+  isMoving: 0
 --- !u!82 &88454180
 AudioSource:
   m_ObjectHideFlags: 0

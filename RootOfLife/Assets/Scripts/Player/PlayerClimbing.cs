@@ -4,6 +4,158 @@ using UnityEngine;
 
 public class PlayerClimbing : MonoBehaviour
 {
+    public bool playerCanClimb;
+    public bool isJumping;
+    public bool isClimbing;
+    public bool isGrounded;
+    public bool jumpingOff;
+
+    private float xInput;
+    private float yInput;
+    private float offsetX;
+    public float jumpForce;
+
+    public int directionX;
+
+    public Vector3 ladderPosition;
+    public Transform avatar;
+
+    PlayerController playerController;
+    Rigidbody rbPlayer;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //ASSIGNER LES VARIABLES ET SCRIPTS AU START
+        playerController = GetComponent<PlayerController>();
+        rbPlayer = GetComponent<Rigidbody>();
+        jumpForce = 10f;
+    }
+
+    private void Update()
+    {
+        //CALCUL DES VARIABLES
+        //calcul des inputs
+        yInput = Input.GetAxis("Vertical");
+        xInput = Input.GetAxis("Horizontal");
+
+        //update des bool
+        isJumping = playerController.isJumping;
+
+        //definir si le player peut climb
+        if (playerCanClimb && !jumpingOff)
+        {
+            offsetX = directionX * 0.5f;
+
+            if (yInput > 0)
+            {
+                StartCoroutine("LadderClimbing");
+            }
+            else if (isJumping)
+            {
+                StartCoroutine("LadderClimbing");
+            }
+        }
+
+        if (isClimbing && Input.GetButtonDown("Jump"))
+        {
+            StartCoroutine("Jump");
+        }
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (isClimbing && !jumpingOff)
+        {
+
+            if (yInput == 0 && !jumpingOff)
+            {
+                rbPlayer.isKinematic = true;
+            }
+            if (yInput > 0 && !jumpingOff)
+            {
+                rbPlayer.isKinematic = false;
+                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * Time.deltaTime * 80, 0);
+                Debug.Log("Monte dans le ladder");
+            }
+            if (yInput < 0 && !jumpingOff)
+            {
+                rbPlayer.isKinematic = false;
+                this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * Time.deltaTime * 200, 0);
+                Debug.Log("Descend dans le ladder");
+
+                if (isGrounded)
+                {
+                    isClimbing = false;
+                    playerController.enabled = true;
+                }
+            }
+            if (!playerCanClimb)
+            {
+                isClimbing = false;
+                playerController.enabled = true;
+                Debug.Log("Debarque du ladder");
+            }
+
+        }
+
+        if (jumpingOff)
+        {
+            //ajout de velocity pour le jump
+            //rbPlayer.AddForce(transform.up * jumpForce);
+            //rbPlayer.AddForce(transform.right * jumpForce);
+            rbPlayer.velocity = new Vector3(jumpForce * directionX, jumpForce, 0);
+        }
+    }
+
+    private void LadderClimbing()
+    {
+        isClimbing = true;
+        playerController.enabled = false;
+        transform.position = new Vector3(ladderPosition.x + offsetX, transform.position.y, transform.position.z);
+        Quaternion turnModel = Quaternion.LookRotation(new Vector3(-directionX, 0, 0));
+        avatar.rotation = turnModel;
+        Debug.Log("LadderClimb");
+    }
+
+    IEnumerator Jump()
+    {
+        StopCoroutine("LadderClimbing");
+        //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        jumpingOff = true;
+        //enlever kinematic
+        rbPlayer.isKinematic = false;
+        //is climbing est false
+        isClimbing = false;
+        //ajout de velocity pour le jump
+        //rbPlayer.AddForce(transform.up * jumpForce);
+        //rbPlayer.AddForce(transform.right * jumpForce);
+        //reactiver le player controller
+        yield return new WaitForSeconds(0.1f);
+        jumpingOff = false;
+        playerController.enabled = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            isGrounded = true;
+            jumpingOff = false;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            isGrounded = false;
+        }
+    }
+
+    /*
     PlayerController playerController;
     LedgeClimb ledgeClimb;
     Plane plane;
@@ -105,6 +257,10 @@ public class PlayerClimbing : MonoBehaviour
             }
 
         }
+        else
+        {
+            isClimbing = false;
+        }
 
 
         //lors de isClimbing, la position du joueur est en x,z la meme chose que le ladder et en y est un offset avec le input vertical
@@ -120,12 +276,14 @@ public class PlayerClimbing : MonoBehaviour
             {
                 rbPlayer.isKinematic = false;
                 this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * Time.deltaTime * 80, 0);
+                Debug.Log("Monte dans le ladder");
             }
 
             if (yInput < 0)
             {
                 rbPlayer.isKinematic = false;
                 this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, yInput * Time.deltaTime * 200, 0);
+                Debug.Log("Descend dans le ladder");
             }
 
             if (yInput == 0)
@@ -138,7 +296,7 @@ public class PlayerClimbing : MonoBehaviour
             playerController.enabled = false;
 
         }
-       
+
 
 
     }
@@ -151,63 +309,79 @@ public class PlayerClimbing : MonoBehaviour
 
             directionX = other.GetComponent<LadderPrefabScript>().ladderDirection;
             LadderClimb();
-
+            canClimb = true;
         }
+        /*
         if (other.gameObject.CompareTag("Ledge") && isClimbing)
         {
             isClimbing = false;
             Debug.Log("isLedgeClimbing");
         }
+        
     }
-    private void OnTriggerStay(Collider other)
-    {
-
-        if (other.gameObject.CompareTag("Ladder") && jumpingOff == false)
+    */
+    /*
+        private void OnTriggerStay(Collider other)
         {
-            
-            //definir la cible ou positionner le perso
-            ladderPosition = other.gameObject.transform.position;
-            directionX = other.GetComponent<LadderPrefabScript>().ladderDirection;
-            canClimb = true;
-        }
-    }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        //Check Ground
-        if(collision.gameObject.layer == 6)
+            if (other.gameObject.CompareTag("Ladder") && jumpingOff == false)
+            {
+
+                //definir la cible ou positionner le perso
+                ladderPosition = other.gameObject.transform.position;
+                directionX = other.GetComponent<LadderPrefabScript>().ladderDirection;
+                canClimb = true;
+                LadderClimb();
+            }
+            else
+            {
+                canClimb = false;
+                isClimbing = false;
+            }
+
+        }
+
+
+
+        private void OnCollisionStay(Collision collision)
         {
-            isGrounded = true;
+            //Check Ground
+            if(collision.gameObject.layer == 6)
+            {
+                isGrounded = true;
+            }
         }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == 6)
+        private void OnCollisionExit(Collision collision)
         {
-            isGrounded = false;
+            if (collision.gameObject.layer == 6)
+            {
+                isGrounded = false;
+            }
         }
-    }
 
-    private void LadderClimb()
-    {
-        //rendre kinematic le player sur le ladder
-        isClimbing = true;
-        //tourner le player avatar dans la bonne direction
-        Quaternion turnModel = Quaternion.LookRotation(new Vector3(-directionX, 0, 0));
-        model.rotation = turnModel;
-        //calcul du offset en x
-        offsetX = directionX * 0.5f;
-        //desactiver le script player controller
-        playerController.enabled = false;
-    }
+        private void LadderClimb()
+        {
+            //rendre kinematic le player sur le ladder
+            isClimbing = true;
+            //tourner le player avatar dans la bonne direction
+            Quaternion turnModel = Quaternion.LookRotation(new Vector3(-directionX, 0, 0));
+            model.rotation = turnModel;
+            //calcul du offset en x
+            offsetX = directionX * 0.5f;
+            //desactiver le script player controller
+            playerController.enabled = false;
+        }
 
-    private void StopLadderClimb()
-    {
-        //rendre kinematic le player sur le ladder
-        isClimbing = false;
-        //desactiver le script player controller
-        playerController.enabled = true;
-        Debug.Log("StopClimbing");
-        rbPlayer.isKinematic = false;
-    }
+        private void StopLadderClimb()
+        {
+            //rendre kinematic le player sur le ladder
+            isClimbing = false;
+            //desactiver le script player controller
+            playerController.enabled = true;
+            Debug.Log("StopClimbing");
+            rbPlayer.isKinematic = false;
+        }
+        */
+
+
 }
