@@ -13,6 +13,8 @@ public class Plane : MonoBehaviour
     public Animator animator;
     Rigidbody myRigidBody;
 
+    public float timerParachute;
+
     //variables camera
 
     public bool isGliding;
@@ -37,28 +39,50 @@ public class Plane : MonoBehaviour
         {
             if (Input.GetButton("Jump"))
             {
+                //timer déclanchement parachute
+                timerParachute += 1 * Time.deltaTime;
+
+                //si le timer est atteint, on déclanche le parachute
+                if(timerParachute >= 0.3f)
+                {
+                    GetComponent<PlayerController>().fallMultiplier = 1;
+                    GetComponent<Rigidbody>().velocity = new Vector3(0, parachuteMultiplier, 0);
+
+                    isGliding = true;
+
+                    animator.SetBool("gliding", true);
+                }
+
+                /*
                 GetComponent<PlayerController>().fallMultiplier = 1;
-                //GetComponent<Rigidbody>().mass = 0.5f;*/
                 GetComponent<Rigidbody>().velocity = new Vector3(0, parachuteMultiplier, 0);
                 
                 isGliding = true;
 
                 animator.SetBool("gliding", true);
+                */
             }
             if (Input.GetButtonUp("Jump"))
             {
+                //reset du timer déclanchement parachute
+                timerParachute = 0;
+
                 GetComponent<PlayerController>().fallMultiplier = initialFallMultiplier;
-                //GetComponent<Rigidbody>().mass = 1f;
                 
                 isGliding = false;
 
                 animator.SetBool("gliding", false);
             }
+
+            if (isGrounded)
+            {
+                //reset du timer déclanchement parachute
+                timerParachute = 0;
+            }
         }
         else
         {
             GetComponent<PlayerController>().fallMultiplier = initialFallMultiplier;
-            //GetComponent<Rigidbody>().mass = 1f;
 
             isGliding = false;
 

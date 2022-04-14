@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
 
     public bool canSpawnSac;
 
+    //Trampoline
+    public bool trampolineBounce;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -171,7 +174,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //si player au sol, alors on autorise le Jump 
-        if (isGrounded)
+        if (isGrounded && !trampolineBounce)
         {
             isJumping = false;
 
