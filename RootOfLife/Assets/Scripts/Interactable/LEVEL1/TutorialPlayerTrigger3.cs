@@ -13,6 +13,8 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
     public Animator nextCercleBlancAnimator;
     public GameObject oldCameraBoundary;
 
+    public bool isActive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
     }
     IEnumerator ActivateTrigger()
     {
+        isActive = true;
         oldCercleBlancAnimator.SetTrigger("off");
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         oldObjectAnimator.SetTrigger("deactivate");

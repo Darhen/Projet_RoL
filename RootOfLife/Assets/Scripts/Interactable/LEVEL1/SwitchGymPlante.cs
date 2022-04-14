@@ -40,6 +40,7 @@ public class SwitchGymPlante : MonoBehaviour
         playerPosition = player.GetComponent<Transform>().position;
     }
 
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -49,6 +50,21 @@ public class SwitchGymPlante : MonoBehaviour
             //animation du pickup de la plante
             StartCoroutine("ActivationGymPlante");
 
+        }
+    }
+    */
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (Input.GetButton("Fire3"))
+            {
+                //positionnement du player pour animation
+                playerPosition.x = animationPosition.transform.position.x;
+                //animation du pickup de la plante
+                StartCoroutine("ActivationGymPlante");
+            }
         }
     }
 

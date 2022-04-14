@@ -12,6 +12,8 @@ public class Passerelle : MonoBehaviour
     public ParticleSystem sparks4;
     public Animator animatorPasserelle;
 
+    public PhysicMaterial glissant;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,15 +39,12 @@ public class Passerelle : MonoBehaviour
     IEnumerator DelaiKinematic()
     {
         animatorPasserelle.SetTrigger("falling");
+        passerelle.GetComponent<MeshCollider>().material = glissant;
         sparks1.Play();
         sparks2.Play();
         sparks3.Play();
         sparks4.Play();
-        //myRb.isKinematic = false;
-        //passerelle.GetComponent<Rigidbody>().isKinematic = false;
         yield return new WaitForSeconds(3f);
-        //myRb.isKinematic = true;
-        //passerelle.GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Passerelle>().enabled = false;
 
     }

@@ -10,6 +10,7 @@ public class TutorialPlayerTrigger2 : MonoBehaviour
     public GameObject oldLight;
     public Animator oldCercleBlancAnimator;
     public Animator nextCercleBlancAnimator;
+    public bool isActive;
     
 
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class TutorialPlayerTrigger2 : MonoBehaviour
     }
     IEnumerator ActivateTrigger()
     {
+        isActive = true;
         oldCercleBlancAnimator.SetTrigger("off");
         yield return new WaitForSeconds(1f);
         nextObject.SetActive(true);

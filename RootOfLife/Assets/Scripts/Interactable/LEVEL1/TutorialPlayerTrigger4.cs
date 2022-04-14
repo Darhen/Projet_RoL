@@ -17,6 +17,8 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     public GameObject ledgeClimbFinal;
     public Animator gateAnimator;
 
+    public bool isActive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     }
     IEnumerator ActivateTrigger()
     {
+        isActive = true;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         oldCercleBlancAnimator.SetTrigger("off");
         oldLight.SetActive(false);
