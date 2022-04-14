@@ -25,6 +25,15 @@ public class collectible : MonoBehaviour
     public GameObject CollectibleUI7;
     public GameObject CollectibleUI8;
     public GameObject CollectibleUI9;
+    public GameObject CollectibleButton1;
+    public GameObject CollectibleButton2;
+    public GameObject CollectibleButton3;
+    public GameObject CollectibleButton4;
+    public GameObject CollectibleButton5;
+    public GameObject CollectibleButton6;
+    public GameObject CollectibleButton7;
+    public GameObject CollectibleButton8;
+    public GameObject CollectibleButton9;
 
     public bool collectibleActive = false;
     public bool collectibleActive2 = false;
@@ -62,10 +71,10 @@ void Update()
             
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
-            CollectibleUI.SetActive(true);
-            
             Collectible_1.SetActive(false);
+            CollectibleUI.SetActive(true);
+
+            CollectibleButton1.SetActive(true);
         }
 
         if (other.gameObject.tag == "Collectible2")
@@ -76,10 +85,10 @@ void Update()
 
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
+            Collectible_2.SetActive(false);
             CollectibleUI2.SetActive(true);
 
-            Collectible_2.SetActive(false);
+            CollectibleButton2.SetActive(true);
         }
 
         if (other.gameObject.tag == "Collectible3")
@@ -90,10 +99,10 @@ void Update()
 
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
+            Collectible_3.SetActive(false);
             CollectibleUI3.SetActive(true);
 
-            Collectible_3.SetActive(false);
+            CollectibleButton3.SetActive(true);
         }
 
         if (other.gameObject.tag == "Collectible4")
@@ -104,10 +113,10 @@ void Update()
 
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
+            Collectible_4.SetActive(false);
             CollectibleUI4.SetActive(true);
 
-            Collectible_4.SetActive(false);
+            CollectibleButton4.SetActive(true);
         }
 
         if (other.gameObject.tag == "Collectible5")
@@ -118,10 +127,10 @@ void Update()
 
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
+            Collectible_5.SetActive(false);
             CollectibleUI5.SetActive(true);
 
-            Collectible_5.SetActive(false);
+            CollectibleButton5.SetActive(true);
         }
 
         if (other.gameObject.tag == "Collectible6")
@@ -132,10 +141,10 @@ void Update()
 
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
+            Collectible_6.SetActive(false);
             CollectibleUI6.SetActive(true);
 
-            Collectible_6.SetActive(false);
+            CollectibleButton6.SetActive(true);
         }
 
         if (other.gameObject.tag == "Collectible7")
@@ -146,10 +155,10 @@ void Update()
 
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
+            Collectible_7.SetActive(false);
             CollectibleUI7.SetActive(true);
 
-            Collectible_7.SetActive(false);
+            CollectibleButton7.SetActive(true);
         }
 
         if (other.gameObject.tag == "Collectible8")
@@ -160,10 +169,10 @@ void Update()
 
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
+            Collectible_8.SetActive(false);
             CollectibleUI8.SetActive(true);
 
-            Collectible_8.SetActive(false);
+            CollectibleButton8.SetActive(true);
         }
 
         if (other.gameObject.tag == "Collectible9")
@@ -174,10 +183,10 @@ void Update()
 
             StartCoroutine(imageOff());
 
-            other.gameObject.SetActive(false);
+            Collectible_9.SetActive(false);
             CollectibleUI9.SetActive(true);
 
-            Collectible_9.SetActive(false);
+            CollectibleButton9.SetActive(true);
         }
     }
 

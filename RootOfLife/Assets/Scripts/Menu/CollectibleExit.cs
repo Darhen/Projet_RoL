@@ -9,6 +9,14 @@ public class CollectibleExit : MonoBehaviour
 
     public GameObject MenuCollectiblesUI;
     public GameObject CollectibleUI;
+    public GameObject CollectibleUI2;
+    public GameObject CollectibleUI3;
+    public GameObject CollectibleUI4;
+    public GameObject CollectibleUI5;
+    public GameObject CollectibleUI6;
+    public GameObject CollectibleUI7;
+    public GameObject CollectibleUI8;
+    public GameObject CollectibleUI9;
 
     // Update is called once per frame
     void Update()
@@ -32,6 +40,14 @@ public class CollectibleExit : MonoBehaviour
     {   
         MenuCollectiblesUI.SetActive(false);
         CollectibleUI.SetActive(false);
+        CollectibleUI2.SetActive(false);
+        CollectibleUI3.SetActive(false);
+        CollectibleUI4.SetActive(false);
+        CollectibleUI5.SetActive(false);
+        CollectibleUI6.SetActive(false);
+        CollectibleUI7.SetActive(false);
+        CollectibleUI8.SetActive(false);
+        CollectibleUI9.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
