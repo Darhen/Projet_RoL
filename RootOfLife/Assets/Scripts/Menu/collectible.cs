@@ -65,7 +65,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI.SetActive(true);
             
-            Collectible_1.SetActive(true);
+            Collectible_1.SetActive(false);
         }
 
         if (other.gameObject.tag == "Collectible2")
@@ -79,7 +79,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI2.SetActive(true);
 
-            Collectible_2.SetActive(true);
+            Collectible_2.SetActive(false);
         }
 
         if (other.gameObject.tag == "Collectible3")
@@ -93,7 +93,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI3.SetActive(true);
 
-            Collectible_3.SetActive(true);
+            Collectible_3.SetActive(false);
         }
 
         if (other.gameObject.tag == "Collectible4")
@@ -107,7 +107,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI4.SetActive(true);
 
-            Collectible_4.SetActive(true);
+            Collectible_4.SetActive(false);
         }
 
         if (other.gameObject.tag == "Collectible5")
@@ -121,7 +121,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI5.SetActive(true);
 
-            Collectible_5.SetActive(true);
+            Collectible_5.SetActive(false);
         }
 
         if (other.gameObject.tag == "Collectible6")
@@ -135,7 +135,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI6.SetActive(true);
 
-            Collectible_6.SetActive(true);
+            Collectible_6.SetActive(false);
         }
 
         if (other.gameObject.tag == "Collectible7")
@@ -149,7 +149,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI7.SetActive(true);
 
-            Collectible_7.SetActive(true);
+            Collectible_7.SetActive(false);
         }
 
         if (other.gameObject.tag == "Collectible8")
@@ -163,7 +163,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI8.SetActive(true);
 
-            Collectible_8.SetActive(true);
+            Collectible_8.SetActive(false);
         }
 
         if (other.gameObject.tag == "Collectible9")
@@ -177,7 +177,7 @@ void Update()
             other.gameObject.SetActive(false);
             CollectibleUI9.SetActive(true);
 
-            Collectible_9.SetActive(true);
+            Collectible_9.SetActive(false);
         }
     }
 
