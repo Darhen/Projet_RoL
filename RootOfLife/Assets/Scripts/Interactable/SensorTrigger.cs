@@ -33,16 +33,20 @@ public class SensorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("FollowMe") || other.CompareTag("OldRoot"))
+        if (other.CompareTag("FollowMe") || other.CompareTag("OldRoot") || other.CompareTag("Box"))
         {
             isActive = true;
             spark.Play();
             redLight.enabled = false;
             greenLight.enabled = true;
+            Debug.Log("activelight");
         }
-        if(other.CompareTag("Player") && onTriggerEnterPlayer)
+        if(other.CompareTag("Player"))
         {
             isActive = true;
+            spark.Play();
+            redLight.enabled = false;
+            greenLight.enabled = true;
         }
     }
 
@@ -52,7 +56,17 @@ public class SensorTrigger : MonoBehaviour
         if (!activateWithPlant && other.CompareTag("Player") || !activateWithPlant && other.CompareTag("Box") /*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
         {
             isActive = true;
-        }  
+            spark.Play();
+            redLight.enabled = false;
+            greenLight.enabled = true;
+        }
+        else
+        {
+            isActive = false;
+            spark.Stop();
+            redLight.enabled = true;
+            greenLight.enabled = false;
+        }
     }
 
     private void OnTriggerExit(Collider other)
