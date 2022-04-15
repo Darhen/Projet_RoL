@@ -61,29 +61,22 @@ public class Trampoline : MonoBehaviour
                 if (Input.GetButtonDown("Jump"))
                 {
                     //StartCoroutine("JumpCount");
+                    //jumpPressed = true;
                     countJump++;
                 }
             }
-
             else
             {
                 playerController.trampolineMode = true;
-
-                /*if (Input.GetButton("Jump"))
+                if (Input.GetButtonDown("Jump"))
                 {
                     if (!isGliding)
                     {
                         jumpPressed = true;
                         //StartCoroutine("JumpInputTimer");
                     }
-                    else
-                    {
-                        return;
-                    }
-                }*/
+                }
             }
-
-
         }
         else
         {
@@ -99,36 +92,32 @@ public class Trampoline : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (canBounce)
+        if (collision.gameObject.CompareTag("Trampoline"))
         {
-            if (jumpPressed)
-            {
-                if (collision.gameObject.CompareTag("Trampoline"))
-                {
-                    StartCoroutine("TrampolineJump");
-                    collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
+            StartCoroutine("DelayJumpInit");
 
-                }
-            }
-            else
+            if (canBounce)
             {
-                if (collision.gameObject.CompareTag("Trampoline"))
+                if (countJump == 1)
                 {
-                    collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
-                    countJump = 0;
+                    if (jumpPressed)
+                    {
+                        StartCoroutine("TrampolineJump");
+                        collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
+                    }
+                    else
+                    {
+                        collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
+                        countJump = 0;
+                    }
                 }
+                
             }
-
         }
-
-
 
         if (collision.gameObject.CompareTag("Untagged"))
         {
             countJump = 0;
-            playerController.trampolineMode = false;
-            canBounce = false;
-            jumpPressed = false;
         }
     }
 
@@ -137,40 +126,14 @@ public class Trampoline : MonoBehaviour
         if (other.gameObject.tag == "Trampoline")
         {
             canBounce = true;
-
-            if (countJump == 0)
-            {
-                StartCoroutine("DelayJumpInit");
-            }
-            else
-            {
-                if (Input.GetButtonDown("Jump"))
-                {
-                    if (!isGliding)
-                    {
-                        jumpPressed = true;
-                        //StartCoroutine("JumpInputTimer");
-                    }
-                }
-            }
         }
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Trampoline")
-        {
-            canBounce = true;
-        }
 
-    }
-    */
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Trampoline")
         {
             canBounce = false;
-            playerController.trampolineMode = false;
             jumpPressed = false;
         }
     }
@@ -189,23 +152,28 @@ public class Trampoline : MonoBehaviour
         bounce = false;
 
     }
-
+    /*
     IEnumerator JumpCount()
     {
         yield return new WaitForSeconds(0.2f);
         countJump++;
     }
-
+    */
+    /*
     IEnumerable JumpInputTimer()
     {
         jumpPressed = true;
         yield return new WaitForSeconds(0.3f);
         jumpPressed = false;
     }
-
+    */
+    /*
     IEnumerator DelayJumpInit()
     {
-        yield return new WaitForSeconds(20f);
-        playerController.trampolineMode = false;
+        yield return new WaitForSeconds(.5f);
+        countJump = 0;
+        canBounce = false;
+        jumpPressed = false;
     }
+    */
 }
