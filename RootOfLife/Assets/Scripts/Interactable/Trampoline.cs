@@ -103,6 +103,7 @@ public class Trampoline : MonoBehaviour
                     if (jumpPressed)
                     {
                         StartCoroutine("TrampolineJump");
+                        StartCoroutine("DelayJumpReinit");
                         collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
                     }
                     else
@@ -158,22 +159,21 @@ public class Trampoline : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         countJump++;
     }
-    */
-    /*
+    
+    
     IEnumerable JumpInputTimer()
     {
         jumpPressed = true;
         yield return new WaitForSeconds(0.3f);
         jumpPressed = false;
     }
+    
     */
-    /*
-    IEnumerator DelayJumpInit()
+    IEnumerator DelayJumpReinit()
     {
-        yield return new WaitForSeconds(.5f);
         countJump = 0;
-        canBounce = false;
-        jumpPressed = false;
+        yield return new WaitForSeconds(2f);
+        countJump = 1;
     }
-    */
+    
 }
