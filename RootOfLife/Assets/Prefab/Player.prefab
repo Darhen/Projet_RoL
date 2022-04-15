@@ -25072,7 +25072,6 @@ MonoBehaviour:
   isFastJumping: 0
   model: {fileID: 2189126246793513207}
   animator: {fileID: 7950957215595722380}
-  canSpawnSac: 1
   liane: {fileID: 0}
   isClimbing: 0
   plantIsPlugged: 0
@@ -25080,6 +25079,8 @@ MonoBehaviour:
   dust: {fileID: 737274254}
   jump: {fileID: 232487878}
   isJumping: 0
+  canSpawnSac: 1
+  trampolineMode: 0
 --- !u!114 &596418948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25116,6 +25117,7 @@ MonoBehaviour:
   jumpQueued: 0
   parachuteMultiplier: 0
   animator: {fileID: 7950957215595722380}
+  timerParachute: 0
   isGliding: 0
 --- !u!114 &239818914
 MonoBehaviour:
@@ -25152,6 +25154,7 @@ MonoBehaviour:
   FadeOutScreen: {fileID: 0}
   sphere: {fileID: 6764732775457254973}
   myLight: {fileID: 150772784}
+  fadeOut: {fileID: 0}
   isDying: 0
   estMort: 0
   deadBySol: 0

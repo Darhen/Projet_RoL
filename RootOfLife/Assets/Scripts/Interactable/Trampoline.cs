@@ -5,6 +5,7 @@ using UnityEngine;
 public class Trampoline : MonoBehaviour
 {
     PlayerController playerController;
+    Plane plane;
     public bool isGrounded;
     Rigidbody rb;
     public float upSpeed;
@@ -12,24 +13,32 @@ public class Trampoline : MonoBehaviour
     public float velocityLimit;
     public bool bounceSpeedChecked;
     public bool bounce;
-    private GameObject trampoline;
-    public bool bounceTriggered;
+
+    public bool canBounce;
+    public int countJump;
+    public bool jumpPressed;
+    public bool isGliding;
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = GetComponent<PlayerController>();
         rb = this.gameObject.GetComponent<Rigidbody>();
+        plane = GetComponent<Plane>();
         bounce = false;
+        canBounce = false;
+        countJump = 0;
+        upSpeed = 1300;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        isGrounded = playerController.isGrounded;
         velocityCheck = rb.velocity.y;
+        isGliding = plane.isGliding;
 
-        /*
         if (velocityCheck <= velocityLimit)
         {
             bounceSpeedChecked = true;
@@ -41,22 +50,46 @@ public class Trampoline : MonoBehaviour
         if (isGrounded && bounce)
         {
             StartCoroutine("DeactivateBounce");
-        }
-        */
 
-        if (isGrounded && bounceSpeedChecked)
+        }
+
+        if (canBounce)
         {
-            StartCoroutine("TrampolineJump");
-            //this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
-            //jouer animation bounce feuille
-            //collision.gameObject.GetComponent<Animator>().Play("trampoline_bounce");
-            trampoline.GetComponent<Animator>().SetTrigger("Bounce");
-            //bounce = true;
+            if (countJump == 0)
+            {
+                playerController.trampolineMode = false;
+                if (Input.GetButtonDown("Jump"))
+                {
+                    //StartCoroutine("JumpCount");
+                    countJump++;
+                }
+            }
+
+            else
+            {
+                playerController.trampolineMode = true;
+
+                /*if (Input.GetButton("Jump"))
+                {
+                    if (!isGliding)
+                    {
+                        jumpPressed = true;
+                        //StartCoroutine("JumpInputTimer");
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }*/
+            }
+
+
         }
         else
         {
-            return;
+            jumpPressed = false;
         }
+
     }
 
     private void FixedUpdate()
@@ -66,84 +99,113 @@ public class Trampoline : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (canBounce)
         {
-            isGrounded = true;
-        }
-
-        /*
-        if(collision.gameObject.CompareTag("Trampoline") && bounceSpeedChecked)
-        {
-            StartCoroutine("TrampolineJump");
-            //this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
-            //jouer animation bounce feuille
-            //collision.gameObject.GetComponent<Animator>().Play("trampoline_bounce");
-            collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
-            //bounce = true;
-        }
-        else
-        {
-           return;
-        }
-        */
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == 6)
-        {
-            isGrounded = false;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!isGrounded && other.gameObject.tag== "Trampoline")
-        {
-
-            if(Input.GetButtonDown(" Jump"))
+            if (jumpPressed)
             {
-                bounceSpeedChecked = true;
-                bounceTriggered = true;
-            }
-        }
-        else
-        {
+                if (collision.gameObject.CompareTag("Trampoline"))
+                {
+                    StartCoroutine("TrampolineJump");
+                    collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
 
-            return;
+                }
+            }
+            else
+            {
+                if (collision.gameObject.CompareTag("Trampoline"))
+                {
+                    collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
+                    countJump = 0;
+                }
+            }
+
         }
+
+
+
+        if (collision.gameObject.CompareTag("Untagged"))
+        {
+            countJump = 0;
+            playerController.trampolineMode = false;
+            canBounce = false;
+            jumpPressed = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
         if (other.gameObject.tag == "Trampoline")
         {
-            trampoline = other.gameObject;
+            canBounce = true;
+
+            if (countJump == 0)
+            {
+                StartCoroutine("DelayJumpInit");
+            }
+            else
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    if (!isGliding)
+                    {
+                        jumpPressed = true;
+                        //StartCoroutine("JumpInputTimer");
+                    }
+                }
+            }
+        }
+    }
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Trampoline")
+        {
+            canBounce = true;
         }
 
     }
-
+    */
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Trampoline")
         {
-            bounceSpeedChecked = false;
-            StartCoroutine("DeactivateBounce");
+            canBounce = false;
+            playerController.trampolineMode = false;
+            jumpPressed = false;
         }
     }
 
+
     IEnumerator TrampolineJump()
     {
-        //indique au script PlayerController que le bounce actuel est un trampolineBounce
-        playerController.trampolineBounce = true;
-
         this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
         yield return new WaitForSeconds(0.01f);
         bounce = true;
+
     }
     IEnumerator DeactivateBounce()
     {
-        //indique au script PlayerController que le bounce n'est pas un trampoline bounce
-        playerController.trampolineBounce = false;
-
-        bounceTriggered = false;
         yield return new WaitForSeconds(2f);
         bounce = false;
+
+    }
+
+    IEnumerator JumpCount()
+    {
+        yield return new WaitForSeconds(0.2f);
+        countJump++;
+    }
+
+    IEnumerable JumpInputTimer()
+    {
+        jumpPressed = true;
+        yield return new WaitForSeconds(0.3f);
+        jumpPressed = false;
+    }
+
+    IEnumerator DelayJumpInit()
+    {
+        yield return new WaitForSeconds(8f);
+        playerController.trampolineMode = false;
     }
 }

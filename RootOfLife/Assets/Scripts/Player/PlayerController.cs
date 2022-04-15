@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     public bool canSpawnSac;
 
     //Trampoline
-    public bool trampolineBounce;
+    public bool trampolineMode;
 
     void Start()
     {
@@ -87,18 +87,24 @@ public class PlayerController : MonoBehaviour
             myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, 0);
         }
 
+
         //Active jump si input est maintenu 
-        if (Input.GetButtonDown("Jump"))
+        if (!trampolineMode)
         {
-            jumpQueued = true;
-            Debug.Log("Jump!");
-
-            if (isGrounded)
+            if (Input.GetButtonDown("Jump"))
             {
-                JumpPs();
-            }
+                jumpQueued = true;
+                Debug.Log("Jump!");
 
+                if (isGrounded)
+                {
+                    JumpPs();
+                }
+
+            }
         }
+
+
 
         //Active le low Jump si input est "juste préssé"
         /*if (myRigidbody.velocity.y > 0 && !(Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) )
@@ -174,7 +180,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //si player au sol, alors on autorise le Jump 
-        if (isGrounded && !trampolineBounce)
+        if (isGrounded)
         {
             isJumping = false;
 
@@ -184,6 +190,7 @@ public class PlayerController : MonoBehaviour
                 jumpQueued = false;
             }
 
+            
             /*if (isFastJumping)
             {
                 myRigidbody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;

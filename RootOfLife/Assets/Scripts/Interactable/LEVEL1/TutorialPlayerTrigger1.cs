@@ -34,7 +34,7 @@ public class TutorialPlayerTrigger1 : MonoBehaviour
         player.GetComponent<Transform>().position = new Vector3 (transform.position.x, player.GetComponent<Transform>().position.y, player.GetComponent<Transform>().position.z);
         player.GetComponent<Rigidbody>().isKinematic = true;
         brasAnimator.SetTrigger("activate");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.02f);
         tutorielPartie1.enabled = true;
         this.gameObject.GetComponent<TutorialPlayerTrigger1>().enabled = false;
     }
