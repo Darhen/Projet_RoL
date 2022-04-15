@@ -119,6 +119,7 @@ public class Trampoline : MonoBehaviour
         if (collision.gameObject.CompareTag("Untagged"))
         {
             countJump = 0;
+            playerController.trampolineMode = false;
         }
     }
 
@@ -172,7 +173,7 @@ public class Trampoline : MonoBehaviour
     IEnumerator DelayJumpReinit()
     {
         countJump = 0;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         countJump = 1;
     }
     
