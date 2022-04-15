@@ -29,7 +29,7 @@ public class Trampoline : MonoBehaviour
         bounce = false;
         canBounce = false;
         countJump = 0;
-        upSpeed = 1300;
+        upSpeed = 1400;
     }
 
     // Update is called once per frame
@@ -205,7 +205,7 @@ public class Trampoline : MonoBehaviour
 
     IEnumerator DelayJumpInit()
     {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(20f);
         playerController.trampolineMode = false;
     }
 }
