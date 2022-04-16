@@ -60,6 +60,7 @@ public class SensorTrigger : MonoBehaviour
             redLight.enabled = false;
             greenLight.enabled = true;
         }
+        /*
         else
         {
             isActive = false;
@@ -67,6 +68,7 @@ public class SensorTrigger : MonoBehaviour
             redLight.enabled = true;
             greenLight.enabled = false;
         }
+        */
     }
 
     private void OnTriggerExit(Collider other)
