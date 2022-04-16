@@ -24,7 +24,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1787610436">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1097275175">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -150,7 +150,14 @@
 					</ActionSetState>
 				</Event>
 				<Event Id="3789515518" Name="Trap_Button_Click" ObjectPath="\Events\Default Work Unit\Objects\Buttons and Switches\Trap_Button_Click" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1029784236" Name="Walker_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Alert" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1029784236" Name="Walker_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Alert" DurationType="OneShot" DurationMin="2." DurationMax="2.">
+					<IncludedMemoryFiles>
+						<File Id="775816294" Language="SFX">
+							<ShortName>EnemyDetected.wav</ShortName>
+							<Path>SFX\EnemyDetected_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1606606892" Name="Walker_Footstep" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Footstep" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2456363482" Name="Walker_Ram" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Ram" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2742300585" Name="Walker_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_ReturnToPost" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>

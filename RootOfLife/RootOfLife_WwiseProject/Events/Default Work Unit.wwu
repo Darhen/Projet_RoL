@@ -109,7 +109,17 @@
 						<Folder Name="Walker" ID="{5DEDF7F3-42E2-4430-8D00-FF4D674AAF0B}" ShortID="989040054">
 							<ChildrenList>
 								<Event Name="Walker_Footstep" ID="{93CD7904-1417-4567-ABEA-6B15CE5B2C2D}"/>
-								<Event Name="Walker_Alert" ID="{3E60FAA8-6AB5-410A-8460-0AF1E2D78587}"/>
+								<Event Name="Walker_Alert" ID="{3E60FAA8-6AB5-410A-8460-0AF1E2D78587}">
+									<ChildrenList>
+										<Action Name="" ID="{12E75A2A-932C-4372-AEBE-EB143182C85B}" ShortID="192553856">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="EnemyDetected" ID="{013F370F-6D4D-4529-A458-089F0EDFFBE0}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Walker_Ram" ID="{3F4745E6-50A4-4A8D-80A0-80601E9A3C7C}"/>
 								<Event Name="Walker_ReturnToPost" ID="{4F1DCE4A-C16D-4E32-A2B8-C23CB9424687}"/>
 							</ChildrenList>
