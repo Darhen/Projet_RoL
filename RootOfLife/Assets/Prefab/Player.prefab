@@ -25081,7 +25081,7 @@ MonoBehaviour:
   dust: {fileID: 737274254}
   jump: {fileID: 232487878}
   isJumping: 0
-  canSpawnSac: 0
+  canSpawnSac: 1
   trampolineMode: 0
 --- !u!114 &596418948
 MonoBehaviour:
@@ -25570,6 +25570,8 @@ GameObject:
   - component: {fileID: 4086829344064056566}
   - component: {fileID: 7950957215595722380}
   - component: {fileID: 1392044701}
+  - component: {fileID: 1392044702}
+  - component: {fileID: 1392044703}
   m_Layer: 0
   m_Name: TestCharacter27_janvier
   m_TagString: Player
@@ -25621,45 +25623,105 @@ MonoBehaviour:
   m_GameObject: {fileID: 3746015286116283980}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e60bdc25e9c7af408116bcfe1ce68b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Footstep:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 43ee86dbc0097024b927726a3fccf2bf, type: 2}
+  Player_Jump:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 782d97a058609e94185260578c653e22, type: 2}
+  Player_Land:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 982e98fee6274694cb0d282a6db27102, type: 2}
+  Close_Hangglider:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f143b667e8dff844db7874a11abcf1b4, type: 2}
+  Open_Hangglider:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 222478c9a0f49f34ea659df39e1acf74, type: 2}
+--- !u!114 &1392044702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746015286116283980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da71af236d6c9e84f80fdb7c0bf2a232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Death:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: b4dd5d8776a185e4aa48076b76d88897, type: 2}
   Player_Fall:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 736587d106ed34246be0430532b68415, type: 2}
   Player_Ram:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c9618cae6ff0e1a4a929775613ffda31, type: 2}
   Player_Shot:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 783c0ce26093ca4408ecd1c2b2b03f59, type: 2}
   Player_Suffocate:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 985cfdc457b0349459210160261a6500, type: 2}
   Player_Respawn:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: e214b07d695483f4389b130338fdb38f, type: 2}
   Player_Spawn:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 2269090075babb241866f6acd40e34a3, type: 2}
   Move_Box:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: b74101b921261384c97ac2ed4fc8f3bf, type: 2}
   Pickup:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: df87b492344e15a4cbc7a76aa9459384, type: 2}
+--- !u!114 &1392044703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746015286116283980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f43fd8287c293c4384025a23f049bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Move_Box:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b74101b921261384c97ac2ed4fc8f3bf, type: 2}
+  Pickup:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: df87b492344e15a4cbc7a76aa9459384, type: 2}
+  Player_Kneel:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 12d71d5504d1682458f40ffc343ddd11, type: 2}
+  Pull_Lever:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 86d7dc27dfee02245b8d42db7fc7e2b9, type: 2}
 --- !u!1 &3915386826947105978
 GameObject:
   m_ObjectHideFlags: 0
@@ -26669,14 +26731,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f58e7e88a824d2b439b0193bacac6dba, type: 3}
---- !u!1 &150772784 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 749786210888476457, guid: f58e7e88a824d2b439b0193bacac6dba, type: 3}
-  m_PrefabInstance: {fileID: 749786211022994201}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4207072812664212334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3460243325864325239, guid: f58e7e88a824d2b439b0193bacac6dba, type: 3}
+  m_PrefabInstance: {fileID: 749786211022994201}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &150772784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 749786210888476457, guid: f58e7e88a824d2b439b0193bacac6dba, type: 3}
   m_PrefabInstance: {fileID: 749786211022994201}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &982161643572197457
@@ -30511,7 +30573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5962369327221003633, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_VersionIndex
-      value: 79
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 5962369327221003633, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_Tangents.Array.data[964].x
@@ -33635,11 +33697,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
---- !u!1 &8522380566845396615 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4193646477957181331, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
-  m_PrefabInstance: {fileID: 5509943830003562772}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8200820200785897844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4447421445358178400, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
@@ -33648,6 +33705,11 @@ Transform:
 --- !u!1 &8828456224828732366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3959713629921020634, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
+  m_PrefabInstance: {fileID: 5509943830003562772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8522380566845396615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4193646477957181331, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
   m_PrefabInstance: {fileID: 5509943830003562772}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8513587301625544252
