@@ -126,7 +126,17 @@
 						</Folder>
 						<Folder Name="Drone" ID="{53DCD9C2-836E-4BF6-9D62-272CC091D6DA}" ShortID="516581124">
 							<ChildrenList>
-								<Event Name="Drone_Hover" ID="{4FE2C508-2CB3-40D3-8D95-A7961C82E288}"/>
+								<Event Name="Drone_Hover" ID="{4FE2C508-2CB3-40D3-8D95-A7961C82E288}">
+									<ChildrenList>
+										<Action Name="" ID="{70830532-9F4D-47F8-9A03-D14052D7AB16}" ShortID="332292880">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DroneMovement" ID="{D20369C0-123B-4660-B245-E1C2DD3A45BB}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Drone_Alert" ID="{360562B6-54DB-4676-B0EA-F02ADB903E48}"/>
 								<Event Name="Drone_Fire" ID="{1E0552D6-69E0-4921-AF49-130D01827690}"/>
 								<Event Name="Drone_ReturnToPost" ID="{836CE6B1-8B11-4271-AF79-20F3C35AB3AD}"/>
