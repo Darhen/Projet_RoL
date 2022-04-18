@@ -104,8 +104,9 @@ public class TutorielPartie1 : MonoBehaviour
         {
             Debug.Log("stage 2 - bras 3");
             brasAnimator3.SetTrigger("stage2");
-            trigger4activated = true;
             spriteBras3.SetTrigger("parachute");
+            trigger4activated = true;
+
         }
 
         //gestion camera boundaries
