@@ -11,7 +11,12 @@ public class TutorielPartie1 : MonoBehaviour
     public Animator brasAnimator2;
     public Animator brasAnimator3;
 
+    public Animator spriteBras1;
+    public Animator spriteBras2;
+    public Animator spriteBras3;
 
+    public SensorTrigger planteTrigger1;
+    public SensorTrigger planteTrigger2;
     public SensorTrigger planteTrigger3;
     public TutorialPlayerTrigger2 triggerPlateforme1;
     public TutorialPlayerTrigger3 triggerPlateforme2;
@@ -22,7 +27,12 @@ public class TutorielPartie1 : MonoBehaviour
     public GameObject boundaryPosition;
     public GameObject targetBoundary;
 
-    public bool trigger1activated;
+    public bool triggerStartTutorialActive;
+    public bool cible1activated;
+    public bool cible2activated;
+    public bool cible3activated;
+
+
     public bool trigger2activated;
     public bool trigger3activated;
     public bool trigger4activated;
@@ -37,20 +47,36 @@ public class TutorielPartie1 : MonoBehaviour
     void Update()
     {
         //premiere action du tuto: poser le sac
-        if (!trigger1activated)
+        if (!triggerStartTutorialActive)
         {
-            if (Input.GetKeyDown(KeyCode.G) && !trigger1activated || Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown(KeyCode.G) && !triggerStartTutorialActive || Input.GetButtonDown("Fire1"))
             {
                 trigger1.SetActive(true);
-                trigger1activated = true;
+                triggerStartTutorialActive = true;
+                spriteBras1.SetTrigger("trigger1");
             }
         }
-        
+
+        //quand le trigger 1 est atteint, changer le sprite pour animation trigger 2
+        if (!cible1activated && planteTrigger1.isActive == true)
+        {
+            spriteBras1.SetTrigger("trigger2");
+            cible1activated = true;
+        }
+
+        //quand le trigger 2 est atteint, changer le sprite pour animation trigger 3
+        if (!cible2activated && planteTrigger2.isActive == true)
+        {
+            spriteBras1.SetTrigger("trigger3");
+            cible2activated = true;
+        }
 
         //lorsque le dernier trigger de plante est active, on redonne le controle au player
-        if (planteTrigger3.isActive == true)
+        if (!cible3activated && planteTrigger3.isActive == true)
         {
+            spriteBras1.SetTrigger("plateforme1");
             player.GetComponent<Rigidbody>().isKinematic = false;
+            cible3activated = true;
         }
 
         //quand le player rejoint la plateforme 1, on active bras 2 et desactive bras 1
@@ -79,6 +105,7 @@ public class TutorielPartie1 : MonoBehaviour
             Debug.Log("stage 2 - bras 3");
             brasAnimator3.SetTrigger("stage2");
             trigger4activated = true;
+            spriteBras3.SetTrigger("parachute");
         }
 
         //gestion camera boundaries
