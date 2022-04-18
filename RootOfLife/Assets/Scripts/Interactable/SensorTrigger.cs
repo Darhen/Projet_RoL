@@ -11,7 +11,7 @@ public class SensorTrigger : MonoBehaviour
     public ParticleSystem spark;
     public Light redLight;
     public Light greenLight;
-    public bool onTriggerEnterPlayer;
+    public bool uniqueActif;
 
     //bool a cocher si on veut que ce trigger fonctionne avec la plante
     public bool activateWithPlant;
@@ -60,20 +60,19 @@ public class SensorTrigger : MonoBehaviour
             redLight.enabled = false;
             greenLight.enabled = true;
         }
-        /*
-        else
+     
+        /*else if (!activateWithPlant)
         {
             isActive = false;
             spark.Stop();
             redLight.enabled = true;
             greenLight.enabled = false;
-        }
-        */
+        }*/
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!activateWithPlant && other.CompareTag("Player") && !onTriggerEnterPlayer || !activateWithPlant && other.CompareTag("Box") && !onTriggerEnterPlayer/*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
+        if (!activateWithPlant && other.CompareTag("Player") && !uniqueActif || !activateWithPlant && other.CompareTag("Box") && !uniqueActif/*|| other.CompareTag("FollowMe") || other.CompareTag("OldRoot")*/)
         {
             isActive = false;
         }
