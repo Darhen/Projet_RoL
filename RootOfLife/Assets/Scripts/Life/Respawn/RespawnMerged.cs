@@ -8,7 +8,7 @@ public class RespawnMerged : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Vector3 respawnPoint;
 
-    public GameObject FadeOutScreen;
+    //public GameObject FadeOutScreen;
     NewCheckIfIsInsideBeam newCheckIfIsInsideBeam;
     ActivateCheckIfIsInside activateCheckIfIsInside;
     CouleurEmmissiveSac couleurEmissiveSac;
@@ -19,7 +19,7 @@ public class RespawnMerged : MonoBehaviour
     private GameObject ennemiSol;
 
     public GameObject sphere;
-    public GameObject myLight;
+    //public GameObject myLight;
     public Image fadeOut;
     private float progressFadeToBlack;
     private float elapseTime;
@@ -44,7 +44,7 @@ PlayerController playerController;
         ennemiSolMouv = ennemiSol.GetComponent<enemy_sol_mouvement>();
 
         respawnPoint = player.transform.position;
-        FadeOutScreen.SetActive(false);
+        //FadeOutScreen.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
