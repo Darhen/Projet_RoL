@@ -9,7 +9,8 @@ public class CinematiquePorteGrotte : MonoBehaviour
     public GameObject cameraTrigger1;
     public GameObject connecteur;
     public GameObject ledgeClimb;
-    public GameObject FadeOutScreen;
+    public GameObject player;
+    //public GameObject FadeOutScreen;
     Animator animatorFadeOut;
     PlayerController playerController;
     ActivationPorteConnecteur activationPorte;
@@ -23,16 +24,16 @@ public class CinematiquePorteGrotte : MonoBehaviour
     void Start()
     {
         activationPorte = connecteur.GetComponent<ActivationPorteConnecteur>();
-        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        plugplant = GameObject.FindWithTag("Player").GetComponent<PlugPlant>();
-        plane = GameObject.FindWithTag("Player").GetComponent<Plane>();
-        moveObject = GameObject.FindWithTag("Player").GetComponent<MoveObject>();
+        playerController = player.GetComponent<PlayerController>();
+        plugplant = player.GetComponent<PlugPlant>();
+        plane = player.GetComponent<Plane>();
+        moveObject = player.GetComponent<MoveObject>();
         cameraTrigger1.SetActive(true);
         cinematicCameraPorte.SetActive(false);
         ledgeClimb.SetActive(false);
         porteOuverte = false;
-        animatorFadeOut = FadeOutScreen.GetComponent<Animator>();
-        FadeOutScreen.SetActive(false);
+        //animatorFadeOut = FadeOutScreen.GetComponent<Animator>();
+        //FadeOutScreen.SetActive(false);
         animatorFadeOut.enabled = false;
     }
 
@@ -49,6 +50,7 @@ public class CinematiquePorteGrotte : MonoBehaviour
 
     IEnumerator CinematiquePorte()
     {
+        Debug.Log("Bonjouuuuur");
         CinematicMode();
         yield return new WaitForSeconds(0.5f);
         SwitchCamera();
@@ -72,14 +74,14 @@ public class CinematiquePorteGrotte : MonoBehaviour
 
     void SwitchCamera()
     {
-        FadeOutScreen.SetActive(true);
-        animatorFadeOut.enabled = true;
-        animatorFadeOut.Play("FadeToBlackCinematique");
+        //FadeOutScreen.SetActive(true);
+        //animatorFadeOut.enabled = true;
+        //animatorFadeOut.Play("FadeToBlackCinematique");
         mainCamera.SetActive(false);
         cinematicCameraPorte.SetActive(true);
-        animatorFadeOut.Play("FadeToGameCinematique");
-        animatorFadeOut.enabled = false;
-        FadeOutScreen.SetActive(false);
+        //animatorFadeOut.Play("FadeToGameCinematique");
+        //animatorFadeOut.enabled = false;
+        //FadeOutScreen.SetActive(false);
     }
 
 
