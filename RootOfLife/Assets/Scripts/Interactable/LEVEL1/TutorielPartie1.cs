@@ -49,7 +49,7 @@ public class TutorielPartie1 : MonoBehaviour
         //premiere action du tuto: poser le sac
         if (!triggerStartTutorialActive)
         {
-            if (Input.GetKeyDown(KeyCode.G) && !triggerStartTutorialActive || Input.GetButtonDown("Fire1"))
+            if (player.GetComponent<PlayerController>().plantIsPlugged && !triggerStartTutorialActive)
             {
                 trigger1.SetActive(true);
                 triggerStartTutorialActive = true;

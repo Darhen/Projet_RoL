@@ -11,6 +11,8 @@ public class LedgeClimb : MonoBehaviour
     Rigidbody rbPlayer;
     Trampoline trampoline;
 
+    public Animator playerAnimator;
+
     public float offset;
     public int direction;
     public bool isJumping;
@@ -60,6 +62,14 @@ public class LedgeClimb : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ledge") && isJumping || other.gameObject.CompareTag("Ledge") && bounce || other.gameObject.CompareTag("Ledge") && isLadderClimbing)
         {
+            //Determiner la direction du ledge climb
+            directionLedge = other.gameObject.GetComponent<LedgeClimbDirection>().direction;
+            //Lors de la collision, on va chercher la position du endPoint enfant du ledge climb actif
+            endPosition = other.gameObject.transform.GetChild(0).position;
+            StartLedgeClimb();
+            /*
+            //Déclarer que le player ledge climb pour l'animation
+            isLedgeClimbing = true;
             Debug.Log("LedgeClimb");
             //Determiner la direction du ledge climb
             directionLedge = other.gameObject.GetComponent<LedgeClimbDirection>().direction;
@@ -67,15 +77,16 @@ public class LedgeClimb : MonoBehaviour
             endPosition = other.gameObject.transform.GetChild(0).position;
             //On reset la position du player au endPoint, au sommet du ledgeClimb avec le offset dans la direction appropriée
             transform.position = endPosition + new Vector3(offset * directionLedge, 0, 0);
+            //Desactiver animation
+            isLedgeClimbing = false;
             //Départ de la coroutine pour desactiver le script PlayerController le temps de l'animation;
             StartCoroutine(Waiter());
             //Éliminer la vélocité du player
             rbPlayer.velocity = new Vector3 (0, 0, 0);
-            //Déclarer que le player ledge climb pour l'animation
-            isLedgeClimbing = true;
             //Tourner le player vers la direction du ledge
             /*Quaternion turnModel = Quaternion.LookRotation(new Vector3(directionLedge, 0, 0));
             model.rotation = turnModel;*/
+            
         }
     }
     //Ce IEnumator desactive les contrôles du player pour la durée de l'animation
@@ -97,5 +108,23 @@ public class LedgeClimb : MonoBehaviour
         rbPlayer.velocity = new Vector3(0, 0, 0);
         rbPlayer.isKinematic = false;
         Debug.Log("playerController enabled true");
+    }
+
+    public void StartLedgeClimb()
+    {
+        //Déclarer que le player ledge climb pour l'animation
+        playerAnimator.Play("LedgeClimb");
+        isLedgeClimbing = true;
+        Debug.Log("LedgeClimb");
+        
+        //On reset la position du player au endPoint, au sommet du ledgeClimb avec le offset dans la direction appropriée
+        transform.position = endPosition + new Vector3(offset * directionLedge, 0, 0);
+        //Départ de la coroutine pour desactiver le script PlayerController le temps de l'animation;
+        StartCoroutine(Waiter());
+        //Éliminer la vélocité du player
+        rbPlayer.velocity = new Vector3(0, 0, 0);
+        //Tourner le player vers la direction du ledge
+        /*Quaternion turnModel = Quaternion.LookRotation(new Vector3(directionLedge, 0, 0));
+        model.rotation = turnModel;*/
     }
 }

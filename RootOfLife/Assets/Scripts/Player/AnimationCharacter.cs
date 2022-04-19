@@ -147,15 +147,30 @@ public class AnimationCharacter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         //Ledge Climb
-        if (other.gameObject.CompareTag("Ledge") && isJumping)
+        if (isLedgeClimbing)
+        {
+            animator.Play("LedgeClimb");
+        }
+        /*
+        if (other.gameObject.CompareTag("Ledge") && isJumping && !isClimbing)
         {
             animator.Play("LedgeClimb");
             animator.SetBool("jump", false);
         }
-   /* }
-    private void OnTriggerEnter(Collider other)
-    {*/
+        else if (other.gameObject.CompareTag("Ledge") && !isJumping && isClimbing)
+        {
+            animator.Play("LedgeClimb");
+        }
+        else if (isLedgeClimbing)
+        {
+            animator.Play("LedgeClimb");
+        }
+        */
+        /* }
+         private void OnTriggerEnter(Collider other)
+         {*/
         //Mort Bras robot (voir coroutine Respawn pour la suite)
         if (other.gameObject.CompareTag("Ennemi"))
         {

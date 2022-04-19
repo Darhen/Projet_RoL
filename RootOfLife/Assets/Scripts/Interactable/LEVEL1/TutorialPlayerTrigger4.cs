@@ -10,6 +10,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     public GameObject oldLight;
     public GameObject wallLights;
     public GameObject ciblesParachute;
+    public GameObject triggerFinal;
     public Animator oldCercleBlancAnimator;
     public Animator nextCercleBlancAnimator; 
     public Animator nextCercleBlancAnimator2;
@@ -53,6 +54,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
         nextCercleBlancAnimator.SetTrigger("on");
         nextCercleBlancAnimator2.SetTrigger("on");
         yield return new WaitForSeconds(0.5f);
+        triggerFinal.SetActive(true);
         nextLight.SetActive(true);
         nextLight2.SetActive(true);
         ledgeClimbFinal.SetActive(true);
