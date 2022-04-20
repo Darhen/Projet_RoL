@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwitchGymPlante : MonoBehaviour
 {
+    public GameObject triggerSocle;
+
     private GameObject player;
     private Vector3 playerPosition;
     public GameObject animationPosition;
@@ -79,12 +81,16 @@ public class SwitchGymPlante : MonoBehaviour
         animatorPlayer.SetTrigger("powerSwitch");
         animatorPlayer.SetBool("cinematic", true);
         //animator.SetTrigger("switch");
+
+        //activer le trigger permettant de reveler le sac
+        triggerSocle.SetActive(true);
         yield return new WaitForSeconds(1.4f);
         spark.Play();
         lamp3.SetActive(false);
         lamp4.SetActive(true);
         animatorWindow.SetTrigger("gymMode");
         animatorPlayer.SetBool("cinematic", false);
+        
         yield return new WaitForSeconds(1f);
         //reactiver le player controller et autres fonctions
         GameplayMode();
@@ -92,17 +98,14 @@ public class SwitchGymPlante : MonoBehaviour
         yield return new WaitForSeconds(5f);
         lamp1.gameObject.SetActive(true);
         lamp2.gameObject.SetActive(true);
-        pad.gameObject.SetActive(true);
-        cercleBlancAnimator.SetTrigger("on");
+        //pad.gameObject.SetActive(true);
+        //cercleBlancAnimator.SetTrigger("on");
     }
 
     //desactiver le player controller et autres fonctions pour une cinematique
     void CinematicMode()
     {
         playerController.enabled = false;
-        plugplant.enabled = false;
-        plane.enabled = false;
-        growthManager.enabled = false;
         moveObject.enabled = false;
     }
 
@@ -110,9 +113,6 @@ public class SwitchGymPlante : MonoBehaviour
     void GameplayMode()
     {
         playerController.enabled = true;
-        plugplant.enabled = true;
-        plane.enabled = true;
-        growthManager.enabled = true;
         moveObject.enabled = true;
     }
 }
