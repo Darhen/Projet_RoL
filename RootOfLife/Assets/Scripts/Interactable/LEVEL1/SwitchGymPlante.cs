@@ -26,6 +26,8 @@ public class SwitchGymPlante : MonoBehaviour
     public GameObject pad;
     public ParticleSystem spark;
 
+    public bool cameraSecurityOn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class SwitchGymPlante : MonoBehaviour
         plugplant = player.GetComponent<PlugPlant>();
         plane = player.GetComponent<Plane>();
         moveObject = player.GetComponent<MoveObject>();
+        cameraSecurityOn = false;
     }
 
     // Update is called once per frame
@@ -90,6 +93,8 @@ public class SwitchGymPlante : MonoBehaviour
         lamp4.SetActive(true);
         animatorWindow.SetTrigger("gymMode");
         animatorPlayer.SetBool("cinematic", false);
+        //activer les caméras de sécurité
+        cameraSecurityOn = true;
         
         yield return new WaitForSeconds(1f);
         //reactiver le player controller et autres fonctions
