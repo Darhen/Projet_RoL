@@ -54,6 +54,19 @@ public class collectible : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            CollectibleUI.SetActive(false);
+            CollectibleUI2.SetActive(false);
+            CollectibleUI3.SetActive(false);
+            CollectibleUI4.SetActive(false);
+            CollectibleUI5.SetActive(false);
+            CollectibleUI6.SetActive(false);
+            CollectibleUI7.SetActive(false);
+            CollectibleUI8.SetActive(false);
+            CollectibleUI9.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             Debug.Log("You have: " + collectibles + " collectibles");
@@ -196,15 +209,15 @@ void Update()
     IEnumerator imageOff()
     {
         yield return new WaitForSeconds(10f);
-        CollectibleUI.SetActive(false);
-        CollectibleUI2.SetActive(false);
-        CollectibleUI3.SetActive(false);
-        CollectibleUI4.SetActive(false);
-        CollectibleUI5.SetActive(false);
-        CollectibleUI6.SetActive(false);
-        CollectibleUI7.SetActive(false);
-        CollectibleUI8.SetActive(false);
-        CollectibleUI9.SetActive(false);
+       // CollectibleUI.SetActive(false);
+       // CollectibleUI2.SetActive(false);
+       // CollectibleUI3.SetActive(false);
+       // CollectibleUI4.SetActive(false);
+       // CollectibleUI5.SetActive(false);
+       // CollectibleUI6.SetActive(false);
+       // CollectibleUI7.SetActive(false);
+       // CollectibleUI8.SetActive(false);
+       // CollectibleUI9.SetActive(false);
     }
 
 
