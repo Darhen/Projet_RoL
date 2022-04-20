@@ -18,7 +18,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     public Color colorIni;
     public Color colorMid;
     public Color colorFin;
-    public float durationDown = 25f;
+    public float durationDown = 40f;
     public float durationUp = 5f;
     public Color lerpedColor;
 
