@@ -195,7 +195,7 @@ void Update()
 
     IEnumerator imageOff()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(10f);
         CollectibleUI.SetActive(false);
         CollectibleUI2.SetActive(false);
         CollectibleUI3.SetActive(false);
