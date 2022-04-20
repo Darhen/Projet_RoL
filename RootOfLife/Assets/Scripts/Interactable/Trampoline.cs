@@ -102,6 +102,7 @@ public class Trampoline : MonoBehaviour
                 {
                     if (jumpPressed)
                     {
+                        collision.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play(true);
                         StartCoroutine("TrampolineJump");
                         StartCoroutine("DelayJumpReinit");
                         collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
