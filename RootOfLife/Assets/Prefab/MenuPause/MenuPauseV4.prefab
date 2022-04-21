@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 1856199664024392115}
   - component: {fileID: 1856199664024392118}
   - component: {fileID: 1856199664024392114}
+  - component: {fileID: 6376697190504462615}
   - component: {fileID: 1856199664024392141}
   m_Layer: 5
   m_Name: Back
@@ -544,6 +545,18 @@ MonoBehaviour:
           m_StringArgument: PausedCanvas_Start
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6376697190504462615}
+        m_TargetAssemblyTypeName: CanvaOpener, Assembly-CSharp
+        m_MethodName: closePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1856199664024392118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +592,19 @@ MonoBehaviour:
   modifyFontSize: 1
   startingFontSize: 50
   fontSizeHighlighted: 55
+--- !u!114 &6376697190504462615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856199664024392143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a0534cbebba34f83bcb7056a0ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 1856199665607013994}
 --- !u!82 &1856199664024392141
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1328,6 +1354,7 @@ GameObject:
   - component: {fileID: 1856199664203197172}
   - component: {fileID: 1856199664203197175}
   - component: {fileID: 1856199664203197179}
+  - component: {fileID: 7757080731568204330}
   - component: {fileID: 1856199664203197174}
   m_Layer: 5
   m_Name: Collectible
@@ -1450,6 +1477,18 @@ MonoBehaviour:
           m_StringArgument: PausedCanvas_Collectibles
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7757080731568204330}
+        m_TargetAssemblyTypeName: CanvaOpener, Assembly-CSharp
+        m_MethodName: closePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1856199664203197175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,6 +1524,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1856199665607013994}
+--- !u!114 &7757080731568204330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856199664203197168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a0534cbebba34f83bcb7056a0ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 4162769342585665113}
 --- !u!82 &1856199664203197174
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7403,6 +7455,7 @@ GameObject:
   - component: {fileID: 4162769342575504059}
   - component: {fileID: 4162769342575507175}
   - component: {fileID: 4725868026160158902}
+  - component: {fileID: 5606552862155564971}
   - component: {fileID: 4162769342587139935}
   m_Layer: 5
   m_Name: Controls
@@ -7525,6 +7578,18 @@ MonoBehaviour:
           m_StringArgument: PausedCanvas_Options
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5606552862155564971}
+        m_TargetAssemblyTypeName: CanvaOpener, Assembly-CSharp
+        m_MethodName: closePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4162769342575507175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7560,6 +7625,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1856199665395533079}
+--- !u!114 &5606552862155564971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162769342585736561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a0534cbebba34f83bcb7056a0ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 4162769342585665113}
 --- !u!82 &4162769342587139935
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8031,6 +8109,7 @@ GameObject:
   - component: {fileID: 4162769342575507809}
   - component: {fileID: 4162769342575539089}
   - component: {fileID: 4162769342585813634}
+  - component: {fileID: 2009716158895661431}
   - component: {fileID: 4162769342587111259}
   m_Layer: 5
   m_Name: Back
@@ -8153,6 +8232,18 @@ MonoBehaviour:
           m_StringArgument: PausedCanvas_Start
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2009716158895661431}
+        m_TargetAssemblyTypeName: CanvaOpener, Assembly-CSharp
+        m_MethodName: closePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4162769342575539089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8176,6 +8267,19 @@ MonoBehaviour:
   startingFontSize: 50
   fontSizeHighlighted: 55
 --- !u!114 &4162769342585813634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162769342585813661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a0534cbebba34f83bcb7056a0ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 1856199665395533079}
+--- !u!114 &2009716158895661431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8296,6 +8400,7 @@ GameObject:
   - component: {fileID: 4162769342605662487}
   - component: {fileID: 4162769342575482945}
   - component: {fileID: 4162769342575541857}
+  - component: {fileID: 7910223969075435947}
   - component: {fileID: 4162769342575533355}
   - component: {fileID: 4162769342587136829}
   m_Layer: 5
@@ -8407,9 +8512,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4162769342575533355}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: UnPause
+      - m_Target: {fileID: 7910223969075435947}
+        m_TargetAssemblyTypeName: CanvaOpener, Assembly-CSharp
+        m_MethodName: closePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8419,6 +8524,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7910223969075435947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162769342585821219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a0534cbebba34f83bcb7056a0ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 4162769342585665113}
 --- !u!114 &4162769342575533355
 MonoBehaviour:
   m_ObjectHideFlags: 0
