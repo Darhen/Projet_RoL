@@ -14941,7 +14941,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9607843, g: 0.45490196, b: 0.26666668, a: 1}
+      maxColor: {r: 0.6226415, g: 0.4978195, b: 0.3729975, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -15003,8 +15003,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.2
+      scalar: 0.005
+      minScalar: 0.003
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -19500,7 +19500,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 1
+  m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
@@ -19520,7 +19520,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 6e253dc59c001e44ab9d35ee01215549, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -25156,9 +25156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3124496072062757462}
   respawnPoint: {x: 0, y: 0, z: 0}
-  FadeOutScreen: {fileID: 0}
   sphere: {fileID: 6764732775457254973}
-  myLight: {fileID: 0}
   fadeOut: {fileID: 0}
   isDying: 0
   estMort: 0
@@ -25175,6 +25173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db1d0035bfb33649a69eb3f2f21c9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
   offset: 0
   direction: 0
   isJumping: 0
