@@ -1850,6 +1850,7 @@
 											<PropertyList>
 												<Property Name="3DPosition" Type="int16" Value="2"/>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="OverrideEffect" Type="bool" Value="True"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
@@ -1858,13 +1859,16 @@
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-14</Value>
+														<Value>-4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+													<ObjectRef Name="Tunnel1" ID="{CC44B890-9865-4157-965F-86FED27BC4C6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
@@ -2111,6 +2115,11 @@
 																	<PropertyList>
 																		<Property Name="3DPosition" Type="int16" Value="1"/>
 																		<Property Name="3DSpatialization" Type="int16" Value="2"/>
+																		<Property Name="Inclusion" Type="bool">
+																			<ValueList>
+																				<Value>False</Value>
+																			</ValueList>
+																		</Property>
 																	</PropertyList>
 																	<ReferenceList>
 																		<Reference Name="Conversion">
@@ -2285,6 +2294,16 @@
 																	<PropertyList>
 																		<Property Name="3DPosition" Type="int16" Value="1"/>
 																		<Property Name="3DSpatialization" Type="int16" Value="2"/>
+																		<Property Name="Inclusion" Type="bool">
+																			<ValueList>
+																				<Value>False</Value>
+																			</ValueList>
+																		</Property>
+																		<Property Name="Volume" Type="Real64">
+																			<ValueList>
+																				<Value>-13</Value>
+																			</ValueList>
+																		</Property>
 																	</PropertyList>
 																	<ReferenceList>
 																		<Reference Name="Conversion">
