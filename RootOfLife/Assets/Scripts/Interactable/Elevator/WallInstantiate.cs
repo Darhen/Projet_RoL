@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WallInstantiate : MonoBehaviour
 {
+    public GameObject SkyboxModifier;
     public GameObject wallPrefab;
     public GameObject world;
     public GameObject ElevatorLight;
@@ -12,6 +13,8 @@ public class WallInstantiate : MonoBehaviour
     public Material Emissive1;
     public Material Emissive2;
 
+    SkyboxIntensity skyboxIntensity;
+
     GameObject newWall;
     public GameObject startPos;
     public int count;
@@ -19,6 +22,7 @@ public class WallInstantiate : MonoBehaviour
     private void Start()
     {
         ElevatorEmissive.GetComponent<MeshRenderer>().material = Emissive1;
+        skyboxIntensity = SkyboxModifier.GetComponent<SkyboxIntensity>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +40,7 @@ public class WallInstantiate : MonoBehaviour
         {
             world.GetComponent<WallSlide>().enabled = true;
             StartCoroutine("OffLamp");
+            skyboxIntensity.StartCoroutine(ChangeSpeed (0.1f, 1f, 7f));
         }
     }
     IEnumerator OffLamp()
