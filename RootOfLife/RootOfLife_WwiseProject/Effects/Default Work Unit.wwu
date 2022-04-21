@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C615EE07-749D-4A53-BBEE-2692865D45C3}" SchemaVersion="103">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{C615EE07-749D-4A53-BBEE-2692865D45C3}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C615EE07-749D-4A53-BBEE-2692865D45C3}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="New_iZotope_Trash_Filters" ID="{D4243E00-3978-4145-8D1B-CA97D97FB836}" PluginName="iZotope Trash Filters" CompanyID="259" PluginID="6" PluginType="3">
+					<PropertyList>
+						<Property Name="Filter1Frequency" Type="Real32" Value="120"/>
+						<Property Name="Filter1LFOPeriod" Type="Real32" Value="2100"/>
+						<Property Name="Filter1LFOTargetQ" Type="Real32" Value="2.1"/>
+						<Property Name="Filter1Type" Type="int32" Value="1"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>
