@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 4684215830143071091}
   - component: {fileID: 4684215830143045321}
   - component: {fileID: 4684215830143046293}
+  - component: {fileID: 4130128777144335556}
   - component: {fileID: 4684215830129644333}
   m_Layer: 5
   m_Name: Controls
@@ -655,10 +656,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4684215830143046293}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: LoadCanvas
-        m_Mode: 5
+      - m_Target: {fileID: 4130128777144335556}
+        m_TargetAssemblyTypeName: CanvaOpener, Assembly-CSharp
+        m_MethodName: openPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -689,6 +690,19 @@ MonoBehaviour:
   modifyFontSize: 1
   startingFontSize: 50
   fontSizeHighlighted: 55
+--- !u!114 &4130128777144335556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4684215830133401859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a0534cbebba34f83bcb7056a0ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 6991282141840597349}
 --- !u!82 &4684215830129644333
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1494,6 +1508,7 @@ MonoBehaviour:
   player: {fileID: 0}
   menuPrincipal: gym_menu
   pauseFirstButton: {fileID: 4684215830133587025}
+  myIndex: 
 --- !u!1 &4684215830133595887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,6 +2347,7 @@ MonoBehaviour:
   player: {fileID: 0}
   menuPrincipal: gym_menu
   pauseFirstButton: {fileID: 4684215830133587025}
+  myIndex: 
 --- !u!1 &6991282142005594504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,6 +3961,7 @@ MonoBehaviour:
   player: {fileID: 0}
   menuPrincipal: gym_menu
   pauseFirstButton: {fileID: 6991282143011206589}
+  myIndex: 
 --- !u!1 &6991282142459932023
 GameObject:
   m_ObjectHideFlags: 0
