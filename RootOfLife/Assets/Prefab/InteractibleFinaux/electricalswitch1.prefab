@@ -246,14 +246,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bc853cb4208df459ed9a6fdc4861f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerSocle: {fileID: 0}
   animationPosition: {fileID: 1134425366309175680}
   animatorWindow: {fileID: 0}
   animatorPlayer: {fileID: 0}
+  cercleBlancAnimator: {fileID: 0}
   growthManager: {fileID: 0}
   lamp1: {fileID: 0}
   lamp2: {fileID: 0}
+  lamp3: {fileID: 0}
+  lamp4: {fileID: 0}
   pad: {fileID: 0}
   spark: {fileID: 0}
+  cameraSecurityOn: 0
+  SwitchActivate:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6da257a092c2a174291671dd778c40fb, type: 2}
 --- !u!114 &2891926617643679630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +282,10 @@ MonoBehaviour:
   animationPosition: {fileID: 1134425366309175680}
   animatorPlayer: {fileID: 0}
   spark: {fileID: 7266019460209825262}
+  SwitchActivate:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6da257a092c2a174291671dd778c40fb, type: 2}
 --- !u!1 &1134425367520685313
 GameObject:
   m_ObjectHideFlags: 0

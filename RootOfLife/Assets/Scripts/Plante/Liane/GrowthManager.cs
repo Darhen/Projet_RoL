@@ -21,6 +21,8 @@ public class GrowthManager : MonoBehaviour
     public bool playerIsActif;
     GameObject TrampolineParent;
 
+    public AK.Wwise.Event PlantDeath;
+
 
     private void Awake()
     {
@@ -95,6 +97,7 @@ public class GrowthManager : MonoBehaviour
     //Prend le dernier child (le + récent) et le détruit, puis au bout de 0.05 sec détruit le prochain child
     IEnumerator DestroyRoots()
     {
+        PlantDeath.Post(gameObject);
         cr_Running = true;
         playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "re-pose" du sac
         playerIsActif = true;
