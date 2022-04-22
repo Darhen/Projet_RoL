@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WallInstantiate : MonoBehaviour
-{
+{/*
     public GameObject SkyboxModifier;
     public GameObject wallPrefab;
     public GameObject world;
@@ -48,5 +48,5 @@ public class WallInstantiate : MonoBehaviour
         yield return new WaitForSeconds(4f);
         ElevatorLight.SetActive(false);
         ElevatorEmissive.GetComponent<MeshRenderer>().material = Emissive2;
-    }
+    }*/
 }
