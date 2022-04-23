@@ -214,7 +214,21 @@
 								<Event Name="BackpackLight_Red" ID="{ADF76909-41B4-421A-B0DF-89C61EDC7875}"/>
 								<Event Name="BackpackLight_Flashing" ID="{FCA4EE31-FBBB-4BE9-B5F6-6BE09DBB51C1}"/>
 								<Event Name="Light_TouchPlant" ID="{9A3F74A6-7184-4032-981A-6C2E47DB61C3}"/>
-								<Event Name="Plant_Death" ID="{D48C9D8C-9021-4929-9941-62DBCE1FB631}"/>
+								<Event Name="Plant_Death" ID="{D48C9D8C-9021-4929-9941-62DBCE1FB631}">
+									<ChildrenList>
+										<Action Name="" ID="{361FDA87-B0DB-41F7-A415-15FA9490CF5F}" ShortID="63603870">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantStretch" ID="{845D2F16-0129-4FC4-A90B-0266D86375DB}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Plant_Stretch" ID="{E19C88C6-2622-42AF-B8D8-55CA7A4FF7C9}">
 									<ChildrenList>
 										<Action Name="" ID="{9D0163E9-E4AE-4AED-A1AC-E4F862BC15AE}" ShortID="1016568001">
