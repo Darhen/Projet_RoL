@@ -17,4 +17,9 @@ public class ObjectSoundTrigger : MonoBehaviour
     {
         AkSoundEngine.PostEvent(eventName, gameObject);
     }
+
+    public void StopSound()
+    {
+        AkSoundEngine.StopAll(gameObject);
+    }
 }

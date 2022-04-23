@@ -39,7 +39,6 @@ public class GrowBehaviour : MonoBehaviour
 
     public Rigidbody myRigidbody;
 
-
     // Start is called before the first frame update
     void Start()
     {

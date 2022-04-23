@@ -22,6 +22,7 @@ public class GrowthManager : MonoBehaviour
     GameObject TrampolineParent;
 
     public AK.Wwise.Event PlantDeath;
+    public AK.Wwise.Event PlantGrowth;
 
 
     private void Awake()
@@ -64,6 +65,14 @@ public class GrowthManager : MonoBehaviour
                     StartCoroutine("DestroyRoots");
                 }
                 //Lance une coroutine de destruction de child
+                if (Input.GetKey(KeyCode.F) || Input.GetButton("Fire2"))
+                {
+                    PlantGrowth.Post(gameObject);
+                }
+                if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))
+                {
+                    PlantGrowth.Stop(gameObject);
+                }
             }
         }
 

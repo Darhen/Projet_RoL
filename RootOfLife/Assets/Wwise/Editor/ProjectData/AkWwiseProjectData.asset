@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 2514fd092500394aa19964cd6fd58c47
     GuidInternal: 
-    m_lastTime: -8585532987434775808
+    m_lastTime: -8585528619914575485
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 1b93bf493072b44987ace6dea7b2a70f
     GuidInternal: 
-    m_lastTime: -8585509258195062732
+    m_lastTime: -8585508517413280264
     List:
     - name: Ambient_Reverb
       guid: 1ae8d4619ef25241b93c607cdf2ac865
@@ -120,7 +120,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 3454e01eb14d194ab326b4460b025f3b
     GuidInternal: 
-    m_lastTime: -8585532930129154416
+    m_lastTime: -8585528619914720916
     List:
     - name: Main
       guid: 1f5913ba1b53d9449e56a9bc2d604682
@@ -148,7 +148,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 97406b27e9e45b4aa4d02307752b4c0a
     GuidInternal: 
-    m_lastTime: -8585508700434775808
+    m_lastTime: -8585508531821336160
     List:
     - name: Actions
       guid: b00a9a5e7a486a4a9a7b3ac7d19bd099
@@ -861,6 +861,29 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Plant_Stretch
+      guid: c6889ce12226af42b8d855ca7a4ff7c9
+      id: 2502130738
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Objects
+        ObjectType: 4
+        guid: f9167f49481fad4c9c2901cee909f36d
+      - ElementName: Plant
+        ObjectType: 4
+        guid: ef3f9f69b2b3d642b9895e35154a04c6
+      - ElementName: Plant_Stretch
+        ObjectType: 3
+        guid: c6889ce12226af42b8d855ca7a4ff7c9
+      Path: Events\Default Work Unit\Objects\Plant\Plant_Stretch
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player
       guid: 9255696191e43c498d3a2144606fbf0b
       id: 1069431850
@@ -1426,7 +1449,7 @@ MonoBehaviour:
     ParentPath: Events\Music work unit
     guid: 9ff9bffb509e9341a65d3b0c64ebb4e4
     GuidInternal: 
-    m_lastTime: -8585508700434775808
+    m_lastTime: -8585508517418377558
     List:
     - name: Music
       guid: d06f47e649afcb4bad219fad69ac9d43
@@ -1630,7 +1653,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 0e4bd1e06fbcba4f8067919caa78f7e1
     GuidInternal: 
-    m_lastTime: -8585532930129139115
+    m_lastTime: -8585528619914595455
     List:
     - name: Level
       guid: 6569e05108c763459dae2f395ca289a2
@@ -1952,7 +1975,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 56e1a10d81b8a149993778f8e56a494a
     GuidInternal: 
-    m_lastTime: -8585530808614775808
+    m_lastTime: -8585528619914585461
     List:
     - name: New_Trigger
       guid: e22544a605c1664fbd9d01dd0df325b9
@@ -1968,9 +1991,9 @@ MonoBehaviour:
         ObjectType: 14
         guid: e22544a605c1664fbd9d01dd0df325b9
       Path: Triggers\Default Work Unit\New_Trigger
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedFileSystemItemIds: 02000000030000000b0000000c00000040000000
+  ExpandedWaapiItemIds: 5b0000005c000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 
