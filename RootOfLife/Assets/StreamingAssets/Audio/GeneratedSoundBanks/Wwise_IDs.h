@@ -37,6 +37,7 @@ namespace AK
         static const AkUniqueID OPEN_MAINMENU = 964983010U;
         static const AkUniqueID PICKUP = 3978245845U;
         static const AkUniqueID PLANT_DEATH = 2998183107U;
+        static const AkUniqueID PLANT_STRETCH = 2502130738U;
         static const AkUniqueID PLAYER_DEATH = 3083087645U;
         static const AkUniqueID PLAYER_FALL = 2551268862U;
         static const AkUniqueID PLAYER_FOOTSTEP = 2453392179U;

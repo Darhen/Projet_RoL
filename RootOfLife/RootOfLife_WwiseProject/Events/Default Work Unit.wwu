@@ -36,7 +36,18 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="ReturnTo_MainMenu" ID="{D785954E-AC16-4159-92BA-36C3F40B4DA5}"/>
+						<Event Name="ReturnTo_MainMenu" ID="{D785954E-AC16-4159-92BA-36C3F40B4DA5}">
+							<ChildrenList>
+								<Action Name="" ID="{4902E0E0-7DEC-4825-8EBB-C52FEAFB140C}" ShortID="291008647">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="Game_Pause" ID="{D2B40CC9-0FEF-4646-B6AC-421B3D6FC833}">
 							<ChildrenList>
 								<Action Name="" ID="{3E44301E-DF23-4E4A-A212-4A1342D20295}" ShortID="814653092">

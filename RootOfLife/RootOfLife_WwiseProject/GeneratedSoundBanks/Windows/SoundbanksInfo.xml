@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Evan\Documents\Game Development\Root of Life\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -24,7 +24,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1615403766">
+		<SoundBank Id="3161908922" Language="SFX" Hash="214433978">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -94,6 +94,34 @@
 				</Event>
 				<Event Id="3978245845" Name="Pickup" ObjectPath="\Events\Default Work Unit\Player\Actions\Pickup" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2998183107" Name="Plant_Death" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2502130738" Name="Plant_Stretch" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Stretch" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="177581736" Language="SFX">
+							<ShortName>LeavesRustlePlantGrowStretch.wav</ShortName>
+							<Path>SFX\LeavesRustlePlantGrowStretch_6EDA8D17.wem</Path>
+						</File>
+						<File Id="519760497" Language="SFX">
+							<ShortName>LeavesRustlePlantGrow.wav</ShortName>
+							<Path>SFX\LeavesRustlePlantGrow_12844C6F.wem</Path>
+						</File>
+						<File Id="625903980" Language="SFX">
+							<ShortName>Plantgrowrocks-001.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-001_6C7C8D32.wem</Path>
+						</File>
+						<File Id="853392424" Language="SFX">
+							<ShortName>Plantgrowrocks-001.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="924115987" Language="SFX">
+							<ShortName>Plantgrowrocks-003.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-003_3F75BDB9.wem</Path>
+						</File>
+						<File Id="993613388" Language="SFX">
+							<ShortName>Plantgrowrocks-002.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-002_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2551268862" Name="Player_Fall" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Fall" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2453392179" Name="Player_Footstep" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Footstep" DurationType="OneShot" DurationMin="1.01684" DurationMax="3.193265">
