@@ -21,6 +21,25 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{F5A5D271-9BAC-4825-BBD6-62568B2E6FAB}" ShortID="360569749">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+										<Property Name="GameParameterValue" Type="Real64" Value="25"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}" WorkUnitID="{48A0017C-B44B-4490-8C9D-46F3150429DD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E9BEB306-937A-4363-AB16-99B164BFE320}" ShortID="567965630">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB" ID="{303CA51D-ECF2-4AE1-81DB-FBAC912FE93A}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="SetLevel_City" ID="{C9B58AC4-C9D2-4914-9331-449643D5BEA8}">
@@ -32,6 +51,18 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="City" ID="{032367C0-4700-4697-9463-468FA0C461E7}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{1A5A07CD-17E6-4AF1-AF81-E797182C3627}" ShortID="471931899">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+										<Property Name="GameParameterValue" Type="Real64" Value="85"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}" WorkUnitID="{48A0017C-B44B-4490-8C9D-46F3150429DD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -49,6 +80,18 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{B6F6CCC3-6F96-441B-B20A-76B8A0B5665A}" ShortID="548840219">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+										<Property Name="GameParameterValue" Type="Real64" Value="55"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}" WorkUnitID="{48A0017C-B44B-4490-8C9D-46F3150429DD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="SetLevel_Tower" ID="{DF3C00E9-B48D-44D6-BF96-F7A2639C6DC7}">
@@ -60,6 +103,18 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{43F5AAFA-A536-43D3-B61D-60F955093C85}" ShortID="43338165">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+										<Property Name="GameParameterValue" Type="Real64" Value="95"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}" WorkUnitID="{48A0017C-B44B-4490-8C9D-46F3150429DD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
