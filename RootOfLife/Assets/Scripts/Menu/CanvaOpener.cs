@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CanvaOpener : MonoBehaviour
 {
     public GameObject Panel;
     public GameObject Panel2;
+    public GameObject pauseFirstButton;
 
     menuStormFrei menu;
 
-    void Start()
+    private void Start()
     {
-        menu = gameObject.GetComponentInParent<menuStormFrei>();  
+        menu = gameObject.GetComponentInParent<menuStormFrei>();
+    }
+
+    private void Update()
+    {
+       
     }
     public void openPanel()
     {
@@ -20,6 +27,7 @@ public class CanvaOpener : MonoBehaviour
             {
                 {
                     Panel.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(pauseFirstButton);
                 }
             }
         }
@@ -30,7 +38,7 @@ public class CanvaOpener : MonoBehaviour
         {
             if (Panel != null)
             {
-                Panel.SetActive(false);
+                Panel2.SetActive(false);
                 {
                     if(this.gameObject.tag == "TaRace")
                     {
