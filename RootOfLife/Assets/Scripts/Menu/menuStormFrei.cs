@@ -8,7 +8,7 @@ public class menuStormFrei : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject menuPauseUI;
-    public GameObject player;
+    GameObject player;
     public string menuPrincipal = "MenuPrincipal";
 
     public GameObject pauseFirstButton;
@@ -17,6 +17,13 @@ public class menuStormFrei : MonoBehaviour
     MenuController_Paused pauseControl; // A reference to the MenuController for our pause menu
     public string myIndex; // A string which defines the index of this currently loaded canvas
     Canvas myCanvas; // A canvas which defines what the canvas is on the object this script is attached to
+
+    void Start()
+    {
+        myCanvas = gameObject.GetComponent<Canvas>(); // We set our canvas
+        pauseControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<MenuController_Paused>(); // We define the pauseControl variable
+        player = GameObject.FindWithTag("player");
+    }
 
     void Update()
     {
@@ -31,12 +38,6 @@ public class menuStormFrei : MonoBehaviour
                 SurPause();
             }
         }
-    }
-
-    void Start()
-    {
-        myCanvas = gameObject.GetComponent<Canvas>(); // We set our canvas
-        pauseControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<MenuController_Paused>(); // We define the pauseControl variable
     }
 
     public void Reprendre() //fonction pour le bouton "reprendre" aussi
