@@ -204,12 +204,53 @@
 								<Event Name="BackpackLight_Flashing" ID="{FCA4EE31-FBBB-4BE9-B5F6-6BE09DBB51C1}"/>
 								<Event Name="Light_TouchPlant" ID="{9A3F74A6-7184-4032-981A-6C2E47DB61C3}"/>
 								<Event Name="Plant_Death" ID="{D48C9D8C-9021-4929-9941-62DBCE1FB631}"/>
+								<Event Name="Plant_Stretch" ID="{E19C88C6-2622-42AF-B8D8-55CA7A4FF7C9}">
+									<ChildrenList>
+										<Action Name="" ID="{9D0163E9-E4AE-4AED-A1AC-E4F862BC15AE}" ShortID="1016568001">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantStretch" ID="{845D2F16-0129-4FC4-A90B-0266D86375DB}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Buttons and Switches" ID="{DB2F7604-146C-4DA1-BAAB-93431A9FFE23}" ShortID="631562959">
 							<ChildrenList>
-								<Event Name="Door_Button_Click" ID="{723474E8-BECD-4D73-ABE9-E411F6AB41D2}"/>
-								<Event Name="Trap_Button_Click" ID="{F48AB6EB-1EEE-4B0D-962C-022E99A3FBD2}"/>
+								<Event Name="Door_Button_Click" ID="{723474E8-BECD-4D73-ABE9-E411F6AB41D2}">
+									<ChildrenList>
+										<Action Name="" ID="{1C5F70AF-99C9-4E32-A20F-B5D5A4FC4B69}" ShortID="503292648">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantStretch" ID="{845D2F16-0129-4FC4-A90B-0266D86375DB}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Trap_Button_Click" ID="{F48AB6EB-1EEE-4B0D-962C-022E99A3FBD2}">
+									<ChildrenList>
+										<Action Name="" ID="{3609338C-876A-4AB8-970B-DFA221B28B7C}" ShortID="20228178">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantStretch" ID="{845D2F16-0129-4FC4-A90B-0266D86375DB}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
