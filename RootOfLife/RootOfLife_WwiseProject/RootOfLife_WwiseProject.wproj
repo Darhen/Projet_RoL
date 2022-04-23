@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="Project" SchemaVersion="103" WwiseVersion="v2021.1.3" WwiseBuild="7665">
+<WwiseDocument Type="Project" SchemaVersion="103" WwiseVersion="v2021.1.7" WwiseBuild="7796">
 	<ProjectInfo>
 		<Project Name="RootOfLife_WwiseProject" ID="{BF044D8A-2C2B-409B-B307-8390E200EE15}">
 			<Platforms>
@@ -21,15 +21,21 @@
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
-						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
-						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
+						<Value Platform="Mac">GeneratedSoundBanks\Mac</Value>
+						<Value Platform="Windows">GeneratedSoundBanks\Windows</Value>
+					</ValueList>
+				</Property>
+				<Property Name="GlobalVoiceInstancesLimit" Type="int16">
+					<ValueList>
+						<Value Platform="Mac">256</Value>
+						<Value Platform="Windows">256</Value>
 					</ValueList>
 				</Property>
 				<Property Name="LicenseKey" Type="string" Value="PHByb2plY3QgaWQ9IjUwNTIiIG1hc2s9IkxKSkwxOTc2IiBlbmM9IjAiPjxsaWNlbnNlIGlkPSIxIiBuYW1lPSJXd2lzZSIgdHlwZT0iMyIgcGxhdGZvcm1zPSIyLDMsNCwxMCwxMywxNCIgZXhwaXJlcz0iMjAyMi0wNy0zMSIgIC8+PGxpY2Vuc2UgaWQ9IjIyIiBuYW1lPSJMZXZlbCBBIExpY2Vuc2UiIHR5cGU9IjMiIHBsYXRmb3Jtcz0iMiwzLDQsMTAsMTMsMTQiIGV4cGlyZXM9IjIwMjItMDctMzEiICAvPjxsaWNlbnNlIGlkPSIyMSIgbmFtZT0iTWFpbnRlbmFuY2UiIHR5cGU9IjMiIHBsYXRmb3Jtcz0iMiwzLDQsMTAsMTMsMTQiIGV4cGlyZXM9IjIwMjItMDctMzEiICAvPjxsaWNlbnNlIGlkPSIyNSIgbmFtZT0iQWxsIFd3aXNlIFBsdWctSW5zIiB0eXBlPSIzIiAgZXhwaXJlcz0iMjAyMi0wNy0zMSIgIC8+PGFzc2V0IGlkPSI2MiIgcGx1Z2luPSI4MzIzMDc1IiBuYW1lPSJCT09NIExpYnJhcnkgT3V0ZG9vciBJbXB1bHNlIFJlc3BvbnNlcyIgdHlwZT0iMSIgIGV4cGlyZXM9IjIwMjEtMDQtMzAiIC8+PC9wcm9qZWN0Pg==|CDV16Rg6wGmpho6OSNr6fNFK7thaW9+07zBCjx2HU1Eb9vzz178xerQaEKyW9MkVFjwUibs6H9Q4Al7AKaKtLzGeWnyrX+4a4i0Pg9mqvTI2kayoisz5ys3c9lknwKFnUC+9IaxuuJdpZLAvZugM22YaxJZZ3sNn4JHaA9kdhlw4yV57D7jpSFuzSjCi0D1uLllHWLIT2EOjOkGqzTdFvQJmRie4U5iXOrewpn8pfaK1GxpZEhC/KjfvaItq2qMvYNrZvcNSK/jK6+zdadyn1oe4Ssiy9+TaiIe4iO0yy6iEKwhsSVnm8NkbFLsoYpIuvUgMzNw4l28AAmBhsHc+rQ=="/>
 				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True"/>
 				<Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True"/>
 				<Property Name="SoundBankGenerateMaxAttenuationInfo" Type="bool" Value="True"/>
-				<Property Name="SoundBankHeaderFilePath" Type="string" Value="../../RootOfLife/Assets/StreamingAssets/Audio/GeneratedSoundBanks"/>
+				<Property Name="SoundBankHeaderFilePath" Type="string" Value="..\..\RootOfLife\Assets\StreamingAssets\Audio\GeneratedSoundBanks"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
 						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
@@ -60,8 +66,18 @@
 						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
+				<Property Name="VolumeThreshold" Type="Real64">
+					<ValueList>
+						<Value Platform="Mac">-80</Value>
+						<Value Platform="Windows">-80</Value>
+					</ValueList>
+				</Property>
 				<Property Name="WwiseVersionWhenCreated" Type="string" Value="Branch=wwise_v2021.1|Build=7796|VersionName=v2021.1.7|Config=Release"/>
 			</PropertyList>
+			<MiscSettings>
+				<MiscSettingEntry Name="Cache"><![CDATA[.cache]]></MiscSettingEntry>
+				<MiscSettingEntry Name="Originals"><![CDATA[Originals]]></MiscSettingEntry>
+			</MiscSettings>
 			<SharedValues>
 				<SharedPropertyList ClassName="AudioSource" PluginType="0" CompanyID="1" PluginID="0">
 					<PropertyList>
@@ -9743,7 +9759,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="" PluginType="3" CompanyID="0" PluginID="127">
+				<SharedPropertyList ClassName="Wwise Convolution Reverb" PluginType="3" CompanyID="0" PluginID="127">
 					<PropertyList>
 						<Property Name="AlgoTypeSelect" Type="int32">
 							<ValueList>
@@ -11030,7 +11046,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="" PluginType="2" CompanyID="0" PluginID="183">
+				<SharedPropertyList ClassName="SoundSeed Grain" PluginType="2" CompanyID="0" PluginID="183">
 					<PropertyList>
 						<Property Name="Amplitude" Type="Real32">
 							<ValueList>
@@ -11914,7 +11930,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="" PluginType="0" CompanyID="0" PluginID="185">
+				<SharedPropertyList ClassName="ParameterModulatorAssociation" PluginType="0" CompanyID="0" PluginID="185">
 					<PropertyList>
 						<Property Name="ModDisplayName" Type="string">
 							<ValueList>
@@ -12995,7 +13011,7 @@
 					</ObsOccCurve>
 				</ObsOccCurves>
 			</EnvironmentalSettings>
-			<DefaultConversion Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}"/>
+			<DefaultConversion Name="GitHub" ID="{3F51E5C7-F9E1-41D3-8FCF-DD7D0BEB15C8}"/>
 			<PhysicalFolderList>
 				<PhysicalFolder Path="Actor-Mixer Hierarchy">
 					<WorkUnit Name="Actor-Mixer Hierarchy" ID="{5EA7BBF8-64C0-4A50-8821-A07E8BE21D68}" PersistMode="Standalone"/>
