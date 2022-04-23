@@ -38,6 +38,16 @@
 							<ChildrenList>
 								<Event Name="Player_Footstep" ID="{C14E4FA5-395F-42D6-9648-93D8862E04D8}">
 									<ChildrenList>
+										<Action Name="" ID="{5FF3A6BB-3894-4296-B53D-BC9075985CA2}" ShortID="726690662">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Slide_Stop" ID="{52E8243D-EF71-4154-B165-0750035D2180}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{532807B2-656B-4CA2-9AC4-8EA90A57708A}" ShortID="494591124">
 											<ReferenceList>
 												<Reference Name="Target">
@@ -49,20 +59,86 @@
 								</Event>
 								<Event Name="Player_Landing" ID="{3522576F-4E7B-4076-932C-7E6FB37C4359}">
 									<ChildrenList>
-										<Action Name="" ID="{D6C46929-2B3D-449A-8B22-C18CF7AB6D2C}" ShortID="825831184">
+										<Action Name="" ID="{E1FC8E9A-328B-44EC-8385-8C8E360C5F1A}" ShortID="148823878">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Oneshot_Chord" ID="{1989605F-316C-4786-BD94-42FC48C356A2}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+													<ObjectRef Name="Player_Footstep" ID="{91B16B30-072D-42CA-9B52-CB9B5981D0DE}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Player_Jump" ID="{09B4E164-EDC9-430C-8277-41874F075418}"/>
-								<Event Name="Open_Hangglider" ID="{3D6068CE-3497-400A-964B-149ADDB5DF84}"/>
-								<Event Name="Close_Hangglider" ID="{FB934B7E-4088-4828-9D64-94FF684A906B}"/>
-								<Event Name="Player_Slide" ID="{8D96ABF0-6F1C-49DD-AA44-D3DB38E45579}"/>
-								<Event Name="Player_Slide_Stop" ID="{52E8243D-EF71-4154-B165-0750035D2180}"/>
+								<Event Name="Player_Jump" ID="{09B4E164-EDC9-430C-8277-41874F075418}">
+									<ChildrenList>
+										<Action Name="" ID="{9F103A2C-83DB-40DF-93D4-5BC0A90B97A1}" ShortID="424855290">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Slide_Stop" ID="{52E8243D-EF71-4154-B165-0750035D2180}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Open_Hangglider" ID="{3D6068CE-3497-400A-964B-149ADDB5DF84}">
+									<ChildrenList>
+										<Action Name="" ID="{F0FD3F48-D8FF-48B9-A1BF-7D7296E818FB}" ShortID="401353087">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Hangglide" ID="{E4803E98-9B42-482C-86CA-8F2F36489BA2}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Close_Hangglider" ID="{FB934B7E-4088-4828-9D64-94FF684A906B}">
+									<ChildrenList>
+										<Action Name="" ID="{C1BBF1E9-F9A2-42BD-906C-C427482096C2}" ShortID="459037052">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Hangglide" ID="{E4803E98-9B42-482C-86CA-8F2F36489BA2}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{F8F9EE51-56DA-4DCF-86A4-32D53E559D39}" ShortID="384024431">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Hangglide-Stop" ID="{92AAA7F6-2169-4D74-89B3-9053389DBA0D}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Slide" ID="{8D96ABF0-6F1C-49DD-AA44-D3DB38E45579}">
+									<ChildrenList>
+										<Action Name="" ID="{8E1274A9-8602-43BA-8BBA-3E3ABF72FAED}" ShortID="227686383">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerSlideSeq" ID="{0967EF39-9591-43E1-B32C-95E7370ADC3E}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Slide_Stop" ID="{52E8243D-EF71-4154-B165-0750035D2180}">
+									<ChildrenList>
+										<Action Name="" ID="{4608E073-3EFB-47F7-88F7-9DA9AA981B84}" ShortID="601463115">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerSlideSeq" ID="{0967EF39-9591-43E1-B32C-95E7370ADC3E}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Player_Glide_Humming" ID="{4A532311-F11F-4A40-B877-3BA7BA494564}"/>
 							</ChildrenList>
 						</Folder>
