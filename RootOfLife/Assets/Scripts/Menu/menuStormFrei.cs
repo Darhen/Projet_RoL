@@ -22,7 +22,7 @@ public class menuStormFrei : MonoBehaviour
     {
         myCanvas = gameObject.GetComponent<Canvas>(); // We set our canvas
         pauseControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<MenuController_Paused>(); // We define the pauseControl variable
-        player = GameObject.FindWithTag("player");
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
