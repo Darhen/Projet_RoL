@@ -5,7 +5,14 @@ using UnityEngine;
 public class CanvaOpener : MonoBehaviour
 {
     public GameObject Panel;
+    public GameObject Panel2;
 
+    menuStormFrei menu;
+
+    void Start()
+    {
+        menu = gameObject.GetComponentInParent<menuStormFrei>();  
+    }
     public void openPanel()
     {
         {
@@ -23,8 +30,12 @@ public class CanvaOpener : MonoBehaviour
         {
             if (Panel != null)
             {
+                Panel.SetActive(false);
                 {
-                    Panel.SetActive(false);
+                    if(this.gameObject.tag == "TaRace")
+                    {
+                        menu.Reprendre();
+                    }
                 }
             }
         }

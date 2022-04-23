@@ -30,6 +30,8 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     
     Renderer _renderer;
 
+    public AK.Wwise.Event recharge;
+
     void Awake()
     {
         m_Collider = GetComponent<CapsuleCollider>();
@@ -77,6 +79,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         {
             lerpedColor = Color.Lerp(colorIni, colorMid, variableT / 0.5f);
             _renderer.material.color = lerpedColor;
+            
         }
         if (variableT > midT)
         {
@@ -92,6 +95,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
             if (variableT > minT)
             {
                 variableT -= Time.deltaTime / durationUp;
+                recharge.Post(gameObject);
             }
         }
         else if (!isInsideBeam)

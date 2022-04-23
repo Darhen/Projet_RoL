@@ -11,6 +11,7 @@ public class PulseEmissive : MonoBehaviour
     public float targetIntensity = 5f;
     public float emissiveIntensity;
 
+    public AK.Wwise.Event PulseSound;
     void Start()
     {
         emissiveIntensity = this.gameObject.GetComponent<CouleurEmmissiveSac>().emissiveIntensity;
@@ -22,6 +23,7 @@ public class PulseEmissive : MonoBehaviour
         {
             emissiveIntensity = maxIntensity;
             targetIntensity = minIntensity;
+            PulseSound.Post(gameObject);
         }
         else if (emissiveIntensity <= minIntensity)
         {
