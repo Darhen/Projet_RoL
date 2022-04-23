@@ -8,10 +8,16 @@
 			</PropertyList>
 			<ChildrenList>
 				<SoundcasterSession Name="Music" ID="{E54142D7-BD00-4405-9E2C-82938B3CED63}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Music" ID="{7BC2A667-8500-4E46-A5D0-DD1159C6AF6A}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}"/>
-							<Value>52.3915461624027</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SFX_Volume" ID="{5337D0B3-0958-45FB-B8F2-F242D232B899}"/>

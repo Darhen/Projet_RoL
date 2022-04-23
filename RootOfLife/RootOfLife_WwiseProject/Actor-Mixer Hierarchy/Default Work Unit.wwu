@@ -3369,7 +3369,7 @@
 												<Path2D Name="Footsteps_Path" ID="{8BB0FF7D-1F31-4C30-80AD-AE4D3EA938EF}">
 													<PointList>
 														<Point>
-															<XPos>-0</XPos>
+															<XPos>0</XPos>
 															<YPos>-84.46328</YPos>
 															<Flags>12</Flags>
 															<Time>0</Time>
@@ -3980,6 +3980,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<BlendContainer Name="AMB" ID="{303CA51D-ECF2-4AE1-81DB-FBAC912FE93A}" ShortID="159557893">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>

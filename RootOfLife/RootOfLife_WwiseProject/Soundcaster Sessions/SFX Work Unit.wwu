@@ -10,8 +10,16 @@
 				<SoundcasterSession Name="Sfx" ID="{F16B1AD0-BB4F-416B-A044-B47486A34808}">
 					<ModuleList>
 						<Module>
+							<ObjectRef Name="AMB" ID="{303CA51D-ECF2-4AE1-81DB-FBAC912FE93A}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SetLevel_Bunker" ID="{C06B4BE5-6C68-41F1-B058-D4A07905B69D}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music" ID="{7BC2A667-8500-4E46-A5D0-DD1159C6AF6A}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
+							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="SetLevel_Cave" ID="{C6CFFBC8-10F5-4124-AED0-C406B2082D8B}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
@@ -29,7 +37,7 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}"/>
-							<Value>52.3915461624027</Value>
+							<Value>85</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SFX_Volume" ID="{5337D0B3-0958-45FB-B8F2-F242D232B899}"/>
@@ -45,7 +53,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
+						<CurrentStateRef Name="City" ID="{032367C0-4700-4697-9463-468FA0C461E7}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Alert" ID="{AABBEC05-8113-40C4-9C26-D8357FE899C3}"/>

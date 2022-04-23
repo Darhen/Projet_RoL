@@ -26,7 +26,11 @@
 						</GameParameter>
 					</ChildrenList>
 				</Folder>
-				<GameParameter Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}"/>
+				<GameParameter Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
