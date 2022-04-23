@@ -58,4 +58,41 @@ private void Start()
     }
 
     */
+    public GameObject MurBrise;
+    public GameObject MurSolide;
+    List<GameObject> childObjects = new List<GameObject>();
+
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(Brise());
+        }
+    }
+
+    IEnumerator Brise()
+    {
+        MurSolide.SetActive(false);
+        MurBrise.SetActive(true);
+        foreach (GameObject childObjects in childObjects)
+        {
+            int flyup = Random.Range(-2, -5);
+            childObjects.GetComponent<Rigidbody>().AddForce(new Vector3(0, flyup, 0), ForceMode.Impulse);
+            Debug.Log(flyup.ToString());
+            // childObjects.GetComponent<Material>().
+        }
+        //bedingbedang.Play();
+        yield return new WaitForSeconds(1.3f);
+        Destroy(MurBrise, 7f);
+    }
 }
