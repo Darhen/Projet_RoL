@@ -11,6 +11,17 @@
 					<ChildrenList>
 						<Event Name="SetLevel_Bunker" ID="{C06B4BE5-6C68-41F1-B058-D4A07905B69D}">
 							<ChildrenList>
+								<Action Name="" ID="{3DF35159-59BF-4522-97EA-942954E8AFFC}" ShortID="185331028">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu" ID="{A66A29E6-2431-4008-B358-7C3249767916}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{63D9CF4E-C13F-4ECE-AC93-05ECACBB05AE}" ShortID="408809605">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
