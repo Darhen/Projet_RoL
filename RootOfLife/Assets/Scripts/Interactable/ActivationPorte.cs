@@ -52,8 +52,8 @@ public class ActivationPorte : MonoBehaviour
     void OnTriggerStay(Collider trigger)
     {
         if (trigger.CompareTag("Player")){
-            
-            if (Input.GetKeyDown(KeyCode.Q))
+
+            if (Input.GetButton("Fire3"))
             {
                 SwitchActivate.Post(gameObject);
                 switchActivated = true;

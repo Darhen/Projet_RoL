@@ -39,9 +39,13 @@ public class StopAnim : MonoBehaviour
 
     private void Update()
     {
-        if(amDead == false && droneDetecteur.isInsideSolBeam == false)
+        if (this.gameObject.tag == "EnnemiGround")
         {
-            ennemiSolMouv.speed = 5f;
+            if (amDead == false && droneDetecteur.isInsideSolBeam == false)
+            {
+                ennemiSolMouv.speed = 5f;
+            }
         }
+        
     }
 }
