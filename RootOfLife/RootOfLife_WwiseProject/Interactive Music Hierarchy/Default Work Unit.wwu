@@ -11,7 +11,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-17</Value>
+								<Value>-14</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -40,7 +40,7 @@
 							<ChildrenList>
 								<MusicSegment Name="Bunkertrack" ID="{7763E122-635B-4FFC-B01B-F9856C6269EB}" ShortID="934190182">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="222857.145833333"/>
+										<Property Name="EndPosition" Type="Real64" Value="229302.108134921"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -114,7 +114,7 @@
 													<MusicCue Name="Exit Cue" ID="{04237924-10F1-4961-AF8C-3BBD1902A9DF}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="222857.145833333"/>
+															<Property Name="TimeMs" Type="Real64" Value="192000"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>
@@ -240,7 +240,7 @@
 													<MusicCue Name="Exit Cue" ID="{9A1D3E0F-B1B6-4ADD-A9CA-A9EEEA1D7E42}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="144000"/>
+															<Property Name="TimeMs" Type="Real64" Value="139636.363636364"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>
@@ -366,7 +366,7 @@
 													<MusicCue Name="Exit Cue" ID="{E55B03C6-73F1-4F86-9A56-20F1912170B8}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="134400"/>
+															<Property Name="TimeMs" Type="Real64" Value="111360"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>
@@ -492,7 +492,7 @@
 													<MusicCue Name="Exit Cue" ID="{08432FFF-AAF5-4CBA-9917-70679039FD83}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="132000"/>
+															<Property Name="TimeMs" Type="Real64" Value="130285.714285714"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>
@@ -617,7 +617,7 @@
 													<MusicCue Name="Exit Cue" ID="{6B42CD5E-33E6-4750-AF95-4CDDD088843F}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="240000"/>
+															<Property Name="TimeMs" Type="Real64" Value="168000"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>
@@ -743,7 +743,7 @@
 													<MusicCue Name="Exit Cue" ID="{F04A3D68-67ED-4BA4-A6FB-4ECE2125DED1}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="188160"/>
+															<Property Name="TimeMs" Type="Real64" Value="168960"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>
@@ -788,6 +788,34 @@
 							<ChildrenList>
 								<MusicTransition Name="Transition" ID="{CB97A377-EA56-4625-9002-9E199301B385}">
 									<TransitionInfo/>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{5154B153-BFE9-40A4-AF39-5334A9B835B8}">
+									<PropertyList>
+										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="1"/>
+									</PropertyList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{DB1C2571-1C3F-4743-A402-902427659136}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="8"/>
+													<Property Name="FadeOffset" Type="Real64" Value="8.8"/>
+													<Property Name="FadeTime" Type="Real64" Value="8.7"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{671B918D-987D-4BF4-886D-559D0D45765F}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="1"/>
+													<Property Name="FadeOffset" Type="Real64" Value="-0.6"/>
+													<Property Name="FadeTime" Type="Real64" Value="6.9"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
 								</MusicTransition>
 							</ChildrenList>
 							<TransitionInfo/>
