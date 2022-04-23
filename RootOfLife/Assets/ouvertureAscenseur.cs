@@ -8,6 +8,7 @@ public class ouvertureAscenseur : MonoBehaviour
     public GameObject porte2;
     Animator animator1;
     Animator animator2;
+    public bool Activated;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +17,23 @@ public class ouvertureAscenseur : MonoBehaviour
         animator2 = porte2.GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
+            Activated = true;
             animator1.SetBool("Activated", true);
             animator2.SetBool("Activated", true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Activated = false;
+            animator1.SetBool("Activated", false);
+            animator2.SetBool("Activated", false);
         }
     }
 }
