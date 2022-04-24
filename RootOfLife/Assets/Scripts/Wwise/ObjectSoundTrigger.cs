@@ -12,7 +12,6 @@ public class ObjectSoundTrigger : MonoBehaviour
     void Start()
     {
         AkSoundEngine.RegisterGameObj(gameObject);
-        AkSoundEngine.StopAll(gameObject);
     }
 
 
