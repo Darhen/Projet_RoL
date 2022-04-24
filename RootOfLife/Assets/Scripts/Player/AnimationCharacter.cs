@@ -178,7 +178,7 @@ public class AnimationCharacter : MonoBehaviour
             StartCoroutine(Respawn());
         }
         //Mort robot spider (voir coroutine Respawn pour la suite)
-        if (other.gameObject.CompareTag("EnnemiGround"))
+        if (other.gameObject.CompareTag("EnnemiGround") || other.gameObject.CompareTag("EnnemiSolBoss"))
         {
             animator.SetBool("spiderDeath", true);
             StartCoroutine(Respawn());

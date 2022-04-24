@@ -9,8 +9,8 @@ public class EnnemiSolBoss : MonoBehaviour
     Rigidbody rb_player;
     public GameObject robotSolBoss;
     public GameObject SpotLight;
-    public GameObject mainCamera;
-    public Vector3 cineOffset;
+    //public GameObject mainCamera;
+    //public Vector3 cineOffset;
 
     Animator animatorLightSol;
     public Animator animatorPlayer;
@@ -30,7 +30,7 @@ public class EnnemiSolBoss : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         rb_player = player.GetComponent<Rigidbody>();
-        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollowGrotte>();
+        //cameraFollow = mainCamera.GetComponent<CameraFollowGrotte>();
         playerController = player.GetComponent<PlayerController>();
         plugplant = player.GetComponent<PlugPlant>();
         plane = player.GetComponent<Plane>();
@@ -49,6 +49,8 @@ public class EnnemiSolBoss : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            Debug.Log("CameraBouge");
+            //cameraFollow.walkThroughOffset = cineOffset;
             StartCoroutine(AttaqueBossSol());
         }
     }
@@ -57,7 +59,7 @@ public class EnnemiSolBoss : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            cameraFollow.walkThroughOffset = new Vector3(0, 0, 0);
+            //cameraFollow.walkThroughOffset = new Vector3(0, 0, 0);
             ennemiSolBossActive.enabled = false;
             robotSolBoss.GetComponent<Animator>().enabled = false;
             robotSolBoss.GetComponent<Animator>().SetBool("IsCharging", false);
@@ -82,12 +84,11 @@ public class EnnemiSolBoss : MonoBehaviour
         CinematicMode();
 
         SpotLight.SetActive(true);
-        cameraFollow.walkThroughOffset = cineOffset;
+       // cameraFollow.walkThroughOffset = cineOffset;
         animatorLightSol.Play("WhiteToRedBossSol");
         yield return new WaitForSeconds(2f);
-        cameraFollow.walkThroughOffset = new Vector3(-2f, 0, -3.56f);
+        //cameraFollow.walkThroughOffset = new Vector3(-2f, 0, -3.56f);
         animatorPlayer.SetBool("cinematic", false);
-        Debug.Log("Camera bouge");
         GameplayMode();
         yield return new WaitForSeconds(0.5f);
 

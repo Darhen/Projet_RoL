@@ -50,7 +50,7 @@ PlayerController playerController;
     void OnTriggerEnter(Collider other)
     {
         //Mort par ennemi robot
-        if (other.CompareTag("Ennemi") || other.CompareTag("EnnemiGround") || other.CompareTag("EnnemiDrone"))
+        if (other.CompareTag("Ennemi") || other.CompareTag("EnnemiGround") || other.CompareTag("EnnemiDrone") || other.CompareTag("EnnemiSolBoss"))
         {
 
             isDead();
