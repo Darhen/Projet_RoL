@@ -39,7 +39,7 @@ public class StopAnim : MonoBehaviour
 
     private void Update()
     {
-        if (this.gameObject.tag == "EnnemiGround")
+        if (this.gameObject.tag == "EnnemiGround" && !(this.gameObject.layer == 8))
         {
             if (amDead == false && droneDetecteur.isInsideSolBeam == false)
             {
