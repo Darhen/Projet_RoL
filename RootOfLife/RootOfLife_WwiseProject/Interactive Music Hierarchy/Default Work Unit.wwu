@@ -38,6 +38,7 @@
 						<MusicPlaylistContainer Name="Bunker" ID="{703B1585-2996-466F-BBB2-57641BAFF1CB}" ShortID="688972112">
 							<PropertyList>
 								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
@@ -179,6 +180,7 @@
 						<MusicPlaylistContainer Name="Hope" ID="{ACE30B51-6CAC-4CD9-BABF-7CDB75055145}" ShortID="679439193">
 							<PropertyList>
 								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
@@ -354,10 +356,8 @@
 									<PropertyList>
 										<Property Name="IsFolder" Type="bool" Value="True"/>
 									</PropertyList>
-									<ReferenceList/>
 									<ChildrenList>
 										<MusicTransition Name="Transition" ID="{BD1EB369-AD5B-4E9E-BEEA-C171B336B591}">
-											<ReferenceList/>
 											<TransitionInfo/>
 										</MusicTransition>
 									</ChildrenList>
@@ -381,6 +381,7 @@
 						<MusicPlaylistContainer Name="Intro" ID="{C90614C6-C723-45ED-8596-F8064BD10CA3}" ShortID="33563701">
 							<PropertyList>
 								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
@@ -522,6 +523,7 @@
 						<MusicPlaylistContainer Name="Outtrack" ID="{658959D1-29A4-456F-B039-52B3AFBA3079}" ShortID="796514909">
 							<PropertyList>
 								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
@@ -664,6 +666,7 @@
 						<MusicPlaylistContainer Name="Transion" ID="{3DD549BE-B6E7-456A-B8D6-494339A693D4}" ShortID="57714475">
 							<PropertyList>
 								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
@@ -805,6 +808,7 @@
 						<MusicPlaylistContainer Name="Menu" ID="{A66A29E6-2431-4008-B358-7C3249767916}" ShortID="676405435">
 							<PropertyList>
 								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
@@ -1022,13 +1026,14 @@
 										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 										<Property Name="ExitSourceAt" Type="int16" Value="1"/>
+										<Property Name="PlaySourcePostExit" Type="bool" Value="False"/>
 									</PropertyList>
 									<TransitionInfo>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{DB1C2571-1C3F-4743-A402-902427659136}">
 												<PropertyList>
 													<Property Name="FadeCurve" Type="int16" Value="8"/>
-													<Property Name="FadeOffset" Type="Real64" Value="8.8"/>
+													<Property Name="FadeOffset" Type="Real64" Value="7.3"/>
 													<Property Name="FadeTime" Type="Real64" Value="8.7"/>
 													<Property Name="FadeType" Type="int16" Value="1"/>
 												</PropertyList>
