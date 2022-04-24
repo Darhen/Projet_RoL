@@ -4264,6 +4264,7 @@
 							<ChildrenList>
 								<BlendContainer Name="AMB" ID="{303CA51D-ECF2-4AE1-81DB-FBAC912FE93A}" ShortID="159557893">
 									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-2</Value>
@@ -4275,14 +4276,20 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+											<ObjectRef Name="Amb" ID="{9883FBE0-6E55-4E2C-8B44-E2CF5CC603F6}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
 										<BlendContainer Name="CityTower" ID="{C39FA023-56F5-444D-9421-74977EAF527A}" ShortID="913841582">
+											<PropertyList>
+												<Property Name="OverrideEffect" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+													<ObjectRef Name="New_Wwise_Parametric_EQ" ID="{1237FA3A-EA72-4401-BAF6-E944E179D840}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
@@ -4316,9 +4323,15 @@
 											<ObjectLists/>
 										</BlendContainer>
 										<BlendContainer Name="Cave" ID="{2554D535-EB39-4FA6-A757-02E3AFDC6D46}" ShortID="347459731">
+											<PropertyList>
+												<Property Name="OverrideEffect" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+													<ObjectRef Name="New_Wwise_Parametric_EQ" ID="{1237FA3A-EA72-4401-BAF6-E944E179D840}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
