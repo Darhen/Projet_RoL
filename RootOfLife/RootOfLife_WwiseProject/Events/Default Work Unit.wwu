@@ -25,39 +25,6 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="GameOver" ID="{DCA2D17C-9EBE-4F18-A730-C0B0ABBC5F51}"/>
-						<Event Name="Open_MainMenu" ID="{2E26E1F4-3E37-4E77-B574-790AE5B0943B}">
-							<ChildrenList>
-								<Action Name="" ID="{AEB2621D-30EF-4963-9463-D75EDF7F0D44}" ShortID="852337571">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="3"/>
-										<Property Name="FadeOutCurve" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="2"/>
-									</PropertyList>
-									<ReferenceList/>
-								</Action>
-								<Action Name="" ID="{7805D26D-1007-4D78-9F67-DFF5719C51BC}" ShortID="436996546">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Menu" ID="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{B4C08241-762E-4BDA-80A6-129F580E905A}" ShortID="808594979">
-									<PropertyList>
-										<Property Name="FadeInCurve" Type="int16" Value="1"/>
-										<Property Name="FadeTime" Type="Real64" Value="3"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Music" ID="{7BC2A667-8500-4E46-A5D0-DD1159C6AF6A}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="ReturnTo_MainMenu" ID="{D785954E-AC16-4159-92BA-36C3F40B4DA5}">
 							<ChildrenList>
 								<Action Name="" ID="{4902E0E0-7DEC-4825-8EBB-C52FEAFB140C}" ShortID="291008647">

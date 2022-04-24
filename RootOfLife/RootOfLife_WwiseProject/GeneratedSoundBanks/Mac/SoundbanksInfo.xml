@@ -25,7 +25,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="790399517">
+		<SoundBank Id="3161908922" Language="SFX" Hash="805727498">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -85,7 +85,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="964983010" Name="Open_MainMenu" ObjectPath="\Events\Default Work Unit\UI\Open_MainMenu" DurationType="Infinite">
+				<Event Id="964983010" Name="Open_MainMenu" ObjectPath="\Events\Music work unit\Music\Open_MainMenu" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="115747688" Language="SFX">
 							<ShortName>Outtrack.wav</ShortName>
@@ -108,33 +108,6 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
-							<Media>
-								<File Id="295224137"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
-							<Media>
-								<File Id="767662687"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
-							<Media>
-								<File Id="164074538"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
-							<Media>
-								<File Id="327066022"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
-							<Media>
-								<File Id="115747688"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
@@ -672,6 +645,33 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
+							<Media>
+								<File Id="295224137"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
+							<Media>
+								<File Id="767662687"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
+							<Media>
+								<File Id="164074538"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
+							<Media>
+								<File Id="327066022"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
+							<Media>
+								<File Id="115747688"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
@@ -686,17 +686,9 @@
 							<ShortName>AMB_BunkerShake-010.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-010_3F75BDB9.wem</Path>
 						</File>
-						<File Id="115747688" Language="SFX">
-							<ShortName>Outtrack.wav</ShortName>
-							<Path>SFX\Outtrack_9EDFC787.wem</Path>
-						</File>
 						<File Id="156765195" Language="SFX">
 							<ShortName>AMB_BunkerShake-002.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-002_3F75BDB9.wem</Path>
-						</File>
-						<File Id="164074538" Language="SFX">
-							<ShortName>Hopetrack.wav</ShortName>
-							<Path>Voices\English(US)\Hopetrack_9EDFC787.wem</Path>
 						</File>
 						<File Id="164203096" Language="SFX">
 							<ShortName>AMB_BunkerShake-012.wav</ShortName>
@@ -714,17 +706,9 @@
 							<ShortName>AMB_Cave drippings-005.wav</ShortName>
 							<Path>SFX\AMB_Cave drippings-005_3F75BDB9.wem</Path>
 						</File>
-						<File Id="295224137" Language="SFX">
-							<ShortName>Bunkertrack.wav</ShortName>
-							<Path>Voices\English(US)\Bunkertrack_9EDFC787.wem</Path>
-						</File>
 						<File Id="302219468" Language="SFX">
 							<ShortName>AMB_Cave drippings-008.wav</ShortName>
 							<Path>SFX\AMB_Cave drippings-008_3F75BDB9.wem</Path>
-						</File>
-						<File Id="327066022" Language="SFX">
-							<ShortName>Menu.wav</ShortName>
-							<Path>Voices\English(US)\Menu_9EDFC787.wem</Path>
 						</File>
 						<File Id="341565957" Language="SFX">
 							<ShortName>AMB_BunkerShake-004.wav</ShortName>
@@ -753,10 +737,6 @@
 						<File Id="703330465" Language="SFX">
 							<ShortName>AMB_CaveDrone.wav</ShortName>
 							<Path>SFX\AMB_CaveDrone_3F75BDB9.wem</Path>
-						</File>
-						<File Id="767662687" Language="SFX">
-							<ShortName>Tensiontrack.wav</ShortName>
-							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 						<File Id="784926989" Language="SFX">
 							<ShortName>AMB_BunkerShake-009.wav</ShortName>
