@@ -25,7 +25,7 @@ public class AnimationCharacter : MonoBehaviour
     private Rigidbody myRigidbody;
 
     //SCRIPTS
-    LedgeClimb ledgeClimb;
+    public LedgeClimb ledgeClimb;
     PlayerClimbing playerClimbing;
     RespawnMerged respawnMerged;
     PlayerController playerController;
@@ -36,7 +36,7 @@ public class AnimationCharacter : MonoBehaviour
     void Start()
     {
         avatar = GameObject.Find("TestCharacter27_janvier");
-        ledgeClimb = GetComponent<LedgeClimb>();
+        //ledgeClimb = GetComponent<LedgeClimb>();
         playerClimbing = GetComponent<PlayerClimbing>();
         respawnMerged = GetComponent<RespawnMerged>();
         playerController = GetComponent<PlayerController>();
@@ -147,12 +147,13 @@ public class AnimationCharacter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        /*
         //Ledge Climb
         if (isLedgeClimbing)
         {
             animator.Play("LedgeClimb");
         }
+        */
         /*
         if (other.gameObject.CompareTag("Ledge") && isJumping && !isClimbing)
         {

@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class LedgeClimb : MonoBehaviour
 {
-    PlayerController playerController;
-    PlayerClimbing playerClimbing;
-    Plane plane;
+    public GameObject player;
+    public PlayerController playerController;
+    public PlayerClimbing playerClimbing;
+    public Plane plane;
     Vector3 endPosition;
-    Rigidbody rbPlayer;
-    Trampoline trampoline;
+    public Rigidbody rbPlayer;
+    public Trampoline trampoline;
 
     public Animator playerAnimator;
 
@@ -26,14 +27,15 @@ public class LedgeClimb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
-        playerClimbing = GetComponent<PlayerClimbing>();
-        plane = GetComponent<Plane>();
+        player = GameObject.FindWithTag("Player");
+        //playerController = GetComponent<PlayerController>();
+        //playerClimbing = GetComponent<PlayerClimbing>();
+        //plane = GetComponent<Plane>();
         offset = 1f;
         timerAnimation = 1.2f;
-        rbPlayer = GetComponent<Rigidbody>();
+        //rbPlayer = GetComponent<Rigidbody>();
         directionLedge = 1;
-        trampoline = GetComponent<Trampoline>();
+        //trampoline = GetComponent<Trampoline>();
     }
 
     // Update is called once per frame
@@ -60,12 +62,13 @@ public class LedgeClimb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ledge") && isJumping || other.gameObject.CompareTag("Ledge") && bounce || other.gameObject.CompareTag("Ledge") && isLadderClimbing)
+        if (other.gameObject.CompareTag("Ledge")/*other.gameObject.CompareTag("Ledge") && isJumping || other.gameObject.CompareTag("Ledge") && bounce || other.gameObject.CompareTag("Ledge") && isLadderClimbing*/)
         {
             //Determiner la direction du ledge climb
             directionLedge = other.gameObject.GetComponent<LedgeClimbDirection>().direction;
             //Lors de la collision, on va chercher la position du endPoint enfant du ledge climb actif
             endPosition = other.gameObject.transform.GetChild(0).position;
+            //playerAnimator.SetTrigger("LedgeClimb");
             StartLedgeClimb();
             /*
             //Déclarer que le player ledge climb pour l'animation
@@ -118,7 +121,8 @@ public class LedgeClimb : MonoBehaviour
         Debug.Log("LedgeClimb");
         
         //On reset la position du player au endPoint, au sommet du ledgeClimb avec le offset dans la direction appropriée
-        transform.position = endPosition + new Vector3(offset * directionLedge, 0, 0);
+        //transform.position = endPosition + new Vector3(offset * directionLedge, 0, 0);
+        player.transform.position = endPosition + new Vector3(offset * directionLedge, 0, 0);
         //Départ de la coroutine pour desactiver le script PlayerController le temps de l'animation;
         StartCoroutine(Waiter());
         //Éliminer la vélocité du player

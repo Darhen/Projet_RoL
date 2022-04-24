@@ -33,7 +33,7 @@ public class CameraBound : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "CameraBound")
         {
             cameraFollow.activeBoundary = true;
             //cameraFollow.boundCamPosition = cameraTarget + extraOffset;
@@ -50,7 +50,7 @@ public class CameraBound : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "CameraBound")
         {
             cameraFollow.activeBoundary = false;
             if (xFree)
