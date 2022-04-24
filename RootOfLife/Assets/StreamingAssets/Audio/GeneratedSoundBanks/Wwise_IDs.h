@@ -77,6 +77,7 @@ namespace AK
                 static const AkUniqueID BUNKER = 2647120390U;
                 static const AkUniqueID CAVE = 4122393694U;
                 static const AkUniqueID CITY = 3888786832U;
+                static const AkUniqueID MENU = 2607556080U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID TOWER = 1737926756U;
             } // namespace STATE
