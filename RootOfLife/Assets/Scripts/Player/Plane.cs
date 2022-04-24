@@ -19,6 +19,10 @@ public class Plane : MonoBehaviour
 
     public bool isGliding;
 
+    public AK.Wwise.Event GlidingOn;
+    public AK.Wwise.Event GlidingOff;
+    private bool soundPlayed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,13 +47,13 @@ public class Plane : MonoBehaviour
                 timerParachute += 1 * Time.deltaTime;
 
                 //si le timer est atteint, on déclanche le parachute
-                if(timerParachute >= 0.3f)
+                if (timerParachute >= 0.3f)
                 {
                     GetComponent<PlayerController>().fallMultiplier = 1;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, parachuteMultiplier, 0);
 
                     isGliding = true;
-
+                    PlaySound();
                     animator.SetBool("gliding", true);
                 }
 
@@ -68,10 +72,16 @@ public class Plane : MonoBehaviour
                 timerParachute = 0;
 
                 GetComponent<PlayerController>().fallMultiplier = initialFallMultiplier;
-                
+
                 isGliding = false;
 
                 animator.SetBool("gliding", false);
+                /*
+                GlidingOff.Post(gameObject);
+                Debug.Log("Gliding OFF");
+                */
+                GlidingOn.Stop(this.gameObject);
+                soundPlayed = false;
             }
 
             if (isGrounded)
@@ -87,6 +97,22 @@ public class Plane : MonoBehaviour
             isGliding = false;
 
             animator.SetBool("gliding", false);
+            GlidingOn.Stop(this.gameObject);
+
+            /*
+            GlidingOff.Post(gameObject);
+            Debug.Log("Gliding OFF");
+            */
+        }
+    }
+
+    void PlaySound()
+    {
+        if(soundPlayed == false)
+        {
+            GlidingOn.Post(gameObject);
+            Debug.Log("playing sound");
+            soundPlayed = true;
         }
     }
 
