@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraTriggerPlante : MonoBehaviour
 {
-    public GameObject mainCamera;
+    //public GameObject mainCamera;
     public GameObject spawnPos;
     CameraFollowGrotte cameraFollow;
     GrowthManager growthManager;

@@ -181,10 +181,11 @@ public class DroneDetecteur : MonoBehaviour
                     ennemiSolMouv.speed = 0f;
                     if (animatorSol != null) animatorSol.enabled = false;
                 }
-                else
+                else if (respawn.deadBySol == false)
                 {
+                    Debug.Log("Se ranime!");
                     ennemiSolMouv.speed = 5f;
-                    if (animatorSol != null) animatorSol.enabled = true;
+                    animatorSol.enabled = true;
                 }
             }
         }
@@ -230,8 +231,9 @@ public class DroneDetecteur : MonoBehaviour
                     ennemiSolMouv.speed = 0f;
                     if (animatorSol != null) animatorSol.enabled = false;
                 }
+               
 
-            }
+        }
 
 
         //}
