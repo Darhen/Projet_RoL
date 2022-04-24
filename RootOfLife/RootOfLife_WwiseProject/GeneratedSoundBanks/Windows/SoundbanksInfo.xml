@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1041877349">
+		<SoundBank Id="1355168291" Language="SFX" Hash="83509637">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -24,7 +24,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3642309066">
+		<SoundBank Id="3161908922" Language="SFX" Hash="59745532">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -648,7 +648,33 @@
 				<Event Id="1028635762" Name="Player_Spawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Spawn" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1457412937" Name="Player_Suffocate" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Suffocate" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="766957497" Name="Pull_Lever" ObjectPath="\Events\Default Work Unit\Player\Actions\Pull_Lever" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1661329569" Name="ReturnTo_MainMenu" ObjectPath="\Events\Default Work Unit\UI\ReturnTo_MainMenu" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1661329569" Name="ReturnTo_MainMenu" ObjectPath="\Events\Default Work Unit\UI\ReturnTo_MainMenu" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="115747688" Language="SFX">
+							<ShortName>Outtrack.wav</ShortName>
+							<Path>SFX\Outtrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="164074538" Language="SFX">
+							<ShortName>Hopetrack.wav</ShortName>
+							<Path>Voices\English(US)\Hopetrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="295224137" Language="SFX">
+							<ShortName>Bunkertrack.wav</ShortName>
+							<Path>Voices\English(US)\Bunkertrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="327066022" Language="SFX">
+							<ShortName>Menu.wav</ShortName>
+							<Path>Voices\English(US)\Menu_9EDFC787.wem</Path>
+						</File>
+						<File Id="767662687" Language="SFX">
+							<ShortName>Tensiontrack.wav</ShortName>
+							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="1224425817" Name="SetLevel_Bunker" ObjectPath="\Events\Music work unit\Music\SetLevel_Bunker" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="35949494" Language="SFX">

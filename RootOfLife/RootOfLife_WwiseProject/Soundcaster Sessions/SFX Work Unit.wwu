@@ -18,6 +18,10 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Player_Footstep" ID="{C14E4FA5-395F-42D6-9648-93D8862E04D8}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Music" ID="{7BC2A667-8500-4E46-A5D0-DD1159C6AF6A}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
 							<Position X="1" Y="0"/>
 						</Module>
@@ -26,12 +30,20 @@
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Open_Hangglider" ID="{3D6068CE-3497-400A-964B-149ADDB5DF84}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Open_MainMenu" ID="{2E26E1F4-3E37-4E77-B574-790AE5B0943B}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="SetLevel_City" ID="{C9B58AC4-C9D2-4914-9331-449643D5BEA8}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Close_Hangglider" ID="{FB934B7E-4088-4828-9D64-94FF684A906B}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="SetLevel_Tower" ID="{DF3C00E9-B48D-44D6-BF96-F7A2639C6DC7}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
@@ -57,11 +69,11 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="City" ID="{032367C0-4700-4697-9463-468FA0C461E7}"/>
+						<CurrentStateRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Alert" ID="{AABBEC05-8113-40C4-9C26-D8357FE899C3}"/>
-						<CurrentSwitchRef Name="Stone" ID="{6318CCD1-8CDB-4FF9-A5BA-9F9D209794B3}"/>
+						<CurrentSwitchRef Name="Dirt" ID="{26E6C451-9704-4001-8C1B-C813526E1D46}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
