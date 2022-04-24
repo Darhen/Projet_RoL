@@ -44,6 +44,8 @@ public class StopAnim : MonoBehaviour
             if (amDead == false && droneDetecteur.isInsideSolBeam == false)
             {
                 ennemiSolMouv.speed = 5f;
+                this.gameObject.GetComponent<Animator>().enabled = true;
+
             }
         }
         

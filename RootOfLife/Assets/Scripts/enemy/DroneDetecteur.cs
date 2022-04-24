@@ -185,7 +185,7 @@ public class DroneDetecteur : MonoBehaviour
                 {
                     Debug.Log("Se ranime!");
                     ennemiSolMouv.speed = 5f;
-                    animatorSol.enabled = true;
+                    if (animatorSol != null) animatorSol.enabled = true;
                 }
             }
         }
@@ -231,7 +231,6 @@ public class DroneDetecteur : MonoBehaviour
                     ennemiSolMouv.speed = 0f;
                     if (animatorSol != null) animatorSol.enabled = false;
                 }
-               
 
         }
 

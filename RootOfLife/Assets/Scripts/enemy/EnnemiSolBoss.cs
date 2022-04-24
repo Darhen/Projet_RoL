@@ -87,6 +87,7 @@ public class EnnemiSolBoss : MonoBehaviour
         yield return new WaitForSeconds(2f);
         cameraFollow.walkThroughOffset = new Vector3(-2f, 0, -3.56f);
         animatorPlayer.SetBool("cinematic", false);
+        Debug.Log("Camera bouge");
         GameplayMode();
         yield return new WaitForSeconds(0.5f);
 
