@@ -14,11 +14,13 @@ public class CameraBound : MonoBehaviour
     public bool xFree;
     public bool yFree;
     public Vector3 extraOffset;
+    public GameObject mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollow>();
+        mainCamera = GameObject.FindWithTag("MainCamera");
+        cameraFollow = mainCamera.GetComponent<CameraFollow>();
         cameraFollow.activeBoundary = false;
         
     }
@@ -34,8 +36,9 @@ public class CameraBound : MonoBehaviour
         if (other.tag == "Player")
         {
             cameraFollow.activeBoundary = true;
-            cameraFollow.boundCamPosition = cameraTarget + extraOffset;
-            if(xFree)
+            //cameraFollow.boundCamPosition = cameraTarget + extraOffset;
+            cameraFollow.boundCamPosition = Vector3.Lerp(mainCamera.transform.position, cameraTarget + extraOffset, 8f);
+            if (xFree)
             {
                 cameraFollow.xFree = true;
             }

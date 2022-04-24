@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1047588814427073184}
   - component: {fileID: 1047588814427073185}
   - component: {fileID: 1047588814427073187}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera Boundary
   m_TagString: CameraBound
   m_Icon: {fileID: 0}
@@ -67,6 +67,8 @@ MonoBehaviour:
   cameraFollow: {fileID: 0}
   xFree: 0
   yFree: 0
+  extraOffset: {x: 0, y: 0, z: 0}
+  mainCamera: {fileID: 0}
 --- !u!1 &3105686164119299342
 GameObject:
   m_ObjectHideFlags: 0
