@@ -6,20 +6,18 @@ public class ObjectSoundTrigger : MonoBehaviour
 {
     public string eventName = "default";
 
+    private uint TitleSoundID;
+
 
     void Start()
     {
         AkSoundEngine.RegisterGameObj(gameObject);
+        AkSoundEngine.StopAll(gameObject);
     }
 
 
     public void PlaySound()
     {
         AkSoundEngine.PostEvent(eventName, gameObject);
-    }
-
-    public void StopSound()
-    {
-        AkSoundEngine.StopAll(gameObject);
     }
 }
