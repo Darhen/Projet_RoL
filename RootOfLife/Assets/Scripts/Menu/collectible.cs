@@ -54,7 +54,7 @@ public class collectible : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift)||Input.GetButtonDown("Fire3"))
         {
             CollectibleUI.SetActive(false);
             CollectibleUI2.SetActive(false);
