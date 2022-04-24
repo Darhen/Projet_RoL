@@ -27,6 +27,14 @@
 						<Event Name="GameOver" ID="{DCA2D17C-9EBE-4F18-A730-C0B0ABBC5F51}"/>
 						<Event Name="Open_MainMenu" ID="{2E26E1F4-3E37-4E77-B574-790AE5B0943B}">
 							<ChildrenList>
+								<Action Name="" ID="{AEB2621D-30EF-4963-9463-D75EDF7F0D44}" ShortID="852337571">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
 								<Action Name="" ID="{876E4E57-A78D-4087-AC89-6331036E3548}" ShortID="942735814">
 									<ReferenceList>
 										<Reference Name="Target">
