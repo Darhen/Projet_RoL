@@ -11,6 +11,16 @@
 					<ChildrenList>
 						<Event Name="SetLevel_Bunker" ID="{C06B4BE5-6C68-41F1-B058-D4A07905B69D}">
 							<ChildrenList>
+								<Action Name="" ID="{DEF04FDF-1A8E-4F05-A99D-D0D7362DE19B}" ShortID="553395259">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu" ID="{A66A29E6-2431-4008-B358-7C3249767916}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{63D9CF4E-C13F-4ECE-AC93-05ECACBB05AE}" ShortID="408809605">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
@@ -18,6 +28,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Bunker" ID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F8FD5E4C-240B-4279-8472-3F31B4CC950E}" ShortID="265552634">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{7BC2A667-8500-4E46-A5D0-DD1159C6AF6A}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -115,21 +132,6 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="AmbienceState" ID="{75C01C8A-9DDB-4355-A5AF-E2E64F370EF2}" WorkUnitID="{48A0017C-B44B-4490-8C9D-46F3150429DD}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Stopthefuckingmenumusic" ID="{6183244E-BE20-4C8B-B949-8C81359F601A}">
-							<ChildrenList>
-								<Action Name="" ID="{8F073E07-C459-48FA-B81E-6BC9FC52A425}" ShortID="51185920">
-									<PropertyList>
-										<Property Name="FadeInCurve" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="3"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Menu" ID="{A66A29E6-2431-4008-B358-7C3249767916}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
