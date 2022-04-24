@@ -35,10 +35,24 @@
 									</PropertyList>
 									<ReferenceList/>
 								</Action>
-								<Action Name="" ID="{876E4E57-A78D-4087-AC89-6331036E3548}" ShortID="942735814">
+								<Action Name="" ID="{7805D26D-1007-4D78-9F67-DFF5719C51BC}" ShortID="436996546">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Menu" ID="{A66A29E6-2431-4008-B358-7C3249767916}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
+											<ObjectRef Name="Menu" ID="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{B4C08241-762E-4BDA-80A6-129F580E905A}" ShortID="808594979">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{7BC2A667-8500-4E46-A5D0-DD1159C6AF6A}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
