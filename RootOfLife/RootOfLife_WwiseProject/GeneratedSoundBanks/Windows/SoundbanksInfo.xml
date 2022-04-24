@@ -24,7 +24,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3475800860">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1825468425">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -98,7 +98,7 @@
 					<IncludedMemoryFiles>
 						<File Id="177581736" Language="SFX">
 							<ShortName>LeavesRustlePlantGrowStretch.wav</ShortName>
-							<Path>SFX\LeavesRustlePlantGrowStretch_6EDA8D17.wem</Path>
+							<Path>SFX\LeavesRustlePlantGrowStretch_1215D5EC.wem</Path>
 						</File>
 						<File Id="519760497" Language="SFX">
 							<ShortName>LeavesRustlePlantGrow.wav</ShortName>
@@ -106,7 +106,7 @@
 						</File>
 						<File Id="625903980" Language="SFX">
 							<ShortName>Plantgrowrocks-001.wav</ShortName>
-							<Path>SFX\Plantgrowrocks-001_6C7C8D32.wem</Path>
+							<Path>SFX\Plantgrowrocks-001_AF98D1D0.wem</Path>
 						</File>
 						<File Id="853392424" Language="SFX">
 							<ShortName>Plantgrowrocks-001.wav</ShortName>
@@ -753,6 +753,14 @@
 					<ActionSetState>
 						<ActionSetStateEntry Id="1737926756" Name="Tower" ObjectPath="\States\Default Work Unit\Level\Tower"/>
 					</ActionSetState>
+				</Event>
+				<Event Id="3101177833" Name="Stopthefuckingmenumusic" ObjectPath="\Events\Music work unit\Music\Stopthefuckingmenumusic" DurationType="OneShot" DurationMin="132." DurationMax="132.">
+					<IncludedMemoryFiles>
+						<File Id="327066022" Language="SFX">
+							<ShortName>Menu.wav</ShortName>
+							<Path>Voices\English(US)\Menu_9EDFC787.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="3789515518" Name="Trap_Button_Click" ObjectPath="\Events\Default Work Unit\Objects\Buttons and Switches\Trap_Button_Click" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1029784236" Name="Walker_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Alert" DurationType="OneShot" DurationMin="2." DurationMax="2.">
