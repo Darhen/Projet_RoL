@@ -58,6 +58,15 @@ public class GrowthManager : MonoBehaviour
 
         if(playerController.plantIsPlugged)
         {
+            if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Fire2"))
+            {
+                PlantGrowth.Post(gameObject);
+            }
+            if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))
+            {
+                PlantDeath.Post(gameObject);
+            }
+
             if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Fire1"))
             {
                 if (currentCap > 1)
@@ -65,14 +74,6 @@ public class GrowthManager : MonoBehaviour
                     StartCoroutine("DestroyRoots");
                 }
                 //Lance une coroutine de destruction de child
-                if (Input.GetKey(KeyCode.F) || Input.GetButton("Fire2"))
-                {
-                    PlantGrowth.Post(gameObject);
-                }
-                if (Input.GetKeyUp(KeyCode.F) || Input.GetButtonUp("Fire2"))
-                {
-                    PlantGrowth.Stop(gameObject);
-                }
             }
         }
 
