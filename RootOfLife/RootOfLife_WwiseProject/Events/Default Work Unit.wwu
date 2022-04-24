@@ -68,6 +68,23 @@
 									</PropertyList>
 									<ReferenceList/>
 								</Action>
+								<Action Name="" ID="{7ED912FE-F9FD-496C-8C07-49432B77700C}" ShortID="633246643">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu" ID="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}" WorkUnitID="{E0D14B0E-BC6F-4FBA-8067-919CAA78F7E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{2E2EAA21-60C8-4567-8502-F29823D2EDE1}" ShortID="351797409">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{7BC2A667-8500-4E46-A5D0-DD1159C6AF6A}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Game_Pause" ID="{D2B40CC9-0FEF-4646-B6AC-421B3D6FC833}">
