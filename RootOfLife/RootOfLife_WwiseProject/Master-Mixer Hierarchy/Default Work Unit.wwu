@@ -6,6 +6,9 @@
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
 					<PropertyList>
 						<Property Name="BusVolume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
 							<RTPCList>
 								<RTPC Name="" ID="{D0DD52DD-6D4F-48D7-96D1-F4275C3C08ED}" ShortID="450863787">
 									<ReferenceList>
@@ -44,7 +47,7 @@
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
 									<ValueList>
-										<Value>-14</Value>
+										<Value>-19</Value>
 									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{C30D717B-9E73-4567-9600-C90CEA46E8EF}" ShortID="537364697">
@@ -121,6 +124,13 @@
 									<ObjectLists/>
 								</AuxBus>
 								<Bus Name="Amb" ID="{9883FBE0-6E55-4E2C-8B44-E2CF5CC603F6}">
+									<PropertyList>
+										<Property Name="BusVolume" Type="Real64">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ObjectLists/>
 								</Bus>
 							</ChildrenList>
