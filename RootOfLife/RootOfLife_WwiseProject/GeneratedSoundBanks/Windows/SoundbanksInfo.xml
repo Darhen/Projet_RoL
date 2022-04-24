@@ -24,7 +24,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1752823574">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3965818647">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -762,7 +762,7 @@
 						<ActionSetStateEntry Id="1737926756" Name="Tower" ObjectPath="\States\Default Work Unit\Level\Tower"/>
 					</ActionSetState>
 				</Event>
-				<Event Id="3101177833" Name="Stopthefuckingmenumusic" ObjectPath="\Events\Music work unit\Music\Stopthefuckingmenumusic" DurationType="OneShot" DurationMin="132." DurationMax="132.">
+				<Event Id="3101177833" Name="Stopthefuckingmenumusic" ObjectPath="\Events\Music work unit\Music\Stopthefuckingmenumusic" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="327066022" Language="SFX">
 							<ShortName>Menu.wav</ShortName>
