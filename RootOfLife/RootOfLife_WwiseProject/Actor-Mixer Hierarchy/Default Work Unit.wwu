@@ -6652,9 +6652,27 @@
 								</Sound>
 								<Sound Name="PlantSFX_PlantDeath" ID="{A00555FF-DC4D-4622-80F0-A9A31A246DFB}" ShortID="811672938">
 									<PropertyList>
-										<Property Name="Volume" Type="Real64">
+										<Property Name="MaxSoundPerInstance" Type="int16">
 											<ValueList>
-												<Value>-15</Value>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{8E3635F7-E4BA-46FF-A490-E506F410DE62}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="300"/>
+															<Property Name="Min" Type="Real64" Value="-300"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -6671,6 +6689,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="PlantSFX_PlantDeath" ID="{1B9CF7AB-8C77-4514-9312-D3A338620B0A}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.492462065317259"/>
+												<Property Name="FadeOutShape" Type="int16" Value="4"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.640656668306249"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>PlantSFX_PlantDeath.wav</AudioFile>
 											<MediaIDList>
