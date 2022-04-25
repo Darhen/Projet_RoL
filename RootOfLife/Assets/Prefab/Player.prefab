@@ -30389,6 +30389,14 @@ MonoBehaviour:
   direction: 0
   plantIsPlugged: 0
   ledgeClimb: {fileID: 3440191406482406374}
+  SlopeSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 085a8554f343d9646b2c68c5e7c6c01e, type: 2}
+  SlopeStopSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2212dcde98b9cfb48b7b5a2efa65b1fd, type: 2}
 --- !u!114 &1465056800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31494,9 +31502,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3124496072062757462}
     - target: {fileID: 394126053503125727, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
+      propertyPath: Recharge.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b2d3427b97bbe940b4ca698ba54637b, type: 2}
+    - target: {fileID: 394126053503125727, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
+      propertyPath: RedLight.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e7cc9cb02476c8f4aa7e5343bcd695fe, type: 2}
+    - target: {fileID: 394126053503125727, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
       propertyPath: recharge.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 027acc1143622624d9e2b2d326422507, type: 2}
+    - target: {fileID: 394126053503125727, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
+      propertyPath: GreenLight.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: dfec9948993a3f04ea5df4918f0ddbc1, type: 2}
+    - target: {fileID: 394126053503125727, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
+      propertyPath: YellowLight.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: ca6b01b8eda1be24a9bf3120685636fc, type: 2}
     - target: {fileID: 394126053626346263, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
       propertyPath: player
       value: 

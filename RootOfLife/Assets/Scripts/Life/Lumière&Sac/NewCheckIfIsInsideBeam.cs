@@ -30,7 +30,10 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     
     Renderer _renderer;
 
-    public AK.Wwise.Event recharge;
+    public AK.Wwise.Event Recharge;
+    public AK.Wwise.Event GreenLight;
+    public AK.Wwise.Event YellowLight;
+    public AK.Wwise.Event RedLight;
 
     void Awake()
     {
@@ -80,7 +83,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         {
             lerpedColor = Color.Lerp(colorIni, colorMid, variableT / 0.5f);
             _renderer.material.color = lerpedColor;
-            
+
         }
         if (variableT > midT)
         {
@@ -91,18 +94,18 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
         if (isInsideBeam)
         {
-            
+
             Debug.Log("Coucou");
             if (variableT > minT)
             {
                 variableT -= Time.deltaTime / durationUp;
-                recharge.Post(gameObject);
+                Recharge.Post(gameObject);
             }
         }
         else if (!isInsideBeam)
         {
             durationUp = 5f;
-            variableT += Time.deltaTime / durationDown ;
+            variableT += Time.deltaTime / durationDown;
         }
 
         if (variableT < 0)
@@ -110,6 +113,26 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
             variableT = minT;
         }
 
+
+        //SON VIE DE LA PLANTE
+
+        if (variableT >= 0.2f)
+        {
+            GreenLight.Post(gameObject);
+            Debug.Log(GreenLight);
+        }
+
+        if (variableT >= 0.55f)
+        {
+            YellowLight.Post(gameObject);
+            Debug.Log(YellowLight);
+        }
+
+        if (variableT >= 0.85f)
+        {
+            RedLight.Post(gameObject);
+            Debug.Log(RedLight);
+        }
     }
 
 }

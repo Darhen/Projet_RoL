@@ -32,6 +32,11 @@ public class AnimationCharacter : MonoBehaviour
     MoveObject moveObject;
 
 
+    //SON 
+    public AK.Wwise.Event SlopeSFX;
+    public AK.Wwise.Event SlopeStopSFX;
+    private bool SFXisPlayed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,11 +82,11 @@ public class AnimationCharacter : MonoBehaviour
         }
 
         //Animation falling
-        if(isFalling)
+        if (isFalling)
         {
             animator.SetBool("falling", true);
         }
-        if(!isFalling)
+        if (!isFalling)
         {
             animator.SetBool("falling", false);
         }
@@ -190,6 +195,31 @@ public class AnimationCharacter : MonoBehaviour
             particleHit.Play();
             animator.SetBool("dieAir", true);
             StartCoroutine(Respawn());
+        }
+    }
+
+    // SFX SLOPES
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Slope")
+        {
+            if (SFXisPlayed == false)
+            {
+                SlopeSFX.Post(gameObject);
+                Debug.Log(SlopeSFX);
+                SFXisPlayed = true;
+            }
+        }
+
+        if (other.gameObject.tag != "Slope")
+        {
+            if(SFXisPlayed == true)
+            {
+                SlopeStopSFX.Post(gameObject);
+                //SlopeSFX.Stop(this.gameObject, 500, AkCurveInterpolation.AkCurveInterpolation_Constant);
+                Debug.Log(SlopeStopSFX);
+                SFXisPlayed = false;
+            }
         }
     }
 
