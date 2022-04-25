@@ -66,6 +66,7 @@ namespace AK
         static const AkUniqueID SETLEVEL_CITY = 2275076219U;
         static const AkUniqueID SETLEVEL_TOWER = 1777656929U;
         static const AkUniqueID STARTGAME = 1521187885U;
+        static const AkUniqueID STOPMOVE_BOX = 267097148U;
         static const AkUniqueID TRAP_BUTTON_CLICK = 3789515518U;
         static const AkUniqueID WALKER_ALERT = 1029784236U;
         static const AkUniqueID WALKER_FOOTSTEP = 1606606892U;

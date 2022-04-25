@@ -25,7 +25,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1023255941">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1937854075">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -148,7 +148,14 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="3375032870" Name="Light_TouchPlant" ObjectPath="\Events\Default Work Unit\Objects\Plant\Light_TouchPlant" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1954644116" Name="Move_Box" ObjectPath="\Events\Default Work Unit\Player\Actions\Move_Box" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1954644116" Name="Move_Box" ObjectPath="\Events\Default Work Unit\Player\Actions\Move_Box" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="38728485" Language="SFX">
+							<ShortName>Boxdrag.wav</ShortName>
+							<Path>SFX\Boxdrag_B78AF6B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1675190527" Name="Open_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Open_Hangglider" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="84859950" Language="SFX">
@@ -313,11 +320,11 @@
 						</File>
 						<File Id="454465381" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_DDDF96FC.wem</Path>
+							<Path>SFX\Backpack fs#01_43FE3BC1.wem</Path>
 						</File>
 						<File Id="489927921" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_409FADB7.wem</Path>
+							<Path>SFX\Backpack fs#01_24FAE4DE.wem</Path>
 						</File>
 						<File Id="491677259" Language="SFX">
 							<ShortName>Player_Footsteps_Stone-007.wav</ShortName>
@@ -345,11 +352,11 @@
 						</File>
 						<File Id="685652376" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_1616FC8D.wem</Path>
+							<Path>SFX\Backpack fs#01_CC5AFF31.wem</Path>
 						</File>
 						<File Id="698426141" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_BAD241D8.wem</Path>
+							<Path>SFX\Backpack fs#01_EB61FBFD.wem</Path>
 						</File>
 						<File Id="735118455" Language="SFX">
 							<ShortName>Player_Footsteps_Metal-014.wav</ShortName>
@@ -409,7 +416,7 @@
 						</File>
 						<File Id="1006050485" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_0182F367.wem</Path>
+							<Path>SFX\Backpack fs#01_9E9BF017.wem</Path>
 						</File>
 						<File Id="1051168390" Language="SFX">
 							<ShortName>Player_Footsteps_Stone-005.wav</ShortName>
@@ -417,7 +424,7 @@
 						</File>
 						<File Id="1059832011" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_57A09B19.wem</Path>
+							<Path>SFX\Backpack fs#01_E1D005DE.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<DefaultSwitchValue>{6318CCD1-8CDB-4FF9-A5BA-9F9D209794B3}</DefaultSwitchValue>
@@ -560,11 +567,11 @@
 						</File>
 						<File Id="454465381" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_DDDF96FC.wem</Path>
+							<Path>SFX\Backpack fs#01_43FE3BC1.wem</Path>
 						</File>
 						<File Id="489927921" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_409FADB7.wem</Path>
+							<Path>SFX\Backpack fs#01_24FAE4DE.wem</Path>
 						</File>
 						<File Id="594181785" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
@@ -576,11 +583,11 @@
 						</File>
 						<File Id="685652376" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_1616FC8D.wem</Path>
+							<Path>SFX\Backpack fs#01_CC5AFF31.wem</Path>
 						</File>
 						<File Id="698426141" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_BAD241D8.wem</Path>
+							<Path>SFX\Backpack fs#01_EB61FBFD.wem</Path>
 						</File>
 						<File Id="700517742" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
@@ -588,11 +595,11 @@
 						</File>
 						<File Id="1006050485" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_0182F367.wem</Path>
+							<Path>SFX\Backpack fs#01_9E9BF017.wem</Path>
 						</File>
 						<File Id="1059832011" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_57A09B19.wem</Path>
+							<Path>SFX\Backpack fs#01_E1D005DE.wem</Path>
 						</File>
 						<File Id="1068717062" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
@@ -612,7 +619,7 @@
 					<IncludedMemoryFiles>
 						<File Id="726171" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_13429B83.wem</Path>
+							<Path>SFX\Backpack fs#01_5DE2830F.wem</Path>
 						</File>
 						<File Id="11020844" Language="SFX">
 							<ShortName>Player_Footsteps_Metal-010.wav</ShortName>
@@ -636,7 +643,7 @@
 						</File>
 						<File Id="129692348" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_53990615.wem</Path>
+							<Path>SFX\Backpack fs#01_C05F86BA.wem</Path>
 						</File>
 						<File Id="158849743" Language="SFX">
 							<ShortName>Player_Footsteps_Metal-012.wav</ShortName>
@@ -712,7 +719,7 @@
 						</File>
 						<File Id="660799115" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_D4720654.wem</Path>
+							<Path>SFX\Backpack fs#01_0FF127AA.wem</Path>
 						</File>
 						<File Id="673225109" Language="SFX">
 							<ShortName>Player_Footsteps_Dirt-005.wav</ShortName>
@@ -752,7 +759,7 @@
 						</File>
 						<File Id="864199325" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_1BF2B4A3.wem</Path>
+							<Path>SFX\Backpack fs#01_4C8082D5.wem</Path>
 						</File>
 						<File Id="930268270" Language="SFX">
 							<ShortName>Player_Footsteps_Dirt-014.wav</ShortName>
@@ -925,6 +932,14 @@
 							<ShortName>AMB_BunkerShake-004.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-004_3F75BDB9.wem</Path>
 						</File>
+						<File Id="343373130" Language="SFX">
+							<ShortName>Bunker_amb.wav</ShortName>
+							<Path>SFX\Bunker_amb_9EDFC787.wem</Path>
+						</File>
+						<File Id="361269324" Language="SFX">
+							<ShortName>City_Amb.wav</ShortName>
+							<Path>SFX\City_Amb_9EDFC787.wem</Path>
+						</File>
 						<File Id="370295239" Language="SFX">
 							<ShortName>AMB_BunkerShake-007.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-007_3F75BDB9.wem</Path>
@@ -948,6 +963,10 @@
 						<File Id="784926989" Language="SFX">
 							<ShortName>AMB_BunkerShake-009.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-009_3F75BDB9.wem</Path>
+						</File>
+						<File Id="801317388" Language="SFX">
+							<ShortName>Cave_Amb.wav</ShortName>
+							<Path>SFX\Cave_Amb_9EDFC787.wem</Path>
 						</File>
 						<File Id="824153819" Language="SFX">
 							<ShortName>AMB_BunkerShake-011.wav</ShortName>
@@ -1011,6 +1030,7 @@
 						<ActionPostEventEntry Id="4154985317" Name="SelectButton" ObjectPath="\Events\Default Work Unit\UI\SelectButton"/>
 					</ActionPostEvent>
 				</Event>
+				<Event Id="267097148" Name="StopMove_Box" ObjectPath="\Events\Default Work Unit\Player\Actions\StopMove_Box" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3789515518" Name="Trap_Button_Click" ObjectPath="\Events\Default Work Unit\Objects\Buttons and Switches\Trap_Button_Click" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1029784236" Name="Walker_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Alert" DurationType="OneShot" DurationMin="2." DurationMax="2.">
 					<IncludedMemoryFiles>
