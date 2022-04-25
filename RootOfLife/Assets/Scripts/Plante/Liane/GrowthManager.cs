@@ -121,6 +121,7 @@ public class GrowthManager : MonoBehaviour
 
     IEnumerator ReplaceRoots()
     {
+        PlantDeath.Post(gameObject);
         cr_Running = true;
         playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "re-pose" du sac
         playerIsActif = true;
