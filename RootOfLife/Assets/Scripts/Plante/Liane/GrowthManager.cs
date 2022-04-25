@@ -24,6 +24,7 @@ public class GrowthManager : MonoBehaviour
     public AK.Wwise.Event PlantDeath;
     public AK.Wwise.Event PlantGrowth;
     public AK.Wwise.Event TrampolineOpenSFX;
+    public AK.Wwise.Event DestroyPlant;
 
 
     private void Awake()
@@ -113,10 +114,12 @@ public class GrowthManager : MonoBehaviour
         playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "re-pose" du sac
         playerIsActif = true;
         Destroy(lastChild.gameObject);
+        DestroyPlant.Post(gameObject);
         while (true)
         {
             yield return new WaitForSeconds(0.05f);
             Destroy(lastChild.gameObject);
+            DestroyPlant.Post(gameObject);
         }
     }
 

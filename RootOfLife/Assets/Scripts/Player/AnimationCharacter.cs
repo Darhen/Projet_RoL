@@ -37,7 +37,9 @@ public class AnimationCharacter : MonoBehaviour
     public AK.Wwise.Event MoveObjectStopSFX;
     public AK.Wwise.Event SlopeSFX;
     public AK.Wwise.Event SlopeStopSFX;
+    public AK.Wwise.Event KneelSFX;
     private bool SFXisPlayed;
+    private bool BoxSFXisPlaying;
 
     // Start is called before the first frame update
     void Start()
@@ -125,7 +127,12 @@ public class AnimationCharacter : MonoBehaviour
         direction = moveObject.direction;
         if (pushingController)
         {
-            MoveObjectSFX.Post(gameObject);
+            if (!BoxSFXisPlaying)
+            {
+                MoveObjectSFX.Post(gameObject);
+                BoxSFXisPlaying = true;
+            }
+            
 
             if (direction == 1)
             {
@@ -142,12 +149,14 @@ public class AnimationCharacter : MonoBehaviour
             animator.SetBool("pushingGauche", false);
 
             MoveObjectStopSFX.Post(gameObject);
+            BoxSFXisPlaying = false;
         }
 
         //Animation plug plant
         if (plantIsPlugged)
         {
             animator.SetBool("growing", true);
+            KneelSFX.Post(gameObject);
         }
         if (!plantIsPlugged)
         {
