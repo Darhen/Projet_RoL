@@ -116,19 +116,19 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
         //SON VIE DE LA PLANTE
 
-        if (variableT >= 0.2f)
+        if (variableT == 0.2f)
         {
             GreenLight.Post(gameObject);
             Debug.Log(GreenLight);
         }
 
-        if (variableT >= 0.55f)
+        if (variableT == 0.55f)
         {
             YellowLight.Post(gameObject);
             Debug.Log(YellowLight);
         }
 
-        if (variableT >= 0.85f)
+        if (variableT == 0.85f)
         {
             RedLight.Post(gameObject);
             Debug.Log(RedLight);
