@@ -6871,6 +6871,39 @@
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
+													<StateInfo>
+														<StateGroupList>
+															<StateGroupInfo>
+																<StateGroupRef Name="Level" ID="{51E06965-C708-4563-9DAE-2F395CA289A2}"/>
+															</StateGroupInfo>
+														</StateGroupList>
+														<CustomStateList>
+															<CustomState>
+																<StateRef Name="City" ID="{032367C0-4700-4697-9463-468FA0C461E7}"/>
+																<CustomState Name="" ID="{86D61172-144E-4203-B76F-218E5E28228C}" ShortID="403413626"/>
+															</CustomState>
+															<CustomState>
+																<StateRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
+																<CustomState Name="" ID="{10BB3963-D3E4-4D06-9702-1BB0FE42C7CF}" ShortID="65092932">
+																	<PropertyList>
+																		<Property Name="Volume" Type="Real64" Value="6"/>
+																	</PropertyList>
+																</CustomState>
+															</CustomState>
+															<CustomState>
+																<StateRef Name="Cave" ID="{B1525950-3904-4C50-BBC3-D03E253F5510}"/>
+																<CustomState Name="" ID="{334B23AA-F95E-42B1-908D-1BA78E948EB3}" ShortID="270380910"/>
+															</CustomState>
+															<CustomState>
+																<StateRef Name="Menu" ID="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}"/>
+																<CustomState Name="" ID="{4AC8B098-58D9-422B-9EF5-C227661E72FA}" ShortID="21126741"/>
+															</CustomState>
+															<CustomState>
+																<StateRef Name="Bunker" ID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}"/>
+																<CustomState Name="" ID="{291C566B-ABDC-478A-AF47-50B16ED06121}" ShortID="594495027"/>
+															</CustomState>
+														</CustomStateList>
+													</StateInfo>
 													<ObjectLists/>
 													<ActiveSourceList>
 														<ActiveSource Name="AMB_WindyCity" ID="{824D97B5-6F29-40D0-906D-EE5584BD10E5}" Platform="Linked"/>
@@ -6921,6 +6954,39 @@
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
+													<StateInfo>
+														<StateGroupList>
+															<StateGroupInfo>
+																<StateGroupRef Name="Level" ID="{51E06965-C708-4563-9DAE-2F395CA289A2}"/>
+															</StateGroupInfo>
+														</StateGroupList>
+														<CustomStateList>
+															<CustomState>
+																<StateRef Name="City" ID="{032367C0-4700-4697-9463-468FA0C461E7}"/>
+																<CustomState Name="" ID="{1967A246-D18E-4822-9A45-0C68460D66F7}" ShortID="958282812"/>
+															</CustomState>
+															<CustomState>
+																<StateRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
+																<CustomState Name="" ID="{1F1DA6BD-6150-493E-AF6C-40743D3B5188}" ShortID="913043475">
+																	<PropertyList>
+																		<Property Name="Volume" Type="Real64" Value="-5.5"/>
+																	</PropertyList>
+																</CustomState>
+															</CustomState>
+															<CustomState>
+																<StateRef Name="Cave" ID="{B1525950-3904-4C50-BBC3-D03E253F5510}"/>
+																<CustomState Name="" ID="{47B6B224-B081-41D8-A8DB-102AB0154804}" ShortID="521973550"/>
+															</CustomState>
+															<CustomState>
+																<StateRef Name="Menu" ID="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}"/>
+																<CustomState Name="" ID="{4006EA8D-C5B0-422E-901B-C0C1E135DCCA}" ShortID="1071642056"/>
+															</CustomState>
+															<CustomState>
+																<StateRef Name="Bunker" ID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}"/>
+																<CustomState Name="" ID="{F4D03EDC-AFD3-4678-A99B-A347BCF835EC}" ShortID="287172572"/>
+															</CustomState>
+														</CustomStateList>
+													</StateInfo>
 													<ObjectLists/>
 													<ActiveSourceList>
 														<ActiveSource Name="City_Amb" ID="{475FC127-CBC2-403D-A797-1776CF0BC16B}" Platform="Linked"/>
@@ -9562,11 +9628,7 @@
 									</CustomState>
 									<CustomState>
 										<StateRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
-										<CustomState Name="" ID="{886CEB57-BAAE-4573-BEA2-7357FF100CE5}" ShortID="234415216">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64" Value="4.5"/>
-											</PropertyList>
-										</CustomState>
+										<CustomState Name="" ID="{886CEB57-BAAE-4573-BEA2-7357FF100CE5}" ShortID="234415216"/>
 									</CustomState>
 									<CustomState>
 										<StateRef Name="Cave" ID="{B1525950-3904-4C50-BBC3-D03E253F5510}"/>
