@@ -36,7 +36,7 @@ public class CinematicWait : MonoBehaviour
         yield return new WaitForSeconds(11f);
         player.transform.position = cinematicEndPosition;
         playerRb.isKinematic = true;
-        yield return new WaitForSeconds(18f);
+        yield return new WaitForSeconds(8f);
         playerRb.isKinematic = false;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
     }
