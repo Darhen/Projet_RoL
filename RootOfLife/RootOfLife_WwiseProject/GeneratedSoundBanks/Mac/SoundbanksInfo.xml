@@ -25,7 +25,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="4105009191">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1421404451">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -106,15 +106,15 @@
 					<IncludedMemoryFiles>
 						<File Id="227548530" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_8C0A6CA1.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_06A530A0.wem</Path>
 						</File>
 						<File Id="336381239" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_438C6D4A.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_6518342D.wem</Path>
 						</File>
 						<File Id="541664350" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_4DB19FAA.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_7667AF33.wem</Path>
 						</File>
 						<File Id="872202127" Language="SFX">
 							<ShortName>83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744.wav</ShortName>
@@ -122,16 +122,32 @@
 						</File>
 						<File Id="993015788" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_A2A800EF.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_FC2E8D4F.wem</Path>
 						</File>
 						<File Id="1062177015" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_70F14C3F.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_8DDFF3DB.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<AuxBusSends>
 						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
 					</AuxBusSends>
+				</Event>
+				<Event Id="1404805401" Name="DoorOpen" ObjectPath="\Events\Default Work Unit\Objects\Doors\DoorOpen" DurationType="OneShot" DurationMin="3.065868" DurationMax="3.065868">
+					<IncludedMemoryFiles>
+						<File Id="665678369" Language="SFX">
+							<ShortName>286576-sliding-closet-door-metal-glass-open-close-6ft-04.wav</ShortName>
+							<Path>SFX\286576-sliding-closet-door-metal-glass-open-close-6ft-04_3CDF8977.wem</Path>
+						</File>
+						<File Id="720889592" Language="SFX">
+							<ShortName>448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded.wav</ShortName>
+							<Path>SFX\448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded_C6787545.wem</Path>
+						</File>
+						<File Id="951914986" Language="SFX">
+							<ShortName>448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded.wav</ShortName>
+							<Path>SFX\448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded_73354518.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2055526214" Name="Drone_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Alert" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2781585832" Name="Drone_Fire" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Fire" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
@@ -221,6 +237,33 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
+							<Media>
+								<File Id="295224137"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
+							<Media>
+								<File Id="767662687"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
+							<Media>
+								<File Id="164074538"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
+							<Media>
+								<File Id="327066022"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
+							<Media>
+								<File Id="115747688"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
@@ -229,27 +272,27 @@
 					<IncludedMemoryFiles>
 						<File Id="54488718" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_CB3DFBC4.wem</Path>
+							<Path>SFX\Backpack fs#01_11A8C993.wem</Path>
 						</File>
 						<File Id="559234715" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_8C75DC18.wem</Path>
+							<Path>SFX\Backpack fs#01_5644B880.wem</Path>
 						</File>
 						<File Id="697507995" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_AF4E85FB.wem</Path>
+							<Path>SFX\Backpack fs#01_31F1A5E8.wem</Path>
 						</File>
 						<File Id="713075599" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_F61D9DBA.wem</Path>
+							<Path>SFX\Backpack fs#01_5286C877.wem</Path>
 						</File>
 						<File Id="737157974" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_AB2BAF63.wem</Path>
+							<Path>SFX\Backpack fs#01_10D2FD7A.wem</Path>
 						</File>
 						<File Id="1019395639" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_E7C88FC3.wem</Path>
+							<Path>SFX\Backpack fs#01_1060D636.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<AuxBusSends>
@@ -300,8 +343,22 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1924523807" Name="PlatformMove" ObjectPath="\Events\Default Work Unit\Objects\PlatformMove" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3914167496" Name="PlatformStop" ObjectPath="\Events\Default Work Unit\Objects\PlatformStop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1924523807" Name="PlatformMove" ObjectPath="\Events\Default Work Unit\Objects\PlatformMove" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="974292524" Language="SFX">
+							<ShortName>Electric_Crackle_Buzz_Motor-08.wav</ShortName>
+							<Path>SFX\Electric_Crackle_Buzz_Motor-08_E064CA26.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3914167496" Name="PlatformStop" ObjectPath="\Events\Default Work Unit\Objects\PlatformStop" DurationType="OneShot" DurationMin="1.078084" DurationMax="1.078084">
+					<IncludedMemoryFiles>
+						<File Id="321430971" Language="SFX">
+							<ShortName>286576-sliding-closet-door-metal-glass-open-close-6ft-04.wav</ShortName>
+							<Path>SFX\286576-sliding-closet-door-metal-glass-open-close-6ft-04_1B2C0AF9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2551268862" Name="Player_Fall" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Fall" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2453392179" Name="Player_Footstep" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Footstep" DurationType="OneShot" DurationMin="1.01684" DurationMax="3.193265">
@@ -678,27 +735,27 @@
 					<IncludedMemoryFiles>
 						<File Id="54488718" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_CB3DFBC4.wem</Path>
+							<Path>SFX\Backpack fs#01_11A8C993.wem</Path>
 						</File>
 						<File Id="559234715" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_8C75DC18.wem</Path>
+							<Path>SFX\Backpack fs#01_5644B880.wem</Path>
 						</File>
 						<File Id="697507995" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_AF4E85FB.wem</Path>
+							<Path>SFX\Backpack fs#01_31F1A5E8.wem</Path>
 						</File>
 						<File Id="713075599" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_F61D9DBA.wem</Path>
+							<Path>SFX\Backpack fs#01_5286C877.wem</Path>
 						</File>
 						<File Id="737157974" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_AB2BAF63.wem</Path>
+							<Path>SFX\Backpack fs#01_10D2FD7A.wem</Path>
 						</File>
 						<File Id="1019395639" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
-							<Path>SFX\Backpack fs#01_E7C88FC3.wem</Path>
+							<Path>SFX\Backpack fs#01_1060D636.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<AuxBusSends>
@@ -905,7 +962,37 @@
 				<Event Id="4254001083" Name="Player_Slide_Stop" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Slide_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1028635762" Name="Player_Spawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Spawn" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1457412937" Name="Player_Suffocate" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Suffocate" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="766957497" Name="Pull_Lever" ObjectPath="\Events\Default Work Unit\Player\Actions\Pull_Lever" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="766957497" Name="Pull_Lever" ObjectPath="\Events\Default Work Unit\Player\Actions\Pull_Lever" DurationType="OneShot" DurationMin="0.861594" DurationMax="0.861594">
+					<IncludedMemoryFiles>
+						<File Id="227548530" Language="SFX">
+							<ShortName>275671-Short_Circuit_34.wav</ShortName>
+							<Path>SFX\275671-Short_Circuit_34_06A530A0.wem</Path>
+						</File>
+						<File Id="336381239" Language="SFX">
+							<ShortName>275671-Short_Circuit_34.wav</ShortName>
+							<Path>SFX\275671-Short_Circuit_34_6518342D.wem</Path>
+						</File>
+						<File Id="541664350" Language="SFX">
+							<ShortName>275671-Short_Circuit_34.wav</ShortName>
+							<Path>SFX\275671-Short_Circuit_34_7667AF33.wem</Path>
+						</File>
+						<File Id="944301208" Language="SFX">
+							<ShortName>257580-Mechanism_-BreakerLightSwitchOnSmall-003.wav</ShortName>
+							<Path>SFX\257580-Mechanism_-BreakerLightSwitchOnSmall-003_9B70E623.wem</Path>
+						</File>
+						<File Id="993015788" Language="SFX">
+							<ShortName>275671-Short_Circuit_34.wav</ShortName>
+							<Path>SFX\275671-Short_Circuit_34_FC2E8D4F.wem</Path>
+						</File>
+						<File Id="1062177015" Language="SFX">
+							<ShortName>275671-Short_Circuit_34.wav</ShortName>
+							<Path>SFX\275671-Short_Circuit_34_8DDFF3DB.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
+				</Event>
 				<Event Id="1661329569" Name="ReturnTo_MainMenu" ObjectPath="\Events\Default Work Unit\UI\ReturnTo_MainMenu" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="115747688" Language="SFX">
@@ -929,33 +1016,6 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
-							<Media>
-								<File Id="295224137"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
-							<Media>
-								<File Id="767662687"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
-							<Media>
-								<File Id="164074538"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
-							<Media>
-								<File Id="327066022"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
-							<Media>
-								<File Id="115747688"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
@@ -1125,15 +1185,15 @@
 					<IncludedMemoryFiles>
 						<File Id="227548530" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_8C0A6CA1.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_06A530A0.wem</Path>
 						</File>
 						<File Id="336381239" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_438C6D4A.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_6518342D.wem</Path>
 						</File>
 						<File Id="541664350" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_4DB19FAA.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_7667AF33.wem</Path>
 						</File>
 						<File Id="872202127" Language="SFX">
 							<ShortName>83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744.wav</ShortName>
@@ -1141,11 +1201,11 @@
 						</File>
 						<File Id="993015788" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_A2A800EF.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_FC2E8D4F.wem</Path>
 						</File>
 						<File Id="1062177015" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
-							<Path>SFX\275671-Short_Circuit_34_70F14C3F.wem</Path>
+							<Path>SFX\275671-Short_Circuit_34_8DDFF3DB.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<AuxBusSends>

@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID CHECKPOINT_REACHED = 1118645644U;
         static const AkUniqueID CLOSE_HANGGLIDER = 3213624757U;
         static const AkUniqueID DOOR_BUTTON_CLICK = 3169467041U;
+        static const AkUniqueID DOOROPEN = 1404805401U;
         static const AkUniqueID DRONE_ALERT = 2055526214U;
         static const AkUniqueID DRONE_FIRE = 2781585832U;
         static const AkUniqueID DRONE_HOVER = 2955752450U;
