@@ -3876,7 +3876,44 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
-						<Folder Name="Actions" ID="{7DCDD003-19AA-4DE3-85E3-5FF06626F389}" ShortID="751646061"/>
+						<Folder Name="Actions" ID="{7DCDD003-19AA-4DE3-85E3-5FF06626F389}" ShortID="751646061">
+							<ChildrenList>
+								<Sound Name="Boxdrag" ID="{5373CA2C-8E02-413F-A341-5C049252FD92}" ShortID="1043630927">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boxdrag" ID="{52C3F24C-13B1-4156-A1AE-49E7DEF14E8A}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="115.789"/>
+												<Property Name="CrossfadeShape" Type="int16" Value="4"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.615254237288134"/>
+												<Property Name="LoopEnd" Type="Real64" Value="2.8177118745463"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.87830509488528"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Boxdrag.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="38728485"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boxdrag" ID="{52C3F24C-13B1-4156-A1AE-49E7DEF14E8A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
 						<Folder Name="Breaths and Grunts" ID="{35A9F8B5-A9ED-479F-AFA4-73E82696B380}" ShortID="580890195">
 							<ChildrenList>
 								<RandomSequenceContainer Name="Breathing" ID="{70D3887C-7004-4EBF-8B92-184274E03F51}" ShortID="428691758">
