@@ -70,6 +70,49 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Checkpoint_Reached" ID="{250B8C2E-3957-4250-B8AD-F303FBE10AD6}"/>
+						<Event Name="StartGame" ID="{BC2ADD0D-ADA9-401B-80CA-AB9F0751B2D2}">
+							<ChildrenList>
+								<Action Name="" ID="{A5348C88-A86C-4C3C-A0CF-1311C8F45D31}" ShortID="552372564">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="41"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SelectButton" ID="{1D0FCC21-5C16-483F-8579-AD4608C88FB0}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{EB2B277A-D98B-4782-BF14-FCC1E16A2371}" ShortID="805545403">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Start Game" ID="{4E0F6BEC-13FA-44BA-98CA-9D8E769ECC53}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="HoverButton" ID="{5AB72B2A-846C-48DD-BE51-05381876A579}">
+							<ChildrenList>
+								<Action Name="" ID="{54F1EF84-B6F2-47D9-9D10-E2F254663151}" ShortID="338954637">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="HoverClicks" ID="{7B8E5FF4-4A7C-4B60-90DE-8A86000CDF98}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SelectButton" ID="{1D0FCC21-5C16-483F-8579-AD4608C88FB0}">
+							<ChildrenList>
+								<Action Name="" ID="{D21FF234-E063-47A4-89C4-4D4593766563}" ShortID="387793186">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SelectionClicks" ID="{F3DC681E-ABEF-4224-B518-F89100B5EF64}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player" ID="{61695592-E491-493C-8D3A-2144606FBF0B}" ShortID="679182670">
@@ -152,6 +195,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{C1BBF1E9-F9A2-42BD-906C-C427482096C2}" ShortID="459037052">
 											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
 												<Property Name="FadeTime" Type="Real64" Value="0.3"/>
 											</PropertyList>
 											<ReferenceList>
@@ -241,6 +285,49 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="PlantStretch" ID="{845D2F16-0129-4FC4-A90B-0266D86375DB}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="BouncePlant" ID="{2E73097B-D7F8-4DCA-BE88-0181F8505BAA}">
+									<ChildrenList>
+										<Action Name="" ID="{4CA6FA74-EC2A-400B-BD72-500026F522A0}" ShortID="470186070">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantSFX_PlantBounceLow" ID="{7BA41440-64DB-4766-9CC7-A48BDBFAD8C4}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="BouncePlantHigh" ID="{EECE7DF4-B240-4A98-AA80-F1AB8B3A0033}">
+									<ChildrenList>
+										<Action Name="" ID="{A5642396-268A-42FF-83C0-AAAF1F549390}" ShortID="525678488">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantSFX_PlantBounceHigh" ID="{4201854F-D237-4D37-96F5-159EDF810612}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlantOpen" ID="{2F9C67FA-26D2-42F3-A83E-94876206238A}">
+									<ChildrenList>
+										<Action Name="" ID="{FEBCB72B-5E92-4C94-B41F-1E34AB655163}" ShortID="405991988">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantStretch" ID="{845D2F16-0129-4FC4-A90B-0266D86375DB}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{AB7B1F80-40DE-4A72-8A0C-AA3F57825888}" ShortID="119609044">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantSFX_PlantOpen" ID="{CF32A89D-671F-46D2-8226-477183DBB0C7}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
