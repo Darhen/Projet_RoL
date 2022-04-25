@@ -23,6 +23,7 @@ public class GrowthManager : MonoBehaviour
 
     public AK.Wwise.Event PlantDeath;
     public AK.Wwise.Event PlantGrowth;
+    public AK.Wwise.Event TrampolineOpenSFX;
 
 
     private void Awake()
@@ -122,6 +123,8 @@ public class GrowthManager : MonoBehaviour
     IEnumerator ReplaceRoots()
     {
         PlantDeath.Post(gameObject);
+        TrampolineOpenSFX.Post(gameObject);
+        Debug.Log(TrampolineOpenSFX);
         cr_Running = true;
         playerController.plantIsPlugged = false; // on repasse en false le bool pour permettre la "re-pose" du sac
         playerIsActif = true;

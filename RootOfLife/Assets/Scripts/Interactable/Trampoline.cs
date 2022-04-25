@@ -19,6 +19,8 @@ public class Trampoline : MonoBehaviour
     public bool jumpPressed;
     public bool isGliding;
 
+    public AK.Wwise.Event BouncePlayerSFX;
+    public AK.Wwise.Event BouncePlantSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -85,11 +87,6 @@ public class Trampoline : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Trampoline"))
@@ -106,11 +103,15 @@ public class Trampoline : MonoBehaviour
                         StartCoroutine("TrampolineJump");
                         StartCoroutine("DelayJumpReinit");
                         collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
+                        BouncePlantSFX.Post(gameObject);
+                        Debug.Log(BouncePlantSFX);
                     }
                     else
                     {
                         collision.gameObject.GetComponent<Animator>().SetTrigger("Bounce");
                         countJump = 0;
+                        BouncePlantSFX.Post(gameObject);
+                        Debug.Log(BouncePlantSFX);
                     }
                 }
                 
@@ -144,6 +145,8 @@ public class Trampoline : MonoBehaviour
 
     IEnumerator TrampolineJump()
     {
+        BouncePlayerSFX.Post(gameObject);
+        Debug.Log(BouncePlayerSFX);
         this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, upSpeed, 0));
         yield return new WaitForSeconds(0.01f);
         bounce = true;
