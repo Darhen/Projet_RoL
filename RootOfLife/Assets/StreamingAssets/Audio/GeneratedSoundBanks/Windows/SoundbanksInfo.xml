@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\tyrai\Documents\GitHub\Projet_RoL\RootOfLife\RootOfLife_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="815620388">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="2658338523" Name="VO_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\VO\VO_Reverb"/>
+				<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+			</IncludedAuxBusses>
+			<GameParameters>
+				<GameParameter Id="1006694123" Name="Music_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Music_Volume"/>
+				<GameParameter Id="1564184899" Name="SFX_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\SFX_Volume"/>
+				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX" Hash="1937854075">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3676974778" Name="Arm_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_Alert" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionTrigger>
+						<ActionTriggerEntry Id="4163741908" Name="New_Trigger" ObjectPath="\Triggers\Default Work Unit\New_Trigger"/>
+					</ActionTrigger>
+				</Event>
+				<Event Id="2110043727" Name="Arm_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_ReturnToPost" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4214178660" Name="Arm_Swivel" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_Swivel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1721747022" Name="BackpackLight_Flashing" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Flashing" DurationType="OneShot" DurationMin="1.48297" DurationMax="1.48297">
+					<IncludedMemoryFiles>
+						<File Id="681779009" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-004.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-004_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1472878853" Name="BackpackLight_Green" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Green" DurationType="OneShot" DurationMin="1.145235" DurationMax="1.145235">
+					<IncludedMemoryFiles>
+						<File Id="580386638" Language="SFX">
+							<ShortName>343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1).wav</ShortName>
+							<Path>SFX\343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)_A4FC06A0.wem</Path>
+						</File>
+						<File Id="881812818" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-003.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-003_DB4EBE32.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2782421265" Name="BackpackLight_Red" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Red" DurationType="OneShot" DurationMin="1.48297" DurationMax="1.48297">
+					<IncludedMemoryFiles>
+						<File Id="681779009" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-004.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="881812818" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-003.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-003_DB4EBE32.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2188239484" Name="BackpackLight_Yellow" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Yellow" DurationType="OneShot" DurationMin="1.39898" DurationMax="1.39898">
+					<IncludedMemoryFiles>
+						<File Id="688515719" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-002.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-002_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2750511972" Name="BouncePlant" ObjectPath="\Events\Default Work Unit\Objects\Plant\BouncePlant" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<IncludedMemoryFiles>
+						<File Id="852745889" Language="SFX">
+							<ShortName>PlantSFX_PlantBounceLow.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantBounceLow_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2256369888" Name="BouncePlantHigh" ObjectPath="\Events\Default Work Unit\Objects\Plant\BouncePlantHigh" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<IncludedMemoryFiles>
+						<File Id="697831868" Language="SFX">
+							<ShortName>PlantSFX_PlantBounceHigh.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantBounceHigh_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1118645644" Name="Checkpoint_Reached" ObjectPath="\Events\Default Work Unit\UI\Checkpoint_Reached" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3213624757" Name="Close_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Close_Hangglider" DurationType="OneShot" DurationMin="2.079501" DurationMax="2.079501">
+					<IncludedMemoryFiles>
+						<File Id="548666378" Language="SFX">
+							<ShortName>Player_Hangglide-003.wav</ShortName>
+							<Path>SFX\Player_Hangglide-003_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3169467041" Name="Door_Button_Click" ObjectPath="\Events\Default Work Unit\Objects\Buttons and Switches\Door_Button_Click" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2055526214" Name="Drone_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Alert" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2781585832" Name="Drone_Fire" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Fire" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2955752450" Name="Drone_Hover" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Hover" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="2345618075" Name="Drone_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_ReturnToPost" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2772308904" Name="Game_Pause" ObjectPath="\Events\Default Work Unit\UI\Game_Pause" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1359982855" Name="Game_Unpause" ObjectPath="\Events\Default Work Unit\UI\Game_Unpause" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\UI\GameOver" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3294862893" Name="GuardianArm_Swivel" ObjectPath="\Events\Default Work Unit\Enemies\Guardian Arm Boss\GuardianArm_Swivel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2710047957" Name="HoverButton" ObjectPath="\Events\Default Work Unit\UI\HoverButton" DurationType="OneShot" DurationMin="1.681793" DurationMax="2.943137">
+					<IncludedMemoryFiles>
+						<File Id="243667553" Language="SFX">
+							<ShortName>SelectionClicks-001.wav</ShortName>
+							<Path>SFX\SelectionClicks-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="294445815" Language="SFX">
+							<ShortName>SelectionClicks-007.wav</ShortName>
+							<Path>SFX\SelectionClicks-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="300270547" Language="SFX">
+							<ShortName>SelectionClicks-006.wav</ShortName>
+							<Path>SFX\SelectionClicks-006_3F75BDB9.wem</Path>
+						</File>
+						<File Id="421927691" Language="SFX">
+							<ShortName>SelectionClicks-005.wav</ShortName>
+							<Path>SFX\SelectionClicks-005_3F75BDB9.wem</Path>
+						</File>
+						<File Id="660815479" Language="SFX">
+							<ShortName>SelectionClicks-004.wav</ShortName>
+							<Path>SFX\SelectionClicks-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="739618492" Language="SFX">
+							<ShortName>SelectionClicks-002.wav</ShortName>
+							<Path>SFX\SelectionClicks-002_3F75BDB9.wem</Path>
+						</File>
+						<File Id="1013918573" Language="SFX">
+							<ShortName>SelectionClicks-003.wav</ShortName>
+							<Path>SFX\SelectionClicks-003_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3375032870" Name="Light_TouchPlant" ObjectPath="\Events\Default Work Unit\Objects\Plant\Light_TouchPlant" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1954644116" Name="Move_Box" ObjectPath="\Events\Default Work Unit\Player\Actions\Move_Box" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="38728485" Language="SFX">
+							<ShortName>Boxdrag.wav</ShortName>
+							<Path>SFX\Boxdrag_B78AF6B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1675190527" Name="Open_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Open_Hangglider" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="84859950" Language="SFX">
+							<ShortName>Player_Hangglide-002.wav</ShortName>
+							<Path>SFX\Player_Hangglide-002_F115542E.wem</Path>
+						</File>
+						<File Id="396700839" Language="SFX">
+							<ShortName>Player_Hangglide-001.wav</ShortName>
+							<Path>SFX\Player_Hangglide-001_F9E4799F.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="964983010" Name="Open_MainMenu" ObjectPath="\Events\Music work unit\Music\Open_MainMenu" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="115747688" Language="SFX">
+							<ShortName>Outtrack.wav</ShortName>
+							<Path>SFX\Outtrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="164074538" Language="SFX">
+							<ShortName>Hopetrack.wav</ShortName>
+							<Path>Voices\English(US)\Hopetrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="295224137" Language="SFX">
+							<ShortName>Bunkertrack.wav</ShortName>
+							<Path>Voices\English(US)\Bunkertrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="327066022" Language="SFX">
+							<ShortName>Menu.wav</ShortName>
+							<Path>Voices\English(US)\Menu_9EDFC787.wem</Path>
+						</File>
+						<File Id="767662687" Language="SFX">
+							<ShortName>Tensiontrack.wav</ShortName>
+							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3978245845" Name="Pickup" ObjectPath="\Events\Default Work Unit\Player\Actions\Pickup" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2998183107" Name="Plant_Death" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Death" DurationType="OneShot" DurationMin="1.671179" DurationMax="1.671179">
+					<IncludedMemoryFiles>
+						<File Id="937378948" Language="SFX">
+							<ShortName>PlantSFX_PlantDeath.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantDeath_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2502130738" Name="Plant_Stretch" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Stretch" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="177581736" Language="SFX">
+							<ShortName>LeavesRustlePlantGrowStretch.wav</ShortName>
+							<Path>SFX\LeavesRustlePlantGrowStretch_1215D5EC.wem</Path>
+						</File>
+						<File Id="519760497" Language="SFX">
+							<ShortName>LeavesRustlePlantGrow.wav</ShortName>
+							<Path>SFX\LeavesRustlePlantGrow_12844C6F.wem</Path>
+						</File>
+						<File Id="625903980" Language="SFX">
+							<ShortName>Plantgrowrocks-001.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-001_AF98D1D0.wem</Path>
+						</File>
+						<File Id="853392424" Language="SFX">
+							<ShortName>Plantgrowrocks-001.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="924115987" Language="SFX">
+							<ShortName>Plantgrowrocks-003.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-003_3F75BDB9.wem</Path>
+						</File>
+						<File Id="993613388" Language="SFX">
+							<ShortName>Plantgrowrocks-002.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-002_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1005889100" Name="PlantOpen" ObjectPath="\Events\Default Work Unit\Objects\Plant\PlantOpen" DurationType="OneShot" DurationMin="1.003708" DurationMax="1.003708">
+					<IncludedMemoryFiles>
+						<File Id="350289143" Language="SFX">
+							<ShortName>PlantSFX_PlantOpen.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantOpen_0F5BC2AB.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1924523807" Name="PlatformMove" ObjectPath="\Events\Default Work Unit\Objects\PlatformMove" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3914167496" Name="PlatformStop" ObjectPath="\Events\Default Work Unit\Objects\PlatformStop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2551268862" Name="Player_Fall" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Fall" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2453392179" Name="Player_Footstep" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Footstep" DurationType="OneShot" DurationMin="1.01684" DurationMax="3.193265">
+					<IncludedMemoryFiles>
+						<File Id="11020844" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-010.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-010_3F75BDB9.wem</Path>
+						</File>
+						<File Id="41478363" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-008.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-008_D3612A90.wem</Path>
+						</File>
+						<File Id="53593743" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-011.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-011_0A3B3BB8.wem</Path>
+						</File>
+						<File Id="123352750" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-009.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-009_3F75BDB9.wem</Path>
+						</File>
+						<File Id="126010324" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-008.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-008_93220850.wem</Path>
+						</File>
+						<File Id="158849743" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-012.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-012_3F75BDB9.wem</Path>
+						</File>
+						<File Id="161219715" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-004.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="226596465" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-009.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-009_33388417.wem</Path>
+						</File>
+						<File Id="265372108" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-010.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-010_5CE3D4B7.wem</Path>
+						</File>
+						<File Id="268171721" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-007.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="294433709" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-016.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-016_3F75BDB9.wem</Path>
+						</File>
+						<File Id="305266144" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-002.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-002_15CF3640.wem</Path>
+						</File>
+						<File Id="315527990" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-010.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-010_B119F3A9.wem</Path>
+						</File>
+						<File Id="335905344" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-005.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-005_3F75BDB9.wem</Path>
+						</File>
+						<File Id="347856841" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-006.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-006_3F75BDB9.wem</Path>
+						</File>
+						<File Id="375260899" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-006.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-006_726E4DC8.wem</Path>
+						</File>
+						<File Id="382813168" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-007.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-007_19451911.wem</Path>
+						</File>
+						<File Id="436977086" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-004.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-004_B5D4CE4D.wem</Path>
+						</File>
+						<File Id="454465381" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_43FE3BC1.wem</Path>
+						</File>
+						<File Id="489927921" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_24FAE4DE.wem</Path>
+						</File>
+						<File Id="491677259" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-007.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-007_02B19589.wem</Path>
+						</File>
+						<File Id="511085146" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-002.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-002_3CD86AE9.wem</Path>
+						</File>
+						<File Id="535912696" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-008.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-008_3F75BDB9.wem</Path>
+						</File>
+						<File Id="619965746" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-008.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-008_B94E66A6.wem</Path>
+						</File>
+						<File Id="659761692" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-001.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="673225109" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-005.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-005_131FFFA5.wem</Path>
+						</File>
+						<File Id="685652376" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_CC5AFF31.wem</Path>
+						</File>
+						<File Id="698426141" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_EB61FBFD.wem</Path>
+						</File>
+						<File Id="735118455" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-014.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-014_3F75BDB9.wem</Path>
+						</File>
+						<File Id="768556356" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-011.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-011_3F75BDB9.wem</Path>
+						</File>
+						<File Id="800744079" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-015.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-015_3F75BDB9.wem</Path>
+						</File>
+						<File Id="822807683" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-001.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-001_369B2C59.wem</Path>
+						</File>
+						<File Id="823986692" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-007.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="830518176" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-003.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-003_3F75BDB9.wem</Path>
+						</File>
+						<File Id="833107491" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-011.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-011_01E6230B.wem</Path>
+						</File>
+						<File Id="863588493" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-002.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-002_3F75BDB9.wem</Path>
+						</File>
+						<File Id="930268270" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-014.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-014_E7719C7F.wem</Path>
+						</File>
+						<File Id="944202564" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-003.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-003_EC2814BE.wem</Path>
+						</File>
+						<File Id="955772495" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-009.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-009_13827754.wem</Path>
+						</File>
+						<File Id="975123401" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-013.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-013_0AE682C4.wem</Path>
+						</File>
+						<File Id="996529630" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-013.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-013_3F75BDB9.wem</Path>
+						</File>
+						<File Id="998930815" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-014.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-014_3F75BDB9.wem</Path>
+						</File>
+						<File Id="1006050485" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_9E9BF017.wem</Path>
+						</File>
+						<File Id="1051168390" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-005.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-005_5FE93625.wem</Path>
+						</File>
+						<File Id="1059832011" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_E1D005DE.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{6318CCD1-8CDB-4FF9-A5BA-9F9D209794B3}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{26E6C451-9704-4001-8C1B-C813526E1D46}">
+							<Media>
+								<File Id="41478363"/>
+								<File Id="226596465"/>
+								<File Id="265372108"/>
+								<File Id="268171721"/>
+								<File Id="305266144"/>
+								<File Id="315527990"/>
+								<File Id="375260899"/>
+								<File Id="382813168"/>
+								<File Id="436977086"/>
+								<File Id="619965746"/>
+								<File Id="659761692"/>
+								<File Id="673225109"/>
+								<File Id="833107491"/>
+								<File Id="930268270"/>
+								<File Id="944202564"/>
+								<File Id="955772495"/>
+								<File Id="975123401"/>
+								<File Id="998930815"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B6E2BF82-6F83-4416-9CF9-FC3A5F41E697}">
+							<Media>
+								<File Id="53593743"/>
+								<File Id="126010324"/>
+								<File Id="265372108"/>
+								<File Id="305266144"/>
+								<File Id="375260899"/>
+								<File Id="382813168"/>
+								<File Id="436977086"/>
+								<File Id="491677259"/>
+								<File Id="511085146"/>
+								<File Id="619965746"/>
+								<File Id="822807683"/>
+								<File Id="944202564"/>
+								<File Id="955772495"/>
+								<File Id="975123401"/>
+								<File Id="998930815"/>
+								<File Id="1051168390"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{44E1369B-DF8E-49E5-A5B8-6670D88C8195}">
+							<Media>
+								<File Id="41478363"/>
+								<File Id="226596465"/>
+								<File Id="265372108"/>
+								<File Id="268171721"/>
+								<File Id="305266144"/>
+								<File Id="315527990"/>
+								<File Id="375260899"/>
+								<File Id="382813168"/>
+								<File Id="436977086"/>
+								<File Id="619965746"/>
+								<File Id="659761692"/>
+								<File Id="673225109"/>
+								<File Id="833107491"/>
+								<File Id="930268270"/>
+								<File Id="944202564"/>
+								<File Id="955772495"/>
+								<File Id="975123401"/>
+								<File Id="998930815"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{453DD2CE-CDDF-4578-9BD6-8E791D6255DB}">
+							<Media>
+								<File Id="11020844"/>
+								<File Id="123352750"/>
+								<File Id="158849743"/>
+								<File Id="161219715"/>
+								<File Id="294433709"/>
+								<File Id="335905344"/>
+								<File Id="347856841"/>
+								<File Id="535912696"/>
+								<File Id="735118455"/>
+								<File Id="768556356"/>
+								<File Id="800744079"/>
+								<File Id="823986692"/>
+								<File Id="830518176"/>
+								<File Id="863588493"/>
+								<File Id="996529630"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{6318CCD1-8CDB-4FF9-A5BA-9F9D209794B3}">
+							<Media>
+								<File Id="53593743"/>
+								<File Id="126010324"/>
+								<File Id="265372108"/>
+								<File Id="305266144"/>
+								<File Id="375260899"/>
+								<File Id="382813168"/>
+								<File Id="436977086"/>
+								<File Id="491677259"/>
+								<File Id="511085146"/>
+								<File Id="619965746"/>
+								<File Id="822807683"/>
+								<File Id="944202564"/>
+								<File Id="955772495"/>
+								<File Id="975123401"/>
+								<File Id="998930815"/>
+								<File Id="1051168390"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{158D1CE6-BC9C-4353-858D-ED81A295B1DF}">
+							<Media>
+								<File Id="265372108"/>
+								<File Id="305266144"/>
+								<File Id="375260899"/>
+								<File Id="382813168"/>
+								<File Id="436977086"/>
+								<File Id="619965746"/>
+								<File Id="944202564"/>
+								<File Id="955772495"/>
+								<File Id="975123401"/>
+								<File Id="998930815"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="4254001083" Name="Player_Slide_Stop" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Slide_Stop"/>
+					</ActionPostEvent>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="2862110540" Name="Player_Glide_Humming" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Glide_Humming" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" DurationType="OneShot" DurationMin="1.619199" DurationMax="2.081828">
+					<IncludedMemoryFiles>
+						<File Id="198304572" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_BF44D43C.wem</Path>
+						</File>
+						<File Id="286045212" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_C753EC53.wem</Path>
+						</File>
+						<File Id="454465381" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_43FE3BC1.wem</Path>
+						</File>
+						<File Id="489927921" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_24FAE4DE.wem</Path>
+						</File>
+						<File Id="594181785" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_902CA3D4.wem</Path>
+						</File>
+						<File Id="611908011" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_9DA7D042.wem</Path>
+						</File>
+						<File Id="685652376" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_CC5AFF31.wem</Path>
+						</File>
+						<File Id="698426141" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_EB61FBFD.wem</Path>
+						</File>
+						<File Id="700517742" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_B2A49270.wem</Path>
+						</File>
+						<File Id="1006050485" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_9E9BF017.wem</Path>
+						</File>
+						<File Id="1059832011" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_E1D005DE.wem</Path>
+						</File>
+						<File Id="1068717062" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_AC6CD9C6.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="4254001083" Name="Player_Slide_Stop" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Slide_Stop"/>
+					</ActionPostEvent>
+					<AuxBusSends>
+						<AuxBus Id="2658338523" Name="VO_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\VO\VO_Reverb"/>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="2325694684" Name="Player_Kneel" ObjectPath="\Events\Default Work Unit\Player\Actions\Player_Kneel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1282282006" Name="Player_Landing" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Landing" DurationType="OneShot" DurationMin="1.01684" DurationMax="3.193265">
+					<IncludedMemoryFiles>
+						<File Id="726171" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_5DE2830F.wem</Path>
+						</File>
+						<File Id="11020844" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-010.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-010_3F75BDB9.wem</Path>
+						</File>
+						<File Id="41478363" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-008.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-008_D3612A90.wem</Path>
+						</File>
+						<File Id="53593743" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-011.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-011_0A3B3BB8.wem</Path>
+						</File>
+						<File Id="123352750" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-009.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-009_3F75BDB9.wem</Path>
+						</File>
+						<File Id="126010324" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-008.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-008_93220850.wem</Path>
+						</File>
+						<File Id="129692348" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_C05F86BA.wem</Path>
+						</File>
+						<File Id="158849743" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-012.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-012_3F75BDB9.wem</Path>
+						</File>
+						<File Id="161219715" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-004.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="226596465" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-009.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-009_33388417.wem</Path>
+						</File>
+						<File Id="265372108" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-010.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-010_5CE3D4B7.wem</Path>
+						</File>
+						<File Id="268171721" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-007.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="294433709" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-016.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-016_3F75BDB9.wem</Path>
+						</File>
+						<File Id="305266144" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-002.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-002_15CF3640.wem</Path>
+						</File>
+						<File Id="315527990" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-010.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-010_B119F3A9.wem</Path>
+						</File>
+						<File Id="335905344" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-005.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-005_3F75BDB9.wem</Path>
+						</File>
+						<File Id="347856841" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-006.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-006_3F75BDB9.wem</Path>
+						</File>
+						<File Id="375260899" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-006.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-006_726E4DC8.wem</Path>
+						</File>
+						<File Id="382813168" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-007.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-007_19451911.wem</Path>
+						</File>
+						<File Id="436977086" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-004.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-004_B5D4CE4D.wem</Path>
+						</File>
+						<File Id="491677259" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-007.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-007_02B19589.wem</Path>
+						</File>
+						<File Id="511085146" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-002.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-002_3CD86AE9.wem</Path>
+						</File>
+						<File Id="535912696" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-008.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-008_3F75BDB9.wem</Path>
+						</File>
+						<File Id="619965746" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-008.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-008_B94E66A6.wem</Path>
+						</File>
+						<File Id="659761692" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-001.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="660799115" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_0FF127AA.wem</Path>
+						</File>
+						<File Id="673225109" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-005.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-005_131FFFA5.wem</Path>
+						</File>
+						<File Id="735118455" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-014.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-014_3F75BDB9.wem</Path>
+						</File>
+						<File Id="768556356" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-011.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-011_3F75BDB9.wem</Path>
+						</File>
+						<File Id="800744079" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-015.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-015_3F75BDB9.wem</Path>
+						</File>
+						<File Id="822807683" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-001.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-001_369B2C59.wem</Path>
+						</File>
+						<File Id="823986692" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-007.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="830518176" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-003.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-003_3F75BDB9.wem</Path>
+						</File>
+						<File Id="833107491" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-011.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-011_01E6230B.wem</Path>
+						</File>
+						<File Id="863588493" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-002.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-002_3F75BDB9.wem</Path>
+						</File>
+						<File Id="864199325" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_4C8082D5.wem</Path>
+						</File>
+						<File Id="930268270" Language="SFX">
+							<ShortName>Player_Footsteps_Dirt-014.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Dirt-014_E7719C7F.wem</Path>
+						</File>
+						<File Id="944202564" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-003.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-003_EC2814BE.wem</Path>
+						</File>
+						<File Id="955772495" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-009.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-009_13827754.wem</Path>
+						</File>
+						<File Id="975123401" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-013.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-013_0AE682C4.wem</Path>
+						</File>
+						<File Id="996529630" Language="SFX">
+							<ShortName>Player_Footsteps_Metal-013.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Metal-013_3F75BDB9.wem</Path>
+						</File>
+						<File Id="998930815" Language="SFX">
+							<ShortName>Player_Footsteps_Sand-014.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Sand-014_3F75BDB9.wem</Path>
+						</File>
+						<File Id="1051168390" Language="SFX">
+							<ShortName>Player_Footsteps_Stone-005.wav</ShortName>
+							<Path>SFX\Player_Footsteps_Stone-005_5FE93625.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="1337349819" Name="Player_Ram" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Ram" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2161713971" Name="Player_Respawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Respawn" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3359302305" Name="Player_Shot" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Shot" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2609528332" Name="Player_Slide" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Slide" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="470163047" Language="SFX">
+							<ShortName>Player_Slide.wav</ShortName>
+							<Path>SFX\Player_Slide_752D4DAD.wem</Path>
+						</File>
+						<File Id="896492177" Language="SFX">
+							<ShortName>Player_Slide.wav</ShortName>
+							<Path>SFX\Player_Slide_78ADA05E.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="4254001083" Name="Player_Slide_Stop" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Slide_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1028635762" Name="Player_Spawn" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Spawn" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1457412937" Name="Player_Suffocate" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Suffocate" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="766957497" Name="Pull_Lever" ObjectPath="\Events\Default Work Unit\Player\Actions\Pull_Lever" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1661329569" Name="ReturnTo_MainMenu" ObjectPath="\Events\Default Work Unit\UI\ReturnTo_MainMenu" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="115747688" Language="SFX">
+							<ShortName>Outtrack.wav</ShortName>
+							<Path>SFX\Outtrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="164074538" Language="SFX">
+							<ShortName>Hopetrack.wav</ShortName>
+							<Path>Voices\English(US)\Hopetrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="295224137" Language="SFX">
+							<ShortName>Bunkertrack.wav</ShortName>
+							<Path>Voices\English(US)\Bunkertrack_9EDFC787.wem</Path>
+						</File>
+						<File Id="327066022" Language="SFX">
+							<ShortName>Menu.wav</ShortName>
+							<Path>Voices\English(US)\Menu_9EDFC787.wem</Path>
+						</File>
+						<File Id="767662687" Language="SFX">
+							<ShortName>Tensiontrack.wav</ShortName>
+							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
+							<Media>
+								<File Id="295224137"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
+							<Media>
+								<File Id="767662687"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
+							<Media>
+								<File Id="164074538"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
+							<Media>
+								<File Id="327066022"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
+							<Media>
+								<File Id="115747688"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="4154985317" Name="SelectButton" ObjectPath="\Events\Default Work Unit\UI\SelectButton" DurationType="OneShot" DurationMin="2." DurationMax="3.5">
+					<IncludedMemoryFiles>
+						<File Id="243667553" Language="SFX">
+							<ShortName>SelectionClicks-001.wav</ShortName>
+							<Path>SFX\SelectionClicks-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="294445815" Language="SFX">
+							<ShortName>SelectionClicks-007.wav</ShortName>
+							<Path>SFX\SelectionClicks-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="421927691" Language="SFX">
+							<ShortName>SelectionClicks-005.wav</ShortName>
+							<Path>SFX\SelectionClicks-005_3F75BDB9.wem</Path>
+						</File>
+						<File Id="660815479" Language="SFX">
+							<ShortName>SelectionClicks-004.wav</ShortName>
+							<Path>SFX\SelectionClicks-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="1013918573" Language="SFX">
+							<ShortName>SelectionClicks-003.wav</ShortName>
+							<Path>SFX\SelectionClicks-003_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1224425817" Name="SetLevel_Bunker" ObjectPath="\Events\Music work unit\Music\SetLevel_Bunker" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="35949494" Language="SFX">
+							<ShortName>AMB_Cave drippings-006.wav</ShortName>
+							<Path>SFX\AMB_Cave drippings-006_3F75BDB9.wem</Path>
+						</File>
+						<File Id="109683961" Language="SFX">
+							<ShortName>AMB_BunkerShake-010.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-010_3F75BDB9.wem</Path>
+						</File>
+						<File Id="156765195" Language="SFX">
+							<ShortName>AMB_BunkerShake-002.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-002_3F75BDB9.wem</Path>
+						</File>
+						<File Id="164203096" Language="SFX">
+							<ShortName>AMB_BunkerShake-012.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-012_3F75BDB9.wem</Path>
+						</File>
+						<File Id="172998980" Language="SFX">
+							<ShortName>AMB_Cave drippings-001.wav</ShortName>
+							<Path>SFX\AMB_Cave drippings-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="194977857" Language="SFX">
+							<ShortName>AMB_BunkerShake-006.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-006_3F75BDB9.wem</Path>
+						</File>
+						<File Id="218241936" Language="SFX">
+							<ShortName>AMB_Cave drippings-005.wav</ShortName>
+							<Path>SFX\AMB_Cave drippings-005_3F75BDB9.wem</Path>
+						</File>
+						<File Id="302219468" Language="SFX">
+							<ShortName>AMB_Cave drippings-008.wav</ShortName>
+							<Path>SFX\AMB_Cave drippings-008_3F75BDB9.wem</Path>
+						</File>
+						<File Id="341565957" Language="SFX">
+							<ShortName>AMB_BunkerShake-004.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="343373130" Language="SFX">
+							<ShortName>Bunker_amb.wav</ShortName>
+							<Path>SFX\Bunker_amb_9EDFC787.wem</Path>
+						</File>
+						<File Id="361269324" Language="SFX">
+							<ShortName>City_Amb.wav</ShortName>
+							<Path>SFX\City_Amb_9EDFC787.wem</Path>
+						</File>
+						<File Id="370295239" Language="SFX">
+							<ShortName>AMB_BunkerShake-007.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="479340424" Language="SFX">
+							<ShortName>AMB_BunkerShake-001.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-001_E191111C.wem</Path>
+						</File>
+						<File Id="551266344" Language="SFX">
+							<ShortName>AMB_CaveDrone.wav</ShortName>
+							<Path>SFX\AMB_CaveDrone_9EDFC787.wem</Path>
+						</File>
+						<File Id="569417270" Language="SFX">
+							<ShortName>AMB_Cave drippings-002.wav</ShortName>
+							<Path>SFX\AMB_Cave drippings-002_3F75BDB9.wem</Path>
+						</File>
+						<File Id="579912406" Language="SFX">
+							<ShortName>AMB_BunkerShake-014.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-014_3F75BDB9.wem</Path>
+						</File>
+						<File Id="784926989" Language="SFX">
+							<ShortName>AMB_BunkerShake-009.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-009_3F75BDB9.wem</Path>
+						</File>
+						<File Id="801317388" Language="SFX">
+							<ShortName>Cave_Amb.wav</ShortName>
+							<Path>SFX\Cave_Amb_9EDFC787.wem</Path>
+						</File>
+						<File Id="824153819" Language="SFX">
+							<ShortName>AMB_BunkerShake-011.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-011_3F75BDB9.wem</Path>
+						</File>
+						<File Id="840516674" Language="SFX">
+							<ShortName>AMB_BunkerShake-013.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-013_3F75BDB9.wem</Path>
+						</File>
+						<File Id="865894407" Language="SFX">
+							<ShortName>AMB_BunkerShake-005.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-005_3F75BDB9.wem</Path>
+						</File>
+						<File Id="888826985" Language="SFX">
+							<ShortName>AMB_BunkerShake-003.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-003_4EB71A30.wem</Path>
+						</File>
+						<File Id="893146988" Language="SFX">
+							<ShortName>AMB_Cave drippings-007.wav</ShortName>
+							<Path>SFX\AMB_Cave drippings-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="930902088" Language="SFX">
+							<ShortName>AMB_BunkerShake-008.wav</ShortName>
+							<Path>SFX\AMB_BunkerShake-008_3F75BDB9.wem</Path>
+						</File>
+						<File Id="940848355" Language="SFX">
+							<ShortName>AMB_WindyCity.wav</ShortName>
+							<Path>SFX\AMB_WindyCity_9EDFC787.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="2647120390" Name="Bunker" ObjectPath="\States\Default Work Unit\Level\Bunker"/>
+					</ActionSetState>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="2511242657" Name="SetLevel_Cave" ObjectPath="\Events\Music work unit\Music\SetLevel_Cave" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="4122393694" Name="Cave" ObjectPath="\States\Default Work Unit\Level\Cave"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2275076219" Name="SetLevel_City" ObjectPath="\Events\Music work unit\Music\SetLevel_City" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="3888786832" Name="City" ObjectPath="\States\Default Work Unit\Level\City"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1777656929" Name="SetLevel_Tower" ObjectPath="\Events\Music work unit\Music\SetLevel_Tower" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="1737926756" Name="Tower" ObjectPath="\States\Default Work Unit\Level\Tower"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1521187885" Name="StartGame" ObjectPath="\Events\Default Work Unit\UI\StartGame" DurationType="OneShot" DurationMin="4." DurationMax="4.">
+					<IncludedMemoryFiles>
+						<File Id="969806067" Language="SFX">
+							<ShortName>Start Game.wav</ShortName>
+							<Path>SFX\Start Game_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="4154985317" Name="SelectButton" ObjectPath="\Events\Default Work Unit\UI\SelectButton"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="267097148" Name="StopMove_Box" ObjectPath="\Events\Default Work Unit\Player\Actions\StopMove_Box" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3789515518" Name="Trap_Button_Click" ObjectPath="\Events\Default Work Unit\Objects\Buttons and Switches\Trap_Button_Click" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1029784236" Name="Walker_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Alert" DurationType="OneShot" DurationMin="2." DurationMax="2.">
+					<IncludedMemoryFiles>
+						<File Id="775816294" Language="SFX">
+							<ShortName>EnemyDetected.wav</ShortName>
+							<Path>SFX\EnemyDetected_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1606606892" Name="Walker_Footstep" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Footstep" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2456363482" Name="Walker_Ram" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Ram" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2742300585" Name="Walker_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_ReturnToPost" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="1686518004" Name="AmbienceState" ObjectPath="\Game Parameters\Default Work Unit\AmbienceState"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1737926756" Name="Tower" ObjectPath="\States\Default Work Unit\Level\Tower" GUID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu" GUID="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2647120390" Name="Bunker" ObjectPath="\States\Default Work Unit\Level\Bunker" GUID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2782712965" Name="Level" ObjectPath="\States\Default Work Unit\Level" GUID="{51E06965-C708-4563-9DAE-2F395CA289A2}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Level\None" GUID="{03523C2F-AD49-4B63-9534-70D34C6422F5}"/>
+						<State Id="2647120390" Name="Bunker" ObjectPath="\States\Default Work Unit\Level\Bunker" GUID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}"/>
+						<State Id="3888786832" Name="City" ObjectPath="\States\Default Work Unit\Level\City" GUID="{032367C0-4700-4697-9463-468FA0C461E7}"/>
+						<State Id="4122393694" Name="Cave" ObjectPath="\States\Default Work Unit\Level\Cave" GUID="{B1525950-3904-4C50-BBC3-D03E253F5510}"/>
+						<State Id="1737926756" Name="Tower" ObjectPath="\States\Default Work Unit\Level\Tower" GUID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
+						<State Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu" GUID="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3888786832" Name="City" ObjectPath="\States\Default Work Unit\Level\City" GUID="{032367C0-4700-4697-9463-468FA0C461E7}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="4122393694" Name="Cave" ObjectPath="\States\Default Work Unit\Level\Cave" GUID="{B1525950-3904-4C50-BBC3-D03E253F5510}">
+					<States/>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="3714303081" Name="Surfaces" ObjectPath="\Switches\Default Work Unit\Surfaces" GUID="{F54FC1B4-0C55-4A62-AC4B-70A17102DFF4}">
+					<Switches>
+						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\Default Work Unit\Surfaces\Dirt" GUID="{26E6C451-9704-4001-8C1B-C813526E1D46}"/>
+						<Switch Id="2473969246" Name="Metal" ObjectPath="\Switches\Default Work Unit\Surfaces\Metal" GUID="{453DD2CE-CDDF-4578-9BD6-8E791D6255DB}"/>
+						<Switch Id="803837735" Name="Sand" ObjectPath="\Switches\Default Work Unit\Surfaces\Sand" GUID="{158D1CE6-BC9C-4353-858D-ED81A295B1DF}"/>
+						<Switch Id="1216965916" Name="Stone" ObjectPath="\Switches\Default Work Unit\Surfaces\Stone" GUID="{6318CCD1-8CDB-4FF9-A5BA-9F9D209794B3}"/>
+						<Switch Id="1407130077" Name="Ladder" ObjectPath="\Switches\Default Work Unit\Surfaces\Ladder" GUID="{B6E2BF82-6F83-4416-9CF9-FC3A5F41E697}"/>
+						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\Surfaces\Wood" GUID="{818B3927-72A1-4AA2-8A18-A9D86F17F36D}"/>
+						<Switch Id="2185786256" Name="Gravel" ObjectPath="\Switches\Default Work Unit\Surfaces\Gravel" GUID="{44E1369B-DF8E-49E5-A5B8-6670D88C8195}"/>
+						<Switch Id="2654748154" Name="Water" ObjectPath="\Switches\Default Work Unit\Surfaces\Water" GUID="{E48B2133-13FA-40FF-AECC-FDE5A679FC5D}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+			<Triggers>
+				<Trigger Id="4163741908" Name="New_Trigger" ObjectPath="\Triggers\Default Work Unit\New_Trigger"/>
+			</Triggers>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

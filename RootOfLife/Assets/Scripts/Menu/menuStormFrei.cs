@@ -18,6 +18,11 @@ public class menuStormFrei : MonoBehaviour
     public string myIndex; // A string which defines the index of this currently loaded canvas
     Canvas myCanvas; // A canvas which defines what the canvas is on the object this script is attached to
 
+    //SON ON OFF MENU
+    public AK.Wwise.Event MenuOn;
+    public AK.Wwise.Event MenuOff;
+
+
     void Start()
     {
         myCanvas = gameObject.GetComponent<Canvas>(); // We set our canvas
@@ -32,10 +37,12 @@ public class menuStormFrei : MonoBehaviour
             if (isPaused == true)
             {
                 Reprendre();
+                MenuOff.Post(gameObject);
             }
             else
             {
                 SurPause();
+                MenuOn.Post(gameObject);
             }
         }
     }
