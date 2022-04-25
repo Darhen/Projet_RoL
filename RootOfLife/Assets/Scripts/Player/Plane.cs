@@ -80,7 +80,7 @@ public class Plane : MonoBehaviour
                 GlidingOff.Post(gameObject);
                 Debug.Log("Gliding OFF");
                 */
-                GlidingOn.Stop(this.gameObject);
+                GlidingOn.Stop(this.gameObject, 500, AkCurveInterpolation.AkCurveInterpolation_Constant);
                 soundPlayed = false;
             }
 
@@ -97,7 +97,7 @@ public class Plane : MonoBehaviour
             isGliding = false;
 
             animator.SetBool("gliding", false);
-            GlidingOn.Stop(this.gameObject);
+            GlidingOn.Stop(this.gameObject, 500, AkCurveInterpolation.AkCurveInterpolation_Constant);
 
             /*
             GlidingOff.Post(gameObject);
