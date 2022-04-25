@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 1b93bf493072b44987ace6dea7b2a70f
     GuidInternal: 
-    m_lastTime: -8585507154599761444
+    m_lastTime: -8585507140155567263
     List:
     - name: Amb
       guid: e0fb8398556e2c4e8b44e2cf5cc603f6
@@ -205,7 +205,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 97406b27e9e45b4aa4d02307752b4c0a
     GuidInternal: 
-    m_lastTime: -8585507115667779264
+    m_lastTime: -8585507085710034761
     List:
     - name: Actions
       guid: b00a9a5e7a486a4a9a7b3ac7d19bd099
@@ -540,6 +540,49 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.691451
       minDuration: 1.691451
+    - name: DoorOpen
+      guid: 6339c7f48ce9e940a9deb3df95dfc6bf
+      id: 1404805401
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Objects
+        ObjectType: 4
+        guid: f9167f49481fad4c9c2901cee909f36d
+      - ElementName: Doors
+        ObjectType: 4
+        guid: bb3439f18b64e34b93ba8230a870eba7
+      - ElementName: DoorOpen
+        ObjectType: 3
+        guid: 6339c7f48ce9e940a9deb3df95dfc6bf
+      Path: Events\Default Work Unit\Objects\Doors\DoorOpen
+      maxAttenuation: 0
+      maxDuration: 3.065868
+      minDuration: 3.065868
+    - name: Doors
+      guid: bb3439f18b64e34b93ba8230a870eba7
+      id: 2150196036
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Objects
+        ObjectType: 4
+        guid: f9167f49481fad4c9c2901cee909f36d
+      - ElementName: Doors
+        ObjectType: 4
+        guid: bb3439f18b64e34b93ba8230a870eba7
+      Path: Events\Default Work Unit\Objects\Doors
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Drone
       guid: c2d9dc536e83f64b9d62272cc091d6da
       id: 2739838641
@@ -1028,8 +1071,8 @@ MonoBehaviour:
         guid: 05e9d367b6f3a046818c3d1d87becb89
       Path: Events\Default Work Unit\Objects\PlatformMove
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlatformStop
       guid: 9cd393468129a140bf952385697a5394
       id: 3914167496
@@ -1048,8 +1091,8 @@ MonoBehaviour:
         guid: 9cd393468129a140bf952385697a5394
       Path: Events\Default Work Unit\Objects\PlatformStop
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.078084
+      minDuration: 1.078084
     - name: Player
       guid: 9255696191e43c498d3a2144606fbf0b
       id: 1069431850
@@ -1410,8 +1453,8 @@ MonoBehaviour:
         guid: 8b13a6fe172ca4438b00a2308da09759
       Path: Events\Default Work Unit\Player\Actions\Pull_Lever
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.861594
+      minDuration: 0.861594
     - name: ReturnTo_MainMenu
       guid: 4e9585d716ac594192ba36c3f40b4da5
       id: 1661329569
@@ -1678,7 +1721,7 @@ MonoBehaviour:
     ParentPath: Events\Music work unit
     guid: 9ff9bffb509e9341a65d3b0c64ebb4e4
     GuidInternal: 
-    m_lastTime: -8585507115667709442
+    m_lastTime: -8585507085710024800
     List:
     - name: Music
       guid: d06f47e649afcb4bad219fad69ac9d43
@@ -2256,9 +2299,9 @@ MonoBehaviour:
         ObjectType: 14
         guid: e22544a605c1664fbd9d01dd0df325b9
       Path: Triggers\Default Work Unit\New_Trigger
-  ExpandedFileSystemItemIds: 020000000300000004000000050000000b000000140000001600000018000000
-  ExpandedWaapiItemIds: 02000000030000000b0000000c000000
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 

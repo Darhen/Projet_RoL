@@ -30393,6 +30393,14 @@ MonoBehaviour:
   direction: 0
   plantIsPlugged: 0
   ledgeClimb: {fileID: 3440191406482406374}
+  MoveObjectSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  MoveObjectStopSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   SlopeSFX:
     idInternal: 0
     valueGuidInternal: 
@@ -30867,10 +30875,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 2269090075babb241866f6acd40e34a3, type: 2}
-  Move_Box:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b74101b921261384c97ac2ed4fc8f3bf, type: 2}
   Pickup:
     idInternal: 0
     valueGuidInternal: 
@@ -30887,10 +30891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f43fd8287c293c4384025a23f049bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Move_Box:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b74101b921261384c97ac2ed4fc8f3bf, type: 2}
   Pickup:
     idInternal: 0
     valueGuidInternal: 
@@ -31507,7 +31507,7 @@ PrefabInstance:
       objectReference: {fileID: 3124496072062757462}
     - target: {fileID: 394126053503125727, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
       propertyPath: durationDown
-      value: 45
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 394126053503125727, guid: fb7d111615f6099428fef80cd489fb95, type: 3}
       propertyPath: Recharge.WwiseObjectReference
@@ -35488,7 +35488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5962369327221003633, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_VersionIndex
-      value: 80
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 5962369327221003633, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_Tangents.Array.data[964].x
@@ -37032,7 +37032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7880790121642187273, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_VersionIndex
-      value: 30
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 7880790121642187273, guid: 2ef8a4e9c515b4b489ecddcc40248b1f, type: 3}
       propertyPath: m_Tangents.Array.data[1092].x
