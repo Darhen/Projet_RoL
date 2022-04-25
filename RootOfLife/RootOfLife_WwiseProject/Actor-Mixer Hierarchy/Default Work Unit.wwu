@@ -554,7 +554,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-20</Value>
+												<Value>-16</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -563,7 +563,7 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+											<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
 										</Reference>
 										<Reference Name="UserAuxSend0">
 											<ObjectRef Name="Ambient_Reverb" ID="{61D4E81A-F29E-4152-B93C-607CDF2AC865}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
@@ -3283,7 +3283,7 @@
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-23</Value>
+														<Value>-15</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3364,9 +3364,21 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Backpack_Foley" ID="{7C3C6E65-C008-4025-87CF-FF7DFA5B723C}" ShortID="164003073">
 											<PropertyList>
+												<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideOutput" Type="bool" Value="True"/>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-6</Value>
+														<Value>-4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3375,7 +3387,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+													<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -3697,14 +3709,32 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Backpack_Pickup" ID="{CD8D38BE-B8E6-4137-AF42-FBB9B4660D97}" ShortID="995809818">
 											<PropertyList>
+												<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideOutput" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
-														<Value>-1010</Value>
+														<Value>-680</Value>
+													</ValueList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
 													</ValueList>
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>3</Value>
+														<Value>12</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3713,7 +3743,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+													<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -4084,7 +4114,7 @@
 									<PropertyList>
 										<Property Name="Highpass" Type="int16">
 											<ValueList>
-												<Value>37</Value>
+												<Value>35</Value>
 											</ValueList>
 										</Property>
 										<Property Name="Lowpass" Type="int16">
@@ -4099,7 +4129,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>3</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -4247,6 +4277,21 @@
 								<Sound Name="Boxdrag" ID="{5373CA2C-8E02-413F-A341-5C049252FD92}" ShortID="1043630927">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-780</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-15</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -4254,6 +4299,9 @@
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Ambient_Reverb" ID="{61D4E81A-F29E-4152-B93C-607CDF2AC865}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -4727,12 +4775,12 @@
 									<PropertyList>
 										<Property Name="Highpass" Type="int16">
 											<ValueList>
-												<Value>37</Value>
+												<Value>31</Value>
 											</ValueList>
 										</Property>
 										<Property Name="Lowpass" Type="int16">
 											<ValueList>
-												<Value>21</Value>
+												<Value>19</Value>
 											</ValueList>
 										</Property>
 										<Property Name="Pitch" Type="int32">
@@ -4745,13 +4793,18 @@
 												<Value>-18</Value>
 											</ValueList>
 										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="VO" ID="{13D36C00-F834-4691-8F18-4994B1245A16}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+											<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
 										</Reference>
 										<Reference Name="UserAuxSend0">
 											<ObjectRef Name="VO_Reverb" ID="{9723866E-E59F-4414-B04A-3720635FA4E2}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>

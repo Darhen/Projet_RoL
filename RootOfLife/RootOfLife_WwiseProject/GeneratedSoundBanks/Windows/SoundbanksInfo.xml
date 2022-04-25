@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="815620388">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1822497043">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -25,7 +25,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1421404451">
+		<SoundBank Id="3161908922" Language="SFX" Hash="634184947">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -201,6 +201,9 @@
 							<Path>SFX\Boxdrag_B78AF6B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="1675190527" Name="Open_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Open_Hangglider" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -237,38 +240,11 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
-							<Media>
-								<File Id="295224137"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
-							<Media>
-								<File Id="767662687"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
-							<Media>
-								<File Id="164074538"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
-							<Media>
-								<File Id="327066022"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
-							<Media>
-								<File Id="115747688"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
 				</Event>
-				<Event Id="3978245845" Name="Pickup" ObjectPath="\Events\Default Work Unit\Player\Actions\Pickup" DurationType="OneShot" DurationMin="2.172147" DurationMax="3.481628">
+				<Event Id="3978245845" Name="Pickup" ObjectPath="\Events\Default Work Unit\Player\Actions\Pickup" DurationType="OneShot" DurationMin="1.795172" DurationMax="2.877393">
 					<IncludedMemoryFiles>
 						<File Id="54488718" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
@@ -731,7 +707,7 @@
 						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
 					</AuxBusSends>
 				</Event>
-				<Event Id="2325694684" Name="Player_Kneel" ObjectPath="\Events\Default Work Unit\Player\Actions\Player_Kneel" DurationType="OneShot" DurationMin="2.172147" DurationMax="3.481628">
+				<Event Id="2325694684" Name="Player_Kneel" ObjectPath="\Events\Default Work Unit\Player\Actions\Player_Kneel" DurationType="OneShot" DurationMin="1.795172" DurationMax="2.877393">
 					<IncludedMemoryFiles>
 						<File Id="54488718" Language="SFX">
 							<ShortName>Backpack fs#01.wav</ShortName>
@@ -1016,6 +992,33 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
+							<Media>
+								<File Id="295224137"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
+							<Media>
+								<File Id="767662687"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
+							<Media>
+								<File Id="164074538"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
+							<Media>
+								<File Id="327066022"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
+							<Media>
+								<File Id="115747688"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>

@@ -22,6 +22,18 @@
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Open_Hangglider" ID="{3D6068CE-3497-400A-964B-149ADDB5DF84}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Player_Landing" ID="{3522576F-4E7B-4076-932C-7E6FB37C4359}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StartGame" ID="{BC2ADD0D-ADA9-401B-80CA-AB9F0751B2D2}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="0" Y="5"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SetLevel_Cave" ID="{C6CFFBC8-10F5-4124-AED0-C406B2082D8B}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="1" Y="1"/>
 						</Module>
@@ -30,12 +42,40 @@
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Close_Hangglider" ID="{FB934B7E-4088-4828-9D64-94FF684A906B}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Player_Slide" ID="{8D96ABF0-6F1C-49DD-AA44-D3DB38E45579}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SelectButton" ID="{1D0FCC21-5C16-483F-8579-AD4608C88FB0}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="1" Y="5"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SetLevel_City" ID="{C9B58AC4-C9D2-4914-9331-449643D5BEA8}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Player_Kneel" ID="{5CD2E70F-651E-4C0A-B146-6CEF4585F008}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Player_Slide_Stop" ID="{52E8243D-EF71-4154-B165-0750035D2180}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="2" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="HoverButton" ID="{5AB72B2A-846C-48DD-BE51-05381876A579}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="2" Y="5"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SetLevel_Tower" ID="{DF3C00E9-B48D-44D6-BF96-F7A2639C6DC7}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Move_Box" ID="{404812F3-A94C-4F6C-9D13-84AE80A9903E}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="3" Y="2"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
