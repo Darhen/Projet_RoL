@@ -123,7 +123,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
         //SON VIE DE LA PLANTE
 
-        if (variableT <= 0.20f)
+        if (variableT > 0 && variableT <= 0.20f)
         {
             if (!greenPlayed)
             {
@@ -133,7 +133,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
             }
         }
 
-        if (variableT >= 0.45f)
+        if(variableT > 0.20f && variableT <= 0.45f)
         {
             if(!yellowPlayed)
             {
@@ -145,7 +145,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
             }
         }
 
-        if (variableT >= 0.70f)
+        if (variableT >= 0.70f && variableT < 1)
         {
             if(!redPlayed)
             {
