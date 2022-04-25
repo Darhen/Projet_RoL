@@ -37,7 +37,15 @@ public class CameraBound : MonoBehaviour
         {
             cameraFollow.activeBoundary = true;
             //cameraFollow.boundCamPosition = cameraTarget + extraOffset;
-            cameraFollow.boundCamPosition = Vector3.Lerp(mainCamera.transform.position, cameraTarget + extraOffset, 8f);
+            if (cameraFollow.boundCamPosition != cameraTarget + extraOffset)
+            {
+                cameraFollow.boundCamPosition = Vector3.Lerp(mainCamera.transform.position, cameraTarget + extraOffset, 8f);
+            }
+            else
+            {
+                cameraFollow.boundCamPosition = cameraTarget + extraOffset;
+            }
+            
             if (xFree)
             {
                 cameraFollow.xFree = true;
