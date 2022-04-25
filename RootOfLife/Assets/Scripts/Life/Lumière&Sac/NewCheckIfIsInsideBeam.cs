@@ -32,9 +32,9 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
     //SON LIGHT
     public AK.Wwise.Event Recharge;
-    public AK.Wwise.Event GreenLight;
-    public AK.Wwise.Event YellowLight;
-    public AK.Wwise.Event RedLight;
+    //public AK.Wwise.Event GreenLight;
+    //public AK.Wwise.Event YellowLight;
+    //public AK.Wwise.Event RedLight;
 
     public bool greenPlayed;
     public bool yellowPlayed;
@@ -122,7 +122,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
 
         //SON VIE DE LA PLANTE
-
+        /*
         if (variableT > 0 && variableT <= 0.20f)
         {
             if (!greenPlayed)
@@ -155,6 +155,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
                 yellowPlayed = false;
             }
         }
+        */
     }
 
 }
