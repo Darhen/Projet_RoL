@@ -21,6 +21,7 @@ public class Plane : MonoBehaviour
 
     public AK.Wwise.Event GlidingOn;
     public AK.Wwise.Event GlidingOff;
+    public AK.Wwise.Event GlidingHumming;
     private bool soundPlayed;
 
     // Start is called before the first frame update
@@ -111,6 +112,7 @@ public class Plane : MonoBehaviour
         if(soundPlayed == false)
         {
             GlidingOn.Post(gameObject);
+            GlidingHumming.Post(gameObject);
             Debug.Log("playing sound");
             soundPlayed = true;
         }

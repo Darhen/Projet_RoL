@@ -27,7 +27,7 @@ public class LoadSceneFinale : MonoBehaviour
     {
         if (LoadScene == true)
         {
-            SceneManager.LoadScene("AscenseurRobot");
+            SceneManager.LoadScene("Level4");
         }
     }
 

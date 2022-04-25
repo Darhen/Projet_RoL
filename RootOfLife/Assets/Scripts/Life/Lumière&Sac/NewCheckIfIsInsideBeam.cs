@@ -30,10 +30,16 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     
     Renderer _renderer;
 
+    //SON LIGHT
     public AK.Wwise.Event Recharge;
     public AK.Wwise.Event GreenLight;
     public AK.Wwise.Event YellowLight;
     public AK.Wwise.Event RedLight;
+
+    public bool greenPlayed;
+    public bool yellowPlayed;
+    public bool redPlayed;
+
 
     void Awake()
     {
@@ -116,22 +122,37 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
 
         //SON VIE DE LA PLANTE
 
-        if (variableT == 0.2f)
+        if (variableT <= 0.20f)
         {
-            GreenLight.Post(gameObject);
-            Debug.Log(GreenLight);
+            if (!greenPlayed)
+            {
+                GreenLight.Post(gameObject);
+                Debug.Log(GreenLight);
+                greenPlayed = true;
+            }
         }
 
-        if (variableT == 0.55f)
+        if (variableT >= 0.45f)
         {
-            YellowLight.Post(gameObject);
-            Debug.Log(YellowLight);
+            if(!yellowPlayed)
+            {
+                YellowLight.Post(gameObject);
+                Debug.Log(YellowLight);
+                yellowPlayed = true;
+                greenPlayed = false;
+                redPlayed = false;
+            }
         }
 
-        if (variableT == 0.85f)
+        if (variableT >= 0.70f)
         {
-            RedLight.Post(gameObject);
-            Debug.Log(RedLight);
+            if(!redPlayed)
+            {
+                RedLight.Post(gameObject);
+                Debug.Log(RedLight);
+                redPlayed = true;
+                yellowPlayed = false;
+            }
         }
     }
 
