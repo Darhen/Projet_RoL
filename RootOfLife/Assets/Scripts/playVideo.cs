@@ -7,11 +7,13 @@ public class playVideo : MonoBehaviour
 
     public GameObject videoPlayer;
     public int timeToStop;
+    public bool generiqueActive;
 
     // Start is called before the first frame update
     void Start()
     {
         videoPlayer.SetActive(false);
+        generiqueActive = false;
     }
 
     // Update is called once per frame
@@ -19,6 +21,7 @@ public class playVideo : MonoBehaviour
     {
         if (player.gameObject.tag == "Player")
         {
+            generiqueActive = true;
             videoPlayer.SetActive(true);
             Destroy(videoPlayer, timeToStop);
         }
