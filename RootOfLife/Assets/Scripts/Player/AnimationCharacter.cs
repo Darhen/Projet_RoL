@@ -37,7 +37,7 @@ public class AnimationCharacter : MonoBehaviour
     public AK.Wwise.Event MoveObjectStopSFX;
     public AK.Wwise.Event SlopeSFX;
     public AK.Wwise.Event SlopeStopSFX;
-    public AK.Wwise.Event KneelSFX;
+   // public AK.Wwise.Event KneelSFX;
     private bool SFXisPlayed;
     private bool BoxSFXisPlaying;
 
@@ -156,12 +156,12 @@ public class AnimationCharacter : MonoBehaviour
         if (plantIsPlugged)
         {
             animator.SetBool("growing", true);
-            KneelSFX.Post(gameObject);
+            //KneelSFX.Post(gameObject);
         }
         if (!plantIsPlugged)
         {
             animator.SetBool("growing", false);
-            KneelSFX.Stop(this.gameObject);
+           // KneelSFX.Stop(this.gameObject);
         }
     }
 
