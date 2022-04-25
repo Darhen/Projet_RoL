@@ -34,6 +34,14 @@
 							<Position X="0" Y="5"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="BackpackLight_Flashing" ID="{FCA4EE31-FBBB-4BE9-B5F6-6BE09DBB51C1}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="0" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BouncePlant" ID="{2E73097B-D7F8-4DCA-BE88-0181F8505BAA}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="0" Y="7"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SetLevel_Cave" ID="{C6CFFBC8-10F5-4124-AED0-C406B2082D8B}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="1" Y="1"/>
 						</Module>
@@ -54,6 +62,14 @@
 							<Position X="1" Y="5"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="BackpackLight_Green" ID="{18D78F27-DBAE-451C-BE36-DF78EBCD7574}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="1" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BouncePlantHigh" ID="{EECE7DF4-B240-4A98-AA80-F1AB8B3A0033}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="1" Y="7"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SetLevel_City" ID="{C9B58AC4-C9D2-4914-9331-449643D5BEA8}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="2" Y="1"/>
 						</Module>
@@ -70,12 +86,40 @@
 							<Position X="2" Y="5"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="BackpackLight_Yellow" ID="{E8983E5A-806B-442A-86CD-6E1F91E7E6B5}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="2" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Plant_Death" ID="{D48C9D8C-9021-4929-9941-62DBCE1FB631}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="2" Y="7"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SetLevel_Tower" ID="{DF3C00E9-B48D-44D6-BF96-F7A2639C6DC7}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="3" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Move_Box" ID="{404812F3-A94C-4F6C-9D13-84AE80A9903E}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BackpackLight_Red" ID="{ADF76909-41B4-421A-B0DF-89C61EDC7875}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="3" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Plant_Stretch" ID="{E19C88C6-2622-42AF-B8D8-55CA7A4FF7C9}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="3" Y="7"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlatformMove" ID="{67D3E905-F3B6-46A0-818C-3D1D87BECB89}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="4" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlatformStop" ID="{4693D39C-2981-40A1-BF95-2385697A5394}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="4" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlantOpen" ID="{2F9C67FA-26D2-42F3-A83E-94876206238A}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="4" Y="7"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -97,7 +141,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
+						<CurrentStateRef Name="Bunker" ID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Alert" ID="{AABBEC05-8113-40C4-9C26-D8357FE899C3}"/>

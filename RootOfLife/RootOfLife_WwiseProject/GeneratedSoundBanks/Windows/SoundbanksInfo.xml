@@ -25,7 +25,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="634184947">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2185735297">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -44,6 +44,9 @@
 							<Path>SFX\PlantSFX_PlantLight-004_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="1472878853" Name="BackpackLight_Green" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Green" DurationType="OneShot" DurationMin="1.145235" DurationMax="1.145235">
 					<IncludedMemoryFiles>
@@ -56,6 +59,9 @@
 							<Path>SFX\PlantSFX_PlantLight-003_DB4EBE32.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2782421265" Name="BackpackLight_Red" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Red" DurationType="OneShot" DurationMin="1.48297" DurationMax="1.48297">
 					<IncludedMemoryFiles>
@@ -68,6 +74,9 @@
 							<Path>SFX\PlantSFX_PlantLight-003_DB4EBE32.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2188239484" Name="BackpackLight_Yellow" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Yellow" DurationType="OneShot" DurationMin="1.39898" DurationMax="1.39898">
 					<IncludedMemoryFiles>
@@ -76,6 +85,9 @@
 							<Path>SFX\PlantSFX_PlantLight-002_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2750511972" Name="BouncePlant" ObjectPath="\Events\Default Work Unit\Objects\Plant\BouncePlant" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
 					<IncludedMemoryFiles>
@@ -84,14 +96,20 @@
 							<Path>SFX\PlantSFX_PlantBounceLow_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
-				<Event Id="2256369888" Name="BouncePlantHigh" ObjectPath="\Events\Default Work Unit\Objects\Plant\BouncePlantHigh" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+				<Event Id="2256369888" Name="BouncePlantHigh" ObjectPath="\Events\Default Work Unit\Objects\Plant\BouncePlantHigh" DurationType="OneShot" DurationMin="1.763322" DurationMax="1.763322">
 					<IncludedMemoryFiles>
 						<File Id="697831868" Language="SFX">
 							<ShortName>PlantSFX_PlantBounceHigh.wav</ShortName>
 							<Path>SFX\PlantSFX_PlantBounceHigh_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="1118645644" Name="Checkpoint_Reached" ObjectPath="\Events\Default Work Unit\UI\Checkpoint_Reached" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3213624757" Name="Close_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Close_Hangglider" DurationType="OneShot" DurationMin="2.079501" DurationMax="2.079501">
@@ -148,6 +166,9 @@
 							<Path>SFX\448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded_73354518.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2055526214" Name="Drone_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Alert" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2781585832" Name="Drone_Fire" ObjectPath="\Events\Default Work Unit\Enemies\Drone\Drone_Fire" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
@@ -282,6 +303,9 @@
 							<Path>SFX\PlantSFX_PlantDeath_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2502130738" Name="Plant_Stretch" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Stretch" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -310,6 +334,9 @@
 							<Path>SFX\Plantgrowrocks-002_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="1005889100" Name="PlantOpen" ObjectPath="\Events\Default Work Unit\Objects\Plant\PlantOpen" DurationType="OneShot" DurationMin="1.003708" DurationMax="1.003708">
 					<IncludedMemoryFiles>
@@ -318,6 +345,9 @@
 							<Path>SFX\PlantSFX_PlantOpen_0F5BC2AB.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="1924523807" Name="PlatformMove" ObjectPath="\Events\Default Work Unit\Objects\PlatformMove" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -326,6 +356,9 @@
 							<Path>SFX\Electric_Crackle_Buzz_Motor-08_E064CA26.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="3914167496" Name="PlatformStop" ObjectPath="\Events\Default Work Unit\Objects\PlatformStop" DurationType="OneShot" DurationMin="1.078084" DurationMax="1.078084">
 					<IncludedMemoryFiles>
@@ -334,6 +367,9 @@
 							<Path>SFX\286576-sliding-closet-door-metal-glass-open-close-6ft-04_1B2C0AF9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2551268862" Name="Player_Fall" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Fall" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
