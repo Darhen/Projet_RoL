@@ -20,6 +20,8 @@ namespace AK
         static const AkUniqueID BACKPACKLIGHT_GREEN = 1472878853U;
         static const AkUniqueID BACKPACKLIGHT_RED = 2782421265U;
         static const AkUniqueID BACKPACKLIGHT_YELLOW = 2188239484U;
+        static const AkUniqueID BOUNCEPLANT = 2750511972U;
+        static const AkUniqueID BOUNCEPLANTHIGH = 2256369888U;
         static const AkUniqueID CHECKPOINT_REACHED = 1118645644U;
         static const AkUniqueID CLOSE_HANGGLIDER = 3213624757U;
         static const AkUniqueID DOOR_BUTTON_CLICK = 3169467041U;
@@ -31,6 +33,7 @@ namespace AK
         static const AkUniqueID GAME_UNPAUSE = 1359982855U;
         static const AkUniqueID GAMEOVER = 4158285989U;
         static const AkUniqueID GUARDIANARM_SWIVEL = 3294862893U;
+        static const AkUniqueID HOVERBUTTON = 2710047957U;
         static const AkUniqueID LIGHT_TOUCHPLANT = 3375032870U;
         static const AkUniqueID MOVE_BOX = 1954644116U;
         static const AkUniqueID OPEN_HANGGLIDER = 1675190527U;
@@ -38,6 +41,9 @@ namespace AK
         static const AkUniqueID PICKUP = 3978245845U;
         static const AkUniqueID PLANT_DEATH = 2998183107U;
         static const AkUniqueID PLANT_STRETCH = 2502130738U;
+        static const AkUniqueID PLANTOPEN = 1005889100U;
+        static const AkUniqueID PLATFORMMOVE = 1924523807U;
+        static const AkUniqueID PLATFORMSTOP = 3914167496U;
         static const AkUniqueID PLAYER_DEATH = 3083087645U;
         static const AkUniqueID PLAYER_FALL = 2551268862U;
         static const AkUniqueID PLAYER_FOOTSTEP = 2453392179U;
@@ -54,10 +60,12 @@ namespace AK
         static const AkUniqueID PLAYER_SUFFOCATE = 1457412937U;
         static const AkUniqueID PULL_LEVER = 766957497U;
         static const AkUniqueID RETURNTO_MAINMENU = 1661329569U;
+        static const AkUniqueID SELECTBUTTON = 4154985317U;
         static const AkUniqueID SETLEVEL_BUNKER = 1224425817U;
         static const AkUniqueID SETLEVEL_CAVE = 2511242657U;
         static const AkUniqueID SETLEVEL_CITY = 2275076219U;
         static const AkUniqueID SETLEVEL_TOWER = 1777656929U;
+        static const AkUniqueID STARTGAME = 1521187885U;
         static const AkUniqueID TRAP_BUTTON_CLICK = 3789515518U;
         static const AkUniqueID WALKER_ALERT = 1029784236U;
         static const AkUniqueID WALKER_FOOTSTEP = 1606606892U;

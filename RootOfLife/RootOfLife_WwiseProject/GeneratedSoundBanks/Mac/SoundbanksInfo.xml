@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="768518293">
+		<SoundBank Id="1355168291" Language="SFX" Hash="4254210341">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -25,7 +25,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="767737405">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3959172481">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -41,17 +41,25 @@
 				<Event Id="1472878853" Name="BackpackLight_Green" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Green" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2782421265" Name="BackpackLight_Red" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Red" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2188239484" Name="BackpackLight_Yellow" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Yellow" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1118645644" Name="Checkpoint_Reached" ObjectPath="\Events\Default Work Unit\UI\Checkpoint_Reached" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3213624757" Name="Close_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Close_Hangglider" DurationType="Infinite">
+				<Event Id="2750511972" Name="BouncePlant" ObjectPath="\Events\Default Work Unit\Objects\Plant\BouncePlant" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
 					<IncludedMemoryFiles>
-						<File Id="84859950" Language="SFX">
-							<ShortName>Player_Hangglide-002.wav</ShortName>
-							<Path>SFX\Player_Hangglide-002_F115542E.wem</Path>
+						<File Id="852745889" Language="SFX">
+							<ShortName>PlantSFX_PlantBounceLow.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantBounceLow_3F75BDB9.wem</Path>
 						</File>
-						<File Id="396700839" Language="SFX">
-							<ShortName>Player_Hangglide-001.wav</ShortName>
-							<Path>SFX\Player_Hangglide-001_F9E4799F.wem</Path>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2256369888" Name="BouncePlantHigh" ObjectPath="\Events\Default Work Unit\Objects\Plant\BouncePlantHigh" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<IncludedMemoryFiles>
+						<File Id="697831868" Language="SFX">
+							<ShortName>PlantSFX_PlantBounceHigh.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantBounceHigh_3F75BDB9.wem</Path>
 						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1118645644" Name="Checkpoint_Reached" ObjectPath="\Events\Default Work Unit\UI\Checkpoint_Reached" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3213624757" Name="Close_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Close_Hangglider" DurationType="OneShot" DurationMin="2.079501" DurationMax="2.079501">
+					<IncludedMemoryFiles>
 						<File Id="548666378" Language="SFX">
 							<ShortName>Player_Hangglide-003.wav</ShortName>
 							<Path>SFX\Player_Hangglide-003_3F75BDB9.wem</Path>
@@ -71,6 +79,38 @@
 				<Event Id="1359982855" Name="Game_Unpause" ObjectPath="\Events\Default Work Unit\UI\Game_Unpause" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\UI\GameOver" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3294862893" Name="GuardianArm_Swivel" ObjectPath="\Events\Default Work Unit\Enemies\Guardian Arm Boss\GuardianArm_Swivel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2710047957" Name="HoverButton" ObjectPath="\Events\Default Work Unit\UI\HoverButton" DurationType="OneShot" DurationMin="1.681793" DurationMax="2.943137">
+					<IncludedMemoryFiles>
+						<File Id="243667553" Language="SFX">
+							<ShortName>SelectionClicks-001.wav</ShortName>
+							<Path>SFX\SelectionClicks-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="294445815" Language="SFX">
+							<ShortName>SelectionClicks-007.wav</ShortName>
+							<Path>SFX\SelectionClicks-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="300270547" Language="SFX">
+							<ShortName>SelectionClicks-006.wav</ShortName>
+							<Path>SFX\SelectionClicks-006_3F75BDB9.wem</Path>
+						</File>
+						<File Id="421927691" Language="SFX">
+							<ShortName>SelectionClicks-005.wav</ShortName>
+							<Path>SFX\SelectionClicks-005_3F75BDB9.wem</Path>
+						</File>
+						<File Id="660815479" Language="SFX">
+							<ShortName>SelectionClicks-004.wav</ShortName>
+							<Path>SFX\SelectionClicks-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="739618492" Language="SFX">
+							<ShortName>SelectionClicks-002.wav</ShortName>
+							<Path>SFX\SelectionClicks-002_3F75BDB9.wem</Path>
+						</File>
+						<File Id="1013918573" Language="SFX">
+							<ShortName>SelectionClicks-003.wav</ShortName>
+							<Path>SFX\SelectionClicks-003_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3375032870" Name="Light_TouchPlant" ObjectPath="\Events\Default Work Unit\Objects\Plant\Light_TouchPlant" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1954644116" Name="Move_Box" ObjectPath="\Events\Default Work Unit\Player\Actions\Move_Box" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1675190527" Name="Open_Hangglider" ObjectPath="\Events\Default Work Unit\Player\Movement\Open_Hangglider" DurationType="Infinite">
@@ -108,6 +148,33 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
+							<Media>
+								<File Id="295224137"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
+							<Media>
+								<File Id="767662687"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
+							<Media>
+								<File Id="164074538"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
+							<Media>
+								<File Id="327066022"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
+							<Media>
+								<File Id="115747688"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
@@ -142,6 +209,16 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1005889100" Name="PlantOpen" ObjectPath="\Events\Default Work Unit\Objects\Plant\PlantOpen" DurationType="OneShot" DurationMin="1.003708" DurationMax="1.003708">
+					<IncludedMemoryFiles>
+						<File Id="350289143" Language="SFX">
+							<ShortName>PlantSFX_PlantOpen.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantOpen_0F5BC2AB.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1924523807" Name="PlatformMove" ObjectPath="\Events\Default Work Unit\Objects\PlatformMove" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3914167496" Name="PlatformStop" ObjectPath="\Events\Default Work Unit\Objects\PlatformStop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2551268862" Name="Player_Fall" ObjectPath="\Events\Default Work Unit\Player\Death\Player_Fall" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2453392179" Name="Player_Footstep" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Footstep" DurationType="OneShot" DurationMin="1.01684" DurationMax="3.193265">
@@ -431,10 +508,39 @@
 					</AuxBusSends>
 				</Event>
 				<Event Id="2862110540" Name="Player_Glide_Humming" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Glide_Humming" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" DurationType="OneShot" DurationMin="1.619199" DurationMax="2.081828">
+					<IncludedMemoryFiles>
+						<File Id="198304572" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_6E953844.wem</Path>
+						</File>
+						<File Id="286045212" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_1D8A3F05.wem</Path>
+						</File>
+						<File Id="594181785" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_2C372C4C.wem</Path>
+						</File>
+						<File Id="611908011" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_2C2C1FB2.wem</Path>
+						</File>
+						<File Id="700517742" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_DBBCC53B.wem</Path>
+						</File>
+						<File Id="1068717062" Language="SFX">
+							<ShortName>Vo_Root of life_1#01.wav</ShortName>
+							<Path>SFX\Vo_Root of life_1#01_AD17888C.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 					<ActionPostEvent>
 						<ActionPostEventEntry Id="4254001083" Name="Player_Slide_Stop" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Slide_Stop"/>
 					</ActionPostEvent>
+					<AuxBusSends>
+						<AuxBus Id="2658338523" Name="VO_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\VO\VO_Reverb"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2325694684" Name="Player_Kneel" ObjectPath="\Events\Default Work Unit\Player\Actions\Player_Kneel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1282282006" Name="Player_Landing" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Landing" DurationType="OneShot" DurationMin="1.01684" DurationMax="3.193265">
@@ -645,36 +751,33 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
-							<Media>
-								<File Id="295224137"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
-							<Media>
-								<File Id="767662687"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
-							<Media>
-								<File Id="164074538"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
-							<Media>
-								<File Id="327066022"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
-							<Media>
-								<File Id="115747688"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
+				</Event>
+				<Event Id="4154985317" Name="SelectButton" ObjectPath="\Events\Default Work Unit\UI\SelectButton" DurationType="OneShot" DurationMin="2." DurationMax="3.5">
+					<IncludedMemoryFiles>
+						<File Id="243667553" Language="SFX">
+							<ShortName>SelectionClicks-001.wav</ShortName>
+							<Path>SFX\SelectionClicks-001_3F75BDB9.wem</Path>
+						</File>
+						<File Id="294445815" Language="SFX">
+							<ShortName>SelectionClicks-007.wav</ShortName>
+							<Path>SFX\SelectionClicks-007_3F75BDB9.wem</Path>
+						</File>
+						<File Id="421927691" Language="SFX">
+							<ShortName>SelectionClicks-005.wav</ShortName>
+							<Path>SFX\SelectionClicks-005_3F75BDB9.wem</Path>
+						</File>
+						<File Id="660815479" Language="SFX">
+							<ShortName>SelectionClicks-004.wav</ShortName>
+							<Path>SFX\SelectionClicks-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="1013918573" Language="SFX">
+							<ShortName>SelectionClicks-003.wav</ShortName>
+							<Path>SFX\SelectionClicks-003_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="1224425817" Name="SetLevel_Bunker" ObjectPath="\Events\Music work unit\Music\SetLevel_Bunker" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -788,6 +891,17 @@
 					<ActionSetState>
 						<ActionSetStateEntry Id="1737926756" Name="Tower" ObjectPath="\States\Default Work Unit\Level\Tower"/>
 					</ActionSetState>
+				</Event>
+				<Event Id="1521187885" Name="StartGame" ObjectPath="\Events\Default Work Unit\UI\StartGame" DurationType="OneShot" DurationMin="4." DurationMax="4.">
+					<IncludedMemoryFiles>
+						<File Id="969806067" Language="SFX">
+							<ShortName>Start Game.wav</ShortName>
+							<Path>SFX\Start Game_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="4154985317" Name="SelectButton" ObjectPath="\Events\Default Work Unit\UI\SelectButton"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="3789515518" Name="Trap_Button_Click" ObjectPath="\Events\Default Work Unit\Objects\Buttons and Switches\Trap_Button_Click" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1029784236" Name="Walker_Alert" ObjectPath="\Events\Default Work Unit\Enemies\Walker\Walker_Alert" DurationType="OneShot" DurationMin="2." DurationMax="2.">
