@@ -56,13 +56,15 @@ public class PlayerDeath : MonoBehaviour
 
 
  // Actions
-    public AK.Wwise.Event Move_Box;
+    //public AK.Wwise.Event Move_Box;
     public AK.Wwise.Event Pickup;
 
+    /*
     public void CallAKEvent_Move_Box()
     {
         Move_Box.Post(gameObject);
     }
+    */
 
     public void CallAKEvent_Pickup()
     {

@@ -33,6 +33,8 @@ public class AnimationCharacter : MonoBehaviour
 
 
     //SON 
+    public AK.Wwise.Event MoveObjectSFX;
+    public AK.Wwise.Event MoveObjectStopSFX;
     public AK.Wwise.Event SlopeSFX;
     public AK.Wwise.Event SlopeStopSFX;
     private bool SFXisPlayed;
@@ -123,6 +125,8 @@ public class AnimationCharacter : MonoBehaviour
         direction = moveObject.direction;
         if (pushingController)
         {
+            MoveObjectSFX.Post(gameObject);
+
             if (direction == 1)
             {
                 animator.SetBool("pushingDroit", true);
@@ -136,6 +140,8 @@ public class AnimationCharacter : MonoBehaviour
         {
             animator.SetBool("pushingDroit", false);
             animator.SetBool("pushingGauche", false);
+
+            MoveObjectStopSFX.Post(gameObject);
         }
 
         //Animation plug plant

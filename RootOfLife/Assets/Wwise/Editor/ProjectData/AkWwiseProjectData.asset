@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 1b93bf493072b44987ace6dea7b2a70f
     GuidInternal: 
-    m_lastTime: -8585507697050980642
+    m_lastTime: -8585507154599761444
     List:
     - name: Amb
       guid: e0fb8398556e2c4e8b44e2cf5cc603f6
@@ -205,7 +205,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 97406b27e9e45b4aa4d02307752b4c0a
     GuidInternal: 
-    m_lastTime: -8585507173567841868
+    m_lastTime: -8585507115667779264
     List:
     - name: Actions
       guid: b00a9a5e7a486a4a9a7b3ac7d19bd099
@@ -317,8 +317,8 @@ MonoBehaviour:
         guid: 31eea4fcbbfbe94bb5f66be09dbb51c1
       Path: Events\Default Work Unit\Objects\Plant\BackpackLight_Flashing
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.48297
+      minDuration: 1.48297
     - name: BackpackLight_Green
       guid: 278fd718aedb1c45be36df78ebcd7574
       id: 1472878853
@@ -340,8 +340,8 @@ MonoBehaviour:
         guid: 278fd718aedb1c45be36df78ebcd7574
       Path: Events\Default Work Unit\Objects\Plant\BackpackLight_Green
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.145235
+      minDuration: 1.145235
     - name: BackpackLight_Red
       guid: 0969f7adb4411a42b0df89c61edc7875
       id: 2782421265
@@ -363,8 +363,8 @@ MonoBehaviour:
         guid: 0969f7adb4411a42b0df89c61edc7875
       Path: Events\Default Work Unit\Objects\Plant\BackpackLight_Red
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.48297
+      minDuration: 1.48297
     - name: BackpackLight_Yellow
       guid: 5a3e98e86b802a4486cd6e1f91e7e6b5
       id: 2188239484
@@ -386,8 +386,8 @@ MonoBehaviour:
         guid: 5a3e98e86b802a4486cd6e1f91e7e6b5
       Path: Events\Default Work Unit\Objects\Plant\BackpackLight_Yellow
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.39898
+      minDuration: 1.39898
     - name: BouncePlant
       guid: 7b09732ef8d7ca4dbe880181f8505baa
       id: 2750511972
@@ -538,8 +538,8 @@ MonoBehaviour:
         guid: e8743472cdbe734dabe9e411f6ab41d2
       Path: Events\Default Work Unit\Objects\Buttons and Switches\Door_Button_Click
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.691451
+      minDuration: 1.691451
     - name: Drone
       guid: c2d9dc536e83f64b9d62272cc091d6da
       id: 2739838641
@@ -836,8 +836,8 @@ MonoBehaviour:
         guid: f31248404ca96c4f9d1384ae80a9903e
       Path: Events\Default Work Unit\Player\Actions\Move_Box
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Movement
       guid: 11aeebfccf70134686e57e662aa1ec51
       id: 2129636626
@@ -919,8 +919,8 @@ MonoBehaviour:
         guid: 7e9e5b4b2138f44e9481d1d1e24ef819
       Path: Events\Default Work Unit\Player\Actions\Pickup
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 3.481628
+      minDuration: 2.172147
     - name: Plant
       guid: ef3f9f69b2b3d642b9895e35154a04c6
       id: 114672780
@@ -962,8 +962,8 @@ MonoBehaviour:
         guid: 8c9d8cd421902949994162dbce1fb631
       Path: Events\Default Work Unit\Objects\Plant\Plant_Death
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.671179
+      minDuration: 1.671179
     - name: Plant_Stretch
       guid: c6889ce12226af42b8d855ca7a4ff7c9
       id: 2502130738
@@ -1203,8 +1203,8 @@ MonoBehaviour:
         guid: 0fe7d25c1e650a4cb1466cef4585f008
       Path: Events\Default Work Unit\Player\Actions\Player_Kneel
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 3.481628
+      minDuration: 2.172147
     - name: Player_Landing
       guid: 6f5722357b4e7640932c7e6fb37c4359
       id: 1282282006
@@ -1492,6 +1492,29 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 4
       minDuration: 4
+    - name: StopMove_Box
+      guid: 2391e7bedb5615429c6e7e07525afad6
+      id: 267097148
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97406b27e9e45b4aa4d02307752b4c0a
+      - ElementName: Player
+        ObjectType: 4
+        guid: 9255696191e43c498d3a2144606fbf0b
+      - ElementName: Actions
+        ObjectType: 4
+        guid: b00a9a5e7a486a4a9a7b3ac7d19bd099
+      - ElementName: StopMove_Box
+        ObjectType: 3
+        guid: 2391e7bedb5615429c6e7e07525afad6
+      Path: Events\Default Work Unit\Player\Actions\StopMove_Box
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Trap_Button_Click
       guid: ebb68af4ee1e0d4b962c022e99a3fbd2
       id: 3789515518
@@ -1513,8 +1536,8 @@ MonoBehaviour:
         guid: ebb68af4ee1e0d4b962c022e99a3fbd2
       Path: Events\Default Work Unit\Objects\Buttons and Switches\Trap_Button_Click
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.691451
+      minDuration: 1.691451
     - name: UI
       guid: b852b0a76e16884a92514b42faa65bf4
       id: 1551306167
@@ -1655,7 +1678,7 @@ MonoBehaviour:
     ParentPath: Events\Music work unit
     guid: 9ff9bffb509e9341a65d3b0c64ebb4e4
     GuidInternal: 
-    m_lastTime: -8585507697053887997
+    m_lastTime: -8585507115667709442
     List:
     - name: Music
       guid: d06f47e649afcb4bad219fad69ac9d43
