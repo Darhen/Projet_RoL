@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class UI_SFX : MonoBehaviour
 {
-    void StartGame()
+    public void StartGame()
     {
         AkSoundEngine.PostEvent("StartGame", gameObject);
     }
 
-    void ReturnToMainMenu()
+    public void ReturnToMainMenu()
     {
         AkSoundEngine.PostEvent("ReturnTo_MainMenu", gameObject);
     }
 
-    void OthersClicks()
+    public void OthersClicks()
     {
         AkSoundEngine.PostEvent("SelectButton", gameObject);
     }
