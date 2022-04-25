@@ -39,6 +39,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
         _renderer = GetComponent<Renderer>();
         Physics.IgnoreLayerCollision(0, 9);
         Physics.IgnoreLayerCollision(6, 9);
+        Physics.IgnoreLayerCollision(10, 9);
 
         maxT = 1;
         midT = 0.5f;
