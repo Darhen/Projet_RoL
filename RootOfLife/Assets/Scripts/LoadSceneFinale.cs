@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class LoadSceneFinale : MonoBehaviour
 {
     public GameObject fadeOut;
+    public bool LoadScene;
 
     private void Start()
     {
         fadeOut.SetActive(false);
+        Physics.IgnoreLayerCollision(10, 0);
+        LoadScene = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,10 +23,19 @@ public class LoadSceneFinale : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (LoadScene == true)
+        {
+            SceneManager.LoadScene("AscenseurRobot");
+        }
+    }
+
     IEnumerator GrotteATour()
     {
         fadeOut.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("AscenseurRobot");
+        yield return new WaitForSeconds(1.5f);
+        LoadScene = true;
+        Debug.Log("Load scene");
     }
 }
