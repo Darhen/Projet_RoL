@@ -5185,6 +5185,487 @@
 									</ChildrenList>
 									<ObjectLists/>
 								</BlendContainer>
+								<RandomSequenceContainer Name="AirPressureRelease" ID="{66E1FF00-644C-42AA-B34B-FC8DB8B8D96F}" ShortID="917531123">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="343983-192_Buoyancy_compensator-deflate-AKG" ID="{7B3874D5-7B43-4F9A-ACB7-D08ED4AEAEC7}" ShortID="745857216">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343983-192_Buoyancy_compensator-deflate-AKG" ID="{85D56874-2C7B-46E1-853B-4EFFFC23FAA5}">
+													<Language>SFX</Language>
+													<AudioFile>343983-192_Buoyancy_compensator-deflate-AKG.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="429132722"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343983-192_Buoyancy_compensator-deflate-AKG" ID="{85D56874-2C7B-46E1-853B-4EFFFC23FAA5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="343984-193_Buoyancy_compensator-deflate-Sennheiser" ID="{1BA28140-DC65-41F3-88C4-6C8D840CA409}" ShortID="132334104">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343984-193_Buoyancy_compensator-deflate-Sennheiser" ID="{7A49F6C7-DAF3-486B-8DEA-8F2AFE554495}">
+													<Language>SFX</Language>
+													<AudioFile>343984-193_Buoyancy_compensator-deflate-Sennheiser.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="546995595"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343984-193_Buoyancy_compensator-deflate-Sennheiser" ID="{7A49F6C7-DAF3-486B-8DEA-8F2AFE554495}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="343994-200_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-AKG" ID="{1145E51E-6313-4B72-B95B-CD3E85BBC8CE}" ShortID="2352925">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343994-200_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-AKG" ID="{E03B802C-CA3A-4BDC-AD29-084E750856D1}">
+													<Language>SFX</Language>
+													<AudioFile>343994-200_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-AKG.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="87876757"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343994-200_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-AKG" ID="{E03B802C-CA3A-4BDC-AD29-084E750856D1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="343995-202_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-AKG" ID="{7F98B076-0151-4214-8427-7C2E23541ED0}" ShortID="383527679">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343995-202_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-AKG" ID="{AEE89030-3772-43C0-8CA6-C2C69D51F35E}">
+													<Language>SFX</Language>
+													<AudioFile>343995-202_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-AKG.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="810084186"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343995-202_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-AKG" ID="{AEE89030-3772-43C0-8CA6-C2C69D51F35E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="343996-201_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-Sennheiser" ID="{49261654-9F50-4DBD-A3FC-702A9BBC075D}" ShortID="785850918">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343996-201_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-Sennheiser" ID="{0A67014A-BCAC-41F6-843C-B2FD9D74A43F}">
+													<Language>SFX</Language>
+													<AudioFile>343996-201_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-Sennheiser.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="461716764"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343996-201_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-Sennheiser" ID="{0A67014A-BCAC-41F6-843C-B2FD9D74A43F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="343997-203_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-Sennheiser" ID="{55ED5A2B-A125-429D-A4C4-6D7B49CAFC4E}" ShortID="796930418">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343997-203_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-Sennheiser" ID="{23070D2F-80D1-49CA-B760-9C8E27AF5358}">
+													<Language>SFX</Language>
+													<AudioFile>343997-203_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-Sennheiser.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="40497001"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343997-203_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-Sennheiser" ID="{23070D2F-80D1-49CA-B760-9C8E27AF5358}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG" ID="{8ABAEC0B-BA47-4873-9173-7433213D1231}" ShortID="677946052">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG" ID="{B684E16F-3E4C-49E9-AD8B-D68F9EC58FBB}">
+													<Language>SFX</Language>
+													<AudioFile>343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="830392434"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG" ID="{B684E16F-3E4C-49E9-AD8B-D68F9EC58FBB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)" ID="{E596408C-9A43-47B8-A70A-4C8050936970}" ShortID="616837816">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-31</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)" ID="{B9C1553D-063A-4903-B2A5-A8C2EDD7A293}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0907116878531073"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.668998697916662"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.43088051730226"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.57611557644774"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1).wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="580386638"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)" ID="{B9C1553D-063A-4903-B2A5-A8C2EDD7A293}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="343999-198_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-AKG" ID="{76E29288-D3B4-4B14-BF84-9DFF586EE274}" ShortID="559701229">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="343999-198_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-AKG" ID="{4D8B8EEF-8F6D-4239-83E2-03F2697AAED3}">
+													<Language>SFX</Language>
+													<AudioFile>343999-198_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-AKG.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="223280041"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="343999-198_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-AKG" ID="{4D8B8EEF-8F6D-4239-83E2-03F2697AAED3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="344000-197_Buoyancy_compensator-overpressure_relief_valve-air_slow-01-Sennheiser" ID="{96E99E83-7B5D-4D4A-9E60-9A39CFA7F482}" ShortID="348988275">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="344000-197_Buoyancy_compensator-overpressure_relief_valve-air_slow-01-Sennheiser" ID="{CA2E0B31-B2A2-46EE-9CA7-581751FB5C7B}">
+													<Language>SFX</Language>
+													<AudioFile>344000-197_Buoyancy_compensator-overpressure_relief_valve-air_slow-01-Sennheiser.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="449314659"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="344000-197_Buoyancy_compensator-overpressure_relief_valve-air_slow-01-Sennheiser" ID="{CA2E0B31-B2A2-46EE-9CA7-581751FB5C7B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="344001-199_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-Sennheiser_04" ID="{06EE72C2-9885-4B5B-A961-709B942F752A}" ShortID="755965320">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="344001-199_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-Sennheiser_04" ID="{34E69BD8-A017-4EA2-BF39-BD32E77E8A3C}">
+													<Language>SFX</Language>
+													<AudioFile>344001-199_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-Sennheiser_04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="712592360"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="344001-199_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-Sennheiser_04" ID="{34E69BD8-A017-4EA2-BF39-BD32E77E8A3C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<ActorMixer Name="Lights" ID="{4ADC8666-12B4-4C4F-9037-E5B692B38118}" ShortID="728181039">
+									<PropertyList>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="PlantSFX_PlantLight-001" ID="{E91D1705-EBF3-4782-8FAF-D0CB9EDB68A0}" ShortID="411467236">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlantSFX_PlantLight-001" ID="{E18CB96E-2C0B-45B5-A02E-120831E225A8}">
+													<Language>SFX</Language>
+													<AudioFile>PlantSFX_PlantLight-001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="83434409"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="PlantSFX_PlantLight-001" ID="{E18CB96E-2C0B-45B5-A02E-120831E225A8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlantSFX_PlantLight-004" ID="{FB08CE42-E801-4832-A420-D2C81A84071A}" ShortID="981361516">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlantSFX_PlantLight-004" ID="{9B4D403A-C71C-4960-8550-A7CB2B4CD448}">
+													<Language>SFX</Language>
+													<AudioFile>PlantSFX_PlantLight-004.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="681779009"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="PlantSFX_PlantLight-004" ID="{9B4D403A-C71C-4960-8550-A7CB2B4CD448}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlantSFX_PlantLight-003" ID="{CE6DEB22-6814-464D-A09B-39A6F35A156F}" ShortID="434757977">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlantSFX_PlantLight-003" ID="{051248DF-EAA5-48E9-93E8-496B4EFBCFB6}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.149343220338983"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlantSFX_PlantLight-003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="881812818"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="PlantSFX_PlantLight-003" ID="{051248DF-EAA5-48E9-93E8-496B4EFBCFB6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlantSFX_PlantLight-002" ID="{96796521-24ED-44AC-8304-98F6F5242803}" ShortID="695018331">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlantSFX_PlantLight-002" ID="{42971F8D-3CCB-4166-B799-5AA540D395A6}">
+													<Language>SFX</Language>
+													<AudioFile>PlantSFX_PlantLight-002.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="688515719"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="PlantSFX_PlantLight-002" ID="{42971F8D-3CCB-4166-B799-5AA540D395A6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</ActorMixer>
 								<Sound Name="PlantSFX_PlantBounceHigh" ID="{4201854F-D237-4D37-96F5-159EDF810612}" ShortID="512543827">
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
@@ -5281,272 +5762,6 @@
 										<ActiveSource Name="PlantSFX_PlantOpen" ID="{9026734C-19D7-4593-BDCC-3B47EAB13222}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<RandomSequenceContainer Name="AirPressureRelease" ID="{66E1FF00-644C-42AA-B34B-FC8DB8B8D96F}" ShortID="917531123">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="343983-192_Buoyancy_compensator-deflate-AKG" ID="{7B3874D5-7B43-4F9A-ACB7-D08ED4AEAEC7}" ShortID="745857216">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343983-192_Buoyancy_compensator-deflate-AKG" ID="{85D56874-2C7B-46E1-853B-4EFFFC23FAA5}">
-													<Language>SFX</Language>
-													<AudioFile>343983-192_Buoyancy_compensator-deflate-AKG.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="429132722"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343983-192_Buoyancy_compensator-deflate-AKG" ID="{85D56874-2C7B-46E1-853B-4EFFFC23FAA5}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="343984-193_Buoyancy_compensator-deflate-Sennheiser" ID="{1BA28140-DC65-41F3-88C4-6C8D840CA409}" ShortID="132334104">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343984-193_Buoyancy_compensator-deflate-Sennheiser" ID="{7A49F6C7-DAF3-486B-8DEA-8F2AFE554495}">
-													<Language>SFX</Language>
-													<AudioFile>343984-193_Buoyancy_compensator-deflate-Sennheiser.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="546995595"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343984-193_Buoyancy_compensator-deflate-Sennheiser" ID="{7A49F6C7-DAF3-486B-8DEA-8F2AFE554495}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="343994-200_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-AKG" ID="{1145E51E-6313-4B72-B95B-CD3E85BBC8CE}" ShortID="2352925">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343994-200_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-AKG" ID="{E03B802C-CA3A-4BDC-AD29-084E750856D1}">
-													<Language>SFX</Language>
-													<AudioFile>343994-200_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-AKG.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="87876757"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343994-200_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-AKG" ID="{E03B802C-CA3A-4BDC-AD29-084E750856D1}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="343995-202_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-AKG" ID="{7F98B076-0151-4214-8427-7C2E23541ED0}" ShortID="383527679">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343995-202_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-AKG" ID="{AEE89030-3772-43C0-8CA6-C2C69D51F35E}">
-													<Language>SFX</Language>
-													<AudioFile>343995-202_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-AKG.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="810084186"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343995-202_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-AKG" ID="{AEE89030-3772-43C0-8CA6-C2C69D51F35E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="343996-201_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-Sennheiser" ID="{49261654-9F50-4DBD-A3FC-702A9BBC075D}" ShortID="785850918">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343996-201_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-Sennheiser" ID="{0A67014A-BCAC-41F6-843C-B2FD9D74A43F}">
-													<Language>SFX</Language>
-													<AudioFile>343996-201_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-Sennheiser.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="461716764"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343996-201_Buoyancy_compensator-overpressure_relief_valve-air_fast-01-Sennheiser" ID="{0A67014A-BCAC-41F6-843C-B2FD9D74A43F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="343997-203_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-Sennheiser" ID="{55ED5A2B-A125-429D-A4C4-6D7B49CAFC4E}" ShortID="796930418">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343997-203_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-Sennheiser" ID="{23070D2F-80D1-49CA-B760-9C8E27AF5358}">
-													<Language>SFX</Language>
-													<AudioFile>343997-203_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-Sennheiser.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="40497001"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343997-203_Buoyancy_compensator-overpressure_relief_valve-air_fast-02-Sennheiser" ID="{23070D2F-80D1-49CA-B760-9C8E27AF5358}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG" ID="{8ABAEC0B-BA47-4873-9173-7433213D1231}" ShortID="677946052">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG" ID="{B684E16F-3E4C-49E9-AD8B-D68F9EC58FBB}">
-													<Language>SFX</Language>
-													<AudioFile>343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="830392434"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG" ID="{B684E16F-3E4C-49E9-AD8B-D68F9EC58FBB}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)" ID="{E596408C-9A43-47B8-A70A-4C8050936970}" ShortID="616837816">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)" ID="{B9C1553D-063A-4903-B2A5-A8C2EDD7A293}">
-													<Language>SFX</Language>
-													<AudioFile>343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1).wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="580386638"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)" ID="{B9C1553D-063A-4903-B2A5-A8C2EDD7A293}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="343999-198_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-AKG" ID="{76E29288-D3B4-4B14-BF84-9DFF586EE274}" ShortID="559701229">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="343999-198_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-AKG" ID="{4D8B8EEF-8F6D-4239-83E2-03F2697AAED3}">
-													<Language>SFX</Language>
-													<AudioFile>343999-198_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-AKG.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="223280041"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="343999-198_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-AKG" ID="{4D8B8EEF-8F6D-4239-83E2-03F2697AAED3}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="344000-197_Buoyancy_compensator-overpressure_relief_valve-air_slow-01-Sennheiser" ID="{96E99E83-7B5D-4D4A-9E60-9A39CFA7F482}" ShortID="348988275">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="344000-197_Buoyancy_compensator-overpressure_relief_valve-air_slow-01-Sennheiser" ID="{CA2E0B31-B2A2-46EE-9CA7-581751FB5C7B}">
-													<Language>SFX</Language>
-													<AudioFile>344000-197_Buoyancy_compensator-overpressure_relief_valve-air_slow-01-Sennheiser.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="449314659"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="344000-197_Buoyancy_compensator-overpressure_relief_valve-air_slow-01-Sennheiser" ID="{CA2E0B31-B2A2-46EE-9CA7-581751FB5C7B}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="344001-199_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-Sennheiser_04" ID="{06EE72C2-9885-4B5B-A961-709B942F752A}" ShortID="755965320">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="344001-199_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-Sennheiser_04" ID="{34E69BD8-A017-4EA2-BF39-BD32E77E8A3C}">
-													<Language>SFX</Language>
-													<AudioFile>344001-199_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-Sennheiser_04.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="712592360"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="344001-199_Buoyancy_compensator-overpressure_relief_valve-air_slow-02-Sennheiser_04" ID="{34E69BD8-A017-4EA2-BF39-BD32E77E8A3C}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-									<ObjectLists/>
-								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Doors" ID="{16FFCEAD-9475-4D27-A8F6-132A6E5596C8}" ShortID="711266323">

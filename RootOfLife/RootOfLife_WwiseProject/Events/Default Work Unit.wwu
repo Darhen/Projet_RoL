@@ -266,10 +266,64 @@
 					<ChildrenList>
 						<Folder Name="Plant" ID="{699F3FEF-B3B2-42D6-B989-5E35154A04C6}" ShortID="449023897">
 							<ChildrenList>
-								<Event Name="BackpackLight_Green" ID="{18D78F27-DBAE-451C-BE36-DF78EBCD7574}"/>
-								<Event Name="BackpackLight_Yellow" ID="{E8983E5A-806B-442A-86CD-6E1F91E7E6B5}"/>
-								<Event Name="BackpackLight_Red" ID="{ADF76909-41B4-421A-B0DF-89C61EDC7875}"/>
-								<Event Name="BackpackLight_Flashing" ID="{FCA4EE31-FBBB-4BE9-B5F6-6BE09DBB51C1}"/>
+								<Event Name="BackpackLight_Green" ID="{18D78F27-DBAE-451C-BE36-DF78EBCD7574}">
+									<ChildrenList>
+										<Action Name="" ID="{E169335E-7D2F-43BD-B04A-EE6E24186BB3}" ShortID="653991924">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantSFX_PlantLight-003" ID="{CE6DEB22-6814-464D-A09B-39A6F35A156F}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{215691A1-7B61-4A04-B5B0-4C3820414DC8}" ShortID="1055330000">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)" ID="{E596408C-9A43-47B8-A70A-4C8050936970}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="BackpackLight_Yellow" ID="{E8983E5A-806B-442A-86CD-6E1F91E7E6B5}">
+									<ChildrenList>
+										<Action Name="" ID="{32821E26-26C6-4DC2-96BF-E94A55DC170B}" ShortID="945185373">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantSFX_PlantLight-002" ID="{96796521-24ED-44AC-8304-98F6F5242803}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="BackpackLight_Red" ID="{ADF76909-41B4-421A-B0DF-89C61EDC7875}">
+									<ChildrenList>
+										<Action Name="" ID="{3C2EBA9C-59FE-43A4-BA21-C405AFF4D0EE}" ShortID="623642195">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantSFX_PlantLight-003" ID="{CE6DEB22-6814-464D-A09B-39A6F35A156F}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{CBA924AE-6F22-4795-9458-878FACC2EF16}" ShortID="587881655">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantSFX_PlantLight-004" ID="{FB08CE42-E801-4832-A420-D2C81A84071A}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="BackpackLight_Flashing" ID="{FCA4EE31-FBBB-4BE9-B5F6-6BE09DBB51C1}">
+									<ChildrenList>
+										<Action Name="" ID="{72C5F5FA-08C1-4879-AD42-2B7A73EF8F87}" ShortID="498952457">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlantSFX_PlantLight-004" ID="{FB08CE42-E801-4832-A420-D2C81A84071A}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Light_TouchPlant" ID="{9A3F74A6-7184-4032-981A-6C2E47DB61C3}"/>
 								<Event Name="Plant_Death" ID="{D48C9D8C-9021-4929-9941-62DBCE1FB631}">
 									<ChildrenList>
