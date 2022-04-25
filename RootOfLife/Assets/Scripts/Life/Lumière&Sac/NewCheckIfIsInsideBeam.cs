@@ -106,6 +106,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
             {
                 variableT -= Time.deltaTime / durationUp;
                 Recharge.Post(gameObject);
+                Debug.Log(Recharge);
             }
         }
         else if (!isInsideBeam)
