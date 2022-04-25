@@ -18,12 +18,20 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Player_Footstep" ID="{C14E4FA5-395F-42D6-9648-93D8862E04D8}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Music" ID="{7BC2A667-8500-4E46-A5D0-DD1159C6AF6A}" WorkUnitID="{137F8B7C-F33F-4C88-913D-51B6F0782DB9}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="SetLevel_Cave" ID="{C6CFFBC8-10F5-4124-AED0-C406B2082D8B}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Player_Jump" ID="{09B4E164-EDC9-430C-8277-41874F075418}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="SetLevel_City" ID="{C9B58AC4-C9D2-4914-9331-449643D5BEA8}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
@@ -53,7 +61,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="City" ID="{032367C0-4700-4697-9463-468FA0C461E7}"/>
+						<CurrentStateRef Name="Tower" ID="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Alert" ID="{AABBEC05-8113-40C4-9C26-D8357FE899C3}"/>

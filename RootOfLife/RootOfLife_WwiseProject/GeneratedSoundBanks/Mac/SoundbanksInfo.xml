@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="4254210341">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2960849286">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -25,7 +25,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3959172481">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1023255941">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -37,10 +37,46 @@
 				</Event>
 				<Event Id="2110043727" Name="Arm_ReturnToPost" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_ReturnToPost" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="4214178660" Name="Arm_Swivel" ObjectPath="\Events\Default Work Unit\Enemies\Sentry Arm\Arm_Swivel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1721747022" Name="BackpackLight_Flashing" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Flashing" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1472878853" Name="BackpackLight_Green" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Green" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2782421265" Name="BackpackLight_Red" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Red" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2188239484" Name="BackpackLight_Yellow" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Yellow" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1721747022" Name="BackpackLight_Flashing" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Flashing" DurationType="OneShot" DurationMin="1.48297" DurationMax="1.48297">
+					<IncludedMemoryFiles>
+						<File Id="681779009" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-004.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-004_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1472878853" Name="BackpackLight_Green" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Green" DurationType="OneShot" DurationMin="1.145235" DurationMax="1.145235">
+					<IncludedMemoryFiles>
+						<File Id="580386638" Language="SFX">
+							<ShortName>343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1).wav</ShortName>
+							<Path>SFX\343998-196_Buoyancy_compensator-overpressure_relief_valve-air_slow-01_AKG (1)_A4FC06A0.wem</Path>
+						</File>
+						<File Id="881812818" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-003.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-003_DB4EBE32.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2782421265" Name="BackpackLight_Red" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Red" DurationType="OneShot" DurationMin="1.48297" DurationMax="1.48297">
+					<IncludedMemoryFiles>
+						<File Id="681779009" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-004.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-004_3F75BDB9.wem</Path>
+						</File>
+						<File Id="881812818" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-003.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-003_DB4EBE32.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2188239484" Name="BackpackLight_Yellow" ObjectPath="\Events\Default Work Unit\Objects\Plant\BackpackLight_Yellow" DurationType="OneShot" DurationMin="1.39898" DurationMax="1.39898">
+					<IncludedMemoryFiles>
+						<File Id="688515719" Language="SFX">
+							<ShortName>PlantSFX_PlantLight-002.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantLight-002_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2750511972" Name="BouncePlant" ObjectPath="\Events\Default Work Unit\Objects\Plant\BouncePlant" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
 					<IncludedMemoryFiles>
 						<File Id="852745889" Language="SFX">
@@ -148,39 +184,19 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
-							<Media>
-								<File Id="295224137"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
-							<Media>
-								<File Id="767662687"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
-							<Media>
-								<File Id="164074538"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
-							<Media>
-								<File Id="327066022"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
-							<Media>
-								<File Id="115747688"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
 				</Event>
 				<Event Id="3978245845" Name="Pickup" ObjectPath="\Events\Default Work Unit\Player\Actions\Pickup" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2998183107" Name="Plant_Death" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2998183107" Name="Plant_Death" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Death" DurationType="OneShot" DurationMin="1.671179" DurationMax="1.671179">
+					<IncludedMemoryFiles>
+						<File Id="937378948" Language="SFX">
+							<ShortName>PlantSFX_PlantDeath.wav</ShortName>
+							<Path>SFX\PlantSFX_PlantDeath_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2502130738" Name="Plant_Stretch" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Stretch" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="177581736" Language="SFX">
@@ -295,6 +311,14 @@
 							<ShortName>Player_Footsteps_Sand-004.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Sand-004_B5D4CE4D.wem</Path>
 						</File>
+						<File Id="454465381" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_DDDF96FC.wem</Path>
+						</File>
+						<File Id="489927921" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_409FADB7.wem</Path>
+						</File>
 						<File Id="491677259" Language="SFX">
 							<ShortName>Player_Footsteps_Stone-007.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Stone-007_02B19589.wem</Path>
@@ -318,6 +342,14 @@
 						<File Id="673225109" Language="SFX">
 							<ShortName>Player_Footsteps_Dirt-005.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Dirt-005_131FFFA5.wem</Path>
+						</File>
+						<File Id="685652376" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_1616FC8D.wem</Path>
+						</File>
+						<File Id="698426141" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_BAD241D8.wem</Path>
 						</File>
 						<File Id="735118455" Language="SFX">
 							<ShortName>Player_Footsteps_Metal-014.wav</ShortName>
@@ -375,9 +407,17 @@
 							<ShortName>Player_Footsteps_Sand-014.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Sand-014_3F75BDB9.wem</Path>
 						</File>
+						<File Id="1006050485" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_0182F367.wem</Path>
+						</File>
 						<File Id="1051168390" Language="SFX">
 							<ShortName>Player_Footsteps_Stone-005.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Stone-005_5FE93625.wem</Path>
+						</File>
+						<File Id="1059832011" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_57A09B19.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<DefaultSwitchValue>{6318CCD1-8CDB-4FF9-A5BA-9F9D209794B3}</DefaultSwitchValue>
@@ -512,27 +552,51 @@
 					<IncludedMemoryFiles>
 						<File Id="198304572" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
-							<Path>SFX\Vo_Root of life_1#01_6E953844.wem</Path>
+							<Path>SFX\Vo_Root of life_1#01_BF44D43C.wem</Path>
 						</File>
 						<File Id="286045212" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
-							<Path>SFX\Vo_Root of life_1#01_1D8A3F05.wem</Path>
+							<Path>SFX\Vo_Root of life_1#01_C753EC53.wem</Path>
+						</File>
+						<File Id="454465381" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_DDDF96FC.wem</Path>
+						</File>
+						<File Id="489927921" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_409FADB7.wem</Path>
 						</File>
 						<File Id="594181785" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
-							<Path>SFX\Vo_Root of life_1#01_2C372C4C.wem</Path>
+							<Path>SFX\Vo_Root of life_1#01_902CA3D4.wem</Path>
 						</File>
 						<File Id="611908011" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
-							<Path>SFX\Vo_Root of life_1#01_2C2C1FB2.wem</Path>
+							<Path>SFX\Vo_Root of life_1#01_9DA7D042.wem</Path>
+						</File>
+						<File Id="685652376" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_1616FC8D.wem</Path>
+						</File>
+						<File Id="698426141" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_BAD241D8.wem</Path>
 						</File>
 						<File Id="700517742" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
-							<Path>SFX\Vo_Root of life_1#01_DBBCC53B.wem</Path>
+							<Path>SFX\Vo_Root of life_1#01_B2A49270.wem</Path>
+						</File>
+						<File Id="1006050485" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_0182F367.wem</Path>
+						</File>
+						<File Id="1059832011" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_57A09B19.wem</Path>
 						</File>
 						<File Id="1068717062" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
-							<Path>SFX\Vo_Root of life_1#01_AD17888C.wem</Path>
+							<Path>SFX\Vo_Root of life_1#01_AC6CD9C6.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<ActionPostEvent>
@@ -540,11 +604,16 @@
 					</ActionPostEvent>
 					<AuxBusSends>
 						<AuxBus Id="2658338523" Name="VO_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\VO\VO_Reverb"/>
+						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
 					</AuxBusSends>
 				</Event>
 				<Event Id="2325694684" Name="Player_Kneel" ObjectPath="\Events\Default Work Unit\Player\Actions\Player_Kneel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1282282006" Name="Player_Landing" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Landing" DurationType="OneShot" DurationMin="1.01684" DurationMax="3.193265">
 					<IncludedMemoryFiles>
+						<File Id="726171" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_13429B83.wem</Path>
+						</File>
 						<File Id="11020844" Language="SFX">
 							<ShortName>Player_Footsteps_Metal-010.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Metal-010_3F75BDB9.wem</Path>
@@ -564,6 +633,10 @@
 						<File Id="126010324" Language="SFX">
 							<ShortName>Player_Footsteps_Stone-008.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Stone-008_93220850.wem</Path>
+						</File>
+						<File Id="129692348" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_53990615.wem</Path>
 						</File>
 						<File Id="158849743" Language="SFX">
 							<ShortName>Player_Footsteps_Metal-012.wav</ShortName>
@@ -637,6 +710,10 @@
 							<ShortName>Player_Footsteps_Dirt-001.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Dirt-001_3F75BDB9.wem</Path>
 						</File>
+						<File Id="660799115" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_D4720654.wem</Path>
+						</File>
 						<File Id="673225109" Language="SFX">
 							<ShortName>Player_Footsteps_Dirt-005.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Dirt-005_131FFFA5.wem</Path>
@@ -672,6 +749,10 @@
 						<File Id="863588493" Language="SFX">
 							<ShortName>Player_Footsteps_Metal-002.wav</ShortName>
 							<Path>SFX\Player_Footsteps_Metal-002_3F75BDB9.wem</Path>
+						</File>
+						<File Id="864199325" Language="SFX">
+							<ShortName>Backpack fs#01.wav</ShortName>
+							<Path>SFX\Backpack fs#01_1BF2B4A3.wem</Path>
 						</File>
 						<File Id="930268270" Language="SFX">
 							<ShortName>Player_Footsteps_Dirt-014.wav</ShortName>
@@ -751,6 +832,33 @@
 							<Path>Voices\English(US)\Tensiontrack_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{0B14027E-EA1F-4F79-9A47-F266DFF67339}">
+							<Media>
+								<File Id="295224137"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{032367C0-4700-4697-9463-468FA0C461E7}">
+							<Media>
+								<File Id="767662687"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B1525950-3904-4C50-BBC3-D03E253F5510}">
+							<Media>
+								<File Id="164074538"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}">
+							<Media>
+								<File Id="327066022"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{8F6641E1-BD58-48EE-BFA0-772F955D16D0}">
+							<Media>
+								<File Id="115747688"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Level\Menu"/>
 					</ActionSetState>
@@ -821,13 +929,13 @@
 							<ShortName>AMB_BunkerShake-007.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-007_3F75BDB9.wem</Path>
 						</File>
-						<File Id="398346668" Language="SFX">
-							<ShortName>AMB_WindyCity.wav</ShortName>
-							<Path>SFX\AMB_WindyCity_3F75BDB9.wem</Path>
-						</File>
 						<File Id="479340424" Language="SFX">
 							<ShortName>AMB_BunkerShake-001.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-001_E191111C.wem</Path>
+						</File>
+						<File Id="551266344" Language="SFX">
+							<ShortName>AMB_CaveDrone.wav</ShortName>
+							<Path>SFX\AMB_CaveDrone_9EDFC787.wem</Path>
 						</File>
 						<File Id="569417270" Language="SFX">
 							<ShortName>AMB_Cave drippings-002.wav</ShortName>
@@ -836,10 +944,6 @@
 						<File Id="579912406" Language="SFX">
 							<ShortName>AMB_BunkerShake-014.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-014_3F75BDB9.wem</Path>
-						</File>
-						<File Id="703330465" Language="SFX">
-							<ShortName>AMB_CaveDrone.wav</ShortName>
-							<Path>SFX\AMB_CaveDrone_3F75BDB9.wem</Path>
 						</File>
 						<File Id="784926989" Language="SFX">
 							<ShortName>AMB_BunkerShake-009.wav</ShortName>
@@ -868,6 +972,10 @@
 						<File Id="930902088" Language="SFX">
 							<ShortName>AMB_BunkerShake-008.wav</ShortName>
 							<Path>SFX\AMB_BunkerShake-008_3F75BDB9.wem</Path>
+						</File>
+						<File Id="940848355" Language="SFX">
+							<ShortName>AMB_WindyCity.wav</ShortName>
+							<Path>SFX\AMB_WindyCity_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<ActionSetState>
