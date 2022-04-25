@@ -282,8 +282,28 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Pickup" ID="{4B5B9E7E-3821-4EF4-9481-D1D1E24EF819}"/>
-								<Event Name="Player_Kneel" ID="{5CD2E70F-651E-4C0A-B146-6CEF4585F008}"/>
+								<Event Name="Pickup" ID="{4B5B9E7E-3821-4EF4-9481-D1D1E24EF819}">
+									<ChildrenList>
+										<Action Name="" ID="{86820024-64AE-45BD-8E44-BBDA2F7AEF37}" ShortID="657656977">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Backpack_Pickup" ID="{CD8D38BE-B8E6-4137-AF42-FBB9B4660D97}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Kneel" ID="{5CD2E70F-651E-4C0A-B146-6CEF4585F008}">
+									<ChildrenList>
+										<Action Name="" ID="{624B2BD6-9EC3-4391-BFBC-D85931360E0C}" ShortID="428773780">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Backpack_Pickup" ID="{CD8D38BE-B8E6-4137-AF42-FBB9B4660D97}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Pull_Lever" ID="{FEA6138B-2C17-43A4-8B00-A2308DA09759}"/>
 								<Event Name="StopMove_Box" ID="{BEE79123-56DB-4215-9C6E-7E07525AFAD6}">
 									<ChildrenList>
@@ -465,6 +485,13 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{EFE33913-63F4-4073-BC99-8599274606B8}" ShortID="78088422">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Button" ID="{AF026E3A-C575-47F6-B4A2-DAF1F85F5E20}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Trap_Button_Click" ID="{F48AB6EB-1EEE-4B0D-962C-022E99A3FBD2}">
@@ -478,6 +505,13 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="PlantStretch" ID="{845D2F16-0129-4FC4-A90B-0266D86375DB}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{735EDF24-4F5A-4DFA-9395-292930147A8B}" ShortID="659207910">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Button" ID="{AF026E3A-C575-47F6-B4A2-DAF1F85F5E20}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
