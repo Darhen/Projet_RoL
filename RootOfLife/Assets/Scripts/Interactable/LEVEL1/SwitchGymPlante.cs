@@ -28,7 +28,6 @@ public class SwitchGymPlante : MonoBehaviour
 
     public bool cameraSecurityOn;
 
-    public AK.Wwise.Event SwitchActivate;
     
 
     // Start is called before the first frame update
@@ -68,7 +67,7 @@ public class SwitchGymPlante : MonoBehaviour
         {
             if (Input.GetButton("Fire3"))
             {
-                SwitchActivate.Post(gameObject);
+
                 //positionnement du player pour animation
                 playerPosition.x = animationPosition.transform.position.x;
                 //animation du pickup de la plante

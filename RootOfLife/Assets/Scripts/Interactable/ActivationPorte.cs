@@ -21,7 +21,6 @@ public class ActivationPorte : MonoBehaviour
     private MoveObject moveObject;
     public ParticleSystem spark;
 
-    public AK.Wwise.Event SwitchActivate;
     
 
     void Start()
@@ -55,7 +54,7 @@ public class ActivationPorte : MonoBehaviour
 
             if (Input.GetButton("Fire3"))
             {
-                SwitchActivate.Post(gameObject);
+
                 switchActivated = true;
 
                 //positionnement du player pour animation

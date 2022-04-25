@@ -31,7 +31,7 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
     Renderer _renderer;
 
     //SON LIGHT
-    public AK.Wwise.Event Recharge;
+    //public AK.Wwise.Event Recharge;
     //public AK.Wwise.Event GreenLight;
     //public AK.Wwise.Event YellowLight;
     //public AK.Wwise.Event RedLight;
@@ -105,8 +105,8 @@ public class NewCheckIfIsInsideBeam : MonoBehaviour
             if (variableT > minT)
             {
                 variableT -= Time.deltaTime / durationUp;
-                Recharge.Post(gameObject);
-                Debug.Log(Recharge);
+                //Recharge.Post(gameObject);
+               // Debug.Log(Recharge);
             }
         }
         else if (!isInsideBeam)

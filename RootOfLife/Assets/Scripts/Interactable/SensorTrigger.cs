@@ -13,7 +13,6 @@ public class SensorTrigger : MonoBehaviour
     public Light greenLight;
     public bool uniqueActif;
 
-    public AK.Wwise.Event InterractibleSound;
 
     //bool a cocher si on veut que ce trigger fonctionne avec la plante
     public bool activateWithPlant;
@@ -23,11 +22,9 @@ public class SensorTrigger : MonoBehaviour
         if (isActive)
         {
             this.gameObject.GetComponent<Renderer>().material = activeMat;
-            InterractibleSound.Post(gameObject);
         }
         else
         {
-            InterractibleSound.Post(gameObject);
             this.gameObject.GetComponent<Renderer>().material = notActiveMat;
             redLight.enabled = true;
             greenLight.enabled = false;

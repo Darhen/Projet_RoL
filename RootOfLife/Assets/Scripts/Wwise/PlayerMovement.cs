@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     //Object Definitions
     public AK.Wwise.Event Player_Footstep;
     public AK.Wwise.Event Player_Jump;
-    public AK.Wwise.Event Player_Land;
+    //public AK.Wwise.Event Player_Land;
     //public AK.Wwise.Event Close_Hangglider;
     //public AK.Wwise.Event Open_Hangglider;
 
@@ -23,10 +23,10 @@ public class PlayerMovement : MonoBehaviour
         Player_Jump.Post(gameObject);
     }
 
-    public void CallAKEvent_Player_Land()
+    /*public void CallAKEvent_Player_Land()
     {
         Player_Land.Post(gameObject);
-    }
+    }*/
 
     /*
     public void CallAKEvent_Close_Hangglider()

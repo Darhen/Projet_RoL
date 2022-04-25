@@ -7,7 +7,7 @@ public class PlayerActions : MonoBehaviour
     // Actions
     //public AK.Wwise.Event Move_Box;
     public AK.Wwise.Event Pickup;
-    public AK.Wwise.Event Player_Kneel;
+    //public AK.Wwise.Event Player_Kneel;
     public AK.Wwise.Event Pull_Lever;
 
     /*public void CallAKEvent_Move_Box()
@@ -20,10 +20,10 @@ public class PlayerActions : MonoBehaviour
         Pickup.Post(gameObject);
     }
 
-    public void CallAKEvent_Player_Kneel()
+    /*public void CallAKEvent_Player_Kneel()
     {
         Player_Kneel.Post(gameObject);
-    }
+    }*/
     public void CallAKEvent_Pull_Lever()
     {
         Pull_Lever.Post(gameObject);
