@@ -146,6 +146,16 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{9339A852-6506-4117-9854-E599AFC4AAB7}" ShortID="852929274">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Rocks" ID="{F2AB42E4-71A3-4428-A95E-69092D0B185D}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{532807B2-656B-4CA2-9AC4-8EA90A57708A}" ShortID="494591124">
 											<ReferenceList>
 												<Reference Name="Target">
@@ -243,10 +253,10 @@
 								</Event>
 								<Event Name="Player_Slide" ID="{8D96ABF0-6F1C-49DD-AA44-D3DB38E45579}">
 									<ChildrenList>
-										<Action Name="" ID="{8E1274A9-8602-43BA-8BBA-3E3ABF72FAED}" ShortID="227686383">
+										<Action Name="" ID="{1DCE25F5-B12C-4492-B43A-8F29C5E0D78C}" ShortID="1003363535">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="PlayerSlideSeq" ID="{0967EF39-9591-43E1-B32C-95E7370ADC3E}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+													<ObjectRef Name="Slide" ID="{50A51C17-F102-40BC-8941-3D1E2E39B9D1}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -260,7 +270,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="PlayerSlideSeq" ID="{0967EF39-9591-43E1-B32C-95E7370ADC3E}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+													<ObjectRef Name="Slide" ID="{50A51C17-F102-40BC-8941-3D1E2E39B9D1}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

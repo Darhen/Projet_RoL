@@ -6,6 +6,9 @@
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
 					<PropertyList>
 						<Property Name="BusVolume" Type="Real64">
+							<ValueList>
+								<Value>8</Value>
+							</ValueList>
 							<RTPCList>
 								<RTPC Name="" ID="{D0DD52DD-6D4F-48D7-96D1-F4275C3C08ED}" ShortID="450863787">
 									<ReferenceList>
@@ -44,7 +47,7 @@
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
 									<ValueList>
-										<Value>-19</Value>
+										<Value>-2</Value>
 									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{C30D717B-9E73-4567-9600-C90CEA46E8EF}" ShortID="537364697">
@@ -81,6 +84,9 @@
 						<Bus Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}">
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{AB33D829-4482-4C60-97BF-D4552A3BE720}" ShortID="1023209034">
 											<ReferenceList>
@@ -135,6 +141,11 @@
 						</Bus>
 						<Bus Name="VO" ID="{13D36C00-F834-4691-8F18-4994B1245A16}">
 							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Highpass" Type="int16">
 									<ValueList>
 										<Value>35</Value>

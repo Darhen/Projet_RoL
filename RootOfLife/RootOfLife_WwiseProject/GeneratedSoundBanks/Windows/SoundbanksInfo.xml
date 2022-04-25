@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1822497043">
+		<SoundBank Id="1355168291" Language="SFX" Hash="889289010">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -25,7 +25,7 @@
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\UI\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2185735297">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1295484844">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -136,7 +136,7 @@
 						</File>
 						<File Id="872202127" Language="SFX">
 							<ShortName>83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744.wav</ShortName>
-							<Path>SFX\83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744_3F75BDB9.wem</Path>
+							<Path>SFX\83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744_B2E7A41D.wem</Path>
 						</File>
 						<File Id="993015788" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
@@ -296,11 +296,11 @@
 						<AuxBus Id="3036939274" Name="Ambient_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Ambient_Reverb"/>
 					</AuxBusSends>
 				</Event>
-				<Event Id="2998183107" Name="Plant_Death" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Death" DurationType="OneShot" DurationMin="1.671179" DurationMax="1.671179">
+				<Event Id="2998183107" Name="Plant_Death" ObjectPath="\Events\Default Work Unit\Objects\Plant\Plant_Death" DurationType="OneShot" DurationMin="0.538726" DurationMax="0.761873">
 					<IncludedMemoryFiles>
 						<File Id="937378948" Language="SFX">
 							<ShortName>PlantSFX_PlantDeath.wav</ShortName>
-							<Path>SFX\PlantSFX_PlantDeath_3F75BDB9.wem</Path>
+							<Path>SFX\PlantSFX_PlantDeath_C2E3F2E6.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<AuxBusSends>
@@ -684,7 +684,7 @@
 					</AuxBusSends>
 				</Event>
 				<Event Id="2862110540" Name="Player_Glide_Humming" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Glide_Humming" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" DurationType="OneShot" DurationMin="1.619199" DurationMax="2.081828">
+				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" DurationType="OneShot" DurationMin="1.591382" DurationMax="2.046063">
 					<IncludedMemoryFiles>
 						<File Id="198304572" Language="SFX">
 							<ShortName>Vo_Root of life_1#01.wav</ShortName>
@@ -962,9 +962,25 @@
 							<ShortName>Player_Slide.wav</ShortName>
 							<Path>SFX\Player_Slide_752D4DAD.wem</Path>
 						</File>
+						<File Id="625903980" Language="SFX">
+							<ShortName>Plantgrowrocks-001.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-001_AF98D1D0.wem</Path>
+						</File>
+						<File Id="853392424" Language="SFX">
+							<ShortName>Plantgrowrocks-001.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-001_3F75BDB9.wem</Path>
+						</File>
 						<File Id="896492177" Language="SFX">
 							<ShortName>Player_Slide.wav</ShortName>
 							<Path>SFX\Player_Slide_78ADA05E.wem</Path>
+						</File>
+						<File Id="924115987" Language="SFX">
+							<ShortName>Plantgrowrocks-003.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-003_3F75BDB9.wem</Path>
+						</File>
+						<File Id="993613388" Language="SFX">
+							<ShortName>Plantgrowrocks-002.wav</ShortName>
+							<Path>SFX\Plantgrowrocks-002_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<AuxBusSends>
@@ -1236,7 +1252,7 @@
 						</File>
 						<File Id="872202127" Language="SFX">
 							<ShortName>83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744.wav</ShortName>
-							<Path>SFX\83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744_3F75BDB9.wem</Path>
+							<Path>SFX\83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744_B2E7A41D.wem</Path>
 						</File>
 						<File Id="993015788" Language="SFX">
 							<ShortName>275671-Short_Circuit_34.wav</ShortName>
