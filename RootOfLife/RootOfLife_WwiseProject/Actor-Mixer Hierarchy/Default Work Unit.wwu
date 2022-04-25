@@ -6685,14 +6685,7 @@
 						</Folder>
 						<Folder Name="Doors" ID="{16FFCEAD-9475-4D27-A8F6-132A6E5596C8}" ShortID="711266323">
 							<ChildrenList>
-								<Sound Name="DoorOpen" ID="{AF2F4E61-E49F-4776-AE6B-1CED818E989C}" ShortID="407473260">
-									<PropertyList>
-										<Property Name="Inclusion" Type="bool">
-											<ValueList>
-												<Value>False</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
+								<BlendContainer Name="DoorOpen" ID="{9ED7C001-BDD7-4B91-9F8A-94CE3F7F5F22}" ShortID="357234583">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
@@ -6702,87 +6695,113 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="DoorOpen" ID="{BFCCC35A-566D-47D1-AC2D-C81A5C42089A}">
-											<Language>SFX</Language>
-											<AudioFile>DoorOpen.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="990849354"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="DoorOpen" ID="{BFCCC35A-566D-47D1-AC2D-C81A5C42089A}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Electric_Crackle_Buzz_Motor-07" ID="{8A3FB1C8-425F-42AB-A748-21C4CB11CCC2}" ShortID="341978436">
-									<PropertyList>
-										<Property Name="Inclusion" Type="bool">
-											<ValueList>
-												<Value>False</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Electric_Crackle_Buzz_Motor-07" ID="{5A9F6F57-9CDB-4752-9189-10E1359D4026}">
-											<Language>SFX</Language>
-											<AudioFile>Electric_Crackle_Buzz_Motor-07.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="204075233"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Electric_Crackle_Buzz_Motor-07" ID="{5A9F6F57-9CDB-4752-9189-10E1359D4026}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Electric_Crackle_Buzz_Motor-08" ID="{B75396FA-6F7F-40F3-A04C-732E4C795AA7}" ShortID="43583260">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Electric_Crackle_Buzz_Motor-08" ID="{132B65B1-0C6B-4327-8B79-776AE7249089}">
+										<Sound Name="286576-sliding-closet-door-metal-glass-open-close-6ft-04" ID="{E0C6CCB4-7F3B-4AE4-A4AD-FD570D4834B5}" ShortID="570210120">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="286576-sliding-closet-door-metal-glass-open-close-6ft-04" ID="{67F4B0F0-298F-4D6F-AC70-8F66239C9674}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.226402542372881"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.1037123940678"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.301870056497175"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.36773781779661"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>286576-sliding-closet-door-metal-glass-open-close-6ft-04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="665678369"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="286576-sliding-closet-door-metal-glass-open-close-6ft-04" ID="{67F4B0F0-298F-4D6F-AC70-8F66239C9674}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded" ID="{673991A8-F3F3-4AD0-820B-1BD8ADD93B9F}" ShortID="160726640">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0663264751472528"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.212244720471209"/>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="1.35685306339216"/>
-												<Property Name="TrimEnd" Type="Real64" Value="5.36516272050756"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Electric_Crackle_Buzz_Motor-08.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="974292524"/>
-											</MediaIDList>
-										</AudioFileSource>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded" ID="{6A09078A-4F5B-4246-BDCD-874270B41BB6}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.692406779661017"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.17049717514124"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.89587570621469"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="720889592"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded" ID="{6A09078A-4F5B-4246-BDCD-874270B41BB6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded_01" ID="{E0B06BB1-E06F-4AAB-B0EC-4F9716FB21BF}" ShortID="207437647">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-9</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded" ID="{4C3ADB69-D2D5-4A1C-A5B3-419AA9890532}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.692406779661017"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.17049717514124"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.30281355932203"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.7205988700565"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="951914986"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="448984-House_Texture-Metal-Small-Squeaks-Stress-MS_Decoded" ID="{4C3ADB69-D2D5-4A1C-A5B3-419AA9890532}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Electric_Crackle_Buzz_Motor-08" ID="{132B65B1-0C6B-4327-8B79-776AE7249089}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Electric_Crackle_Buzz_Motor-09" ID="{93EF3C24-8E04-4247-A449-141ECA938FE2}" ShortID="1042620556">
-									<PropertyList>
-										<Property Name="Inclusion" Type="bool">
-											<ValueList>
-												<Value>False</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
+								</BlendContainer>
+								<BlendContainer Name="Platform" ID="{D9E5E5C6-C3DE-4AAD-9D9A-72441D3A986C}" ShortID="89561351">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
@@ -6792,19 +6811,86 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Electric_Crackle_Buzz_Motor-09" ID="{0B0D4C5D-7567-4E55-AE82-946331375EDB}">
-											<Language>SFX</Language>
-											<AudioFile>Electric_Crackle_Buzz_Motor-09.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="498108230"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<Sound Name="Electric_Crackle_Buzz_Motor-08" ID="{B75396FA-6F7F-40F3-A04C-732E4C795AA7}" ShortID="43583260">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Electric_Crackle_Buzz_Motor-08" ID="{132B65B1-0C6B-4327-8B79-776AE7249089}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.842100486446688"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.212244720471209"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.45702989200538"/>
+														<Property Name="LoopEnd" Type="Real64" Value="3.97958134551172"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.609536723163842"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.36516272050756"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Electric_Crackle_Buzz_Motor-08.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="974292524"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Electric_Crackle_Buzz_Motor-08" ID="{132B65B1-0C6B-4327-8B79-776AE7249089}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="286576-sliding-closet-door-metal-glass-open-close-6ft-04" ID="{6458C084-3350-422D-93B4-E1877DB19CE6}" ShortID="843994709">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>300</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="286576-sliding-closet-door-metal-glass-open-close-6ft-04" ID="{031754EB-D930-4351-A99D-9541B1481189}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.217307458449696"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.95277736581921"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="6.35902118395539"/>
+														<Property Name="TrimEnd" Type="Real64" Value="7.64108580508474"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>286576-sliding-closet-door-metal-glass-open-close-6ft-04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="321430971"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="286576-sliding-closet-door-metal-glass-open-close-6ft-04" ID="{031754EB-D930-4351-A99D-9541B1481189}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Electric_Crackle_Buzz_Motor-09" ID="{0B0D4C5D-7567-4E55-AE82-946331375EDB}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+								</BlendContainer>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Traps" ID="{253B3342-46F2-4DB7-AA97-C0545AFD69E3}" ShortID="702336069">
@@ -7402,6 +7488,315 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</BlendContainer>
+						<Folder Name="Lever" ID="{CFA47CBB-A8F3-4647-AB3F-A1F62F889446}" ShortID="554322465">
+							<ChildrenList>
+								<BlendContainer Name="Lever" ID="{DE1D3A31-C018-41C4-8667-DD7494CB7427}" ShortID="19651152">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="Electric" ID="{1E684396-37DD-4AA5-8254-FA71E3C3C1BD}" ShortID="905812870">
+											<PropertyList>
+												<Property Name="InitialDelay" Type="Real64">
+													<ValueList>
+														<Value>0.2</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{3D09CCD7-BB3F-44B8-B6AE-4A33BAA6573D}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{3CE332D4-11D6-453A-BAA3-E44F6E89D139}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Ambient_Reverb" ID="{61D4E81A-F29E-4152-B93C-607CDF2AC865}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="275671-Short_Circuit_02" ID="{CECA4C01-A28C-4DA4-85F6-123057C83E74}" ShortID="52617499">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="275671-Short_Circuit_34" ID="{1BD84B89-8B73-4E1C-948A-4B8A8FA2677D}">
+															<PropertyList>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.177113439306358"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.407695086705203"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>275671-Short_Circuit_34.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="541664350"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="275671-Short_Circuit_34" ID="{1BD84B89-8B73-4E1C-948A-4B8A8FA2677D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="275671-Short_Circuit_04" ID="{CF514D7F-DAD1-4A15-B633-847140BF1650}" ShortID="477755642">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="275671-Short_Circuit_34" ID="{DDA42168-208D-461B-9D2C-344C609D6C0B}">
+															<PropertyList>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.48789739884393"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.745213150289018"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>275671-Short_Circuit_34.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="993015788"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="275671-Short_Circuit_34" ID="{DDA42168-208D-461B-9D2C-344C609D6C0B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<Sound Name="257580-Mechanism_-BreakerLightSwitchOnSmall-003" ID="{C99A545A-9F21-4C85-87E7-1C149813B42F}" ShortID="316629843">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>26</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="257580-Mechanism_-BreakerLightSwitchOnSmall-003" ID="{D0761A87-640E-44FB-9F71-4B3050F00257}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.713106864214612"/>
+														<Property Name="FadeOutShape" Type="int16" Value="1"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.861594411776009"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>257580-Mechanism_-BreakerLightSwitchOnSmall-003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="944301208"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="257580-Mechanism_-BreakerLightSwitchOnSmall-003" ID="{D0761A87-640E-44FB-9F71-4B3050F00257}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="Electric_01" ID="{C79235B1-37E2-437A-A276-24DDE5675FFF}" ShortID="225456452">
+											<PropertyList>
+												<Property Name="InitialDelay" Type="Real64">
+													<ValueList>
+														<Value>0.4</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{441E54A4-8983-489F-89CE-7FB868C8FBC3}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Ambient_Reverb" ID="{61D4E81A-F29E-4152-B93C-607CDF2AC865}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="275671-Short_Circuit_34" ID="{F364A120-21D7-42EB-9C64-A375D85130A3}" ShortID="1030941969">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="275671-Short_Circuit_34" ID="{68AEBBBE-D0A1-4562-B824-CCBDD7B2F295}">
+															<PropertyList>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="2.04515895953757"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>275671-Short_Circuit_34.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1062177015"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="275671-Short_Circuit_34" ID="{68AEBBBE-D0A1-4562-B824-CCBDD7B2F295}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="275671-Short_Circuit_01" ID="{864E6A8A-6BE2-47F7-8E9A-2B8E06662796}" ShortID="1029051893">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="275671-Short_Circuit_34" ID="{171E3530-B290-452A-ACAF-951E746AFA6F}">
+															<PropertyList>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.173771676300579"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>275671-Short_Circuit_34.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="227548530"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="275671-Short_Circuit_34" ID="{171E3530-B290-452A-ACAF-951E746AFA6F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="275671-Short_Circuit_03" ID="{02F65151-B4CE-4264-8F0B-C8B567F915A1}" ShortID="281454046">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{49BF931B-7230-49B4-87AC-E6DEA7B2A70F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="275671-Short_Circuit_34" ID="{B95D5E71-74A8-464E-B35E-BD9137F3B6AE}">
+															<PropertyList>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="1.80121026011561"/>
+																<Property Name="TrimEnd" Type="Real64" Value="2.05518424855491"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>275671-Short_Circuit_34.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="336381239"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="275671-Short_Circuit_34" ID="{B95D5E71-74A8-464E-B35E-BD9137F3B6AE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<ObjectLists/>
+								</BlendContainer>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Music" ID="{3AA51C06-2DC8-4D34-9942-23491E9AE1F8}" ShortID="949271195">

@@ -304,7 +304,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Pull_Lever" ID="{FEA6138B-2C17-43A4-8B00-A2308DA09759}"/>
+								<Event Name="Pull_Lever" ID="{FEA6138B-2C17-43A4-8B00-A2308DA09759}">
+									<ChildrenList>
+										<Action Name="" ID="{A1F0A97F-B91B-417D-AA55-1CBBEB8AE6DB}" ShortID="947703963">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Lever" ID="{DE1D3A31-C018-41C4-8667-DD7494CB7427}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="StopMove_Box" ID="{BEE79123-56DB-4215-9C6E-7E07525AFAD6}">
 									<ChildrenList>
 										<Action Name="" ID="{601FDBFD-A56B-483C-A37A-3C25049FE478}" ShortID="335280780">
@@ -519,8 +529,53 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
-						<Event Name="PlatformMove" ID="{67D3E905-F3B6-46A0-818C-3D1D87BECB89}"/>
-						<Event Name="PlatformStop" ID="{4693D39C-2981-40A1-BF95-2385697A5394}"/>
+						<Event Name="PlatformMove" ID="{67D3E905-F3B6-46A0-818C-3D1D87BECB89}">
+							<ChildrenList>
+								<Action Name="" ID="{F9EE597F-8899-40DC-A1EC-2BEFD7B4FCFF}" ShortID="664173509">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Electric_Crackle_Buzz_Motor-08" ID="{B75396FA-6F7F-40F3-A04C-732E4C795AA7}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlatformStop" ID="{4693D39C-2981-40A1-BF95-2385697A5394}">
+							<ChildrenList>
+								<Action Name="" ID="{7600A441-EE4B-4843-A6AB-1CFC27C3F7F7}" ShortID="812471954">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Electric_Crackle_Buzz_Motor-08" ID="{B75396FA-6F7F-40F3-A04C-732E4C795AA7}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{5FE76B85-0035-4BE4-B570-442A9635B457}" ShortID="1011721192">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="286576-sliding-closet-door-metal-glass-open-close-6ft-04" ID="{6458C084-3350-422D-93B4-E1877DB19CE6}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="Doors" ID="{F13934BB-648B-4BE3-93BA-8230A870EBA7}" ShortID="448203271">
+							<ChildrenList>
+								<Event Name="DoorOpen" ID="{F4C73963-E98C-40E9-A9DE-B3DF95DFC6BF}">
+									<ChildrenList>
+										<Action Name="" ID="{E8BF91C6-AAEA-4B5F-A43B-A0018D00379D}" ShortID="766564570">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DoorOpen" ID="{9ED7C001-BDD7-4B91-9F8A-94CE3F7F5F22}" WorkUnitID="{19EE3EAA-1E73-4056-8E05-CDFD59D083D5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemies" ID="{0C413C05-0774-412C-AACF-09DB7788A1CE}" ShortID="186971875">
