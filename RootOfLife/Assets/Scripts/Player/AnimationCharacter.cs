@@ -161,6 +161,7 @@ public class AnimationCharacter : MonoBehaviour
         if (!plantIsPlugged)
         {
             animator.SetBool("growing", false);
+            KneelSFX.Stop(this.gameObject);
         }
     }
 
