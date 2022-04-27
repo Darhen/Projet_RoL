@@ -12,6 +12,8 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
     public Animator oldCercleBlancAnimator;
     public Animator nextCercleBlancAnimator;
     public GameObject oldCameraBoundary;
+    //public GameObject cameraBoundaryPosition;
+    //public GameObject nextCameraPosition;
 
     public bool isActive;
 
@@ -42,7 +44,8 @@ public class TutorialPlayerTrigger3 : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         oldObjectAnimator.SetTrigger("deactivate");
         yield return new WaitForSeconds(1f);
-        oldCameraBoundary.SetActive(false);
+        //oldCameraBoundary.SetActive(false);
+        //cameraBoundaryPosition.transform.position = Vector3.Lerp(cameraBoundaryPosition.transform.position, nextCameraPosition.transform.position, 6f);
         oldObject.SetActive(false);
         nextObject.SetActive(true);
         yield return new WaitForSeconds(1f);

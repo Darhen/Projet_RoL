@@ -116,8 +116,8 @@ public class TutorielPartie1 : MonoBehaviour
         }
         if (trigger4activated == true)
         {
-            boundaryPosition.transform.position = targetBoundary.transform.position;
-            cameraBound.xFree = true;
+            boundaryPosition.transform.position = Vector3.Lerp(boundaryPosition.transform.position, targetBoundary.transform.position, 10f);
+            //cameraBound.xFree = true;
         }
     }
 

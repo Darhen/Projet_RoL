@@ -145,6 +145,16 @@ public class PlayerClimbing : MonoBehaviour
             isGrounded = true;
             jumpingOff = false;
         }
+        if (isClimbing)
+        {
+            if (collision.gameObject.layer == 11)
+            {
+                isClimbing = false;
+                isGrounded = true;
+                jumpingOff = false;
+            }
+        }
+        
     }
 
     private void OnCollisionExit(Collision collision)

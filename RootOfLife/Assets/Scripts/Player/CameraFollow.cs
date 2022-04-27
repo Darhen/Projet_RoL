@@ -200,19 +200,22 @@ public class CameraFollow : MonoBehaviour
             if (xFree)
             {
                 Vector3 desiredPosition = new Vector3(target.transform.position.x + offset.x + boundCamPosition.x, boundCamPosition.y, boundCamPosition.z);
-                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                //Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, 2f * Time.deltaTime);
                 transform.position = smoothedPosition;
             }
             if (yFree)
             {
                 Vector3 desiredPosition = new Vector3(boundCamPosition.x, target.transform.position.y + offset.y + boundCamPosition.y, boundCamPosition.z);
-                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                //Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, 2f * Time.deltaTime);
                 transform.position = smoothedPosition;
             }
             else
             {
                 Vector3 desiredPosition = boundCamPosition;
-                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                //Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, 2f * Time.deltaTime);
                 transform.position = smoothedPosition;
             }
 
