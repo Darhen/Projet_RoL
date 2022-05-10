@@ -9,6 +9,7 @@ public class ActivationAscenseur : MonoBehaviour
     WallSlide wallSlide;
     public bool switchActivated;
     public GameObject player;
+    public GameObject mainCamera;
     RespawnMerged respawnMerged;
 
     private Vector3 playerPosition;
@@ -30,6 +31,7 @@ public class ActivationAscenseur : MonoBehaviour
         wallSlide = wall.GetComponent<WallSlide>();
         wallSlide.enabled = false;
         Particules.SetActive(false);
+        mainCamera.GetComponent<Animator>().enabled = false;
     }
 
     void OnTriggerStay(Collider trigger)
@@ -45,8 +47,8 @@ public class ActivationAscenseur : MonoBehaviour
                 //positionnement du player pour animation
                 playerPosition.x = animationPosition.transform.position.x;
                 StartCoroutine("ActivationGymPlante");
-                wallSlide.enabled = true;
-                Particules.SetActive(true);
+                StartCoroutine("ActivateAscenseur");
+                
             }
         }
     }
@@ -66,6 +68,15 @@ public class ActivationAscenseur : MonoBehaviour
         //reactiver le player controller et autres fonctions
         animatorPlayer.SetBool("cinematic", false);
         GameplayMode();
+    }
+
+    IEnumerator ActivateAscenseur()
+    {
+        yield return new WaitForSeconds(2f);
+        mainCamera.GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds(3f);
+        wallSlide.enabled = true;
+        Particules.SetActive(true);
     }
 
     //desactiver le player controller et autres fonctions pour une cinematique

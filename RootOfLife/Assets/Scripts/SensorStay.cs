@@ -46,7 +46,7 @@ private void start()
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("FollowMe") || other.CompareTag("OldRoot") || other.CompareTag("Box"))
+        if (/*other.CompareTag("FollowMe") || other.CompareTag("OldRoot") ||*/ other.CompareTag("Box"))
         {
             isActive = true;
             Debug.Log("activelight");
