@@ -14,6 +14,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     public Animator oldCercleBlancAnimator;
     public Animator nextCercleBlancAnimator; 
     public Animator nextCercleBlancAnimator2;
+    public Animator plateforme2;
     public GameObject oldCameraBoundary;
     public GameObject ledgeClimbFinal;
     public Animator gateAnimator;
@@ -44,6 +45,7 @@ public class TutorialPlayerTrigger4 : MonoBehaviour
     {
         isActive = true;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        plateforme2.SetTrigger("deactivate");
         oldCercleBlancAnimator.SetTrigger("off");
         oldLight.SetActive(false);
         oldCameraBoundary.SetActive(false);

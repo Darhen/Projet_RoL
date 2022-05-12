@@ -16,6 +16,8 @@ public class CameraBound : MonoBehaviour
     public Vector3 extraOffset;
     public GameObject mainCamera;
 
+    public float smooth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class CameraBound : MonoBehaviour
             //cameraFollow.boundCamPosition = cameraTarget + extraOffset;
             if (cameraFollow.boundCamPosition != cameraTarget + extraOffset)
             {
-                cameraFollow.boundCamPosition = Vector3.Lerp(mainCamera.transform.position, cameraTarget + extraOffset, 8f);
+                cameraFollow.boundCamPosition = Vector3.Lerp(mainCamera.transform.position, cameraTarget + extraOffset, 8f + smooth);
             }
             else
             {
@@ -61,6 +63,9 @@ public class CameraBound : MonoBehaviour
         if (other.tag == "CameraBound")
         {
             cameraFollow.activeBoundary = false;
+
+            StartCoroutine("SmoothChange");
+
             if (xFree)
             {
                 cameraFollow.xFree = false;
@@ -70,5 +75,12 @@ public class CameraBound : MonoBehaviour
                 cameraFollow.yFree = false;
             }
         }
+    }
+
+    IEnumerator SmoothChange()
+    {
+        cameraFollow.smoothSpeed = 1.5f;
+        yield return new WaitForSeconds(6f);
+        cameraFollow.smoothSpeed = 3.5f;
     }
 }
