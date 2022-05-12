@@ -9,12 +9,20 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     //public GameObject RespawnPoint;
+    RespawnMerged respawnMerged;
+    GameObject player;
 
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Cancel"))
+        respawnMerged = player.GetComponent<RespawnMerged>();
+
+        /*if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Cancel"))
         {
             if (GameIsPaused)
             {
@@ -24,7 +32,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
-        }
+        }*/
     }
 
     public void Resume ()
@@ -49,9 +57,10 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("Loading RestartGame...");
-        
+
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        respawnMerged.StartCoroutine("Respawn");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //référence future : https://www.youtube.com/watch?v=TVSLCZWYL_E
         //SceneManager.LoadScene("Demo_Preuve_techno");
     }

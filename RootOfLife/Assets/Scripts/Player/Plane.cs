@@ -48,7 +48,7 @@ public class Plane : MonoBehaviour
                 timerParachute += 1 * Time.deltaTime;
 
                 //si le timer est atteint, on déclanche le parachute
-                if (timerParachute >= 0.3f)
+                if (timerParachute >= 0.15f)
                 {
                     GetComponent<PlayerController>().fallMultiplier = 1;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, parachuteMultiplier, 0);

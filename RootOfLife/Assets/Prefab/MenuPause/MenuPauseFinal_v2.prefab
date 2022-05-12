@@ -1897,6 +1897,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPauseUI: {fileID: 5344386598351553729}
   menuPrincipal: gym_menu
+  Lvl_1: LEVEL 1
+  Lvl_2: LEVEL2
+  Lvl_3: LEVEL_GROTTE_OFFICIEL
+  Lvl_4: Level4
   pauseFirstButton: {fileID: 5344386598351465147}
   myIndex: 
   MenuOn:
@@ -5706,6 +5710,7 @@ GameObject:
   - component: {fileID: 7650692314648839664}
   - component: {fileID: 7650692314648839669}
   - component: {fileID: 5755558535017098533}
+  - component: {fileID: 2150773852853554048}
   m_Layer: 5
   m_Name: RestartBouton
   m_TagString: Untagged
@@ -5830,6 +5835,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5755558535017098533}
         m_TargetAssemblyTypeName: UI_SFX, Assembly-CSharp
         m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2150773852853554048}
+        m_TargetAssemblyTypeName: CanvaOpener, Assembly-CSharp
+        m_MethodName: closePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5982,6 +5999,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3185916a0b3dd344590a58474a70f3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2150773852853554048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7650692314648839666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a0534cbebba34f83bcb7056a0ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 5344386598351553729}
+  Panel2: {fileID: 5344386598351553729}
+  pauseFirstButton: {fileID: 0}
 --- !u!1 &7650692314697996105
 GameObject:
   m_ObjectHideFlags: 0
@@ -6213,7 +6245,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: Last Checkpoint
 --- !u!61 &7650692315032298322
 BoxCollider2D:
   m_ObjectHideFlags: 0
