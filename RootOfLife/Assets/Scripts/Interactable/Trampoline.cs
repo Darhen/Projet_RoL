@@ -67,7 +67,7 @@ public class Trampoline : MonoBehaviour
                     countJump++;
                 }
             }
-            else
+            else if (countJump == 1)
             {
                 playerController.trampolineMode = true;
                 if (Input.GetButtonDown("Jump"))
@@ -83,6 +83,7 @@ public class Trampoline : MonoBehaviour
         else
         {
             jumpPressed = false;
+            countJump = 0;
         }
 
     }
@@ -91,7 +92,7 @@ public class Trampoline : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trampoline"))
         {
-            StartCoroutine("DelayJumpInit");
+            //StartCoroutine("DelayJumpReinit");
 
             if (canBounce)
             {
@@ -125,6 +126,17 @@ public class Trampoline : MonoBehaviour
         }
     }
 
+    /*private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Trampoline"))
+        {
+            if (!canBounce)
+            {
+                countJump = 0;
+            }
+        }
+    }*/
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Trampoline")
@@ -138,7 +150,13 @@ public class Trampoline : MonoBehaviour
         if (other.gameObject.tag == "Trampoline")
         {
             canBounce = false;
-            jumpPressed = false;
+            countJump = 0;
+            //jumpPressed = false;
+
+            /*if (!canBounce)
+            {
+                countJump = 0;
+            }*/
         }
     }
 
