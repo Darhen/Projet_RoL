@@ -239,6 +239,15 @@ public class AnimationCharacter : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision other)
+    {
+       if (other.gameObject.tag == "Slope")
+        {
+            SlopeStopSFX.Post(gameObject);
+            SFXisPlayed = false;
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         //Slope
