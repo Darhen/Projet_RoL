@@ -69,6 +69,7 @@ public class PlugPlant : MonoBehaviour
                 {
                     growthManager.playerIsActif = true;
                     playerController.plantIsPlugged = false;
+                    playerController.enabled = true;
 
                     // **INSERT ANIMATION DE CANCEL DE POSAGE DE SAC ICI**
                 }
