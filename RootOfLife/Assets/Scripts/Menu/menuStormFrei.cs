@@ -84,7 +84,7 @@ public class menuStormFrei : MonoBehaviour
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         player.GetComponent<PlayerController>().enabled = true;
-        player.GetComponent<PlugPlant>().enabled = true;
+        //player.GetComponent<PlugPlant>().enabled = true;
         player.GetComponent<AnimationCharacter>().enabled = true;
     }
 
@@ -97,7 +97,7 @@ public class menuStormFrei : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(pauseFirstButton); //cree nouvelle selection (pour manette)
         Cursor.lockState = CursorLockMode.None; //fait reapparaitre le curseur
         player.GetComponent<PlayerController>().enabled = false; //fait qu'on ne peut pas "dash" durant le menu
-        player.GetComponent<PlugPlant>().enabled = false;
+        //player.GetComponent<PlugPlant>().enabled = false;
         player.GetComponent<AnimationCharacter>().enabled = false;
     }
 

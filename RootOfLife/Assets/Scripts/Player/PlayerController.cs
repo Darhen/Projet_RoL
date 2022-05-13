@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     //Trampoline
     public bool trampolineMode;
 
+    PlugPlant plugPlant;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -64,6 +66,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+
         //On stock dans un float l'input x qu'on insert dans un vector3 multiplié par speed et en ignorant la vélocité y du rigidbody ("évite les conflits de physique")
         xInput = Input.GetAxis("Horizontal");
         //movementVector = new Vector3(xInput * speed, myRigidbody.velocity.y, 0);
