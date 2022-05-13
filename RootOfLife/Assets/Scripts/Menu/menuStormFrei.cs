@@ -10,7 +10,7 @@ public class menuStormFrei : MonoBehaviour
     public GameObject menuPauseUI;
     GameObject player;
     public string menuPrincipal = "MenuPrincipal";
-    public string Lvl_1 = "LEVEL 1";
+    public string Lvl_1 = "LEVEL  1";
     public string Lvl_2 = "LEVEL2";
     public string Lvl_3 = "LEVEL_GROTTE_OFFICIEL";
     public string Lvl_4 = "Level4";
