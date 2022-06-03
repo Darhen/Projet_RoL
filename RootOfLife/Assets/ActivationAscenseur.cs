@@ -9,7 +9,7 @@ public class ActivationAscenseur : MonoBehaviour
     WallSlide wallSlide;
     public bool switchActivated;
     public GameObject player;
-    public GameObject mainCamera;
+    //public GameObject mainCamera;
     RespawnMerged respawnMerged;
 
     private Vector3 playerPosition;
@@ -31,7 +31,7 @@ public class ActivationAscenseur : MonoBehaviour
         wallSlide = wall.GetComponent<WallSlide>();
         wallSlide.enabled = false;
         Particules.SetActive(false);
-        mainCamera.GetComponent<Animator>().enabled = false;
+        //mainCamera.GetComponent<Animator>().enabled = false;
     }
 
     void OnTriggerStay(Collider trigger)
@@ -72,8 +72,8 @@ public class ActivationAscenseur : MonoBehaviour
 
     IEnumerator ActivateAscenseur()
     {
-        yield return new WaitForSeconds(2f);
-        mainCamera.GetComponent<Animator>().enabled = true;
+        //yield return new WaitForSeconds(2f);
+        //mainCamera.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(3f);
         wallSlide.enabled = true;
         Particules.SetActive(true);
