@@ -18,15 +18,11 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Player_Slide" ID="{8D96ABF0-6F1C-49DD-AA44-D3DB38E45579}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
-							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="Open_Hangglider" ID="{3D6068CE-3497-400A-964B-149ADDB5DF84}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Door_Button_Click" ID="{723474E8-BECD-4D73-ABE9-E411F6AB41D2}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<ObjectRef Name="Pull_Lever" ID="{FEA6138B-2C17-43A4-8B00-A2308DA09759}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="0" Y="4"/>
 						</Module>
 						<Module>
@@ -38,10 +34,6 @@
 							<Position X="0" Y="6"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Pull_Lever" ID="{FEA6138B-2C17-43A4-8B00-A2308DA09759}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
-							<Position X="0" Y="7"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="SetLevel_Bunker" ID="{C06B4BE5-6C68-41F1-B058-D4A07905B69D}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="1" Y="0"/>
 						</Module>
@@ -50,15 +42,11 @@
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Player_Slide_Stop" ID="{52E8243D-EF71-4154-B165-0750035D2180}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
-							<Position X="1" Y="2"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="Close_Hangglider" ID="{FB934B7E-4088-4828-9D64-94FF684A906B}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="1" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Trap_Button_Click" ID="{F48AB6EB-1EEE-4B0D-962C-022E99A3FBD2}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<ObjectRef Name="Door_Button_Click" ID="{723474E8-BECD-4D73-ABE9-E411F6AB41D2}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="1" Y="4"/>
 						</Module>
 						<Module>
@@ -70,7 +58,7 @@
 							<Position X="1" Y="6"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="SetLevel_City" ID="{C9B58AC4-C9D2-4914-9331-449643D5BEA8}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
+							<ObjectRef Name="SetLevel_Cave" ID="{C6CFFBC8-10F5-4124-AED0-C406B2082D8B}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
@@ -78,15 +66,11 @@
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Player_Jump" ID="{09B4E164-EDC9-430C-8277-41874F075418}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
-							<Position X="2" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Pickup" ID="{4B5B9E7E-3821-4EF4-9481-D1D1E24EF819}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<ObjectRef Name="Player_Footstep" ID="{C14E4FA5-395F-42D6-9648-93D8862E04D8}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="2" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="DoorOpen" ID="{F4C73963-E98C-40E9-A9DE-B3DF95DFC6BF}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<ObjectRef Name="Trap_Button_Click" ID="{F48AB6EB-1EEE-4B0D-962C-022E99A3FBD2}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="2" Y="4"/>
 						</Module>
 						<Module>
@@ -98,7 +82,7 @@
 							<Position X="2" Y="6"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="SetLevel_Cave" ID="{C6CFFBC8-10F5-4124-AED0-C406B2082D8B}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
+							<ObjectRef Name="SetLevel_City" ID="{C9B58AC4-C9D2-4914-9331-449643D5BEA8}" WorkUnitID="{FBBFF99F-9E50-4193-A65D-3B0C64EBB4E4}"/>
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
@@ -106,15 +90,11 @@
 							<Position X="3" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Player_Landing" ID="{3522576F-4E7B-4076-932C-7E6FB37C4359}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
-							<Position X="3" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Player_Kneel" ID="{5CD2E70F-651E-4C0A-B146-6CEF4585F008}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<ObjectRef Name="Move_Box" ID="{404812F3-A94C-4F6C-9D13-84AE80A9903E}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="3" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Plant_Death" ID="{D48C9D8C-9021-4929-9941-62DBCE1FB631}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<ObjectRef Name="DoorOpen" ID="{F4C73963-E98C-40E9-A9DE-B3DF95DFC6BF}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="3" Y="4"/>
 						</Module>
 						<Module>
@@ -134,15 +114,11 @@
 							<Position X="4" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Player_Footstep" ID="{C14E4FA5-395F-42D6-9648-93D8862E04D8}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
-							<Position X="4" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Move_Box" ID="{404812F3-A94C-4F6C-9D13-84AE80A9903E}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<ObjectRef Name="StopMove_Box" ID="{BEE79123-56DB-4215-9C6E-7E07525AFAD6}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="4" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="StopMove_Box" ID="{BEE79123-56DB-4215-9C6E-7E07525AFAD6}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
+							<ObjectRef Name="Plant_Death" ID="{D48C9D8C-9021-4929-9941-62DBCE1FB631}" WorkUnitID="{276B4097-E4E9-4A5B-A4D0-2307752B4C0A}"/>
 							<Position X="4" Y="4"/>
 						</Module>
 						<Module>
@@ -173,7 +149,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Menu" ID="{F9D5C7B3-8418-4EC1-AB1C-E7D8CA8339B5}"/>
+						<CurrentStateRef Name="Bunker" ID="{0B14027E-EA1F-4F79-9A47-F266DFF67339}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Alert" ID="{AABBEC05-8113-40C4-9C26-D8357FE899C3}"/>

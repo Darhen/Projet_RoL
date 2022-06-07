@@ -3303,9 +3303,9 @@
 													<ChildrenList>
 														<AudioFileSource Name="Backpack fs#01" ID="{26E306F4-DB0B-46B2-88B4-455ED2BBD3CF}">
 															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.292288106631101"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.548953160320141"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.643183534911131"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.933747746634573"/>
 																<Property Name="TrimEnd" Type="Real64" Value="1.62901833814334"/>
 															</PropertyList>
 															<Language>SFX</Language>
@@ -3344,9 +3344,11 @@
 													<ChildrenList>
 														<AudioFileSource Name="Backpack fs#01" ID="{293A499A-B242-4BB6-8497-81D1613BB637}">
 															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.35601303772881"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.259327796277835"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="2.36974360585862"/>
-																<Property Name="TrimEnd" Type="Real64" Value="3.38334577922078"/>
+																<Property Name="TrimBegin" Type="Real64" Value="2.86606117864029"/>
+																<Property Name="TrimEnd" Type="Real64" Value="3.45411879585144"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>Backpack fs#01.wav</AudioFile>
@@ -3385,6 +3387,11 @@
 																<Value>-8</Value>
 															</ValueList>
 														</Property>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -3400,9 +3407,12 @@
 													<ChildrenList>
 														<AudioFileSource Name="Backpack fs#01" ID="{6B6B7BFB-6FCE-4427-9692-94D077662382}">
 															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.375927308802309"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.0985705612481152"/>
+																<Property Name="FadeInShape" Type="int16" Value="4"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.526299937149486"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="4.05156119465419"/>
+																<Property Name="TrimBegin" Type="Real64" Value="4.29810052581347"/>
 																<Property Name="TrimEnd" Type="Real64" Value="4.82440046296296"/>
 															</PropertyList>
 															<Language>SFX</Language>
@@ -3442,6 +3452,11 @@
 																<Value>-8</Value>
 															</ValueList>
 														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -3457,10 +3472,12 @@
 													<ChildrenList>
 														<AudioFileSource Name="Backpack fs#01" ID="{FD0CDA0F-82FA-41E0-A06A-2BAF7054B2E6}">
 															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.438581860269361"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.542589978191639"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.496317572781674"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="13.7213467712843"/>
-																<Property Name="TrimEnd" Type="Real64" Value="15.0997469035594"/>
+																<Property Name="TrimBegin" Type="Real64" Value="14.1751228378275"/>
+																<Property Name="TrimEnd" Type="Real64" Value="14.7177128160192"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>Backpack fs#01.wav</AudioFile>
@@ -3515,8 +3532,9 @@
 														<AudioFileSource Name="Backpack fs#01" ID="{1F616733-B9B7-4A7F-ABA6-9C7F7BB725C4}">
 															<PropertyList>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.438581860269359"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.477310864443968"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="15.4756742123617"/>
+																<Property Name="TrimBegin" Type="Real64" Value="16.1413972601388"/>
 																<Property Name="TrimEnd" Type="Real64" Value="17.1046925505051"/>
 															</PropertyList>
 															<Language>SFX</Language>
@@ -3571,10 +3589,12 @@
 													<ChildrenList>
 														<AudioFileSource Name="Backpack fs#01" ID="{CF23F571-73AF-4571-A970-442ADB7090D0}">
 															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.81450916907167"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.60689243812606"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.539803500458596"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																<Property Name="TrimBegin" Type="Real64" Value="19.422910954786"/>
-																<Property Name="TrimEnd" Type="Real64" Value="20.7386565355941"/>
+																<Property Name="TrimEnd" Type="Real64" Value="20.3108621967345"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>Backpack fs#01.wav</AudioFile>
@@ -3639,7 +3659,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>9</Value>
+														<Value>4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -4585,7 +4605,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-15</Value>
+												<Value>-20</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -5622,6 +5642,13 @@
 					</PropertyList>
 					<ChildrenList>
 						<Sound Name="Start Game" ID="{4E0F6BEC-13FA-44BA-98CA-9D8E769ECC53}" ShortID="414831195">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
@@ -5648,7 +5675,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>8</Value>
+										<Value>2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -7305,13 +7332,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="Electric" ID="{34AE8918-F660-4103-9218-F3B43814A644}" ShortID="67689830">
-									<PropertyList>
-										<Property Name="InitialDelay" Type="Real64">
-											<ValueList>
-												<Value>0.1</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
@@ -7359,7 +7379,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-11</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -7391,6 +7411,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="275671-Short_Circuit_02" ID="{D166C3D7-E0FB-4D5E-ADD5-22EE37136DFB}" ShortID="527698430">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-9</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5417C903-17C6-4ED7-A604-C615ED8151C6}"/>
@@ -7457,7 +7484,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-14</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -7518,9 +7545,9 @@
 									<ChildrenList>
 										<AudioFileSource Name="83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744" ID="{3FF03BCE-0B08-4055-949E-6A3219C3C270}">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0806616924226338"/>
-												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.00294105590178202"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.112863020230885"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>83050-Button_electronic_blast_hit_reverb-BLASTWAVEFX-19744.wav</AudioFile>
@@ -8584,6 +8611,11 @@
 										<BlendContainer Name="CityTower" ID="{C39FA023-56F5-444D-9421-74977EAF527A}" ShortID="913841582">
 											<PropertyList>
 												<Property Name="OverrideEffect" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -8677,7 +8709,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-20</Value>
+																<Value>-29</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -8795,6 +8827,11 @@
 														<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
 														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 														<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+														<Property Name="UserAuxSendVolume0" Type="Real64">
+															<ValueList>
+																<Value>-7</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
 																<Value>-4</Value>
@@ -10532,7 +10569,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-18</Value>
+																<Value>-31</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -10549,6 +10586,9 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="Cave_Amb" ID="{0A7B9DF7-4EF7-4731-BB07-EC37174BBE5C}">
+															<PropertyList>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>Cave_Amb.wav</AudioFile>
 															<MediaIDList>
@@ -11288,7 +11328,7 @@
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-22</Value>
+																<Value>-39</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
